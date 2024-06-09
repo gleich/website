@@ -1,0 +1,34 @@
+.root {
+    display: flex;
+    flex-direction: row;
+}
+
+.personal {
+    display: flex;
+    flex-direction: row;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+}
+
+.nameAndDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.name {
+    font-size: 64px;
+    font-weight: 600;
+    margin: 40px;
+    line-height: 75%;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+
+.description {
+    margin: 0;
+    margin-top: 4px;
+}
