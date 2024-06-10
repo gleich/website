@@ -2,6 +2,7 @@
 :root {
   --foreground: black;
   --background: white;
+  --success: #30ce75;
 }
 
 /* DARK MODE */
@@ -35,4 +36,8 @@ h6 {
 
 a {
   color: #49a4ff;
+}
+
+p {
+  font-size: 17px;
 }

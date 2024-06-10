@@ -1,0 +1,23 @@
+.cache {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+}
+
+.status {
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 140px;
+}
+
+.icon {
+  width: 18px;
+  min-width: 18px;
+  height: auto;
+}
+
+.details {
+  padding-left: 15px;
+}
