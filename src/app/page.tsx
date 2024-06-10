@@ -2,8 +2,14 @@ import styles from "./page.module.css";
 import Header from "@/ui/root/header/header";
 import Link from "next/link";
 import Cache from "@/ui/cache";
+import { loadStravaData } from "@/lib/strava";
+import { loadSteamData } from "@/lib/steam";
 
-export default function Home() {
+export const revalidate = 30;
+
+export default async function Home() {
+  const stravaData = await loadStravaData();
+  const steamData = await loadSteamData();
   return (
     <main className={styles.main}>
       <Header />
@@ -20,14 +26,8 @@ export default function Home() {
           )! Here is the status of each cache:
         </p>
         <div className={styles.caches}>
-          <Cache
-            name="Strava"
-            lastUpdate={new Date("2024-06-08T05:17:33.463127299Z")}
-          />
-          <Cache
-            name="Steam"
-            lastUpdate={new Date("2024-05-09T20:44:48.539286381Z")}
-          />
+          <Cache name="Strava" lastUpdate={stravaData.last_updated} />
+          <Cache name="Steam" lastUpdate={steamData.last_updated} />
         </div>
       </div>
     </main>

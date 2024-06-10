@@ -35,7 +35,7 @@ export default function Cache({
         <p>{name} online</p>
       </div>
       <div className={styles.details}>
-        <p>Last updated {lastUpdateRelative}</p>
+        <p>Auto updated {lastUpdateRelative}</p>
         <p>{lastUpdateExact}</p>
       </div>
     </div>
