@@ -1,32 +1,15 @@
-"use client";
-
 import styles from "@/ui/root/header/header.module.css";
 import Logo from "./logo";
 import Social from "./social";
-import { useEffect, useState, useMemo } from "react";
+import Description from "./description";
 
 export default function Header() {
-  const descriptions = useMemo(
-    () => ["photographer", "cyclist", "developer", "college student"],
-    [],
-  );
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const cycleTexts = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % descriptions.length);
-    }, 2000);
-
-    return () => clearInterval(cycleTexts);
-  }, [descriptions]);
-
   return (
     <div className={styles.root}>
       <div className={styles.personal}>
         <div className={styles.nameAndDescription}>
           <h1 className={styles.name}>Matt Gleich</h1>
-          <p className={styles.description}>{descriptions[index]}</p>
+          <Description />
         </div>
         <Logo className={styles.logo} />
       </div>

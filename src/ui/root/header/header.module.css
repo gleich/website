@@ -32,10 +32,6 @@
   margin-right: 0px;
 }
 
-.description {
-  margin-top: 4px;
-}
-
 .logo {
   height: 150px;
   width: auto;
@@ -55,10 +51,6 @@
     margin-top: 10px;
     margin-left: 10px;
     font-size: 7vb;
-  }
-
-  .description {
-    font-size: 2.5vb;
   }
 
   .personal {
