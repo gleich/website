@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  color: var(--foreground);
+  text-decoration-color: var(--foreground);
+  text-decoration: none;
+  height: min-content;
+}
