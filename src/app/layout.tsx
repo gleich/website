@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 const title = 'Matt Gleich';
 const description = 'College student, cyclist, and photographer';
+const ogImage = '/opengraph.png';
 
 export const metadata: Metadata = {
   title: title,
