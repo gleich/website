@@ -11,16 +11,18 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <Header />
-      <div className={styles.introduction}>
-        <p>
+      <div>
+        <p className={styles.introduction}>
           Hey! I&apos;m Matt Gleich, a college student attending the{' '}
           <Link href="https://rit.edu">
             Rochester Institute of Technology (RIT)
           </Link>
           . I&apos;m studying computer science and in my free I really enjoy
-          cycling (gravel, road, & mountain bike) and photography. This website
-          pulls in a bunch of data automatically from my proxy cache api built
-          in rust (<Link href="https://github.com/gleich/lcp">gleich/lcp</Link>
+          cycling (gravel, road, & mountain bike) and photography. <br />
+          <br />
+          This website pulls in a bunch of data automatically from my proxy
+          cache api built in rust (
+          <Link href="https://github.com/gleich/lcp">gleich/lcp</Link>
           )! Here is the status of each cache:
         </p>
         <div className={styles.caches}>
