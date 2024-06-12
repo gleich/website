@@ -1,6 +1,10 @@
+.main {
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
 .introduction {
-  padding-left: 30px;
-  padding-top: 50px;
+  padding-top: 20px;
   max-width: 800px;
 }
 
@@ -12,10 +16,17 @@
   row-gap: 20px;
 }
 
+.sections {
+  padding-top: 50px;
+}
+
 @media (max-width: 678px) {
+  .main {
+    padding: 10px;
+  }
+
   .introduction {
     padding-top: 40px;
-    padding-left: 10px;
   }
 
   .caches {

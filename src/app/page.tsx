@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Cache from '@/ui/cache';
 import { loadStravaData } from '@/lib/strava';
 import { loadSteamData } from '@/lib/steam';
+import RecentGames from '@/ui/steam/recentGames';
 
 export default async function Home() {
   const stravaData = await loadStravaData();
@@ -11,6 +12,7 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <Header />
+
       <div>
         <p className={styles.introduction}>
           Hey! I&apos;m Matt Gleich, a college student attending the{' '}
@@ -29,6 +31,10 @@ export default async function Home() {
           <Cache name="Strava" lastUpdate={stravaData.last_updated} />
           <Cache name="Steam" lastUpdate={steamData.last_updated} />
         </div>
+      </div>
+
+      <div className={styles.sections}>
+        <RecentGames games={steamData.data} />
       </div>
     </main>
   );

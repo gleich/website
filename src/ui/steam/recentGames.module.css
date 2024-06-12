@@ -1,0 +1,50 @@
+.recentGames {
+  max-width: 620px;
+}
+
+.title {
+  background-color: var(--foreground);
+  color: var(--background);
+  width: min-content;
+  padding: 5px 8px;
+}
+
+.description {
+  padding: 15px 0px;
+}
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.game {
+  display: flex;
+  gap: 10px;
+}
+
+.gameInfo {
+  font-weight: bold;
+}
+
+.gameInfo > h3 {
+  font-family: Inter;
+}
+
+.gameTitle {
+  padding-bottom: 5px;
+  text-decoration: underline;
+}
+
+@media (max-width: 678px) {
+  .game {
+    flex-direction: column;
+  }
+
+  .games {
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+}
