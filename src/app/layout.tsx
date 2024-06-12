@@ -6,9 +6,56 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const title = 'Matt Gleich';
+const description = 'College student, cyclist, and photographer';
+
 export const metadata: Metadata = {
-  title: 'Matt Gleich',
-  description: 'College student, cyclist, and photographer',
+  title: title,
+  description: description,
+  authors: [
+    {
+      name: 'Matt Gleich',
+      url: 'https://mattglei.ch',
+    },
+  ],
+  keywords: [
+    'Matt Gleich',
+    'Matt',
+    'Gleich',
+    'Matthew Gleich',
+    'Matthew',
+    'photography',
+    'coding',
+    'cycling',
+    'RIT',
+  ],
+  openGraph: {
+    title: title,
+    description: description,
+    siteName: title,
+    images: [
+      {
+        url: '/opengraph.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
+  },
+  twitter: {
+    creator: '@matt_gleich',
+    card: 'summary_large_image',
+    title: title,
+    description: description,
+    images: [
+      {
+        url: '/opengraph.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
