@@ -5,8 +5,6 @@ import Cache from "@/ui/cache";
 import { loadStravaData } from "@/lib/strava";
 import { loadSteamData } from "@/lib/steam";
 
-export const revalidate = 30;
-
 export default async function Home() {
   const stravaData = await loadStravaData();
   const steamData = await loadSteamData();
