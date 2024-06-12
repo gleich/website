@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect, useState, useMemo } from "react";
-import styles from "@/ui/root/header/description.module.css";
+import { useEffect, useState, useMemo } from 'react';
+import styles from '@/ui/root/header/description.module.css';
 
 export default function Description() {
   const descriptions = useMemo(
-    () => ["photographer", "cyclist", "developer", "college student"],
+    () => ['photographer', 'cyclist', 'developer', 'college student'],
     [],
   );
 

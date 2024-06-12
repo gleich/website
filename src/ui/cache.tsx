@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import styles from "@/ui/cache.module.css";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-import advancedFormat from "dayjs/plugin/advancedFormat";
-import { Inconsolata } from "next/font/google";
+import styles from '@/ui/cache.module.css';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+import { Inconsolata } from 'next/font/google';
 
-const inconsolata = Inconsolata({ subsets: ["latin"] });
+const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export default function Cache({
   name,
@@ -24,7 +24,10 @@ export default function Cache({
 
   const dayjsLastUpdate = dayjs(lastUpdate);
   const lastUpdateRelative = dayjsLastUpdate.fromNow();
-  const lastUpdateExact = dayjsLastUpdate.format("MM/DD/YYYY hh:MM A [") +dayjsLastUpdate.format("z") + "]";
+  const lastUpdateExact =
+    dayjsLastUpdate.format('MM/DD/YYYY hh:MM A [') +
+    dayjsLastUpdate.format('z') +
+    ']';
   return (
     <div className={`${styles.cache} ${inconsolata.className}`}>
       <div className={styles.status}>

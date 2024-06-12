@@ -1,15 +1,15 @@
-import Response from "@/lib/response";
-import { env } from "process";
+import Response from '@/lib/response';
+import { env } from 'process';
 
 export async function loadStravaData() {
-  const res = await fetch("https://api.mattglei.ch/strava/cache", {
-    method: "GET",
+  const res = await fetch('https://api.mattglei.ch/strava/cache', {
+    method: 'GET',
     headers: {
-      Authorization: "Bearer " + env.API_KEY,
+      Authorization: 'Bearer ' + env.API_KEY,
     },
     next: {
       revalidate: 10,
-    }
+    },
   });
   const responseData: Response<Activity[]> = await res.json();
   return responseData;

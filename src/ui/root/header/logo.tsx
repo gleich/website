@@ -1,4 +1,4 @@
-import styles from "@/ui/root/header/logo.module.css";
+import styles from '@/ui/root/header/logo.module.css';
 
 export default function Logo({ className }: { className: string }) {
   return (

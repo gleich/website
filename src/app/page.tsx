@@ -1,9 +1,9 @@
-import styles from "./page.module.css";
-import Header from "@/ui/root/header/header";
-import Link from "next/link";
-import Cache from "@/ui/cache";
-import { loadStravaData } from "@/lib/strava";
-import { loadSteamData } from "@/lib/steam";
+import styles from './page.module.css';
+import Header from '@/ui/root/header/header';
+import Link from 'next/link';
+import Cache from '@/ui/cache';
+import { loadStravaData } from '@/lib/strava';
+import { loadSteamData } from '@/lib/steam';
 
 export default async function Home() {
   const stravaData = await loadStravaData();
@@ -13,7 +13,7 @@ export default async function Home() {
       <Header />
       <div className={styles.introduction}>
         <p>
-          Hey! I&apos;m Matt Gleich, a college student attending the{" "}
+          Hey! I&apos;m Matt Gleich, a college student attending the{' '}
           <Link href="https://rit.edu">
             Rochester Institute of Technology (RIT)
           </Link>
