@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     ],
     locale: 'en-US',
     type: 'website',
-    url: 'mattglei.ch',
+    url: 'https://mattglei.ch',
   },
   twitter: {
     creator: '@matt_gleich',
