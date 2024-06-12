@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Cache from '@/ui/cache';
 import { loadStravaData } from '@/lib/strava';
 import { loadSteamData } from '@/lib/steam';
-import RecentGames from '@/ui/steam/recentGames';
+import Games from '@/ui/root/games';
+import Activities from '@/ui/root/activities/activities';
 
 export default async function Home() {
   const stravaData = await loadStravaData();
@@ -16,7 +17,7 @@ export default async function Home() {
       <div>
         <p className={styles.introduction}>
           Hey! I&apos;m Matt Gleich, a college student attending the{' '}
-          <Link href="https://rit.edu">
+          <Link href="https://rit.edu" target="_blank">
             Rochester Institute of Technology (RIT)
           </Link>
           . I&apos;m studying computer science and in my free I really enjoy
@@ -24,7 +25,9 @@ export default async function Home() {
           <br />
           This website pulls in a bunch of data automatically from my proxy
           cache api built in rust (
-          <Link href="https://github.com/gleich/lcp">gleich/lcp</Link>
+          <Link href="https://github.com/gleich/lcp" target="_blank">
+            gleich/lcp
+          </Link>
           )! Here is the status of each cache:
         </p>
         <div className={styles.caches}>
@@ -34,7 +37,8 @@ export default async function Home() {
       </div>
 
       <div className={styles.sections}>
-        <RecentGames games={steamData.data} />
+        <Activities activities={stravaData.data} />
+        <Games games={steamData.data} />
       </div>
     </main>
   );

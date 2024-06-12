@@ -1,0 +1,14 @@
+.section {
+  max-width: 700px;
+}
+
+.title {
+  background-color: var(--foreground);
+  color: var(--background);
+  width: min-content;
+  padding: 5px 8px;
+}
+
+.description {
+  padding: 15px 0px;
+}

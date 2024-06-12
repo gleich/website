@@ -15,6 +15,38 @@ export async function loadStravaData() {
   return responseData;
 }
 
+export function extractSportType(sport_type: string): [string, string] {
+  const icon_folder = '/icons/activities/strava/';
+  let name: string;
+  let icon_name: string;
+  switch (sport_type) {
+    case 'Run':
+      name = sport_type;
+      icon_name = 'run.svg';
+      break;
+    case 'GravelRide':
+      name = 'Gravel Ride';
+      icon_name = 'gravel.svg';
+      break;
+    case 'Hike':
+      name = sport_type;
+      icon_name = 'hike.svg';
+      break;
+    case 'Walk':
+      name = sport_type;
+      icon_name = 'walk.svg';
+      break;
+    case 'Ride':
+      name = sport_type;
+      icon_name = 'ride.svg';
+      break;
+    default:
+      name = 'Workout';
+      icon_name = 'workout.svg';
+  }
+  return [name, icon_folder + icon_name];
+}
+
 export interface Activity {
   name: string;
   sport_type: string;
