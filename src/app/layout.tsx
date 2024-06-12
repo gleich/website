@@ -8,7 +8,11 @@ const inter = Inter({ subsets: ['latin'] });
 
 const title = 'Matt Gleich';
 const description = 'College student, cyclist, and photographer';
-const ogImage = '/opengraph.png';
+const ogImage = {
+  url: '/opengraph.png',
+  width: 1200,
+  height: 630,
+};
 
 export const metadata: Metadata = {
   title: title,
@@ -34,13 +38,7 @@ export const metadata: Metadata = {
     title: title,
     description: description,
     siteName: title,
-    images: [
-      {
-        url: '/opengraph.jpg',
-        width: 1200,
-        height: 630,
-      },
-    ],
+    images: [ogImage],
     locale: 'en-US',
     type: 'website',
     url: 'https://mattglei.ch',
@@ -50,13 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: title,
     description: description,
-    images: [
-      {
-        url: '/opengraph.jpg',
-        width: 1200,
-        height: 630,
-      },
-    ],
+    images: [ogImage],
   },
 };
 
