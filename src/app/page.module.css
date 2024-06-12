@@ -20,6 +20,7 @@
   padding-top: 50px;
   display: flex;
   gap: 100px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 678px) {
