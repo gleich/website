@@ -32,7 +32,7 @@ export default function RecentGames({ games }: { games: Game[] }) {
                 recently
               </p>
               <Link href={g.url} target="_blank">
-                See on store
+                See in Steam store
               </Link>
             </div>
           </div>
