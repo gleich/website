@@ -12,3 +12,9 @@
 .description {
   padding: 15px 0px;
 }
+
+@media (max-width: 950px) {
+  .section {
+    max-width: none;
+  }
+}
