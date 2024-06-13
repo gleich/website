@@ -19,7 +19,7 @@
 .sections {
   padding-top: 50px;
   display: flex;
-  gap: 100px;
+  gap: 70px;
   flex-wrap: wrap;
 }
 
