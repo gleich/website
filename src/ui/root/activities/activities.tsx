@@ -4,6 +4,8 @@ import styles from '@/ui/root/activities/activities.module.css';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import duration from 'dayjs/plugin/duration';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import Image from 'next/image';
 import { Inconsolata } from 'next/font/google';
 import Stat from './stat';
@@ -13,6 +15,8 @@ const inconsolata = Inconsolata({ subsets: ['latin'] });
 export default function Activities({ activities }: { activities: Activity[] }) {
   dayjs.extend(relativeTime);
   dayjs.extend(duration);
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
   return (
     <Section
       name="Activities"
