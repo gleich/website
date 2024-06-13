@@ -7,9 +7,7 @@ export async function loadSteamData() {
     headers: {
       Authorization: 'Bearer ' + env.API_KEY,
     },
-    next: {
-      revalidate: 10,
-    },
+    cache: 'no-store',
   });
   const responseData: Response<Game[]> = await res.json();
   return responseData;
