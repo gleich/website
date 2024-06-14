@@ -1,4 +1,4 @@
-import { revalidatePath } from 'next/cache';
+import { revalidateTag } from 'next/cache';
 import { NextResponse } from 'next/server';
 import { env } from 'process';
 
@@ -10,7 +10,8 @@ export async function POST(request: Request) {
     'Bearer ' + env.REVALIDATE_TOKEN
   ) {
     console.log('Revalidation on / triggered');
-    revalidatePath('/');
+    revalidateTag('strava');
+    revalidateTag('steam');
     return NextResponse.json({ revalidated: true }, { status: 202 });
   }
   return NextResponse.json(
