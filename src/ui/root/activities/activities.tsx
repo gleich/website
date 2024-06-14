@@ -9,6 +9,7 @@ import timezone from 'dayjs/plugin/timezone';
 import Image from 'next/image';
 import { Inconsolata } from 'next/font/google';
 import Stat from './stat';
+import Link from 'next/link';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -40,6 +41,46 @@ export default function Activities({ activities }: { activities: Activity[] }) {
               formattedDuration = movingDuration.format('m[m] & s[s]');
             }
 
+            let stats = [
+              <Stat
+                key="time"
+                icon="clock.svg"
+                name="Time"
+                value={`${formattedDuration}`}
+              />,
+              <Stat
+                key="distance"
+                icon="compass.svg"
+                name="Distance"
+                value={`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}
+              />,
+              <Stat
+                key="heartrate"
+                icon="heart.svg"
+                name="Avg. heartrate"
+                value={`${a.average_heartrate} bpm`}
+              />,
+              <Stat
+                key="elevation"
+                icon="elevation.svg"
+                name="Elevation gain"
+                value={`${Math.round(a.total_elevation_gain * 3.281)} ft`}
+              />,
+            ];
+            if (
+              a.device_watts &&
+              (sportName === 'Gravel Ride' || sportName === 'Ride')
+            ) {
+              stats.push(
+                <Stat
+                  key="power"
+                  icon="power.svg"
+                  name="Avg. power"
+                  value={`${a.average_watts} watts`}
+                />,
+              );
+            }
+
             return (
               <div key={a.id}>
                 <div className={styles.title}>
@@ -57,23 +98,7 @@ export default function Activities({ activities }: { activities: Activity[] }) {
                     {sportName} on {date.format('MM/DD/YYYY [@] h:MM A')}
                   </p>
                   <br />
-                  <div className={styles.stats}>
-                    <Stat
-                      icon="clock.svg"
-                      name="Time"
-                      value={`${formattedDuration}`}
-                    />
-                    <Stat
-                      icon="compass.svg"
-                      name="Distance"
-                      value={`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}
-                    />
-                    <Stat
-                      icon="heart.svg"
-                      name="Average HR"
-                      value={`${a.average_heartrate} bpm`}
-                    />
-                  </div>
+                  <div className={styles.stats}>{stats}</div>
                 </div>
               </div>
             );
