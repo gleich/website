@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     request.headers.get('Authorization') ==
     'Bearer ' + env.REVALIDATE_TOKEN
   ) {
-    console.log('Revalidation triggered');
+    console.log('Revalidation on / triggered');
     revalidatePath('/');
     return NextResponse.json({ revalidated: true }, { status: 202 });
   }
