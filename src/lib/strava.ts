@@ -10,6 +10,7 @@ export async function loadStravaData() {
     next: {
       tags: ['strava'],
     },
+    cache: 'force-cache',
   });
   const responseData: Response<Activity[]> = await res.json();
   return responseData;
