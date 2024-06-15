@@ -28,7 +28,7 @@ export default function Activities({ activities }: { activities: Activity[] }) {
           .filter((a) => !a.private)
           .slice(0, 3)
           .map((a) => {
-            const date = dayjs(a.start_date);
+            const date = dayjs(a.start_date).tz(dayjs.tz.guess());
             const [sportName, sportIcon] = extractSportType(a.sport_type);
 
             const movingDuration = dayjs.duration(a.moving_time, 'seconds');
