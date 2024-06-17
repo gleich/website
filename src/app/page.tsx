@@ -6,6 +6,7 @@ import { loadStravaData } from '@/lib/strava';
 import { loadSteamData } from '@/lib/steam';
 import Games from '@/ui/root/games';
 import Activities from '@/ui/root/activities/activities';
+import { Suspense } from 'react';
 
 export default async function Home() {
   const stravaData = await loadStravaData();
@@ -37,8 +38,12 @@ export default async function Home() {
       </div>
 
       <div className={styles.sections}>
-        <Activities activities={stravaData.data} />
-        <Games games={steamData.data} />
+        <Suspense>
+          <Activities activities={stravaData.data} />
+        </Suspense>
+        <Suspense>
+          <Games games={steamData.data} />
+        </Suspense>
       </div>
     </main>
   );
