@@ -5,15 +5,13 @@ import styles from '@/ui/root/games.module.css';
 import Section from '../section';
 
 export default function Games({ games }: { games: Game[] }) {
-  let totalRecentlyPlayed = 0;
-  games.map((g) => (totalRecentlyPlayed += g.playtime.minutes_last_2weeks));
   return (
     <Section
       name="Games"
       description="To relax I love to play video games with some of my friends. Here are my recently played titles over on Steam:"
     >
       <div className={styles.games}>
-        {games.map((g) => (
+        {games.slice(0, 8).map((g) => (
           <Link key={g.app_id} href={g.url} target="_blank">
             <Image
               key={g.app_id}
