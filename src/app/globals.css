@@ -17,11 +17,20 @@
   }
 }
 
+::selection {
+  background-color: var(--foreground);
+  text-decoration-color: var(--background);
+  color: var(--background);
+}
+
 body {
   color: var(--foreground);
   background-color: var(--background);
   padding: 0;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  animation: 0.2s linear initial-page-load;
 }
 
 p,
@@ -45,4 +54,14 @@ p {
 h3 {
   font-size: 20px;
   text-decoration: underline;
+}
+
+@keyframes initial-page-load {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
 }
