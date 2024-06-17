@@ -22,6 +22,7 @@ export interface Game {
   url: string;
   icon_url: string;
   header_url: string;
+  library_url: string;
   playtime: Playtime;
 }
 

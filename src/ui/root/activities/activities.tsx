@@ -1,3 +1,5 @@
+'use client';
+
 import { Activity, extractSportType } from '@/lib/strava';
 import Section from '../../section';
 import styles from '@/ui/root/activities/activities.module.css';
@@ -9,15 +11,14 @@ import timezone from 'dayjs/plugin/timezone';
 import Image from 'next/image';
 import { Inconsolata } from 'next/font/google';
 import Stat from './stat';
-import Link from 'next/link';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
+dayjs.extend(relativeTime);
+dayjs.extend(duration);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export default function Activities({ activities }: { activities: Activity[] }) {
-  dayjs.extend(relativeTime);
-  dayjs.extend(duration);
-  dayjs.extend(utc);
-  dayjs.extend(timezone);
   return (
     <Section
       name="Activities"

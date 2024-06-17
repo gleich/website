@@ -8,11 +8,6 @@
   gap: 5px;
 }
 
-.game {
-  display: flex;
-  gap: 10px;
-}
-
 .gameInfo {
   font-weight: bold;
 }
@@ -29,8 +24,6 @@
   }
 
   .games {
-    gap: 25px;
-    align-items: center;
     justify-content: center;
   }
 }
