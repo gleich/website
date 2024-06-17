@@ -7,12 +7,10 @@ import { loadSteamData } from '@/lib/steam';
 import Games from '@/ui/root/games';
 import Activities from '@/ui/root/activities/activities';
 import { Suspense } from 'react';
-import { setTimeout } from 'timers/promises';
 
 export default async function Home() {
   const stravaData = await loadStravaData();
   const steamData = await loadSteamData();
-  await setTimeout(50000);
   return (
     <main className={styles.main}>
       <Header />
