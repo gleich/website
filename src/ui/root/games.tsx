@@ -12,6 +12,7 @@ export default async function Games() {
       name="Games"
       description="To relax I love to play video games with some of my friends. Here are my recently played titles over on Steam:"
       source="Steam"
+      sourceURL="https://store.steampowered.com/about/"
       lastUpdated={steamData.last_updated}
     >
       <div className={styles.games}>

@@ -1,17 +1,23 @@
 import styles from '@/ui/section/section.module.css';
+import { Inconsolata } from 'next/font/google';
+import Link from 'next/link';
 import { ReactNode } from 'react';
-import LiveFrom from './liveFrom';
+import { LastUpdated } from './lastUpdated';
+
+const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export default function Section({
   name,
   description,
   source,
+  sourceURL,
   lastUpdated,
   children,
 }: {
   name: string;
   description: string;
   source: string;
+  sourceURL: string;
   lastUpdated: Date;
   children: ReactNode;
 }) {
@@ -19,10 +25,25 @@ export default function Section({
     <div className={styles.section}>
       <div className={styles.header}>
         <h2 className={styles.title}>{name}</h2>
-        <LiveFrom source={source} lastUpdated={lastUpdated} />
+        <div className={`${styles.liveFrom} ${inconsolata.className}`}>
+          <div className={styles.liveFromTitle}>
+            <span className={styles.liveCircle} />
+            <p>
+              LIVE from{' '}
+              <Link
+                className={styles.liveSourceLink}
+                href={sourceURL}
+                target="_blank"
+              >
+                {source}
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
       <p className={styles.description}>{description}</p>
       {children}
+      <LastUpdated lastUpdated={lastUpdated} />
     </div>
   );
 }

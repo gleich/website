@@ -19,6 +19,7 @@ export default async function Activities() {
       name="Activities"
       description="One of my favorite things in the world is staying active and enjoying the outdoors. I grew up in New Hampshire hiking, biking, snowshoeing, and traveling with my family. Out of all of those things I've loved cycling mainly through gravel cycling, road cycling, and mountain biking. Below are some of my recent activities from Strava:"
       source="Strava"
+      sourceURL="https://www.strava.com/about"
       lastUpdated={stravaData.last_updated}
     >
       <div className={styles.activities}>
