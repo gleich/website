@@ -51,7 +51,7 @@ export function extractSportType(sport_type: string): [string, string] {
 export interface Activity {
   name: string;
   sport_type: string;
-  start_date: string;
+  start_date: Date;
   map: Map;
   trainer: boolean;
   commute: boolean;
@@ -69,16 +69,8 @@ export interface Activity {
   pr_count: number;
   distance: number;
   id: number;
-  laps: Lap[];
 }
 
 export interface Map {
   summary_polyline: string;
-}
-
-export interface Lap {
-  moving_time: number;
-  distance: number;
-  average_watts: number;
-  lap_index: number;
 }

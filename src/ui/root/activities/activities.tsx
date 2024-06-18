@@ -2,19 +2,14 @@ import { extractSportType, loadStravaData } from '@/lib/strava';
 import Section from '../../section/section';
 import styles from '@/ui/root/activities/activities.module.css';
 import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import duration from 'dayjs/plugin/duration';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
 import Image from 'next/image';
 import { Inconsolata } from 'next/font/google';
 import Stat from './stat';
+import Title from './title';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
-dayjs.extend(relativeTime);
 dayjs.extend(duration);
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 export default async function Activities() {
   const stravaData = await loadStravaData();
@@ -31,7 +26,6 @@ export default async function Activities() {
           .filter((a) => !a.private)
           .slice(0, 3)
           .map((a) => {
-            const date = dayjs(a.start_date).tz(dayjs.tz.guess());
             const [sportName, sportIcon] = extractSportType(a.sport_type);
 
             const movingDuration = dayjs.duration(a.moving_time, 'seconds');
@@ -97,9 +91,7 @@ export default async function Activities() {
                   <h3>{a.name}</h3>
                 </div>
                 <div className={`${styles.details} ${inconsolata.className}`}>
-                  <p>
-                    {sportName} on {date.format('MM/DD/YYYY [@] h:MM A')}
-                  </p>
+                  <Title sportName={sportName} date={a.start_date} />
                   <br />
                   <div className={styles.stats}>{stats}</div>
                 </div>

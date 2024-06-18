@@ -24,4 +24,5 @@ export interface Game {
   header_url: string;
   library_url: string;
   playtime_forever: number;
+  rtime_last_played: Date;
 }

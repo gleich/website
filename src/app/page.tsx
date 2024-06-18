@@ -17,7 +17,7 @@ export default async function Home() {
             Rochester Institute of Technology (RIT)
           </Link>
           . I&apos;m studying computer science and in my free I really enjoy
-          cycling (gravel, road, & mountain bike) and photography. Below is a
+          cycling (gravel, road, & mountain bike) and photography. Below are a
           few sections featuring parts of who I am!
           <br />
         </p>
