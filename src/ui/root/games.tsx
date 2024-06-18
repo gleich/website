@@ -18,7 +18,7 @@ export default async function Games() {
       <div className={styles.games}>
         {games
           .filter((g) => g.library_url != null)
-          .slice(0, 12)
+          .slice(0, 20)
           .map((g) => (
             <Link key={g.app_id} href={g.url} target="_blank">
               <Image

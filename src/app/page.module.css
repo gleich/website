@@ -23,6 +23,9 @@
   display: flex;
   gap: 70px;
   flex-wrap: wrap;
+  flex: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 678px) {
