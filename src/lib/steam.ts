@@ -23,10 +23,5 @@ export interface Game {
   icon_url: string;
   header_url: string;
   library_url: string;
-  playtime: Playtime;
-}
-
-export interface Playtime {
-  minutes_last_2weeks: number;
-  minutes_forever: number;
+  playtime_forever: number;
 }
