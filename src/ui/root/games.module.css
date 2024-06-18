@@ -32,7 +32,7 @@
 
 @media (max-width: 575px) {
   .games {
-    height: 600px;
+    height: 830px; /* 207.5px each */
     overflow-y: hidden;
   }
 }
