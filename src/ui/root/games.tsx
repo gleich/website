@@ -1,14 +1,18 @@
-import { Game } from '@/lib/steam';
+import { Game, loadSteamData } from '@/lib/steam';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/ui/root/games.module.css';
-import Section from '../section';
+import Section from '../section/section';
 
-export default function Games({ games }: { games: Game[] }) {
+export default async function Games() {
+  const steamData = await loadSteamData();
+  const games = steamData.data;
   return (
     <Section
       name="Games"
       description="To relax I love to play video games with some of my friends. Here are my recently played titles over on Steam:"
+      source="Steam"
+      lastUpdated={steamData.last_updated}
     >
       <div className={styles.games}>
         {games

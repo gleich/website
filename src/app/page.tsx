@@ -1,16 +1,11 @@
 import styles from './page.module.css';
 import Header from '@/ui/root/header/header';
 import Link from 'next/link';
-import Cache from '@/ui/cache';
-import { loadStravaData } from '@/lib/strava';
-import { loadSteamData } from '@/lib/steam';
 import Games from '@/ui/root/games';
 import Activities from '@/ui/root/activities/activities';
 import { Suspense } from 'react';
 
 export default async function Home() {
-  const stravaData = await loadStravaData();
-  const steamData = await loadSteamData();
   return (
     <main className={styles.main}>
       <Header />
@@ -22,27 +17,18 @@ export default async function Home() {
             Rochester Institute of Technology (RIT)
           </Link>
           . I&apos;m studying computer science and in my free I really enjoy
-          cycling (gravel, road, & mountain bike) and photography. <br />
+          cycling (gravel, road, & mountain bike) and photography. Below is a
+          few sections featuring parts of who I am!
           <br />
-          This website pulls in a bunch of data automatically from my proxy
-          cache api built in rust (
-          <Link href="https://github.com/gleich/lcp" target="_blank">
-            gleich/lcp
-          </Link>
-          )! Here is the status of each cache:
         </p>
-        <div className={styles.caches}>
-          <Cache name="Strava" lastUpdate={stravaData.last_updated} />
-          <Cache name="Steam" lastUpdate={steamData.last_updated} />
-        </div>
       </div>
 
       <div className={styles.sections}>
         <Suspense>
-          <Activities activities={stravaData.data} />
+          <Activities />
         </Suspense>
         <Suspense>
-          <Games games={steamData.data} />
+          <Games />
         </Suspense>
       </div>
     </main>

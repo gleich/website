@@ -1,7 +1,5 @@
-'use client';
-
-import { Activity, extractSportType } from '@/lib/strava';
-import Section from '../../section';
+import { extractSportType, loadStravaData } from '@/lib/strava';
+import Section from '../../section/section';
 import styles from '@/ui/root/activities/activities.module.css';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -18,11 +16,15 @@ dayjs.extend(duration);
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export default function Activities({ activities }: { activities: Activity[] }) {
+export default async function Activities() {
+  const stravaData = await loadStravaData();
+  const activities = stravaData.data;
   return (
     <Section
       name="Activities"
       description="One of my favorite things in the world is staying active and enjoying the outdoors. I grew up in New Hampshire hiking, biking, snowshoeing, and traveling with my family. Out of all of those things I've loved cycling mainly through gravel cycling, road cycling, and mountain biking. Below are some of my recent activities from Strava:"
+      source="Strava"
+      lastUpdated={stravaData.last_updated}
     >
       <div className={styles.activities}>
         {activities
