@@ -1,8 +1,20 @@
 .activities {
   display: flex;
   gap: 20px;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity {
+  width: 470px;
+}
+
+.info {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
 }
 
 .title {

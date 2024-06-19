@@ -8,6 +8,12 @@ const nextConfig = {
         port: '',
         pathname: '/store_item_assets/steam/apps/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'api.mapbox.com',
+        port: '',
+        pathname: '/styles/v1/mapbox/streets-v12/static/**',
+      },
     ],
   },
 };

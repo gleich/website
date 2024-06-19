@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Inconsolata } from 'next/font/google';
 import Stat from './stat';
 import Title from './title';
+import { env } from 'process';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 dayjs.extend(duration);
@@ -14,6 +15,8 @@ dayjs.extend(duration);
 export default async function Activities() {
   const stravaData = await loadStravaData();
   const activities = stravaData.data;
+  const mapWidth = 200;
+  const mapHeight = 200;
   return (
     <Section
       name="Activities"
@@ -25,7 +28,7 @@ export default async function Activities() {
       <div className={styles.activities}>
         {activities
           .filter((a) => !a.private)
-          .slice(0, 3)
+          .slice(0, 6)
           .map((a) => {
             const [sportName, sportIcon] = extractSportType(a.sport_type);
 
@@ -80,7 +83,7 @@ export default async function Activities() {
             }
 
             return (
-              <div key={a.id}>
+              <div key={a.id} className={styles.activity}>
                 <div className={styles.title}>
                   <Image
                     src={sportIcon}
@@ -91,10 +94,18 @@ export default async function Activities() {
                   />
                   <h3>{a.name}</h3>
                 </div>
-                <div className={`${styles.details} ${inconsolata.className}`}>
-                  <Title sportName={sportName} date={a.start_date} />
-                  <br />
-                  <div className={styles.stats}>{stats}</div>
+                <div className={styles.info}>
+                  <Image
+                    src={`https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/path-2+000(${encodeURIComponent(a.map.summary_polyline)})/auto/${mapHeight}x${mapWidth}@2x?access_token=${encodeURIComponent(env.MAPBOX_TOKEN as string)}`}
+                    alt="Map"
+                    width={mapWidth}
+                    height={mapHeight}
+                  />
+                  <div className={`${styles.details} ${inconsolata.className}`}>
+                    <Title sportName={sportName} date={a.start_date} />
+                    <br />
+                    <div className={styles.stats}>{stats}</div>
+                  </div>
                 </div>
               </div>
             );
