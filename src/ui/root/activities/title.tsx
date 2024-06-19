@@ -11,8 +11,20 @@ export default function Title({
 }) {
   const dayjsDate = dayjs(date);
   return (
-    <p>
-      {sportName} on {dayjsDate.format('MM/DD/YYYY [@] h:MM A')}
-    </p>
+    <>
+      <style jsx>
+        {`
+          .name {
+            font-weight: bold;
+            text-decoration: underline;
+          }
+        `}
+      </style>
+      <p>
+        <span className="name">{sportName}</span>
+        <br />
+        {dayjsDate.format('MM/DD/YYYY [@] h:MM A')}
+      </p>
+    </>
   );
 }

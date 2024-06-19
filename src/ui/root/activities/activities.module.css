@@ -8,7 +8,7 @@
 }
 
 .activity {
-  width: 470px;
+  max-width: 600px;
 }
 
 .info {
@@ -37,5 +37,12 @@
   .icon {
     filter: invert(100%) sepia(79%) saturate(0%) hue-rotate(104deg)
       brightness(112%) contrast(101%);
+  }
+}
+
+@media (max-width: 678px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
   }
 }

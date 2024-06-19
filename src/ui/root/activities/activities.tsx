@@ -15,8 +15,8 @@ dayjs.extend(duration);
 export default async function Activities() {
   const stravaData = await loadStravaData();
   const activities = stravaData.data;
-  const mapWidth = 200;
-  const mapHeight = 200;
+  const mapWidth = 300;
+  const mapHeight = 300;
   return (
     <Section
       name="Activities"
@@ -28,7 +28,7 @@ export default async function Activities() {
       <div className={styles.activities}>
         {activities
           .filter((a) => !a.private)
-          .slice(0, 6)
+          .slice(0, 2)
           .map((a) => {
             const [sportName, sportIcon] = extractSportType(a.sport_type);
 
