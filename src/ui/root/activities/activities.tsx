@@ -100,6 +100,7 @@ export default async function Activities() {
                     alt="Map"
                     width={mapWidth}
                     height={mapHeight}
+                    unoptimized={true}
                   />
                   <div className={`${styles.details} ${inconsolata.className}`}>
                     <Title sportName={sportName} date={a.start_date} />
