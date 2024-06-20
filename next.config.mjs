@@ -10,9 +10,8 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'api.mapbox.com',
+        hostname: 'gleich.s3.us-east-2.amazonaws.com',
         port: '',
-        pathname: '/styles/v1/mapbox/streets-v12/static/**',
       },
     ],
   },
