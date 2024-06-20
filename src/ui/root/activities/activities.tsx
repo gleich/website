@@ -96,7 +96,7 @@ export default async function Activities() {
                 </div>
                 <div className={styles.info}>
                   <Image
-                    src={`https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/path-2+000(${encodeURIComponent(a.map.summary_polyline)})/auto/${mapHeight}x${mapWidth}@2x?access_token=${encodeURIComponent(env.MAPBOX_TOKEN as string)}`}
+                    src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
                     alt="Map"
                     width={mapWidth}
                     height={mapHeight}
