@@ -100,6 +100,8 @@ export default async function Workouts() {
                       alt="Map"
                       width={200}
                       height={200}
+                      placeholder="blur"
+                      blurDataURL="data:image/gif;base64,baseiVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8+fzifwAIxAOS05NsJgAAAABJRU5ErkJggg=="
                     />
                   </div>
                 </div>

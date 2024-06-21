@@ -35,8 +35,6 @@ export default async function Games() {
                   alt={g.name}
                   width={133.33}
                   height={200}
-                  placeholder="blur"
-                  blurDataURL="data:image/gif;base64,baseiVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8+fzifwAIxAOS05NsJgAAAABJRU5ErkJggg=="
                 />
               </Link>
             ))}
