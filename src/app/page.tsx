@@ -19,8 +19,9 @@ export default async function Home() {
             </Link>
             . I&apos;m studying computer science and in my free I really enjoy
             cycling (gravel, road, & mountain bike) and photography. Below are a
-            few sections featuring parts of who I am!
-            <br />
+            few sections featuring parts of who I am! Want to get in touch? Feel
+            free to shoot me an email over at{' '}
+            <Link href="email@mattglei.ch">email@mattglei.ch</Link>.
           </p>
         </div>
 

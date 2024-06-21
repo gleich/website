@@ -8,10 +8,6 @@
   margin-top: 10px;
 }
 
-.activity {
-  max-width: 600px;
-}
-
 .info {
   display: flex;
   gap: 15px;
@@ -25,6 +21,7 @@
 
 .details {
   font-weight: 900;
+  margin-right: 40px;
 }
 
 .icon {
@@ -43,4 +40,10 @@
   align-items: center;
   gap: 8px;
   margin-top: 20px;
+}
+
+@media (max-width: 678px) {
+  .details {
+    margin-right: 0px;
+  }
 }
