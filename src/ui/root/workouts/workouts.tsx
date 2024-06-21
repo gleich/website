@@ -27,13 +27,13 @@ export default async function Workouts() {
         <p>
           One of my favorite things in the world is staying active and enjoying
           the outdoors. I grew up in New Hampshire hiking, biking, snowshoeing,
-          and traveling with my family. Out of all of those things I&apos;ve
-          loved cycling mainly through gravel cycling, road cycling, and
-          mountain biking. Below are some of my recent activities from{' '}
+          and traveling with my family. Out of all of those things I especially
+          love cycling mainly through gravel cycling, road cycling, and mountain
+          biking. Below are 6 of my most recent{' '}
           <Link href="https://strava.com" target="_blank">
             Strava
-          </Link>
-          :
+          </Link>{' '}
+          activities:
         </p>
         <div className={styles.activities}>
           {activities
