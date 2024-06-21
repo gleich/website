@@ -3,7 +3,6 @@ import Header from '@/ui/root/header/header';
 import Link from 'next/link';
 import Games from '@/ui/root/games';
 import Activities from '@/ui/root/activities/activities';
-import { Suspense } from 'react';
 import Copyright from '@/ui/root/copyright';
 
 export default async function Home() {
@@ -26,12 +25,8 @@ export default async function Home() {
         </div>
 
         <div className={styles.sections}>
-          <Suspense>
-            <Activities />
-          </Suspense>
-          <Suspense>
-            <Games />
-          </Suspense>
+          <Activities />
+          <Games />
         </div>
       </main>
       <Copyright />

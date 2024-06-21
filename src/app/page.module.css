@@ -30,6 +30,11 @@
   justify-content: center;
 }
 
+.sectionLoadingIcon {
+  width: 100px;
+  height: 100px;
+}
+
 @media (max-width: 678px) {
   .main {
     padding: 10px;

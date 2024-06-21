@@ -1,4 +1,3 @@
-import mainStyles from './page.module.css';
 import styles from './loading.module.css';
 import Logo from '@/ui/root/header/logo';
 

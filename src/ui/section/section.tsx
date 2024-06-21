@@ -8,14 +8,12 @@ const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export default function Section({
   name,
-  description,
   source,
   sourceURL,
   lastUpdated,
   children,
 }: {
   name: string;
-  description: string;
   source: string;
   sourceURL: string;
   lastUpdated: Date;
@@ -41,7 +39,6 @@ export default function Section({
           </div>
         </div>
       </div>
-      <p className={styles.description}>{description}</p>
       {children}
       <LastUpdated lastUpdated={lastUpdated} />
     </div>

@@ -10,27 +10,38 @@ export default async function Games() {
   return (
     <Section
       name="Games"
-      description="To relax I love to play video games with some of my friends. Here are my recently played titles over on Steam:"
       source="Steam"
       sourceURL="https://store.steampowered.com/about/"
       lastUpdated={steamData.last_updated}
     >
-      <div className={styles.games}>
-        {games
-          .filter((g) => g.library_url != null)
-          .slice(0, 20)
-          .map((g) => (
-            <Link key={g.app_id} href={g.url} target="_blank">
-              <Image
-                key={g.app_id}
-                src={g.library_url}
-                alt={g.name}
-                width={133.33}
-                height={200}
-              />
-            </Link>
-          ))}
-      </div>
+      <>
+        <p>
+          To relax I love to play video games with some of my friends. Here are
+          my recently played titles over on{' '}
+          <Link href="https://store.steampowered.com/about/" target="_blank">
+            Steam
+          </Link>
+          :
+        </p>
+        <div className={styles.games}>
+          {games
+            .filter((g) => g.library_url != null)
+            .slice(0, 20)
+            .map((g) => (
+              <Link key={g.app_id} href={g.url} target="_blank">
+                <Image
+                  key={g.app_id}
+                  src={g.library_url}
+                  alt={g.name}
+                  width={133.33}
+                  height={200}
+                  placeholder="blur"
+                  blurDataURL="data:image/gif;base64,baseiVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8+fzifwAIxAOS05NsJgAAAABJRU5ErkJggg=="
+                />
+              </Link>
+            ))}
+        </div>
+      </>
     </Section>
   );
 }
