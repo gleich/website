@@ -10,7 +10,7 @@ const title = 'Matt Gleich';
 const description =
   'College student @RIT, developer, cyclist, and photographer';
 const ogImage = {
-  url: 'https://beta.mattglei.ch/opengraph.png',
+  url: 'https://mattglei.ch/opengraph.png',
   width: 1200,
   height: 630,
 };
