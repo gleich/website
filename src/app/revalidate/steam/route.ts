@@ -7,8 +7,7 @@ export async function POST(request: Request) {
     request.headers.get('Authorization') ==
     'Bearer ' + env.REVALIDATE_TOKEN
   ) {
-    console.log('Revalidation on / triggered');
-    revalidateTag('strava');
+    console.log('Revalidation for steam triggered');
     revalidateTag('steam');
     return NextResponse.json({ revalidated: true }, { status: 202 });
   }
