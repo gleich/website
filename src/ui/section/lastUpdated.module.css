@@ -5,8 +5,12 @@
   margin-top: 10px;
 }
 
+.cachedAndServed {
+  color: #30ce75;
+}
+
 .link {
-  color: grey;
+  color: #30ce75;
 }
 
 @media (max-width: 678px) {

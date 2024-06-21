@@ -6,8 +6,9 @@ import duration from 'dayjs/plugin/duration';
 import Image from 'next/image';
 import { Inconsolata } from 'next/font/google';
 import Stat from './stat';
-import Title from './title';
+import Time from './time';
 import Link from 'next/link';
+import SVGIcon from '@/ui/svgIcon';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 dayjs.extend(duration);
@@ -37,7 +38,7 @@ export default async function Activities() {
         <div className={styles.activities}>
           {activities
             .filter((a) => !a.private)
-            .slice(0, 2)
+            .slice(0, 6)
             .map((a) => {
               const [sportName, sportIcon] = extractSportType(a.sport_type);
 
@@ -51,72 +52,55 @@ export default async function Activities() {
                 formattedDuration = movingDuration.format('m[m] & s[s]');
               }
 
-              let stats = [
-                <Stat
-                  key="time"
-                  icon="clock.svg"
-                  name="Time"
-                  value={`${formattedDuration}`}
-                />,
-                <Stat
-                  key="distance"
-                  icon="compass.svg"
-                  name="Distance"
-                  value={`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}
-                />,
-                <Stat
-                  key="heartrate"
-                  icon="heart.svg"
-                  name="Avg. heartrate"
-                  value={`${a.average_heartrate} bpm`}
-                />,
-                <Stat
-                  key="elevation"
-                  icon="elevation.svg"
-                  name="Elevation gain"
-                  value={`${Math.round(a.total_elevation_gain * 3.281)} ft`}
-                />,
-              ];
-              if (
-                a.device_watts &&
-                (sportName === 'Gravel Ride' || sportName === 'Ride')
-              ) {
-                stats.push(
-                  <Stat
-                    key="power"
-                    icon="power.svg"
-                    name="Avg. power"
-                    value={`${a.average_watts} watts`}
-                  />,
-                );
-              }
-
               return (
                 <div key={a.id} className={styles.activity}>
                   <div className={styles.title}>
-                    <Image
+                    <SVGIcon
                       src={sportIcon}
                       alt={sportName}
-                      width={24}
-                      height={24}
+                      width={27}
+                      height={27}
                       className={styles.icon}
                     />
                     <h3>{a.name}</h3>
                   </div>
                   <div className={styles.info}>
-                    <Image
-                      src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
-                      alt="Map"
-                      width={300}
-                      height={300}
-                    />
                     <div
                       className={`${styles.details} ${inconsolata.className}`}
                     >
-                      <Title sportName={sportName} date={a.start_date} />
-                      <br />
-                      <div className={styles.stats}>{stats}</div>
+                      <Time date={a.start_date} />
+                      <div className={styles.stats}>
+                        <Stat name="Duration" value={`${formattedDuration}`} />
+                        <Stat
+                          name="Distance"
+                          value={`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}
+                        />
+                        <Stat
+                          name="Avg. HR"
+                          value={`${a.average_heartrate} bpm`}
+                        />
+                      </div>
+                      <div className={styles.viewOnStrava}>
+                        <SVGIcon
+                          src="/icons/strava.svg"
+                          alt="Strava Logo"
+                          width={18}
+                          height={18}
+                        />
+                        <Link
+                          href={`https://www.strava.com/activities/${a.id}`}
+                          target="_blank"
+                        >
+                          View on Strava
+                        </Link>
+                      </div>
                     </div>
+                    <Image
+                      src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
+                      alt="Map"
+                      width={200}
+                      height={200}
+                    />
                   </div>
                 </div>
               );

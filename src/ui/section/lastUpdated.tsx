@@ -26,14 +26,16 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
       Last updated {dayjsLastUpdate.fromNow()}
       <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
       <br />
-      Cached & served from{' '}
-      <Link
-        href="https://github.com/gleich/lcp"
-        target="_blank"
-        className={styles.link}
-      >
-        gleich/lcp
-      </Link>
+      <span className={styles.cachedAndServed}>
+        Cached & served from{' '}
+        <Link
+          href="https://github.com/gleich/lcp"
+          target="_blank"
+          className={styles.link}
+        >
+          gleich/lcp
+        </Link>
+      </span>
     </div>
   );
 }
