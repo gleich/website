@@ -7,7 +7,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 const inter = Inter({ subsets: ['latin'] });
 
 const title = 'Matt Gleich';
-const description = 'College student, cyclist, and photographer';
+const description =
+  'College student @RIT, developer, cyclist, and photographer';
 const ogImage = {
   url: 'https://beta.mattglei.ch/opengraph.png',
   width: 1200,
