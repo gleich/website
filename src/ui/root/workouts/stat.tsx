@@ -1,5 +1,4 @@
-import styles from '@/ui/root/activities/stat.module.css';
-import Image from 'next/image';
+import styles from '@/ui/root/workouts/stat.module.css';
 
 export default function Stat({ name, value }: { name: string; value: string }) {
   return (

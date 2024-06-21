@@ -1,6 +1,6 @@
 import { extractSportType, loadStravaData } from '@/lib/strava';
 import Section from '../../section/section';
-import styles from '@/ui/root/activities/activities.module.css';
+import styles from '@/ui/root/workouts/workouts.module.css';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import Image from 'next/image';
@@ -13,12 +13,12 @@ import SVGIcon from '@/ui/svgIcon';
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 dayjs.extend(duration);
 
-export default async function Activities() {
+export default async function Workouts() {
   const stravaData = await loadStravaData();
   const activities = stravaData.data;
   return (
     <Section
-      name="Activities"
+      name="Workouts"
       source="Strava"
       sourceURL="https://www.strava.com/about"
       lastUpdated={stravaData.last_updated}
