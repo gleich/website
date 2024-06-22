@@ -1,5 +1,6 @@
 import Response from '@/lib/response';
 import { env } from 'process';
+import { setTimeout } from 'timers/promises';
 
 export async function loadSteamData() {
   const res = await fetch('https://api.mattglei.ch/steam/cache', {

@@ -5,6 +5,8 @@ import Games from '@/ui/root/games/games';
 import Workouts from '@/ui/root/workouts/workouts';
 import Copyright from '@/ui/root/copyright';
 import Photos from '@/ui/root/photos/photos';
+import { Suspense } from 'react';
+import LoadingSection from '@/ui/section/loading';
 
 export default async function Home() {
   return (
@@ -27,9 +29,17 @@ export default async function Home() {
         </div>
 
         <div className={styles.sections}>
-          <Workouts />
+          <Suspense
+            fallback={<LoadingSection name="Workouts" expectedHeight={613} />}
+          >
+            <Workouts />
+          </Suspense>
           <Photos />
-          <Games />
+          <Suspense
+            fallback={<LoadingSection name="Games" expectedHeight={443.5} />}
+          >
+            <Games />
+          </Suspense>
         </div>
       </main>
       <Copyright />

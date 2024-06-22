@@ -14,7 +14,7 @@ export default async function Games() {
       sourceURL="https://store.steampowered.com/about/"
       lastUpdated={steamData.last_updated}
     >
-      <>
+      <div>
         <p>
           To relax I love to play video games with some of my friends. Here are
           my recently played titles over on{' '}
@@ -40,7 +40,7 @@ export default async function Games() {
               </Link>
             ))}
         </div>
-      </>
+      </div>
     </LiveSection>
   );
 }
