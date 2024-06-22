@@ -166,7 +166,7 @@ export default function Photos() {
             height={(p.horizontal ? 1355 : 2032) / shrinkFactor}
             placeholder="blur"
             className={styles.photo}
-            unoptimized={true}
+            unoptimized={p.horizontal}
             draggable={false}
           />
         ))}
