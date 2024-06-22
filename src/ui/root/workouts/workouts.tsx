@@ -1,5 +1,5 @@
 import { extractSportType, loadStravaData } from '@/lib/strava';
-import Section from '../../section/section';
+import LiveSection from '../../section/liveSection';
 import styles from '@/ui/root/workouts/workouts.module.css';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
@@ -9,6 +9,7 @@ import Stat from './stat';
 import Time from './time';
 import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';
+import ViewMore from '@/ui/viewMore';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 dayjs.extend(duration);
@@ -17,7 +18,7 @@ export default async function Workouts() {
   const stravaData = await loadStravaData();
   const activities = stravaData.data;
   return (
-    <Section
+    <LiveSection
       name="Workouts"
       source="Strava"
       sourceURL="https://www.strava.com/about"
@@ -109,6 +110,6 @@ export default async function Workouts() {
             })}
         </div>
       </>
-    </Section>
+    </LiveSection>
   );
 }

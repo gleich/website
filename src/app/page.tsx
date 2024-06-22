@@ -1,9 +1,10 @@
 import styles from './page.module.css';
 import Header from '@/ui/root/header/header';
 import Link from 'next/link';
-import Games from '@/ui/root/games';
+import Games from '@/ui/root/games/games';
 import Workouts from '@/ui/root/workouts/workouts';
 import Copyright from '@/ui/root/copyright';
+import Photos from '@/ui/root/photos/photos';
 
 export default async function Home() {
   return (
@@ -27,6 +28,7 @@ export default async function Home() {
 
         <div className={styles.sections}>
           <Workouts />
+          <Photos />
           <Games />
         </div>
       </main>

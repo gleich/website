@@ -1,14 +1,14 @@
 import { Game, loadSteamData } from '@/lib/steam';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '@/ui/root/games.module.css';
-import Section from '../section/section';
+import styles from '@/ui/root/games/games.module.css';
+import LiveSection from '../../section/liveSection';
 
 export default async function Games() {
   const steamData = await loadSteamData();
   const games = steamData.data;
   return (
-    <Section
+    <LiveSection
       name="Games"
       source="Steam"
       sourceURL="https://store.steampowered.com/about/"
@@ -33,13 +33,13 @@ export default async function Games() {
                   key={g.app_id}
                   src={g.library_url}
                   alt={g.name}
-                  width={133.33}
-                  height={200}
+                  width={600 / 4.5}
+                  height={900 / 4.5}
                 />
               </Link>
             ))}
         </div>
       </>
-    </Section>
+    </LiveSection>
   );
 }
