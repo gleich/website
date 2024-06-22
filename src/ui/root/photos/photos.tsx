@@ -167,6 +167,7 @@ export default function Photos() {
             placeholder="blur"
             className={styles.photo}
             unoptimized={true}
+            draggable={false}
           />
         ))}
       </div>

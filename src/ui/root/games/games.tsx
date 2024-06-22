@@ -35,6 +35,7 @@ export default async function Games() {
                   alt={g.name}
                   width={600 / 4.5}
                   height={900 / 4.5}
+                  draggable={false}
                 />
               </Link>
             ))}
