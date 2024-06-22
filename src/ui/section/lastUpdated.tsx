@@ -18,7 +18,7 @@ const inconsolata = Inconsolata({ subsets: ['latin'] });
 export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   const dayjsLastUpdate = dayjs(lastUpdated);
   const lastUpdateExact =
-    dayjsLastUpdate.format('MM/DD/YYYY [@] hh:MM A [') +
+    dayjsLastUpdate.format('MM/DD/YYYY [@] hh:mm A [') +
     dayjsLastUpdate.format('z') +
     ']';
   return (
