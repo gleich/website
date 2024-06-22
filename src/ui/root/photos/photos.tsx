@@ -1,5 +1,6 @@
 import Section from '@/ui/section/section';
 import styles from '@/ui/root/photos/photos.module.css';
+import ViewMore from '@/ui/viewMore';
 import Image, { StaticImageData } from 'next/image';
 
 // automatically generated from script in /scripts/photos
@@ -19,7 +20,6 @@ import mtb2 from '@photos/mtb2.jpg';
 import nyc from '@photos/nyc.jpg';
 import spider from '@photos/spider.jpg';
 import up from '@photos/up.jpg';
-import ViewMore from '@/ui/viewMore';
 
 interface Photo {
   data: StaticImageData;
@@ -32,31 +32,31 @@ interface Photo {
 // automatically generated from script in /scripts/photos
 const photos: Photo[] = [
   {
-    data: RITRacing,
-    alt: 'RITRacing',
-    width: 2032,
-    height: 1355,
-    horizontal: true,
-  },
-  {
     data: flowers,
     alt: 'flowers',
-    width: 3216,
-    height: 2144,
+    width: 4391,
+    height: 2928,
     horizontal: true,
   },
   {
     data: spider,
     alt: 'spider',
-    width: 2352,
-    height: 1568,
+    width: 2540,
+    height: 1693,
+    horizontal: true,
+  },
+  {
+    data: RITRacing,
+    alt: 'RITRacing',
+    width: 2713,
+    height: 1809,
     horizontal: true,
   },
   {
     data: cadillac,
     alt: 'cadillac',
-    width: 1936,
-    height: 1291,
+    width: 2277,
+    height: 1520,
     horizontal: true,
   },
   {
@@ -166,6 +166,7 @@ export default function Photos() {
             height={(p.horizontal ? 1355 : 2032) / shrinkFactor}
             placeholder="blur"
             className={styles.photo}
+            unoptimized={p.horizontal}
           />
         ))}
       </div>
