@@ -22,6 +22,8 @@ export default function SVGIcon({
       className={`${styles.image} ${className}`}
       width={width}
       height={height}
+      priority={true}
+      unoptimized={true}
     />
   );
 }
