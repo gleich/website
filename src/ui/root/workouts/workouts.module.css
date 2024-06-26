@@ -1,6 +1,6 @@
 .activities {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
