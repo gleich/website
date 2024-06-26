@@ -26,8 +26,8 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
       Last updated {dayjsLastUpdate.fromNow()}
       <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
       <br />
-      <span className={styles.cachedAndServed}>
-        Cached & served from{' '}
+      <span className={styles.cachedAndProcessed}>
+        Cached & processed by{' '}
         <Link
           href="https://github.com/gleich/lcp"
           target="_blank"
