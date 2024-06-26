@@ -7,19 +7,21 @@ export default function SVGIcon({
   className,
   width,
   height,
+  inverted,
 }: {
   src: string;
   alt: string;
   className?: string;
   width: number;
   height: number;
+  inverted?: boolean;
 }) {
   return (
     <Image
       src={src}
       alt={alt}
       draggable={false}
-      className={`${styles.image} ${className}`}
+      className={`${inverted ? styles.invertedImage : styles.image} ${className}`}
       width={width}
       height={height}
       priority={true}

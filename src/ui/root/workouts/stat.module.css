@@ -20,10 +20,3 @@
   font-size: 15px;
   color: grey;
 }
-
-@media (prefers-color-scheme: dark) {
-  .icon {
-    filter: invert(100%) sepia(79%) saturate(0%) hue-rotate(104deg)
-      brightness(112%) contrast(101%);
-  }
-}

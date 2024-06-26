@@ -12,27 +12,29 @@
   display: flex;
   gap: 15px;
   flex-direction: row;
+  margin-top: 5px;
 }
 
 .title {
   display: flex;
-  padding-bottom: 5px;
 }
 
 .details {
   font-weight: 900;
-  margin-right: 40px;
+  width: 200px;
 }
 
 .icon {
-  padding-right: 10px;
+  margin-right: 10px;
+  padding: 2px 3px;
 }
 
 .stats {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-  gap: 5px;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .viewOnStrava {
@@ -42,8 +44,30 @@
   margin-top: 20px;
 }
 
+.map {
+  border-radius: 5px;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.valueName {
+  font-weight: normal;
+  font-size: 13px;
+  color: grey;
+}
+
+.activity {
+  border: 1px solid rgb(37, 37, 37);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
+  padding: 10px;
+}
+
 @media (max-width: 678px) {
   .details {
     margin-right: 0px;
+    width: 155px;
   }
 }

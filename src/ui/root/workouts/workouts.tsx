@@ -9,7 +9,6 @@ import Stat from './stat';
 import Time from './time';
 import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';
-import ViewMore from '@/ui/viewMore';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 dayjs.extend(duration);
@@ -53,14 +52,16 @@ export default async function Workouts() {
                 formattedDuration = movingDuration.format('m[m] & s[s]');
               }
 
+              const iconSize = sportName === 'Run' ? 23 : 27;
+
               return (
                 <div key={a.id} className={styles.activity}>
                   <div className={styles.title}>
                     <SVGIcon
                       src={sportIcon}
                       alt={sportName}
-                      width={27}
-                      height={27}
+                      width={iconSize}
+                      height={iconSize}
                       className={styles.icon}
                     />
                     <h3>{a.name}</h3>
@@ -71,15 +72,14 @@ export default async function Workouts() {
                     >
                       <Time date={a.start_date} />
                       <div className={styles.stats}>
-                        <Stat name="Duration" value={`${formattedDuration}`} />
-                        <Stat
-                          name="Distance"
-                          value={`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}
-                        />
-                        <Stat
-                          name="Avg. HR"
-                          value={`${a.average_heartrate} bpm`}
-                        />
+                        <p className={styles.value}>{formattedDuration}</p>
+                        <p className={styles.valueName}>Duration</p>
+                        <p
+                          className={styles.value}
+                        >{`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}</p>
+                        <p className={styles.valueName}>Distance</p>
+                        <p className={styles.value}>{a.average_heartrate}</p>
+                        <p className={styles.valueName}>Avg Heartrate</p>
                       </div>
                       <div className={styles.viewOnStrava}>
                         <SVGIcon
@@ -104,6 +104,7 @@ export default async function Workouts() {
                       placeholder="blur"
                       draggable={false}
                       blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8+fzifwAIxAOS05NsJgAAAABJRU5ErkJggg=="
+                      className={styles.map}
                     />
                   </div>
                 </div>
