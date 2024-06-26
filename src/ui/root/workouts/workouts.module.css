@@ -17,6 +17,13 @@
 
 .title {
   display: flex;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
+.titleText {
+  font-size: 22px;
+  text-decoration: underline;
 }
 
 .details {
@@ -69,6 +76,34 @@
   .details {
     margin-right: 0px;
     width: 155px;
+  }
+
+  .value {
+    font-size: 18px;
+  }
+
+  .valueName {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 400px) {
+  .map {
+    width: 170px;
+    height: 170px;
+  }
+
+  .title {
+    max-width: 340px;
+  }
+
+  .titleText {
+    font-size: 20px;
+  }
+
+  .icon {
+    width: 24px;
+    height: auto;
   }
 }
 

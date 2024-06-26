@@ -64,7 +64,7 @@ export default async function Workouts() {
                       height={iconSize}
                       className={styles.icon}
                     />
-                    <h3>{a.name}</h3>
+                    <h3 className={styles.titleText}>{a.name}</h3>
                   </div>
                   <div className={styles.info}>
                     <div
