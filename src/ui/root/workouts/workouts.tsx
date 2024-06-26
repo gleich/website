@@ -78,22 +78,24 @@ export default async function Workouts() {
                           className={styles.value}
                         >{`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}</p>
                         <p className={styles.valueName}>Distance</p>
-                        <p className={styles.value}>{a.average_heartrate}</p>
+                        <p className={styles.value}>
+                          {a.average_heartrate} bpm
+                        </p>
                         <p className={styles.valueName}>Avg Heartrate</p>
-                      </div>
-                      <div className={styles.viewOnStrava}>
-                        <SVGIcon
-                          src="/icons/strava.svg"
-                          alt="Strava Logo"
-                          width={18}
-                          height={18}
-                        />
-                        <Link
-                          href={`https://www.strava.com/activities/${a.id}`}
-                          target="_blank"
-                        >
-                          View on Strava
-                        </Link>
+                        <div className={styles.viewOnStrava}>
+                          <SVGIcon
+                            src="/icons/strava.svg"
+                            alt="Strava Logo"
+                            width={18}
+                            height={18}
+                          />
+                          <Link
+                            href={`https://www.strava.com/activities/${a.id}`}
+                            target="_blank"
+                          >
+                            View on Strava
+                          </Link>
+                        </div>
                       </div>
                     </div>
                     <Image

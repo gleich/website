@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Social({ name, href }: { name: string; href: string }) {
   return (
-    <Link href={href} className={styles.root} target="_blank">
+    <Link href={href} className={styles.icon} target="_blank">
       <SVGIcon
         src={`/icons/${name}.svg`}
         width={30}
