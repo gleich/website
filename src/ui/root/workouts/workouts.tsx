@@ -66,7 +66,10 @@ export default async function Workouts() {
                     />
                     <h3 className={styles.titleText}>{a.name}</h3>
                   </div>
-                  <div className={styles.info}>
+                  <div
+                    className={styles.info}
+                    style={{ marginTop: sportName === 'Run' ? 5 : 0 }}
+                  >
                     <div
                       className={`${styles.details} ${inconsolata.className}`}
                     >
