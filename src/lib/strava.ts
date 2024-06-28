@@ -52,6 +52,7 @@ export interface Activity {
   name: string;
   sport_type: string;
   start_date: Date;
+  start_date_local: Date;
   map: Map;
   trainer: boolean;
   commute: boolean;

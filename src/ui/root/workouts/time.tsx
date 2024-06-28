@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+import timezone from 'dayjs/plugin/timezone';
 import styles from '@/ui/root/workouts/time.module.css';
 
 dayjs.extend(duration);
+dayjs.extend(timezone);
 
 export default function Time({ date }: { date: Date }) {
   const [currentTime, setCurrentTime] = useState(dayjs());
