@@ -5,7 +5,6 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import Image from 'next/image';
 import { Inconsolata } from 'next/font/google';
-import Stat from './stat';
 import Time from './time';
 import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';

@@ -10,7 +10,6 @@ import beach from '@photos/beach.jpg';
 import cadillac from '@photos/cadillac.jpg';
 import eggBeach from '@photos/eggBeach.jpg';
 import eye from '@photos/eye.jpg';
-import flowers from '@photos/flowers.jpg';
 import glass from '@photos/glass.jpg';
 import ladybug from '@photos/ladybug.jpg';
 import marcAudi from '@photos/marcAudi.jpg';
@@ -18,6 +17,7 @@ import motorcycle from '@photos/motorcycle.jpg';
 import mtb1 from '@photos/mtb1.jpg';
 import mtb2 from '@photos/mtb2.jpg';
 import nyc from '@photos/nyc.jpg';
+import porsche from '@photos/porsche.jpg';
 import spider from '@photos/spider.jpg';
 import up from '@photos/up.jpg';
 
@@ -32,10 +32,10 @@ interface Photo {
 // automatically generated from script in /scripts/photos
 const photos: Photo[] = [
   {
-    data: flowers,
-    alt: 'flowers',
-    width: 3047,
-    height: 2032,
+    data: RITRacing,
+    alt: 'RITRacing',
+    width: 1919,
+    height: 1280,
     horizontal: true,
   },
   {
@@ -46,10 +46,10 @@ const photos: Photo[] = [
     horizontal: true,
   },
   {
-    data: RITRacing,
-    alt: 'RITRacing',
-    width: 1919,
-    height: 1280,
+    data: porsche,
+    alt: 'porsche',
+    width: 2335,
+    height: 1557,
     horizontal: true,
   },
   {
@@ -60,10 +60,10 @@ const photos: Photo[] = [
     horizontal: true,
   },
   {
-    data: ladybug,
-    alt: 'ladybug',
-    width: 2069,
-    height: 3100,
+    data: marcAudi,
+    alt: 'marcAudi',
+    width: 1129,
+    height: 1693,
     horizontal: false,
   },
   {
@@ -74,13 +74,6 @@ const photos: Photo[] = [
     horizontal: false,
   },
   {
-    data: eggBeach,
-    alt: 'eggBeach',
-    width: 1020,
-    height: 1529,
-    horizontal: false,
-  },
-  {
     data: glass,
     alt: 'glass',
     width: 1037,
@@ -88,24 +81,24 @@ const photos: Photo[] = [
     horizontal: false,
   },
   {
-    data: beach,
-    alt: 'beach',
-    width: 1138,
-    height: 1707,
+    data: ladybug,
+    alt: 'ladybug',
+    width: 2069,
+    height: 3100,
     horizontal: false,
   },
   {
-    data: marcAudi,
-    alt: 'marcAudi',
-    width: 1129,
-    height: 1693,
+    data: eggBeach,
+    alt: 'eggBeach',
+    width: 1020,
+    height: 1529,
     horizontal: false,
   },
   {
     data: motorcycle,
     alt: 'motorcycle',
-    width: 1355,
-    height: 2032,
+    width: 1394,
+    height: 2091,
     horizontal: false,
   },
   {
@@ -127,6 +120,13 @@ const photos: Photo[] = [
     alt: 'nyc',
     width: 1259,
     height: 1888,
+    horizontal: false,
+  },
+  {
+    data: beach,
+    alt: 'beach',
+    width: 1138,
+    height: 1707,
     horizontal: false,
   },
   {
