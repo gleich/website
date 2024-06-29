@@ -9,18 +9,24 @@ import styles from '@/ui/root/workouts/time.module.css';
 dayjs.extend(duration);
 dayjs.extend(timezone);
 
-export default function Time({ date }: { date: Date }) {
+export default function Time({
+  date,
+  timezone,
+}: {
+  date: Date;
+  timezone: string;
+}) {
   const [currentTime, setCurrentTime] = useState(dayjs());
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
-    }, 60000); // Update every minute (60000 milliseconds)
+    }, 1000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
-  const dayjsDate = dayjs(date);
+  const dayjsDate = dayjs(date).tz(timezone.split(' ')[1]);
   const diff = dayjs.duration(dayjsDate.diff(currentTime));
   const daysDiff = Math.abs(Number(diff.format('D')));
   const hoursDiff = Math.abs(Number(diff.format('H')));
@@ -36,13 +42,15 @@ export default function Time({ date }: { date: Date }) {
       `${hoursDiff}h`;
   } else if (minutesDiff > 0 && daysDiff < 1) {
     fromNow = `${hoursDiff}h` + ' & ' + `${minutesDiff}m`;
-  } else {
+  } else if (minutesDiff > 0 && hoursDiff < 1) {
     fromNow = `${minutesDiff}m` + ' & ' + `${secondsDiff}s`;
+  } else {
+    fromNow = `${secondsDiff}`;
   }
 
   return (
     <p className={styles.time}>
-      {dayjsDate.format('MM/DD/YYYY [@] h:MM A')} <br />
+      {dayjsDate.format('MM/DD/YYYY [@] h:mm A')} <br />
       {fromNow} ago
     </p>
   );
