@@ -9,13 +9,7 @@ import styles from '@/ui/root/workouts/time.module.css';
 dayjs.extend(duration);
 dayjs.extend(timezone);
 
-export default function Time({
-  date,
-  timezone,
-}: {
-  date: Date;
-  timezone: string;
-}) {
+export default function Time({ date, tz }: { date: Date; tz: string }) {
   const [currentTime, setCurrentTime] = useState(dayjs());
 
   useEffect(() => {
@@ -26,7 +20,7 @@ export default function Time({
     return () => clearInterval(interval);
   }, []);
 
-  const dayjsDate = dayjs(date).tz(timezone.split(' ')[1]);
+  const dayjsDate = dayjs(date).tz(tz.split(' ')[1]);
   const diff = dayjs.duration(dayjsDate.diff(currentTime));
   const daysDiff = Math.abs(Number(diff.format('D')));
   const hoursDiff = Math.abs(Number(diff.format('H')));

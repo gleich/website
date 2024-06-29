@@ -72,7 +72,7 @@ export default async function Workouts() {
                     <div
                       className={`${styles.details} ${inconsolata.className}`}
                     >
-                      <Time date={a.start_date} timezone={a.timezone} />
+                      <Time date={a.start_date} tz={a.timezone} />
                       <div className={styles.stats}>
                         <div className={styles.stat}>
                           <p className={styles.value}>{formattedDuration}</p>
