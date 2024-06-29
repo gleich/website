@@ -109,8 +109,8 @@ export default async function Workouts() {
                     <Image
                       src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
                       alt="Map"
-                      width={200}
-                      height={200}
+                      width={250}
+                      height={210}
                       placeholder="blur"
                       draggable={false}
                       blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8+fzifwAIxAOS05NsJgAAAABJRU5ErkJggg=="
