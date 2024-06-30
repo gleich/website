@@ -113,7 +113,7 @@ export default async function Workouts() {
                       height={210}
                       placeholder="blur"
                       draggable={false}
-                      blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8+fzifwAIxAOS05NsJgAAAABJRU5ErkJggg=="
+                      blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcfKaxHgAGewJx0wWoEQAAAABJRU5ErkJggg=="
                       className={styles.map}
                     />
                   </div>
