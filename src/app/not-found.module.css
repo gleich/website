@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.logo {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 678px) {
+  .main {
+    flex-direction: column;
+  }
+}
