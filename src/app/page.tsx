@@ -7,6 +7,7 @@ import Copyright from '@/ui/root/copyright';
 import Photos from '@/ui/root/photos/photos';
 import { Suspense } from 'react';
 import LoadingSection from '@/ui/section/loading';
+import SVGIcon from '@/ui/svgIcon';
 
 export default async function Home() {
   return (
@@ -26,7 +27,17 @@ export default async function Home() {
             free to shoot me an email over at{' '}
             <Link href="email@mattglei.ch">email@mattglei.ch</Link>. More of my
             professional work is detailed in my{' '}
-            <Link href="/resume.pdf" target="_blank">
+            <Link
+              href="/resume.pdf"
+              target="_blank"
+              className={styles.resumeLink}
+            >
+              <SVGIcon
+                src="/icons/file-text.svg"
+                alt="text file icon"
+                width={14}
+                height={14}
+              />
               résumé
             </Link>
             .
