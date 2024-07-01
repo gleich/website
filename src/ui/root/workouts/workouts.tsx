@@ -10,6 +10,7 @@ import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
+
 dayjs.extend(duration);
 
 export default async function Workouts() {
@@ -37,7 +38,6 @@ export default async function Workouts() {
         <div className={styles.activities}>
           {activities
             .filter((a) => !a.private)
-            .slice(0, 6)
             .map((a) => {
               const [sportName, sportIcon] = extractSportType(a.sport_type);
 
@@ -51,71 +51,50 @@ export default async function Workouts() {
                 formattedDuration = movingDuration.format('m[m] & s[s]');
               }
 
-              const iconSize = sportName === 'Run' ? 23 : 27;
-
               return (
                 <div key={a.id} className={styles.activity}>
-                  <div className={styles.title}>
-                    <SVGIcon
-                      src={sportIcon}
-                      alt={sportName}
-                      width={iconSize}
-                      height={iconSize}
-                      className={styles.icon}
-                    />
-                    <h3 className={styles.titleText}>{a.name}</h3>
-                  </div>
-                  <div
-                    className={styles.info}
-                    style={{ marginTop: sportName === 'Run' ? 5 : 0 }}
-                  >
-                    <div
-                      className={`${styles.details} ${inconsolata.className}`}
-                    >
-                      <Time date={a.start_date} tz={a.timezone} />
-                      <div className={styles.stats}>
-                        <div className={styles.stat}>
-                          <p className={styles.value}>{formattedDuration}</p>
-                          <p className={styles.valueName}>Duration</p>
-                        </div>
-                        <div className={styles.stat}>
-                          <p
-                            className={styles.value}
-                          >{`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}</p>
-                          <p className={styles.valueName}>Distance</p>
-                        </div>
-                        <div className={styles.stat}>
-                          <p className={styles.value}>
-                            {a.average_heartrate} bpm
-                          </p>
-                          <p className={styles.valueName}>Avg Heartrate</p>
-                        </div>
-                        <div className={styles.viewOnStrava}>
-                          <SVGIcon
-                            src="/icons/strava.svg"
-                            alt="Strava Logo"
-                            width={18}
-                            height={18}
-                          />
-                          <Link
-                            href={`https://www.strava.com/activities/${a.id}`}
-                            target="_blank"
-                          >
-                            View on Strava
-                          </Link>
-                        </div>
-                      </div>
+                  <div className={styles.header}>
+                    <div className={styles.title}>
+                      <SVGIcon
+                        src={sportIcon}
+                        alt={sportName}
+                        width={26}
+                        height={26}
+                        className={styles.icon}
+                      />
+                      <h3 className={styles.titleText}>{a.name}</h3>
                     </div>
+                    <Time date={a.start_date} tz={a.timezone} />
+                  </div>
+                  <div className={styles.info}>
                     <Image
                       src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
                       alt="Map"
-                      width={240}
-                      height={210}
+                      width={440}
+                      height={230}
                       placeholder="blur"
                       draggable={false}
                       blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcfKaxHgAGewJx0wWoEQAAAABJRU5ErkJggg=="
                       className={styles.map}
                     />
+                    <div className={`${styles.stats} ${inconsolata.className}`}>
+                      <div className={styles.stat}>
+                        <p className={styles.value}>{formattedDuration}</p>
+                        <p className={styles.valueName}>Duration</p>
+                      </div>
+                      <div className={styles.stat}>
+                        <p
+                          className={styles.value}
+                        >{`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}</p>
+                        <p className={styles.valueName}>Distance</p>
+                      </div>
+                      <div className={styles.stat}>
+                        <p className={styles.value}>
+                          {a.average_heartrate} bpm
+                        </p>
+                        <p className={styles.valueName}>Avg Heartrate</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
