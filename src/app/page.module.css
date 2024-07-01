@@ -36,10 +36,14 @@
 }
 
 .resumeLink {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   gap: 5px;
+}
+
+.resumeFileIcon {
+  vertical-align: middle;
+  position: relative;
+  padding-right: 5px;
+  bottom: 0.5px;
 }
 
 @media (max-width: 678px) {

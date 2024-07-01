@@ -2,6 +2,7 @@
 :root {
   --foreground: black;
   --background: white;
+  --link: #49a4ff;
 }
 
 /* DARK MODE */
@@ -42,7 +43,7 @@ h6 {
 }
 
 a {
-  color: #49a4ff;
+  color: var(--link);
 }
 
 p {

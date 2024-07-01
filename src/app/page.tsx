@@ -8,6 +8,7 @@ import Photos from '@/ui/root/photos/photos';
 import { Suspense } from 'react';
 import LoadingSection from '@/ui/section/loading';
 import SVGIcon from '@/ui/svgIcon';
+import Image from 'next/image';
 
 export default async function Home() {
   return (
@@ -32,11 +33,12 @@ export default async function Home() {
               target="_blank"
               className={styles.resumeLink}
             >
-              <SVGIcon
+              <Image
                 src="/icons/file-text.svg"
                 alt="text file icon"
                 width={14}
                 height={14}
+                className={styles.resumeFileIcon}
               />
               résumé
             </Link>
