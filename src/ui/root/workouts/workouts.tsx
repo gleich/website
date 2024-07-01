@@ -83,16 +83,40 @@ export default async function Workouts() {
                         <p className={styles.valueName}>Duration</p>
                       </div>
                       <div className={styles.stat}>
-                        <p
-                          className={styles.value}
-                        >{`${((a.distance * 0.621) / 1000).toPrecision(3)} miles`}</p>
+                        <p className={styles.value}>
+                          {((a.distance * 0.621) / 1000).toPrecision(3)} mi
+                        </p>
                         <p className={styles.valueName}>Distance</p>
                       </div>
                       <div className={styles.stat}>
-                        <p className={styles.value}>
-                          {a.average_heartrate} bpm
-                        </p>
-                        <p className={styles.valueName}>Avg Heartrate</p>
+                        {(() => {
+                          if (a.total_elevation_gain > 152.4)
+                            return (
+                              <>
+                                <p className={styles.value}>
+                                  {Math.round(
+                                    a.total_elevation_gain * 3.280839895,
+                                  ).toLocaleString()}{' '}
+                                  ft
+                                </p>
+                                <p className={styles.valueName}>
+                                  Elevation Gain
+                                </p>
+                              </>
+                            );
+                          else {
+                            return (
+                              <>
+                                <p className={styles.value}>
+                                  {a.average_heartrate} bpm
+                                </p>
+                                <p className={styles.valueName}>
+                                  Avg. Heartrate
+                                </p>
+                              </>
+                            );
+                          }
+                        })()}
                       </div>
                     </div>
                   </div>
