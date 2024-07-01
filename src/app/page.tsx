@@ -9,6 +9,7 @@ import { Suspense } from 'react';
 import LoadingSection from '@/ui/section/loading';
 import SVGIcon from '@/ui/svgIcon';
 import Image from 'next/image';
+import Projects from '@/ui/root/projects/projects';
 
 export default async function Home() {
   return (
@@ -52,6 +53,11 @@ export default async function Home() {
           >
             <Workouts />
           </Suspense>
+          {/* <Suspense
+            fallback={<LoadingSection name="Projects" expectedHeight={600} />}
+          >
+            <Projects />
+          </Suspense> */}
           <Photos />
           <Suspense
             fallback={<LoadingSection name="Games" expectedHeight={443.5} />}

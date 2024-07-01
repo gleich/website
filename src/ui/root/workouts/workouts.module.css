@@ -68,12 +68,6 @@
   color: grey;
 }
 
-.activity {
-  border: 1px solid rgb(117, 117, 117);
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-}
-
 @media (max-width: 678px) {
   .value {
     font-size: 18px;
@@ -101,12 +95,5 @@
   .icon {
     width: 24px;
     height: auto;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .activity {
-    border: 1px solid rgb(37, 37, 37);
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
   }
 }

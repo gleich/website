@@ -60,10 +60,10 @@ const photos: Photo[] = [
     horizontal: true,
   },
   {
-    data: marcAudi,
-    alt: 'marcAudi',
-    width: 1129,
-    height: 1693,
+    data: mtb2,
+    alt: 'mtb2',
+    width: 1440,
+    height: 2160,
     horizontal: false,
   },
   {
@@ -95,10 +95,17 @@ const photos: Photo[] = [
     horizontal: false,
   },
   {
-    data: motorcycle,
-    alt: 'motorcycle',
-    width: 1394,
-    height: 2091,
+    data: nyc,
+    alt: 'nyc',
+    width: 1259,
+    height: 1888,
+    horizontal: false,
+  },
+  {
+    data: marcAudi,
+    alt: 'marcAudi',
+    width: 1129,
+    height: 1693,
     horizontal: false,
   },
   {
@@ -109,17 +116,10 @@ const photos: Photo[] = [
     horizontal: false,
   },
   {
-    data: mtb2,
-    alt: 'mtb2',
-    width: 1440,
-    height: 2160,
-    horizontal: false,
-  },
-  {
-    data: nyc,
-    alt: 'nyc',
-    width: 1259,
-    height: 1888,
+    data: motorcycle,
+    alt: 'motorcycle',
+    width: 1394,
+    height: 2091,
     horizontal: false,
   },
   {

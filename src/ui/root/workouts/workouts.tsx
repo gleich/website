@@ -8,6 +8,7 @@ import { Inconsolata } from 'next/font/google';
 import Time from './time';
 import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';
+import Card from '@/ui/card';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -52,7 +53,7 @@ export default async function Workouts() {
               }
 
               return (
-                <div key={a.id} className={styles.activity}>
+                <Card key={a.id}>
                   <div className={styles.header}>
                     <div className={styles.title}>
                       <SVGIcon
@@ -71,7 +72,7 @@ export default async function Workouts() {
                       src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
                       alt="Map"
                       width={440}
-                      height={230}
+                      height={240}
                       placeholder="blur"
                       draggable={false}
                       blurDataURL="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcfKaxHgAGewJx0wWoEQAAAABJRU5ErkJggg=="
@@ -120,7 +121,7 @@ export default async function Workouts() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Card>
               );
             })}
         </div>
