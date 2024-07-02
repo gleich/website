@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+.photo {
+  border-radius: 5px;
+}
+
 @media (max-width: 678px) {
   .photo {
     height: 250px;
