@@ -2,7 +2,7 @@ import Response from '@/lib/response';
 import { env } from 'process';
 
 export async function loadStravaData() {
-  const res = await fetch('https://api.mattglei.ch/strava/cache', {
+  const res = await fetch('https://lcp.mattglei.ch/strava/cache', {
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + env.API_KEY,

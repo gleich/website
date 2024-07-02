@@ -2,7 +2,7 @@ import Response from '@/lib/response';
 import { env } from 'process';
 
 export async function loadSteamData() {
-  const res = await fetch('https://api.mattglei.ch/steam/cache', {
+  const res = await fetch('https://lcp.mattglei.ch/steam/cache', {
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + env.API_KEY,
