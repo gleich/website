@@ -23,12 +23,12 @@ export default async function Home() {
             <Link href="https://rit.edu" target="_blank">
               Rochester Institute of Technology (RIT)
             </Link>
-            . I&apos;m studying computer science and in my free I really enjoy
-            cycling (gravel, road, & mountain bike) and photography. Below are a
-            few sections featuring parts of who I am! Want to get in touch? Feel
-            free to shoot me an email over at{' '}
-            <Link href="email@mattglei.ch">email@mattglei.ch</Link>. More of my
-            professional work is detailed in my{' '}
+            . I&apos;m going into my 3rd year studying computer science there
+            and in my free time I really enjoy cycling (gravel, road, & mountain
+            bike) and photography. Below are a few sections featuring parts of
+            who I am! Want to get in touch? Feel free to shoot me an email over
+            at <Link href="email@mattglei.ch">email@mattglei.ch</Link>. More of
+            my professional work is detailed in my{' '}
             <Link
               href="/resume.pdf"
               target="_blank"
