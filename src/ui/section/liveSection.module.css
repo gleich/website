@@ -37,7 +37,6 @@
   border: solid 3px var(--live-color);
   padding: 5px 10px;
   animation: glow 2s infinite alternate;
-  text-shadow: 0 0 2px var(--live-color);
 }
 
 .liveCircle {

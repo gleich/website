@@ -26,6 +26,7 @@
 .title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .titleIconAndTitle {
@@ -91,6 +92,15 @@
     width: 100%;
     height: auto;
   }
+
+  .icon {
+    width: 24px;
+    height: auto;
+  }
+
+  .titleText {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -100,10 +110,5 @@
 
   .titleText {
     font-size: 20px;
-  }
-
-  .icon {
-    width: 24px;
-    height: auto;
   }
 }
