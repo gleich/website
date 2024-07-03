@@ -1,8 +1,22 @@
-import { Game, loadSteamData } from '@/lib/steam';
+import { loadSteamData } from '@/lib/steam';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/ui/root/games/games.module.css';
 import LiveSection from '../../section/liveSection';
+import { Inconsolata } from 'next/font/google';
+
+const inconsolata = Inconsolata({ subsets: ['latin'] });
+
+function formatPlaytime(playtime_minutes: number): string {
+  if (playtime_minutes >= 60) {
+    const hours = playtime_minutes / 60;
+    return hours % 1 === 0 ? `${hours} hrs` : `${hours.toFixed(1)} hrs`;
+  } else {
+    return playtime_minutes === 1
+      ? `${playtime_minutes} min`
+      : `${playtime_minutes} mins`;
+  }
+}
 
 export default async function Games() {
   const steamData = await loadSteamData();
@@ -28,7 +42,12 @@ export default async function Games() {
             .filter((g) => g.library_url != null)
             .slice(0, 20)
             .map((g) => (
-              <Link key={g.app_id} href={g.url} target="_blank">
+              <Link
+                key={g.app_id}
+                href={g.url}
+                target="_blank"
+                className={styles.gameLink}
+              >
                 <Image
                   key={g.app_id}
                   src={g.library_url}
@@ -37,6 +56,9 @@ export default async function Games() {
                   height={900 / 4.5}
                   draggable={false}
                 />
+                <p className={`${styles.playTime} ${inconsolata.className}`}>
+                  {formatPlaytime(g.playtime_forever)}
+                </p>
               </Link>
             ))}
         </div>
