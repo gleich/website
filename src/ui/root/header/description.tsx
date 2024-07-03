@@ -5,7 +5,7 @@ import styles from '@/ui/root/header/description.module.css';
 
 export default function Description() {
   const descriptions = useMemo(
-    () => ['photographer', 'cyclist', 'developer', 'college student'],
+    () => ['college student', 'developer', 'cyclist', 'photographer'],
     [],
   );
 

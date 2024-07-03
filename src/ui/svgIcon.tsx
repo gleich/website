@@ -23,7 +23,6 @@ export default function SVGIcon({
       width={width}
       height={height}
       priority={true}
-      unoptimized={true}
     />
   );
 }

@@ -27,8 +27,8 @@ export default async function Home() {
             and in my free time I really enjoy cycling (gravel, road, & mountain
             bike) and photography. Below are a few sections featuring parts of
             who I am! Want to get in touch? Feel free to shoot me an email over
-            at <Link href="email@mattglei.ch">email@mattglei.ch</Link>. More of
-            my professional work is detailed in my{' '}
+            at <Link href="mailto:email@mattglei.ch">email@mattglei.ch</Link>.
+            More of my professional work is detailed in my{' '}
             <Link
               href="/resume.pdf"
               target="_blank"

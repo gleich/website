@@ -56,14 +56,29 @@ export default async function Workouts() {
                 <Card key={a.id}>
                   <div className={styles.header}>
                     <div className={styles.title}>
-                      <SVGIcon
-                        src={sportIcon}
-                        alt={sportName}
-                        width={26}
-                        height={26}
-                        className={styles.icon}
-                      />
-                      <h3 className={styles.titleText}>{a.name}</h3>
+                      <div className={styles.titleIconAndTitle}>
+                        <SVGIcon
+                          src={sportIcon}
+                          alt={sportName}
+                          width={26}
+                          height={26}
+                          className={styles.icon}
+                        />
+                        <h3 className={styles.titleText}>{a.name}</h3>
+                      </div>
+                      <Link
+                        href={`https://strava.com/activities/${a.id}`}
+                        target="_blank"
+                        title="View on Strava"
+                      >
+                        <SVGIcon
+                          src="/icons/socials/strava.svg"
+                          alt="View on Strava"
+                          height={22}
+                          width={22}
+                          className={styles.stravaIcon}
+                        />
+                      </Link>
                     </div>
                     <Time date={a.start_date} tz={a.timezone} />
                   </div>
