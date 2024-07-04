@@ -47,18 +47,25 @@
 }
 
 .gameTable th {
-  text-decoration: underline;
   font-weight: 900;
   padding: 0px 15px;
 }
 
-.gameTable tr {
-  border: 1px dotted rgb(66, 66, 66);
+.gameTable th {
+  border: 1px dotted rgb(50, 50, 50);
+}
+
+.gameTable td {
+  border: 1px dotted rgb(50, 50, 50);
+}
+
+.gameRankHeader {
+  border: 0px !important;
 }
 
 .gameRank {
   padding: 0px !important;
-  text-align: right;
+  text-align: center;
 }
 
 .gamePlaytime {
@@ -69,8 +76,8 @@
   text-decoration: underline;
   font-weight: 600;
   display: flex;
-  align-items: center;
-  padding-left: 5px !important;
+  height: 100%;
+  padding-left: 5px;
   gap: 10px;
 }
 
@@ -90,7 +97,7 @@
   background-color: var(--background);
   color: var(--success);
   height: 14px;
-  border: 0.5px solid rgb(76, 76, 76);
+  border: 0.5px solid rgb(117, 117, 117);
 }
 
 .gameProgressBar::-webkit-progress-value {

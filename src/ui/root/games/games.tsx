@@ -90,16 +90,19 @@ export default async function Games() {
                   .map((g, i) => (
                     <tr key={g.app_id} className={styles.gameData}>
                       <td className={styles.gameRank}>#{i + 1}</td>
-                      <td className={styles.gameName}>
-                        <Image
-                          src={g.icon_url}
-                          alt={`${g.name} icon`}
-                          height={18}
-                          width={18}
-                        />
-                        <Link href={g.url} target="_blank" title={g.name}>
-                          {truncateText(g.name, 27)}
-                        </Link>
+                      <td className={styles.gameNameContainer}>
+                        <div className={styles.gameName}>
+                          <Image
+                            src={g.icon_url}
+                            alt={`${g.name} icon`}
+                            height={18}
+                            width={18}
+                            draggable={false}
+                          />
+                          <Link href={g.url} target="_blank" title={g.name}>
+                            {truncateText(g.name, 27)}
+                          </Link>
+                        </div>
                       </td>
                       <td className={styles.gamePlaytime}>
                         {formatPlaytime(g.playtime_forever)}
