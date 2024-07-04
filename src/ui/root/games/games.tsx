@@ -4,7 +4,6 @@ import Link from 'next/link';
 import styles from '@/ui/root/games/games.module.css';
 import LiveSection from '../../section/liveSection';
 import { Inconsolata } from 'next/font/google';
-import Card from '@/ui/card';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -75,60 +74,58 @@ export default async function Games() {
               ))}
           </div>
           <div className={`${styles.gameTable} ${inconsolata.className}`}>
-            <Card>
-              <table style={{ borderCollapse: 'collapse' }}>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th className={styles.gamePlaytimeHeader}>Time Played</th>
-                    <th>Achievement Progress</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {games
-                    .filter((g) => g.library_url != null)
-                    .slice(0, 15)
-                    .map((g, i) => (
-                      <tr key={g.app_id} className={styles.gameData}>
-                        <td className={styles.gameRank}>#{i + 1}</td>
-                        <td className={styles.gameName}>
-                          <Image
-                            src={g.icon_url}
-                            alt={`${g.name} icon`}
-                            height={18}
-                            width={18}
-                          />
-                          <Link href={g.url} target="_blank" title={g.name}>
-                            {truncateText(g.name, 27)}
-                          </Link>
-                        </td>
-                        <td className={styles.gamePlaytime}>
-                          {formatPlaytime(g.playtime_forever)}
-                        </td>
-                        <td className={styles.gameProgress}>
-                          <div className={styles.gameProgressContainer}>
-                            {g.achievement_progress != null ? (
-                              <>
-                                <p className={styles.gameProgressValue}>
-                                  {g.achievement_progress.toPrecision(3)}%
-                                </p>
-                                <progress
-                                  className={styles.gameProgressBar}
-                                  max={100}
-                                  value={g.achievement_progress}
-                                />
-                              </>
-                            ) : (
-                              <p>N/A</p>
-                            )}
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            </Card>
+            <table style={{ borderCollapse: 'collapse' }}>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th className={styles.gamePlaytimeHeader}>Time Played</th>
+                  <th>Achievement Progress</th>
+                </tr>
+              </thead>
+              <tbody>
+                {games
+                  .filter((g) => g.library_url != null)
+                  .slice(0, 20)
+                  .map((g, i) => (
+                    <tr key={g.app_id} className={styles.gameData}>
+                      <td className={styles.gameRank}>#{i + 1}</td>
+                      <td className={styles.gameName}>
+                        <Image
+                          src={g.icon_url}
+                          alt={`${g.name} icon`}
+                          height={18}
+                          width={18}
+                        />
+                        <Link href={g.url} target="_blank" title={g.name}>
+                          {truncateText(g.name, 27)}
+                        </Link>
+                      </td>
+                      <td className={styles.gamePlaytime}>
+                        {formatPlaytime(g.playtime_forever)}
+                      </td>
+                      <td className={styles.gameProgress}>
+                        <div className={styles.gameProgressContainer}>
+                          {g.achievement_progress != null ? (
+                            <>
+                              <p className={styles.gameProgressValue}>
+                                {g.achievement_progress.toPrecision(3)}%
+                              </p>
+                              <progress
+                                className={styles.gameProgressBar}
+                                max={100}
+                                value={g.achievement_progress}
+                              />
+                            </>
+                          ) : (
+                            <p>N/A</p>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
