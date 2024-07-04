@@ -25,4 +25,5 @@ export interface Game {
   library_url: string;
   playtime_forever: number;
   rtime_last_played: Date;
+  achievement_progress: number | null;
 }

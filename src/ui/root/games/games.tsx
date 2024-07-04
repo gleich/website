@@ -4,17 +4,26 @@ import Link from 'next/link';
 import styles from '@/ui/root/games/games.module.css';
 import LiveSection from '../../section/liveSection';
 import { Inconsolata } from 'next/font/google';
+import Card from '@/ui/card';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
+
+function truncateText(text: string, length: number): string {
+  if (text.length <= length) {
+    return text;
+  }
+
+  return text.slice(0, length) + '\u2026';
+}
 
 function formatPlaytime(playtime_minutes: number): string {
   if (playtime_minutes >= 60) {
     const hours = playtime_minutes / 60;
-    return hours % 1 === 0 ? `${hours} hrs` : `${hours.toFixed(1)} hrs`;
+    return hours === 1 ? `${hours} hour` : `${hours.toFixed(1)} hours`;
   } else {
     return playtime_minutes === 1
-      ? `${playtime_minutes} min`
-      : `${playtime_minutes} mins`;
+      ? `${playtime_minutes} minute`
+      : `${playtime_minutes} minutes`;
   }
 }
 
@@ -34,33 +43,93 @@ export default async function Games() {
           my recently played titles over on{' '}
           <Link href="https://store.steampowered.com/about/" target="_blank">
             Steam
-          </Link>
-          :
+          </Link>{' '}
+          ranked by recently played:
         </p>
         <div className={styles.games}>
-          {games
-            .filter((g) => g.library_url != null)
-            .slice(0, 20)
-            .map((g) => (
-              <Link
-                key={g.app_id}
-                href={g.url}
-                target="_blank"
-                className={styles.gameLink}
-              >
-                <Image
+          <div className={styles.gameCovers}>
+            {games
+              .filter((g) => g.library_url != null)
+              .slice(0, 10)
+              .map((g, i) => (
+                <Link
                   key={g.app_id}
-                  src={g.library_url}
-                  alt={g.name}
-                  width={600 / 4.5}
-                  height={900 / 4.5}
-                  draggable={false}
-                />
-                <p className={`${styles.playTime} ${inconsolata.className}`}>
-                  {formatPlaytime(g.playtime_forever)}
-                </p>
-              </Link>
-            ))}
+                  href={g.url}
+                  target="_blank"
+                  className={styles.gameLink}
+                >
+                  <Image
+                    key={g.app_id}
+                    src={g.library_url}
+                    alt={g.name}
+                    width={600 / 4.5}
+                    height={900 / 4.5}
+                    draggable={false}
+                  />
+                  <p
+                    className={`${styles.libraryRanking} ${inconsolata.className}`}
+                  >
+                    #{i + 1}
+                  </p>
+                </Link>
+              ))}
+          </div>
+          <div className={`${styles.gameTable} ${inconsolata.className}`}>
+            <Card>
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th className={styles.gamePlaytimeHeader}>Time Played</th>
+                    <th>Achievement Progress</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {games
+                    .filter((g) => g.library_url != null)
+                    .slice(0, 15)
+                    .map((g, i) => (
+                      <tr key={g.app_id} className={styles.gameData}>
+                        <td className={styles.gameRank}>#{i + 1}</td>
+                        <td className={styles.gameName}>
+                          <Image
+                            src={g.icon_url}
+                            alt={`${g.name} icon`}
+                            height={18}
+                            width={18}
+                          />
+                          <Link href={g.url} target="_blank" title={g.name}>
+                            {truncateText(g.name, 27)}
+                          </Link>
+                        </td>
+                        <td className={styles.gamePlaytime}>
+                          {formatPlaytime(g.playtime_forever)}
+                        </td>
+                        <td className={styles.gameProgress}>
+                          <div className={styles.gameProgressContainer}>
+                            {g.achievement_progress != null ? (
+                              <>
+                                <p className={styles.gameProgressValue}>
+                                  {g.achievement_progress.toPrecision(3)}%
+                                </p>
+                                <progress
+                                  className={styles.gameProgressBar}
+                                  max={100}
+                                  value={g.achievement_progress}
+                                />
+                              </>
+                            ) : (
+                              <p>N/A</p>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            </Card>
+          </div>
         </div>
       </div>
     </LiveSection>

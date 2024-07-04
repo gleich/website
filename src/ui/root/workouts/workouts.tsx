@@ -16,7 +16,7 @@ dayjs.extend(duration);
 
 export default async function Workouts() {
   const stravaData = await loadStravaData();
-  const activities = stravaData.data;
+  const activities = stravaData.data.slice(0, 3);
   return (
     <LiveSection
       name="Workouts"
@@ -30,7 +30,7 @@ export default async function Workouts() {
           the outdoors. I grew up in New Hampshire hiking, biking, snowshoeing,
           and traveling with my family. Out of all of those things I especially
           love cycling mainly through gravel cycling, road cycling, and mountain
-          biking. Below are 6 of my most recent{' '}
+          biking. Below are {activities.length} of my most recent{' '}
           <Link href="https://strava.com" target="_blank">
             Strava
           </Link>{' '}

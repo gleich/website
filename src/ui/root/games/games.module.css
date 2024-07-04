@@ -5,18 +5,26 @@
 .games {
   margin-top: 10px;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.gameCovers {
+  display: flex;
   flex-wrap: wrap;
   gap: 5px;
   align-items: center;
   justify-content: center;
   position: relative;
+  max-width: 50%;
 }
 
 .gameLink {
   position: relative;
 }
 
-.playTime {
+.libraryRanking {
   position: absolute;
   bottom: 0px;
   color: rgb(255, 255, 255);
@@ -32,19 +40,100 @@
   font-size: 14px;
 }
 
-@media (max-width: 678px) {
-  .game {
-    flex-direction: column;
+.gameTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameTable th {
+  text-decoration: underline;
+  font-weight: 900;
+  padding: 0px 15px;
+}
+
+.gameRank {
+  padding: 0px !important;
+  text-align: right;
+}
+
+.gamePlaytime {
+  text-align: center;
+}
+
+.gameName {
+  text-decoration: underline;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-left: 5px !important;
+  gap: 10px;
+}
+
+.gameProgressValue {
+  width: 35px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.gameProgressBar {
+  max-width: 80px;
+  appearance: none;
+  height: 14px;
+}
+
+.gameProgressBar::-webkit-progress-bar {
+  background-color: var(--background);
+  color: var(--success);
+  height: 14px;
+  border: 0.5px solid rgb(76, 76, 76);
+}
+
+.gameProgressBar::-webkit-progress-value {
+  background-color: #e1dc3f;
+}
+
+.gameProgressContainer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1400px) {
+  .gamePlaytime {
+    display: none;
   }
 
-  .games {
-    justify-content: center;
+  .gamePlaytimeHeader {
+    display: none;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 1150px) {
   .games {
-    height: 830px; /* 207.5px each */
-    overflow-y: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .gameCovers {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .gameTable {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .gameProgressBar {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  .gameTable td {
+    padding: 0px 0px;
   }
 }

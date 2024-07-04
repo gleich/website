@@ -10,6 +10,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'media.steampowered.com',
+        port: '',
+        pathname: '/steamcommunity/public/images/apps/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'gleich.s3.us-east-2.amazonaws.com',
         port: '',
       },

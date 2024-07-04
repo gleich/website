@@ -6,11 +6,11 @@
 }
 
 .cachedAndProcessed {
-  color: #30ce75;
+  color: var(--success);
 }
 
 .link {
-  color: #30ce75;
+  color: var(--success);
 }
 
 @media (max-width: 678px) {
