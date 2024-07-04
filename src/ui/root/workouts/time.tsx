@@ -36,17 +36,13 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
   let fromNow: string;
 
   if (daysDiff > 0) {
-    fromNow =
-      `${daysDiff} ` +
-      (daysDiff === 1 ? 'day' : 'days') +
-      ' & ' +
-      `${hoursDiff}h`;
-  } else if (minutesDiff > 0 && daysDiff < 1) {
-    fromNow = `${hoursDiff}h` + ' & ' + `${minutesDiff}m`;
-  } else if (minutesDiff > 0 && hoursDiff < 1) {
-    fromNow = `${minutesDiff}m` + ' & ' + `${secondsDiff}s`;
+    fromNow = `${daysDiff} ${daysDiff === 1 ? 'day' : 'days'} & ${hoursDiff}h`;
+  } else if (hoursDiff > 0) {
+    fromNow = `${hoursDiff}h & ${minutesDiff}m`;
+  } else if (minutesDiff > 0) {
+    fromNow = `${minutesDiff}m & ${secondsDiff}s`;
   } else {
-    fromNow = `${secondsDiff}`;
+    fromNow = `${secondsDiff}s`;
   }
 
   return (
