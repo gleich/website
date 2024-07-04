@@ -133,11 +133,41 @@
   }
 
   .gameProgressBar {
-    max-width: 100px;
+    max-width: 70px;
     width: 100%;
   }
 
   .gameTable td {
     padding: 0px 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .gameProgressBar {
+    max-width: 50px;
+    width: 100%;
+  }
+
+  .gameName {
+    width: 200px;
+    text-align: start;
+  }
+
+  .gameRank {
+    width: 20px !important;
+  }
+
+  .gameRankHeader {
+    width: 20px !important;
+  }
+
+  .gameTable th {
+    padding: 0px;
+    width: 100px;
+  }
+
+  .gameTable tr {
+    border-left: 0px;
+    border-right: 0px;
   }
 }

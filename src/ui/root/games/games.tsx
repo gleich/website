@@ -77,7 +77,7 @@ export default async function Games() {
             <table style={{ borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
-                  <th></th>
+                  <th className={styles.gameRankHeader} />
                   <th>Name</th>
                   <th className={styles.gamePlaytimeHeader}>Time Played</th>
                   <th>Achievement Progress</th>
