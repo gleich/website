@@ -103,11 +103,11 @@
 }
 
 .gameProgressBar::-webkit-progress-value {
-  background-color: #e1dc3f;
+  background-color: var(--progress-bar-value-color);
 }
 
 .gameProgressBar::-moz-progress-bar {
-  background-color: #e1dc3f;
+  background-color: var(--progress-bar-value-color);
   color: var(--background);
   height: 14px;
   border: 0.2px solid rgb(117, 117, 117);

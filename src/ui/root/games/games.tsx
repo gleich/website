@@ -117,6 +117,14 @@ export default async function Games() {
                               <progress
                                 className={styles.gameProgressBar}
                                 max={100}
+                                style={
+                                  {
+                                    '--progress-bar-value-color':
+                                      g.achievement_progress == 100.0
+                                        ? '#30ce75'
+                                        : '#e1dc3f',
+                                  } as React.CSSProperties
+                                }
                                 value={g.achievement_progress}
                               />
                             </>
