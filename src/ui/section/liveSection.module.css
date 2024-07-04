@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  align-items: flex-start;
 }
 
 .title {
@@ -28,6 +29,8 @@
   flex-direction: column;
   color: var(--live-color);
   font-weight: 900;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .liveFromTitle {

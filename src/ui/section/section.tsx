@@ -1,5 +1,6 @@
 import styles from '@/ui/section/liveSection.module.css';
 import { ReactNode } from 'react';
+import Card from '../card';
 
 export default function Section({
   name,
@@ -10,10 +11,12 @@ export default function Section({
 }) {
   return (
     <div className={styles.section}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>{name}</h2>
-      </div>
-      {children}
+      <Card>
+        <div className={styles.header}>
+          <h2 className={styles.title}>{name}</h2>
+        </div>
+        {children}
+      </Card>
     </div>
   );
 }

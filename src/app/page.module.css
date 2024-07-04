@@ -23,7 +23,7 @@
 .sections {
   padding-top: 50px;
   display: flex;
-  gap: 70px;
+  gap: 40px;
   flex-wrap: wrap;
   flex: 50%;
   align-items: center;
