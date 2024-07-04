@@ -10,7 +10,7 @@ export async function loadSteamData() {
     next: {
       tags: ['steam'],
     },
-    cache: 'force-cache',
+    cache: 'no-store',
   });
   const responseData: Response<Game[]> = await res.json();
   return responseData;
