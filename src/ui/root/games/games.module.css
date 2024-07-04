@@ -52,6 +52,10 @@
   padding: 0px 15px;
 }
 
+.gameTable tr {
+  border: 1px dotted rgb(66, 66, 66);
+}
+
 .gameRank {
   padding: 0px !important;
   text-align: right;

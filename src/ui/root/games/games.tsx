@@ -76,7 +76,7 @@ export default async function Games() {
           </div>
           <div className={`${styles.gameTable} ${inconsolata.className}`}>
             <Card>
-              <table>
+              <table style={{ borderCollapse: 'collapse' }}>
                 <thead>
                   <tr>
                     <th></th>
