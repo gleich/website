@@ -18,11 +18,11 @@ function truncateText(text: string, length: number): string {
 function formatPlaytime(playtime_minutes: number): string {
   if (playtime_minutes >= 60) {
     const hours = playtime_minutes / 60;
-    return hours === 1 ? `${hours} hour` : `${hours.toFixed(1)} hours`;
+    return hours === 1 ? `${hours}hr` : `${hours.toFixed(1)}hrs`;
   } else {
     return playtime_minutes === 1
-      ? `${playtime_minutes} minute`
-      : `${playtime_minutes} minutes`;
+      ? `${playtime_minutes}min`
+      : `${playtime_minutes}mins`;
   }
 }
 
