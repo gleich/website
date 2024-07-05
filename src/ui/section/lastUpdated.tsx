@@ -8,6 +8,7 @@ import advancedFormat from 'dayjs/plugin/advancedFormat';
 import styles from '@/ui/section/lastUpdated.module.css';
 import { Inconsolata } from 'next/font/google';
 import Link from 'next/link';
+import Image from 'next/image';
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -27,14 +28,22 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
       <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
       <br />
       <span className={styles.cachedAndProcessed}>
-        Cached & processed by{' '}
-        <Link
-          href="https://github.com/gleich/lcp"
-          target="_blank"
-          className={styles.link}
-        >
-          gleich/lcp
-        </Link>
+        <Image
+          src="/icons/hard-drive.svg"
+          alt="Hard Drive Icon"
+          height={15}
+          width={15}
+        />
+        <span>
+          Cached & processed by{' '}
+          <Link
+            href="https://github.com/gleich/lcp"
+            target="_blank"
+            className={styles.link}
+          >
+            gleich/lcp
+          </Link>
+        </span>
       </span>
     </div>
   );

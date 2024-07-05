@@ -6,6 +6,10 @@
 }
 
 .cachedAndProcessed {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-end;
   color: var(--success);
 }
 
@@ -21,5 +25,9 @@
   .lastUpdated {
     text-align: center;
     font-size: 14px;
+  }
+
+  .cachedAndProcessed {
+    justify-content: center;
   }
 }
