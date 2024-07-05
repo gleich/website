@@ -13,10 +13,17 @@
   cursor: pointer;
   font-weight: 900;
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 .button:hover {
   background-color: white;
   color: black;
+}
+
+@media (max-width: 678px) {
+  .button {
+    font-size: 16px;
+  }
 }
