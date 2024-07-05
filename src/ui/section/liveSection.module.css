@@ -55,6 +55,14 @@
   color: var(--live-color);
 }
 
+@media (max-width: 400px) {
+  .card {
+    border: none;
+    padding: 0px;
+    box-shadow: none;
+  }
+}
+
 @-webkit-keyframes dot-pulse {
   0% {
     -webkit-box-shadow: 0 0 0 0 var(--live-color-dimmed);

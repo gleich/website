@@ -11,7 +11,7 @@ export default function Section({
 }) {
   return (
     <div className={styles.section}>
-      <Card>
+      <Card className={styles.card}>
         <div className={styles.header}>
           <h2 className={styles.title}>{name}</h2>
         </div>
