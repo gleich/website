@@ -17,3 +17,10 @@
     width: auto;
   }
 }
+
+@media (max-width: 400px) {
+  .photo {
+    width: var(--photo-mobile-width);
+    height: auto;
+  }
+}

@@ -38,12 +38,12 @@ export default async function Games() {
     >
       <div>
         <p>
-          To relax I love to play video games with some of my friends. Here are
-          my recently played titles over on{' '}
+          To relax, I love playing video games with some of my friends. Here are
+          my recently played titles on{' '}
           <Link href="https://store.steampowered.com/about/" target="_blank">
             Steam
-          </Link>{' '}
-          ranked by recently played:
+          </Link>
+          , ranked by recent activity:
         </p>
         <div className={styles.games}>
           <div className={styles.gameCovers}>

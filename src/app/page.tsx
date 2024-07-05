@@ -10,6 +10,7 @@ import LoadingSection from '@/ui/section/loading';
 import SVGIcon from '@/ui/svgIcon';
 import Image from 'next/image';
 import Projects from '@/ui/root/projects/projects';
+import Resume from '@/ui/root/projects/resume';
 
 export default async function Home() {
   return (
@@ -28,22 +29,7 @@ export default async function Home() {
             bike) and photography. Below are a few sections featuring parts of
             who I am! Want to get in touch? Feel free to shoot me an email over
             at <Link href="mailto:email@mattglei.ch">email@mattglei.ch</Link>.
-            More of my professional work is detailed in my{' '}
-            <Link
-              href="/resume.pdf"
-              target="_blank"
-              className={styles.resumeLink}
-            >
-              <Image
-                src="/icons/file-text.svg"
-                alt="text file icon"
-                width={14}
-                height={14}
-                className={styles.resumeFileIcon}
-              />
-              résumé
-            </Link>
-            .
+            More of my professional work is detailed in my <Resume />.
           </p>
         </div>
 
@@ -53,11 +39,11 @@ export default async function Home() {
           >
             <Workouts />
           </Suspense>
-          {/* <Suspense
+          <Suspense
             fallback={<LoadingSection name="Projects" expectedHeight={600} />}
           >
             <Projects />
-          </Suspense> */}
+          </Suspense>
           <Photos />
           <Suspense
             fallback={<LoadingSection name="Games" expectedHeight={458} />}

@@ -29,8 +29,6 @@
   flex-direction: column;
   color: var(--live-color);
   font-weight: 900;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
 .liveFromTitle {

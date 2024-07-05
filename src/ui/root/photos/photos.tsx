@@ -150,10 +150,10 @@ export default function Photos() {
   return (
     <Section name="Photos">
       <p>
-        I&apos;ve been really into photography for about 7 years now. Starting
-        with nature (mainly landscapes and macro) I&apos;ve gotten into
-        automotive photography over the past few years at college especially
-        with the RIT car club. I mainly take photos with Nikon gear, with my
+        I&apos;ve been really into photography for about seven years now.
+        Starting with nature photography, mainly landscapes and macro, I&apos;ve
+        recently delved into automotive photography, especially during my time
+        at college with the RIT car club. I primarily use Nikon gear, with my
         current camera being a Nikon Z7II. Here are a few of my best photos:
       </p>
       <div className={styles.photos}>
@@ -168,6 +168,11 @@ export default function Photos() {
             className={styles.photo}
             unoptimized={p.horizontal}
             draggable={false}
+            style={
+              {
+                '--photo-mobile-width': p.horizontal ? '100%' : '45%',
+              } as React.CSSProperties
+            }
           />
         ))}
       </div>

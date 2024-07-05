@@ -1,0 +1,10 @@
+.fileIcon {
+  vertical-align: middle;
+  position: relative;
+  padding-right: 5px;
+  bottom: 0.5px;
+}
+
+.resume {
+  gap: 5px;
+}

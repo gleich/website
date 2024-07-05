@@ -7,9 +7,6 @@ export async function loadStravaData() {
     headers: {
       Authorization: 'Bearer ' + env.API_KEY,
     },
-    next: {
-      tags: ['strava'],
-    },
     cache: 'no-store',
   });
   const responseData: Response<Activity[]> = await res.json();
