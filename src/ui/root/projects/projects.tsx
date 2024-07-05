@@ -1,13 +1,12 @@
 import LiveSection from '@/ui/section/liveSection';
 import styles from '@/ui/root/projects/projects.module.css';
-import Card from '@/ui/card';
 import { loadGithubData } from '@/lib/github';
 import Link from 'next/link';
 import Resume from './resume';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { Inconsolata } from 'next/font/google';
-import SVGIcon from '@/ui/svgIcon';
+import Project from './project';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -71,42 +70,9 @@ export default async function Projects() {
       </p>
       <div className={styles.highlightedProjectsContainer}>
         <div className={styles.highlightedProjects}>
-          {repositories.map((r) => {
-            const lastUpdated = dayjs(r.updated_at);
-            return (
-              <Card key={r.id} className={styles.highlightedProject}>
-                <div className={styles.highlightedProjectHeader}>
-                  <div className={styles.highlightedProjectName}>
-                    <SVGIcon
-                      src="/icons/book.svg"
-                      alt="Folder Icon"
-                      width={15}
-                      height={15}
-                    />
-
-                    <Link href={r.url} target="_blank">
-                      {r.owner}/{r.name}
-                    </Link>
-                  </div>
-                  <p className={styles.highlightedProjectLanguage}>
-                    <span
-                      className={styles.highlightedProjectLanguageCircle}
-                      style={{ backgroundColor: r.language_color }}
-                    />{' '}
-                    {r.language}{' '}
-                  </p>
-                </div>
-                <div
-                  className={`${styles.highlightedProjectDetails} ${inconsolata.className}`}
-                >
-                  <p>{r.description}</p>
-                  <p className={styles.highlightedProjectUpdated}>
-                    Updated {lastUpdated.fromNow()}
-                  </p>
-                </div>
-              </Card>
-            );
-          })}
+          {repositories.map((r) => (
+            <Project repo={r} key={r.id} />
+          ))}
         </div>
       </div>
     </LiveSection>

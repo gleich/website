@@ -9,6 +9,7 @@ import styles from '@/ui/section/lastUpdated.module.css';
 import { Inconsolata } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -18,13 +19,22 @@ const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   const dayjsLastUpdate = dayjs(lastUpdated);
+  const [fromNow, setFromNow] = useState(dayjsLastUpdate.fromNow());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFromNow(dayjsLastUpdate.fromNow());
+    }, 1000);
+    return () => clearInterval(interval);
+  });
+
   const lastUpdateExact =
     dayjsLastUpdate.format('MM/DD/YYYY [@] hh:mm A [') +
     dayjsLastUpdate.format('z') +
     ']';
   return (
     <div className={`${styles.lastUpdated} ${inconsolata.className}`}>
-      Last updated {dayjsLastUpdate.fromNow()}
+      Last updated {fromNow}
       <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
       <br />
       <span className={styles.cachedAndProcessed}>

@@ -1,0 +1,46 @@
+.highlightedProjectLanguage {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlightedProject {
+  max-width: 400px;
+  width: 100%;
+}
+
+.highlightedProjectHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.highlightedProjectName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.highlightedProjectDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.highlightedProjectUpdated {
+  font-size: 14px !important;
+  color: grey;
+  margin-top: 10px;
+}
+
+.highlightedProjectLanguageCircle {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  border-radius: 50%;
+}

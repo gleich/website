@@ -23,7 +23,6 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
