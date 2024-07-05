@@ -40,7 +40,7 @@ export default async function Home() {
             <Workouts />
           </Suspense>
           <Suspense
-            fallback={<LoadingSection name="Projects" expectedHeight={600} />}
+            fallback={<LoadingSection name="Projects" expectedHeight={274} />}
           >
             <Projects />
           </Suspense>
