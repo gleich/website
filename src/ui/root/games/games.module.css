@@ -150,6 +150,7 @@
   .gameProgressBar {
     max-width: 70px;
     width: 100%;
+    padding-right: 10px;
   }
 
   .gameTable td {
@@ -193,5 +194,15 @@
   .gameTable tr {
     border-left: 0px;
     border-right: 0px;
+  }
+
+  .gameLink {
+    width: 18%;
+    height: auto;
+  }
+
+  .libraryCover {
+    width: 100%;
+    height: auto;
   }
 }

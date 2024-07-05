@@ -170,7 +170,7 @@ export default function Photos() {
             draggable={false}
             style={
               {
-                '--photo-mobile-width': p.horizontal ? '100%' : '45%',
+                '--photo-mobile-width': p.horizontal ? '100%' : '49%',
               } as React.CSSProperties
             }
           />

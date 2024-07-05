@@ -64,6 +64,7 @@ export default async function Games() {
                     width={600 / 4.5}
                     height={900 / 4.5}
                     draggable={false}
+                    className={styles.libraryCover}
                   />
                   <p
                     className={`${styles.libraryRanking} ${inconsolata.className}`}
