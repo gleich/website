@@ -83,9 +83,9 @@
 }
 
 .gameProgressValue {
-  width: 35px;
   text-align: right;
-  padding-right: 5px;
+  width: 40px;
+  padding-right: 10px;
 }
 
 .gameProgressBar {
@@ -115,7 +115,6 @@
 
 .gameProgressContainer {
   display: flex;
-  gap: 5px;
   align-items: center;
   justify-content: center;
 }
@@ -159,6 +158,15 @@
 }
 
 @media (max-width: 400px) {
+  .gameProgressContainer {
+    text-align: center;
+  }
+
+  .gameProgressValue {
+    width: 100px;
+    text-align: center;
+  }
+
   .gameProgressBar {
     max-width: 70px;
     width: 100%;
