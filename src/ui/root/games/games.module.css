@@ -52,11 +52,11 @@
 }
 
 .gameTable th {
-  border: 1px dotted rgb(50, 50, 50);
+  border: 1px dashed rgb(50, 50, 50);
 }
 
 .gameTable td {
-  border: 1px dotted rgb(50, 50, 50);
+  border: 1px dashed rgb(50, 50, 50);
 }
 
 .gameRankHeader {
