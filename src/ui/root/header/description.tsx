@@ -2,6 +2,13 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import styles from '@/ui/root/header/description.module.css';
+import { IBM_Plex_Mono } from 'next/font/google';
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: '700',
+  subsets: ['latin'],
+  style: 'italic',
+});
 
 export default function Description() {
   const descriptions = useMemo(
@@ -19,5 +26,9 @@ export default function Description() {
     return () => clearInterval(cycleTexts);
   }, [descriptions]);
 
-  return <p className={styles.description}>{descriptions[index]}</p>;
+  return (
+    <p className={`${styles.description} ${ibmPlexMono.className}`}>
+      {descriptions[index]}
+    </p>
+  );
 }
