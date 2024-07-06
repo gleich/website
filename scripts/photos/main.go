@@ -1,25 +1,28 @@
 package main
 
 import (
+	"bytes"
+	"encoding/base64"
 	"fmt"
-	"image"
+	"image/jpeg"
 	_ "image/jpeg"
+	"image/png"
 	"os"
 	"path/filepath"
-	"sort"
 	"strings"
 
+	"github.com/buckket/go-blurhash"
 	"github.com/gleich/lumber/v2"
 )
 
 const photos_folder = "../../public/photos"
 
 type Photo struct {
-	Filename   string
-	Name       string
-	Width      int
-	Height     int
-	Horizontal bool
+	Name        string
+	Filename    string
+	Path        string
+	AspectRatio float32
+	BlurDataURL string
 }
 
 func main() {
@@ -39,33 +42,54 @@ func main() {
 			}
 			defer reader.Close()
 
-			im, _, err := image.DecodeConfig(reader)
+			parsedJPG, err := jpeg.Decode(reader)
 			if err != nil {
-				lumber.Fatal(err, "Reading image data from", name, "failed")
+				lumber.Fatal(err, "Parsing JPEG failed for", name)
 			}
-			photos = append(photos, Photo{Filename: name, Name: strings.TrimSuffix(name, ".jpg"), Width: im.Width, Height: im.Height, Horizontal: im.Width > im.Height})
+			width := parsedJPG.Bounds().Dx()
+			height := parsedJPG.Bounds().Dy()
+			blurData, err := blurhash.Encode(4, 3, parsedJPG)
+			if err != nil {
+				lumber.Fatal(err, "Creating blur data for", name, "failed")
+			}
+
+			scaleDownFactor := 200
+			blurImage, err := blurhash.Decode(blurData, width/scaleDownFactor, height/scaleDownFactor, 1)
+			if err != nil {
+				lumber.Fatal(err, "Encoding blurhash data to img failed for", name)
+			}
+			blurImageOut := new(bytes.Buffer)
+			err = png.Encode(blurImageOut, blurImage)
+			if err != nil {
+				lumber.Fatal(err, "Writing data to PNG failed", name)
+			}
+			base64BlurData := base64.StdEncoding.EncodeToString(blurImageOut.Bytes())
+
+			photos = append(
+				photos, Photo{
+					Filename:    name,
+					Name:        strings.TrimSuffix(name, ".jpg"),
+					AspectRatio: float32(parsedJPG.Bounds().Dx()) / float32(parsedJPG.Bounds().Dy()),
+					Path:        fmt.Sprintf("/photos/%s", name),
+					BlurDataURL: base64BlurData,
+				},
+			)
+			lumber.Success("Processed", name)
 		}
 	}
 
 	fmt.Println()
-	lumber.Success("IMPORTS:\n")
-	for _, photo := range photos {
-		fmt.Printf("import %s from '@photos/%s'\n", photo.Name, photo.Filename)
-	}
-
-	fmt.Println()
 	lumber.Success("DATA ARRAY:\n")
-	fmt.Println("const photos: Photo[] = [")
-	sort.Slice(photos, func(i, j int) bool {
-		return photos[i].Horizontal == true && photos[j].Horizontal == false
-	})
+	fmt.Println("const images: GalleryImage[] = [")
 	for _, photo := range photos {
 		fmt.Println("\t{")
-		fmt.Printf("\t\tdata: %s,\n", photo.Name)
+		fmt.Printf("\t\tsrc: '%s',\n", fmt.Sprintf("/photos/%s", photo.Filename))
 		fmt.Printf("\t\talt: '%s',\n", photo.Name)
-		fmt.Printf("\t\twidth: %d,\n", photo.Width)
-		fmt.Printf("\t\theight: %d,\n", photo.Height)
-		fmt.Printf("\t\thorizontal: %t,\n", photo.Horizontal)
+		fmt.Printf("\t\taspect_ratio: %f,\n", photo.AspectRatio)
+		fmt.Println("\t\tnextImageProps: {")
+		fmt.Println("\t\t\tplaceholder: 'blur',")
+		fmt.Printf("\t\t\tblurDataURL: 'data:image/png;base64,%s'\n", photo.BlurDataURL)
+		fmt.Println("\t\t},")
 		fmt.Println("\t},")
 	}
 	fmt.Println("];")
