@@ -57,6 +57,10 @@
 }
 
 @media (max-width: 600px) {
+  .header {
+    margin-top: 20px;
+  }
+
   .titleText {
     font-size: 5vw;
   }
