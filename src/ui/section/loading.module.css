@@ -12,7 +12,7 @@
 
 .loadingText::after {
   content: '[\00A0\00A0\00A0\00A0]';
-  animation: loading 1s steps(16) infinite;
+  animation: loading 0.5s steps(16) infinite;
 }
 
 @keyframes loading {
