@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   description: description,
   openGraph: {
     title: title,
+    siteName: 'Matt Gleich',
     description: description,
     images: [ogImage],
     url: 'https://mattglei.ch/lcp',
