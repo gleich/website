@@ -55,6 +55,7 @@ export default function Lcp() {
             src={jetsPhoto}
             alt="Jets Flying over Castle in Germany"
             className={styles.titlePhoto}
+            placeholder="blur"
           />
           <h1 className={`${styles.titleText} ${ibmPlexMono.className}`}>
             lcp - Lightweight Cache Proxy
