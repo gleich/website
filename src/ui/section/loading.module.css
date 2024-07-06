@@ -9,3 +9,62 @@
   width: 200px;
   height: auto;
 }
+
+.loadingText::after {
+  content: '[\00A0\00A0\00A0\00A0]';
+  animation: loading 1s steps(16) infinite;
+}
+
+@keyframes loading {
+  0% {
+    content: '[\00A0\00A0\00A0\00A0]';
+  }
+  6.25% {
+    content: '[=\00A0\00A0\00A0]';
+  }
+  12.5% {
+    content: '[==\00A0\00A0]';
+  }
+  18.75% {
+    content: '[===\00A0]';
+  }
+  25% {
+    content: '[\00A0===]';
+  }
+  31.25% {
+    content: '[\00A0\00A0==]';
+  }
+  37.5% {
+    content: '[\00A0\00A0\00A0=]';
+  }
+  43.75% {
+    content: '[\00A0\00A0\00A0\00A0]';
+  }
+  50% {
+    content: '[\00A0\00A0\00A0=]';
+  }
+  56.25% {
+    content: '[\00A0\00A0==]';
+  }
+  62.5% {
+    content: '[\00A0===]';
+  }
+  68.75% {
+    content: '[====]';
+  }
+  75% {
+    content: '[===\00A0]';
+  }
+  81.25% {
+    content: '[==\00A0\00A0]';
+  }
+  87.5% {
+    content: '[=\00A0\00A0\00A0]';
+  }
+  93.75% {
+    content: '[\00A0\00A0\00A0\00A0]';
+  }
+  100% {
+    content: '[\00A0\00A0\00A0\00A0]';
+  }
+}
