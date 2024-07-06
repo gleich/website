@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import styles from '@/app/lcp/page.module.css';
 import jetsPhoto from '../../../public/articles/lcp/jets.jpeg';
-import stravaDiagram from '../../../public/articles/lcp/strava.svg';
 import Image from 'next/image';
 import Logo from '@/ui/root/header/logo';
 import Link from 'next/link';
@@ -9,7 +8,7 @@ import { IBM_Plex_Mono } from 'next/font/google';
 import SVGIcon from '@/ui/svgIcon';
 import Copyright from '@/ui/root/copyright';
 
-const title = 'Lightweight Cache Proxy';
+const title = 'gleich/lcp';
 const description =
   'Lightweight cache proxy written in rust. Backend service for aggregating, processing, and caching data from services like Strava and GitHub.';
 const ogImage = {
