@@ -90,7 +90,7 @@ export default async function Workouts() {
                       height={240}
                       placeholder="blur"
                       draggable={false}
-                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN881y0HgAHGAJp+GbJMAAAAABJRU5ErkJggg=="
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkOFfrAwADugGZAjy+cgAAAABJRU5ErkJggg=="
                       className={styles.map}
                     />
                     <div className={`${styles.stats} ${inconsolata.className}`}>
