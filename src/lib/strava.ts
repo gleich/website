@@ -1,6 +1,5 @@
 import Response from '@/lib/response';
 import { env } from 'process';
-import { setTimeout } from 'timers/promises';
 
 export async function loadStravaData() {
   const res = await fetch('https://lcp.dev.mattglei.ch/strava/cache', {
@@ -11,7 +10,6 @@ export async function loadStravaData() {
     cache: 'no-store',
   });
   const responseData: Response<Activity[]> = await res.json();
-  await setTimeout(20000);
   return responseData;
 }
 
