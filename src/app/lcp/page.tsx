@@ -9,9 +9,29 @@ import { IBM_Plex_Mono } from 'next/font/google';
 import SVGIcon from '@/ui/svgIcon';
 import Copyright from '@/ui/root/copyright';
 
+const title = 'Lightweight Cache Proxy';
+const description =
+  'Lightweight cache proxy written in rust. Backend service for aggregating, processing, and caching data from services like Strava and GitHub.';
+const ogImage = {
+  url: 'https://mattglei.ch/articles/lcp/opengraph.png',
+  width: 1200,
+  height: 630,
+};
+
 export const metadata: Metadata = {
-  title: 'lcp - Lightweight Cache Proxy',
-  description: 'Lightweight cache proxy written in rust. gleich/lcp',
+  title: title,
+  description: description,
+  openGraph: {
+    title: title,
+    description: description,
+    images: [ogImage],
+    url: 'https://mattglei.ch/lcp',
+  },
+  twitter: {
+    title: title,
+    description: description,
+    images: [ogImage],
+  },
 };
 
 const ibmPlexMono = IBM_Plex_Mono({
