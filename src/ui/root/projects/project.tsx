@@ -1,5 +1,5 @@
 'use client';
-import { Repository } from '@/lib/github';
+import { Repository } from '@/lib/lcp/github';
 import { exactFromNow } from '@/lib/time';
 import Card from '@/ui/card';
 import styles from '@/ui/root/projects/project.module.css';
