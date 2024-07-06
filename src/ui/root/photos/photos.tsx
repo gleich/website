@@ -188,7 +188,7 @@ const images: GalleryImage[] = [
 ];
 
 export default function Photos() {
-  const widths = [600, 1200, 2300];
+  const widths = [600, 1200, 2400];
   const ratios = [2.2, 4, 6, 8];
   return (
     <Section name="Photos">
@@ -200,13 +200,7 @@ export default function Photos() {
         current camera being a Nikon Z7II. Here are a few of my best photos:
       </p>
       <div className={styles.photos}>
-        <Gallery
-          widths={widths}
-          ratios={ratios}
-          images={images}
-          gap="2px"
-          lastRowBehavior="fill"
-        />
+        <Gallery widths={widths} ratios={ratios} images={images} gap="2px" />
       </div>
       <ViewMore
         locationName="Instagram"
