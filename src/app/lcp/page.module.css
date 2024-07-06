@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article {
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+}
+
+.header {
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 70px;
+}
+
+.headerLogo {
+  width: 70px;
+  height: auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.titlePhoto {
+  width: 100%;
+  height: auto;
+}
+
+.githubLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.content {
+  margin-top: 40px;
+}
+
+.content h2 {
+  padding: 10px 0px;
+  text-decoration: underline;
+}
+
+.overviewImage {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .titleText {
+    font-size: 5vw;
+  }
+}
