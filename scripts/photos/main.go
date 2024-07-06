@@ -89,6 +89,7 @@ func main() {
 		fmt.Println("\t\tnextImageProps: {")
 		fmt.Println("\t\t\tplaceholder: 'blur',")
 		fmt.Printf("\t\t\tblurDataURL: 'data:image/png;base64,%s'\n", photo.BlurDataURL)
+		fmt.Println("\t\t\tdraggable: false")
 		fmt.Println("\t\t},")
 		fmt.Println("\t},")
 	}
