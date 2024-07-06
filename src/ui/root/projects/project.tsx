@@ -1,5 +1,6 @@
 'use client';
 import { Repository } from '@/lib/github';
+import { exactFromNow } from '@/lib/time';
 import Card from '@/ui/card';
 import styles from '@/ui/root/projects/project.module.css';
 import SVGIcon from '@/ui/svgIcon';
@@ -15,14 +16,14 @@ dayjs.extend(relativeTime);
 
 export default function Project({ repo }: { repo: Repository }) {
   const updatedAt = dayjs(repo.updated_at);
-  const [fromNow, setFromNow] = useState(updatedAt.fromNow());
+  const [currentTime, setCurrentTime] = useState(dayjs());
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFromNow(updatedAt.fromNow());
+      setCurrentTime(dayjs());
     }, 1000);
     return () => clearInterval(interval);
-  });
+  }, []);
 
   return (
     <Card className={styles.highlightedProject}>
@@ -51,7 +52,9 @@ export default function Project({ repo }: { repo: Repository }) {
         className={`${styles.highlightedProjectDetails} ${inconsolata.className}`}
       >
         <p>{repo.description}</p>
-        <p className={styles.highlightedProjectUpdated}>Updated {fromNow}</p>
+        <p className={styles.highlightedProjectUpdated}>
+          Updated {exactFromNow(updatedAt, currentTime)}
+        </p>
       </div>
     </Card>
   );

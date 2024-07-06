@@ -1,4 +1,4 @@
-import Response from '@/lib/response';
+import Response from '@/lib/lcp/response';
 import { env } from 'process';
 
 export async function loadStravaData() {

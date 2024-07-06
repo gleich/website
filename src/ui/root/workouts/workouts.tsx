@@ -1,4 +1,4 @@
-import { extractSportType, loadStravaData } from '@/lib/strava';
+import { extractSportType, loadStravaData } from '@/lib/lcp/strava';
 import LiveSection from '../../section/liveSection';
 import styles from '@/ui/root/workouts/workouts.module.css';
 import dayjs from 'dayjs';

@@ -1,4 +1,4 @@
-import { loadSteamData } from '@/lib/steam';
+import { loadSteamData } from '@/lib/lcp/steam';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/ui/root/games/games.module.css';
