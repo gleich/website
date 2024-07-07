@@ -7,8 +7,6 @@ import Copyright from '@/ui/root/copyright';
 import Photos from '@/ui/root/photos/photos';
 import { Suspense } from 'react';
 import LoadingSection from '@/ui/section/loading';
-import SVGIcon from '@/ui/svgIcon';
-import Image from 'next/image';
 import Projects from '@/ui/root/projects/projects';
 import Resume from '@/ui/root/projects/resume';
 
@@ -35,7 +33,7 @@ export default async function Home() {
 
         <div className={styles.sections}>
           <Suspense
-            fallback={<LoadingSection name="Workouts" expectedHeight={397.5} />}
+            fallback={<LoadingSection name="Workouts" expectedHeight={460.5} />}
           >
             <Workouts />
           </Suspense>
