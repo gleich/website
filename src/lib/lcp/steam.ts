@@ -1,16 +1,7 @@
-import Response from '@/lib/lcp/response';
-import { env } from 'process';
+import { Cache, loadFromLCP } from './lcp';
 
 export async function loadSteamData() {
-  const res = await fetch('https://lcp.dev.mattglei.ch/steam/cache', {
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + env.API_KEY,
-    },
-    cache: 'no-store',
-  });
-  const responseData: Response<Game[]> = await res.json();
-  return responseData;
+  return loadFromLCP<Game[]>(Cache.Steam);
 }
 
 export interface Game {

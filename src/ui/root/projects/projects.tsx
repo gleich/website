@@ -1,6 +1,6 @@
 import LiveSection from '@/ui/section/liveSection';
 import styles from '@/ui/root/projects/projects.module.css';
-import { loadGithubData } from '@/lib/lcp/github';
+import { loadGitHubData } from '@/lib/lcp/github';
 import Link from 'next/link';
 import Resume from './resume';
 import dayjs from 'dayjs';
@@ -10,7 +10,7 @@ import Project from './project';
 dayjs.extend(relativeTime);
 
 export default async function Projects() {
-  const githubData = await loadGithubData();
+  const githubData = await loadGitHubData();
   const repositories = githubData.data;
   return (
     <LiveSection

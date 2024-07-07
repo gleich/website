@@ -1,16 +1,7 @@
-import { env } from 'process';
-import Response from './response';
+import { Cache, loadFromLCP } from './lcp';
 
-export async function loadGithubData() {
-  const res = await fetch('https://lcp.dev.mattglei.ch/github/cache', {
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + env.API_KEY,
-    },
-    cache: 'no-store',
-  });
-  const responseData: Response<Repository[]> = await res.json();
-  return responseData;
+export async function loadGitHubData() {
+  return loadFromLCP<Repository[]>(Cache.GitHub);
 }
 
 export interface Repository {

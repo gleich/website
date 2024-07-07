@@ -1,16 +1,7 @@
-import Response from '@/lib/lcp/response';
-import { env } from 'process';
+import { Cache, loadFromLCP } from './lcp';
 
 export async function loadStravaData() {
-  const res = await fetch('https://lcp.dev.mattglei.ch/strava/cache', {
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + env.API_KEY,
-    },
-    cache: 'no-store',
-  });
-  const responseData: Response<Activity[]> = await res.json();
-  return responseData;
+  return loadFromLCP<Activity[]>(Cache.Strava);
 }
 
 export function extractSportType(sport_type: string): [string, string] {
