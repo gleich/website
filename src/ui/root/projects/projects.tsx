@@ -16,7 +16,7 @@ export default async function Projects() {
     <LiveSection
       name="Projects"
       source="GitHub"
-      sourceURL="https://github.com"
+      sourceURL="https://github.com/about"
       lastUpdated={githubData.last_updated}
     >
       <p>
@@ -29,7 +29,7 @@ export default async function Projects() {
         <Link href="https://github.com/gleich/is31fl3731" target="_blank">
           custom integrated circuit drivers
         </Link>{' '}
-        in Rust to creating{' '}
+        written in Rust to creating{' '}
         <Link href="https://github.com/gleich/fgh" target="_blank">
           CLIs
         </Link>{' '}

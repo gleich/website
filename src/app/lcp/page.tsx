@@ -78,9 +78,9 @@ export default function Lcp() {
         <div className={styles.content}>
           <h2>What is lcp?</h2>
           <p>
-            lcp is a backend service that aggregates, processes, and caches data
-            from a number of APIs. This data is then exposed as a REST API. It
-            is written in the{' '}
+            lcp is a backend service I wrote that aggregates, processes, and
+            caches data from a number of APIs. This data is then exposed as a
+            REST API. It is written in the{' '}
             <Link href="https://www.rust-lang.org/" target="_blank">
               rust programming language
             </Link>{' '}
@@ -98,8 +98,8 @@ export default function Lcp() {
           <Image
             src={'/articles/lcp/overview.svg'}
             alt="Overview Diagram"
-            height={551}
-            width={986}
+            height={540}
+            width={979}
             className={styles.overviewImage}
           />
           <p>
