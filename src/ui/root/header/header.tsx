@@ -19,7 +19,10 @@ export default function Header() {
           name="instagram"
           href="https://www.instagram.com/mattglei.ch/"
         />
-        <Social name="strava" href="https://www.strava.com/athletes/30124266" />
+        <Social
+          name="strava"
+          href="https://www.strava.com/athletes/mattgleich"
+        />
         <Social
           name="linkedin"
           href="https://www.linkedin.com/in/matt-gleich/"
