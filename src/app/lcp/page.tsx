@@ -137,26 +137,43 @@ export default function Lcp() {
             . All of this caching happens in different threads so to ensure
             thread-safe memory interactions this protected memory space is used.
           </p>
-          <h2>Caching Benefits</h2>
-          <ul>
-            <li>
-              <b>Fast response times.</b> When the site makes a request to load
-              data from lcp.dev.mattglei.ch/strava/cache all it is doing is
-              reading the cached data from memory. No expensive database queries
-              or anything.
-            </li>
-            <li>
-              <b>Expensive operations can be done before the request is made</b>
-              . With Steam for example, there is no endpoint from the Steam REST
+          <h2>Main Benefits</h2>
+          <div className={styles.cacheBenefit}>
+            <b className={styles.cacheBenefitTitle}>Fast response times</b>
+            <p className={styles.cacheBenefitBody}>
+              When the site makes a request to load data from
+              lcp.dev.mattglei.ch/strava/cache all it is doing is reading the
+              cached data from memory. No expensive database queries or
+              anything.
+            </p>
+          </div>
+          <div className={styles.cacheBenefit}>
+            <b className={styles.cacheBenefitTitle}>
+              Data can be processed and aggregated
+            </b>
+            <p className={styles.cacheBenefitBody}>
+              With Steam for example, there is no endpoint from the Steam REST
               API to get your games with the achievement data all in one
               request. So, for every game you need to make a request to load in
               the achievement data. All of this is done by lcp so that when a
               request is made to lcp.dev.mattglei.ch/steam/cache it returns the
               games with their achievements all in one request. This cuts down
-              25+ requests to the Steam REST API with each request taking +400ms
+              +25 requests to the Steam REST API with each request taking +400ms
               down to one request that takes ~200ms.
-            </li>
-          </ul>
+            </p>
+          </div>
+          <div className={styles.cacheBenefit}>
+            <b className={styles.cacheBenefitTitle}>Circumvent rate limiting</b>
+            <p className={styles.cacheBenefitBody}>
+              All major APIs have rate limits. The Strava API for example only
+              allows 100 requests every 15 minutes. If I wasn&apos;t caching
+              this data and was simply requesting the data every time that
+              someone visited the site I could very easily encounter rate
+              limiting. The REST API that is exposed by lcp has no rate limits,
+              so my site can hit it every time a request is made without having
+              to worry about rate limits.
+            </p>
+          </div>
           <h2>Strava Maps</h2>
           <p>
             One interesting technical problem that I faced in this project was
@@ -172,8 +189,15 @@ export default function Lcp() {
             from Strava. Unfortunately mapbox static images don&apos;t work with
             the Next.js Image component, a React component for greatly
             optimizing images for the web. This is mainly due to the way in
-            which Mapbox tokens are secured and how Next.js optimizes images on
-            the server. I took this problem as an opportunity to learn{' '}
+            which{' '}
+            <Link
+              href="https://docs.mapbox.com/accounts/guides/tokens/#url-restrictions"
+              target="_blank"
+            >
+              Mapbox tokens are secured
+            </Link>{' '}
+            and how Next.js optimizes images on the server. I took this problem
+            as an opportunity to learn{' '}
             <Link href="https://aws.amazon.com/pm/serv-s3/?sc_channel=ps">
               AWS&apos;s S3 object storage
             </Link>{' '}

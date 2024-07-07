@@ -56,6 +56,20 @@
   height: auto;
 }
 
+.cacheBenefit {
+  display: flex;
+  flex-direction: column;
+}
+
+.cacheBenefitTitle {
+  color: var(--success);
+  padding: 10px 0px;
+}
+
+.cacheBenefitBody {
+  padding-left: 30px;
+}
+
 @media (max-width: 600px) {
   .header {
     margin-top: 20px;
