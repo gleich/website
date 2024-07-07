@@ -65,7 +65,8 @@
 
 .map {
   border-radius: 5px;
-  width: 100%;
+  max-width: 100%;
+  width: 440px;
   height: auto;
 }
 
