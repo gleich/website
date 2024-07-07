@@ -165,7 +165,7 @@ export default function Lcp() {
           <div className={styles.cacheBenefit}>
             <b className={styles.cacheBenefitTitle}>Circumvent rate limiting</b>
             <p className={styles.cacheBenefitBody}>
-              All major APIs have rate limits. The Strava API for example only
+              Most major APIs have rate limits. The Strava API for example only
               allows 100 requests every 15 minutes. If I wasn&apos;t caching
               this data and was simply requesting the data every time that
               someone visited the site I could very easily encounter rate
