@@ -27,7 +27,7 @@ export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
   const res = await fetch(`https://lcp.dev.mattglei.ch/${pathName}/cache`, {
     method: 'GET',
     headers: {
-      Authorization: 'Bearer ' + env.API_KEY,
+      Authorization: 'Bearer ' + env.LCP_ACCESS_TOKEN,
     },
     cache: 'no-store',
   });
