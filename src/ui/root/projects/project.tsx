@@ -32,6 +32,7 @@ export default function Project({ repo }: { repo: Repository }) {
           <SVGIcon
             src="/icons/book.svg"
             alt="Folder Icon"
+            title=""
             width={15}
             height={15}
           />
