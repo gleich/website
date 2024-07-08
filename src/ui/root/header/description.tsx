@@ -12,7 +12,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export default function Description() {
   const descriptions = useMemo(
-    () => ['college student', 'developer', 'cyclist', 'photographer'],
+    () => ['college student', 'software engineer', 'cyclist', 'photographer'],
     [],
   );
 
