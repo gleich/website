@@ -206,8 +206,8 @@ const images: GalleryImage[] = [
 ];
 
 export default function Photos() {
-  const widths = [600, 1200, 2400];
-  const ratios = [2.2, 4, 6, 8];
+  const widths = [600, 1200];
+  const ratios = [2.2, 4, 6];
   return (
     <Section name="Photos">
       <p>
