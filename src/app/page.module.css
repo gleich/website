@@ -6,10 +6,14 @@
   align-items: center;
 }
 
+.header {
+  max-width: 1500px;
+  width: 100%;
+}
+
 .introduction {
   padding-top: 20px;
-  max-width: 800px;
-  text-align: justify;
+  max-width: 1200px;
 }
 
 .caches {
