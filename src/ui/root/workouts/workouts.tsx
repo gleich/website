@@ -52,6 +52,8 @@ export default async function Workouts() {
                 formattedDuration = movingDuration.format('m[m] & s[s]');
               }
 
+              const stravaLink = `https://strava.com/activities/${a.id}`;
+
               return (
                 <Card key={a.id}>
                   <div className={styles.header}>
@@ -64,10 +66,12 @@ export default async function Workouts() {
                           height={26}
                           className={styles.icon}
                         />
-                        <h3 className={styles.titleText}>{a.name}</h3>
+                        <Link href={stravaLink} target="_blank">
+                          <h3 className={styles.titleText}>{a.name}</h3>
+                        </Link>
                       </div>
                       <Link
-                        href={`https://strava.com/activities/${a.id}`}
+                        href={stravaLink}
                         target="_blank"
                         title="View on Strava"
                       >

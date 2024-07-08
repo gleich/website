@@ -39,6 +39,7 @@
 
 .titleText {
   font-size: 22px;
+  color: var(--foreground);
   text-decoration: underline;
 }
 
