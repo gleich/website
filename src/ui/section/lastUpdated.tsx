@@ -35,7 +35,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
     ']';
   return (
     <div className={`${styles.lastUpdated} ${inconsolata.className}`}>
-      Last updated {exactFromNow(dayjsLastUpdate, currentTime)}
+      Updated {exactFromNow(dayjsLastUpdate, currentTime)}
       <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
       <br />
       <span className={styles.cachedAndProcessed}>
