@@ -67,7 +67,11 @@ export default async function Workouts() {
                           height={26}
                           className={styles.icon}
                         />
-                        <Link href={stravaLink} target="_blank">
+                        <Link
+                          href={stravaLink}
+                          target="_blank"
+                          title="View on Strava"
+                        >
                           <h3 className={styles.titleText}>{a.name}</h3>
                         </Link>
                       </div>
