@@ -62,6 +62,7 @@ export default async function Workouts() {
                         <SVGIcon
                           src={sportIcon}
                           alt={sportName}
+                          title={sportName}
                           width={26}
                           height={26}
                           className={styles.icon}
@@ -77,7 +78,8 @@ export default async function Workouts() {
                       >
                         <SVGIcon
                           src="/icons/socials/strava.svg"
-                          alt="View on Strava"
+                          alt="Strava icon"
+                          title="View on Strava"
                           height={22}
                           width={22}
                           className={styles.stravaIcon}
