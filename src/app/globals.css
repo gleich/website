@@ -66,6 +66,10 @@ p {
   font-size: 16px;
 }
 
+sup {
+  font-size: 12px;
+}
+
 img {
   -webkit-user-drag: none;
 }

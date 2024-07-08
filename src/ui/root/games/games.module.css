@@ -10,6 +10,10 @@
   margin-bottom: 20px;
 }
 
+.gameData:hover {
+  background-color: rgb(34, 34, 34);
+}
+
 .gameCovers {
   display: flex;
   flex-wrap: wrap;
@@ -204,5 +208,11 @@
   .libraryCover {
     width: 100%;
     height: auto;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .gameData:hover {
+    background-color: rgb(239, 239, 239);
   }
 }
