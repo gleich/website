@@ -3,6 +3,7 @@
   --foreground: black;
   --background: white;
   --link: #49a4ff;
+  --border: rgb(117, 117, 117);
 
   --live-color: rgb(243, 9, 40);
   --live-color-dimmed: rgba(243, 9, 40, 0.4);
@@ -15,6 +16,7 @@
   :root {
     --foreground: white;
     --background: rgb(23, 23, 28);
+    --border: rgb(46, 46, 46);
   }
 
   html {

@@ -1,12 +1,11 @@
 .card {
-  border: 1px solid rgb(117, 117, 117);
+  border: 1px solid var(--border);
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
   .card {
-    border: 1px solid rgb(46, 46, 46);
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
   }
 }

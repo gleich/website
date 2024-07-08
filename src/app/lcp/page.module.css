@@ -11,11 +11,20 @@
 }
 
 .header {
+  position: sticky;
+  border-bottom: 0.5px solid var(--border);
+  background-color: rgba(23, 23, 28, 0.8);
+  z-index: 2;
+  top: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.headerLink {
   color: var(--foreground);
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 70px;
 }
 
 .headerLogo {
@@ -68,6 +77,12 @@
 
 .cacheBenefitBody {
   padding-left: 30px;
+}
+
+@media (prefers-color-scheme: light) {
+  .header {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 @media (max-width: 600px) {

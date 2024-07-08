@@ -45,8 +45,8 @@ export default function Lcp() {
   return (
     <main className={styles.main}>
       <div className={styles.article}>
-        <div>
-          <Link href="/" className={styles.header}>
+        <div className={styles.header}>
+          <Link href="/" className={styles.headerLink}>
             <Logo className={styles.headerLogo} />
             <h1>Matt Gleich</h1>
           </Link>
