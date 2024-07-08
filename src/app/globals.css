@@ -1,14 +1,10 @@
-/* LIGHT MODE */
+/* ROOT VARIABLES */
 :root {
-  --foreground: black;
-  --background: white;
   --link: #49a4ff;
-  --border: rgb(117, 117, 117);
+  --success: #30ce75;
 
   --live-color: rgb(243, 9, 40);
   --live-color-dimmed: rgba(243, 9, 40, 0.4);
-
-  --success: #30ce75;
 }
 
 /* DARK MODE */
@@ -22,9 +18,18 @@
   html {
     color-scheme: dark;
   }
+}
 
-  body {
-    font-weight: normal;
+/* LIGHT MODE */
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground: black;
+    --background: white;
+    --border: rgb(117, 117, 117);
+  }
+
+  html {
+    color-scheme: light;
   }
 }
 
