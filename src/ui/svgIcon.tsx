@@ -18,6 +18,7 @@ export default function SVGIcon({
     <Image
       src={src}
       alt={alt}
+      title={alt}
       draggable={false}
       className={`${styles.image} ${className}`}
       width={width}
