@@ -30,8 +30,8 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
   const dayjsDate = dayjs(date).tz(tz.split(' ')[1]);
   return (
     <p className={`${styles.time} ${inconsolata.className}`}>
-      {dayjsDate.format(`MMMM Do [@] h:mm A`)} ·{' '}
-      {exactFromNow(dayjsDate, currentTime)}
+      {dayjsDate.format(`dddd, MMMM Do [at] h:mm A`)} [
+      {exactFromNow(dayjsDate, currentTime)}]
     </p>
   );
 }
