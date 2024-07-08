@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import styles from '@/app/lcp/page.module.css';
 import jetsPhoto from '../../../public/articles/lcp/jets.jpeg';
+import overviewPhoto from '../../../public/articles/lcp/overview.jpg';
 import Image from 'next/image';
 import Logo from '@/ui/root/header/logo';
 import Link from 'next/link';
@@ -8,9 +9,9 @@ import { IBM_Plex_Mono } from 'next/font/google';
 import SVGIcon from '@/ui/svgIcon';
 import Copyright from '@/ui/root/copyright';
 
-const title = 'gleich/lcp';
+const title = 'lcp';
 const description =
-  'Lightweight cache proxy written in rust. Backend service for aggregating, processing, and caching data from services like Strava and GitHub.';
+  "Lightweight cache proxy written in rust. Backend service for caching, processing, and aggregating data from APIs like Strava and GitHub's.";
 const ogImage = {
   url: 'https://mattglei.ch/articles/lcp/opengraph.png',
   width: 1200,
@@ -96,11 +97,10 @@ export default function Lcp() {
           </p>
           <h2>System Overview</h2>
           <Image
-            src={'/articles/lcp/overview.svg'}
+            src={overviewPhoto}
             alt="Overview Diagram"
-            height={540}
-            width={979}
             className={styles.overviewImage}
+            placeholder="blur"
           />
           <p>
             The diagram above illustrates how each cache gets updated. There are
@@ -163,7 +163,9 @@ export default function Lcp() {
             </p>
           </div>
           <div className={styles.cacheBenefit}>
-            <b className={styles.cacheBenefitTitle}>Circumvent rate limiting</b>
+            <b className={styles.cacheBenefitTitle}>
+              Avoid hitting API rate limits
+            </b>
             <p className={styles.cacheBenefitBody}>
               Most major APIs have rate limits. The Strava API for example only
               allows 100 requests every 15 minutes. If I wasn&apos;t caching
