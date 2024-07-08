@@ -1,6 +1,6 @@
-/* ROOT VARIABLES */
+/* VARIABLES */
 :root {
-  --link: #49a4ff;
+  --link: #2b95ff;
   --success: #30ce75;
 
   --live-color: rgb(243, 9, 40);
@@ -46,7 +46,6 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-weight: 500;
 }
 
 p,
