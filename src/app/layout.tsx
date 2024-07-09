@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: title,
     description: description,
-    siteName: title,
+    siteName: 'mattglei.ch',
     images: [ogImage],
     locale: 'en-US',
     type: 'website',
