@@ -28,24 +28,24 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/beach.jpg',
-    alt: 'beach',
+    src: '/photos/mtb2.jpg',
+    alt: 'mtb2',
     aspect_ratio: 0.666667,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAIAAAC+k6JsAAAAZklEQVR4nCTKPQqEIQyE4dH1hwQLsRVr738ab2BtI8FGlvi93cOMA9B7r7Wec+ac6hACERljnHNqZs45iwgRqWOMKSVrrffe4mVe917d90tE9t6/b2TmtdYY47ujtVZKAfAPAAD///glHtpwFeYBAAAAAElFTkSuQmCC',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAIAAAD3rtNaAAAApklEQVR4nFSNMaqFMBBFg3MxaJxISFATsFGwyBLc/07cgGBhoZjPN+8V7zbDORwYEu/GcZznuaqqfd+FEEW2AIgopZTxY5m5ruui+Eb5OOeY+TiOn3YYhr7vQwgZ/7+t6xpjtNYCKMty2zYsyzJNk/eemaWU13U55xBjDCF0Xae1llI+z2OMgffeWmuMadsWwH3fSilorZumUe9SSud5EtFfAAAA///8GiLyr4tWmgAAAABJRU5ErkJggg==',
       draggable: false,
     },
   },
   {
-    src: '/photos/eggBeach.jpg',
-    alt: 'eggBeach',
-    aspect_ratio: 0.667103,
+    src: '/photos/marcAudi.jpg',
+    alt: 'marcAudi',
+    aspect_ratio: 0.666864,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAIAAABPxRC5AAAAb0lEQVR4nATAXQrCMAwH8Cb5J/0YTPFtFxJ89P4XGChjClpnq9kP5+vFRE/jsQx5fT4ATRBVmLFoIGg+RNGShoKwETNLFE0Ki8T2d9Tty07d8KPWP1XGafLeMnlodV1uMtMLrRchb+/7Mu8BAAD//xWcJFkinQABAAAAAElFTkSuQmCC',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAIAAAC+k6JsAAAAcElEQVR4nATAMZLCMAwF0G9JVsaZ7CwtJQ0Nh+QYnBQzRPIXz15PfPiYdTs6/keYKaScFELQYPu4f+cRZ1/Nq0HGdjX9i7UlRrXDVC8NztVJJ90y9lpqNFlaqTZnz1O8RAMIyHxLhjiaJhH8BQAA//+PEzIMpisfLwAAAABJRU5ErkJggg==',
       draggable: false,
     },
   },
@@ -171,13 +171,13 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/mtb2.jpg',
-    alt: 'mtb2',
+    src: '/photos/beach.jpg',
+    alt: 'beach',
     aspect_ratio: 0.666667,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAIAAAD3rtNaAAAApklEQVR4nFSNMaqFMBBFg3MxaJxISFATsFGwyBLc/07cgGBhoZjPN+8V7zbDORwYEu/GcZznuaqqfd+FEEW2AIgopZTxY5m5ruui+Eb5OOeY+TiOn3YYhr7vQwgZ/7+t6xpjtNYCKMty2zYsyzJNk/eemaWU13U55xBjDCF0Xae1llI+z2OMgffeWmuMadsWwH3fSilorZumUe9SSud5EtFfAAAA///8GiLyr4tWmgAAAABJRU5ErkJggg==',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAIAAAC+k6JsAAAAZklEQVR4nCTKPQqEIQyE4dH1hwQLsRVr738ab2BtI8FGlvi93cOMA9B7r7Wec+ac6hACERljnHNqZs45iwgRqWOMKSVrrffe4mVe917d90tE9t6/b2TmtdYY47ujtVZKAfAPAAD///glHtpwFeYBAAAAAElFTkSuQmCC',
       draggable: false,
     },
   },
@@ -193,13 +193,13 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/marcAudi.jpg',
-    alt: 'marcAudi',
-    aspect_ratio: 0.666864,
+    src: '/photos/eggBeach.jpg',
+    alt: 'eggBeach',
+    aspect_ratio: 0.667103,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAIAAAC+k6JsAAAAcElEQVR4nATAMZLCMAwF0G9JVsaZ7CwtJQ0Nh+QYnBQzRPIXz15PfPiYdTs6/keYKaScFELQYPu4f+cRZ1/Nq0HGdjX9i7UlRrXDVC8NztVJJ90y9lpqNFlaqTZnz1O8RAMIyHxLhjiaJhH8BQAA//+PEzIMpisfLwAAAABJRU5ErkJggg==',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAIAAABPxRC5AAAAb0lEQVR4nATAXQrCMAwH8Cb5J/0YTPFtFxJ89P4XGChjClpnq9kP5+vFRE/jsQx5fT4ATRBVmLFoIGg+RNGShoKwETNLFE0Ki8T2d9Tty07d8KPWP1XGafLeMnlodV1uMtMLrRchb+/7Mu8BAAD//xWcJFkinQABAAAAAElFTkSuQmCC',
       draggable: false,
     },
   },
@@ -218,7 +218,13 @@ export default function Photos() {
         current camera being a Nikon Z7II. Here are a few of my best photos:
       </p>
       <div className={styles.photos}>
-        <Gallery widths={widths} ratios={ratios} images={images} gap="2px" />
+        <Gallery
+          widths={widths}
+          ratios={ratios}
+          images={images}
+          gap="2px"
+          lastRowBehavior="fill"
+        />
       </div>
       <ViewMore
         locationName="Instagram"
