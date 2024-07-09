@@ -9,11 +9,13 @@ import { Suspense } from 'react';
 import LoadingSection from '@/ui/section/loading';
 import Projects from '@/ui/root/projects/projects';
 import Resume from '@/ui/root/projects/resume';
+import Nav from '@/ui/root/nav';
 
 export default async function Home() {
   return (
     <>
       <main className={styles.main}>
+        <Nav maxWidth={1500} hide={true} />
         <div className={styles.header}>
           <Header />
           <div>

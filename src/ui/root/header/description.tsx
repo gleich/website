@@ -10,7 +10,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   style: 'italic',
 });
 
-export default function Description() {
+export default function Description({ fontSize }: { fontSize: number }) {
   const descriptions = useMemo(
     () => ['college student', 'software engineer', 'cyclist', 'photographer'],
     [],
@@ -27,7 +27,10 @@ export default function Description() {
   }, [descriptions]);
 
   return (
-    <p className={`${styles.description} ${ibmPlexMono.className}`}>
+    <p
+      className={`${styles.description} ${ibmPlexMono.className}`}
+      style={{ fontSize: `${fontSize}px` }}
+    >
       {descriptions[index]}
     </p>
   );

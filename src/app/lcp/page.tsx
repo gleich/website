@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { IBM_Plex_Mono } from 'next/font/google';
 import SVGIcon from '@/ui/svgIcon';
 import Copyright from '@/ui/root/copyright';
+import Nav from '@/ui/root/nav';
 
 const title = 'lcp';
 const description =
@@ -45,12 +46,7 @@ export default function Lcp() {
   return (
     <main className={styles.main}>
       <div className={styles.article}>
-        <div className={styles.header}>
-          <Link href="/" className={styles.headerLink}>
-            <Logo className={styles.headerLogo} />
-            <h1>Matt Gleich</h1>
-          </Link>
-        </div>
+        <Nav maxWidth={1000} />
         <div className={styles.title}>
           <Image
             src={jetsPhoto}

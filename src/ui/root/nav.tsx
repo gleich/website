@@ -1,0 +1,55 @@
+'use client';
+import { useEffect, useState } from 'react';
+import styles from '@/ui/root/nav.module.css';
+import Logo from './header/logo';
+import Description from './header/description';
+import Socials from './header/social';
+import Link from 'next/link';
+
+export default function Nav({
+  maxWidth,
+  hide,
+}: {
+  maxWidth: number;
+  hide?: boolean;
+}) {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    setScrollY(window.scrollY);
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const maxHeight = 75;
+  const height = Math.min(maxHeight, hide ? scrollY / 2.6 : maxHeight);
+  const revealPercentage = height / (maxHeight - 40);
+  return (
+    <div
+      className={styles.nav}
+      style={{
+        position: hide ? 'fixed' : 'sticky',
+        height: `${height}px`,
+        opacity: `${revealPercentage}`,
+        maxWidth: `${maxWidth}px`,
+      }}
+    >
+      <Link href="/" className={styles.link}>
+        <Logo className={styles.logo} />
+        <div className={styles.nameAndDescription}>
+          <h1 className={styles.name}>Matt Gleich</h1>
+          <Description fontSize={13} />
+        </div>
+      </Link>
+      <div className={styles.socials}>
+        <Socials />
+      </div>
+    </div>
+  );
+}
