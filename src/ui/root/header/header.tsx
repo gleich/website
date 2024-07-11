@@ -1,6 +1,5 @@
 import styles from '@/ui/root/header/header.module.css';
 import Logo from './logo';
-import Social from './social';
 import Description from './description';
 import Socials from './social';
 
