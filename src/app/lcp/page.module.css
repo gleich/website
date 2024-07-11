@@ -65,17 +65,20 @@
   height: auto;
 }
 
-.cacheBenefit {
+.benefit {
+  color: var(--success);
+}
+
+.customList {
   display: flex;
   flex-direction: column;
 }
 
-.cacheBenefitTitle {
-  color: var(--success);
+.customList b {
   padding: 10px 0px;
 }
 
-.cacheBenefitBody {
+.customList p {
   padding-left: 30px;
 }
 
