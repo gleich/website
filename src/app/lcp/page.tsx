@@ -211,9 +211,9 @@ export default function Lcp() {
               Why use the Rust programming language?
             </b>
             <p>
-              Relative to languages like java, javaScript/typeScript, python,
-              and go Rust is not a common option for building REST APIs. lcp is
-              developed in Rust for a few key reasons:
+              Relative to languages like Java, JavaScript/TypeScript, Python,
+              and Golang, Rust is not a common option for building REST APIs.
+              lcp is developed in Rust for a few key reasons:
               <ul>
                 <li>
                   I like working with and writing Rust. I find that the
