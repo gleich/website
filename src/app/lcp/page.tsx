@@ -11,7 +11,7 @@ import Nav from '@/ui/root/nav';
 
 const title = 'lcp';
 const description =
-  'Lightweight cache proxy written in Rust. Backend service for caching, processing, and aggregating data from APIs like Strava and GitHub.';
+  'Lightweight cache proxy written in Rust. Backend service for caching, processing, and aggregating data from APIs like the Strava and GitHub API.';
 const ogImage = {
   url: 'https://mattglei.ch/articles/lcp/opengraph.png',
   width: 1200,
