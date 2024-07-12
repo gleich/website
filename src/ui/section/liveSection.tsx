@@ -21,7 +21,7 @@ export default function LiveSection({
   children: ReactNode;
 }) {
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <Card className={styles.card}>
         <div className={styles.header}>
           <h2 className={styles.title}>{name}</h2>
@@ -44,6 +44,6 @@ export default function LiveSection({
         {children}
         <LastUpdated lastUpdated={lastUpdated} />
       </Card>
-    </div>
+    </section>
   );
 }
