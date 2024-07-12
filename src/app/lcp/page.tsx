@@ -259,7 +259,7 @@ export default function Lcp() {
               together in one?
             </b>
             <p>
-              First of al, having each cache be independent of each other
+              First of all, having each cache be independent of each other
               provides a separation of concerns which makes the application
               easier to maintain/work with. It also allows each section to load
               independently on the front end. Using features from Next.js like{' '}
