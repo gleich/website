@@ -137,7 +137,7 @@ export default async function Workouts() {
                                   {a.average_heartrate} bpm
                                 </p>
                                 <p className={styles.valueName}>
-                                  Avg. Heartrate
+                                  Avg. Heart Rate
                                 </p>
                               </>
                             );
