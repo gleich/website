@@ -1,7 +1,6 @@
 .main {
   padding: 30px;
   padding-top: 25px;
-  animation: 0.2s linear initial-page-load;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,15 +52,5 @@
   .caches {
     align-items: center;
     justify-content: center;
-  }
-}
-
-@keyframes initial-page-load {
-  from {
-    opacity: 0%;
-  }
-
-  to {
-    opacity: 100%;
   }
 }
