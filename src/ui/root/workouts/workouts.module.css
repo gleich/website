@@ -38,7 +38,6 @@
 }
 
 .titleText {
-  font-size: 22px;
   color: var(--foreground);
   text-decoration: underline;
 }
@@ -48,38 +47,12 @@
   padding: 2px 3px;
 }
 
-.stats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  font-weight: 900;
-  margin-top: 10px;
-}
-
-.stat {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .map {
   border-radius: 5px;
   max-width: 100%;
   width: 440px;
   height: auto;
-}
-
-.value {
-  font-size: 20px;
-  font-weight: 900;
-}
-
-.valueName {
-  font-weight: normal;
-  font-size: 13px;
-  color: grey;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -89,14 +62,6 @@
 }
 
 @media (max-width: 678px) {
-  .value {
-    font-size: 18px;
-  }
-
-  .valueName {
-    font-size: 11px;
-  }
-
   .icon {
     width: 24px;
     height: auto;

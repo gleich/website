@@ -4,13 +4,11 @@ import styles from '@/ui/root/workouts/workouts.module.css';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import Image from 'next/image';
-import { Inconsolata } from 'next/font/google';
 import Time from './time';
 import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';
 import Card from '@/ui/card';
-
-const inconsolata = Inconsolata({ subsets: ['latin'] });
+import Stats from '@/ui/root/workouts/stats';
 
 dayjs.extend(duration);
 
@@ -53,6 +51,22 @@ export default async function Workouts() {
               }
 
               const stravaLink = `https://strava.com/activities/${a.id}`;
+
+              const stats = new Map<string, string>([
+                ['Duration', formattedDuration],
+                [
+                  'Distance',
+                  `${((a.distance * 0.621) / 1000).toPrecision(3)} mi`,
+                ],
+              ]);
+              if (a.total_elevation_gain > 152.4) {
+                stats.set(
+                  'Elevation Gain',
+                  `${Math.round(a.total_elevation_gain * 3.280839895).toLocaleString()} ft`,
+                );
+              } else {
+                stats.set('Avg Heart Rate', `${a.average_heartrate} bpm`);
+              }
 
               return (
                 <Card key={a.id}>
@@ -103,48 +117,7 @@ export default async function Workouts() {
                       placeholder="blur"
                       blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAC0AUoDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAEDAgQF/8QAFRABAQAAAAAAAAAAAAAAAAAAAAH/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQIDBP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APtgPM5qqKA6culVYqKoqoqqqoqiqiiioqgAKAgAAIACAAgAgAgAAKgCgAoAAAAAPIoObAqKCqiqqxYiqqxYiqKqKqqqCiqgKogCoCgiogIACKgAAgIIKIoAAKIogqKAAAADygOaCgoqooKqKqqqKqqqKooCqoigAAICgCIAIACAqAiAAAAgqCCgAoigKgCiAPOAwgqKooKKKiqqqiqKqCqqoKKAKAACAAIIAgAIiKgAAIgACiAKqAiiKCiAKIAwFGFAFFVFUUBVVUUVQFFEVVFQBUAAQABBAEABEQAQBARRFEUQQVUAUAFEBFABiAy0KiqCoqqoCiqiiioqgqCqogCoAAIACCAIgCAgAiAiiACCiKAqAigAogCgAyARoVAFVFUFRVVVQBVQVVAUABQARAAQBBAQQAREAAARAAFEUQVFAVAFAAABkAiqACgKqqigoiqqgKKAKAAAgAIIIqAIqIggACCIAAKgIoAKACgAKigAKMhFZUVFAVFUVUBVVFUUAVQFAABFQBFQBFREQAEBBABAAEAAUAFEVRRFAABQAYgMigAqoKKqKKqoqiiKKoigAAIqAIqAIqCIACAggAgAAAKKIoCooCooAAKAoxAYQVFFURVFVFFVUUBUVQVFAAARUARUARUBAQQRUQAABAFAUFRQFRQFRVUABRFBiAwyKAooAqgoqgKKACgoAAIACAAgAiAIICAACAAoCgoAKACgqgAKAD//2Q=="
                     />
-                    <div className={`${styles.stats} ${inconsolata.className}`}>
-                      <div className={styles.stat}>
-                        <p className={styles.value}>{formattedDuration}</p>
-                        <p className={styles.valueName}>Duration</p>
-                      </div>
-                      <div className={styles.stat}>
-                        <p className={styles.value}>
-                          {((a.distance * 0.621) / 1000).toPrecision(3)} mi
-                        </p>
-                        <p className={styles.valueName}>Distance</p>
-                      </div>
-                      <div className={styles.stat}>
-                        {(() => {
-                          if (a.total_elevation_gain > 152.4)
-                            return (
-                              <>
-                                <p className={styles.value}>
-                                  {Math.round(
-                                    a.total_elevation_gain * 3.280839895,
-                                  ).toLocaleString()}{' '}
-                                  ft
-                                </p>
-                                <p className={styles.valueName}>
-                                  Elevation Gain
-                                </p>
-                              </>
-                            );
-                          else {
-                            return (
-                              <>
-                                <p className={styles.value}>
-                                  {a.average_heartrate} bpm
-                                </p>
-                                <p className={styles.valueName}>
-                                  Avg. Heart Rate
-                                </p>
-                              </>
-                            );
-                          }
-                        })()}
-                      </div>
-                    </div>
+                    <Stats stats={stats} />
                   </div>
                 </Card>
               );

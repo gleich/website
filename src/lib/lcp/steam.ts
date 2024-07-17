@@ -14,4 +14,13 @@ export interface Game {
   playtime_forever: number;
   rtime_last_played: Date;
   achievement_progress: number | null;
+  achievements: Achievement[] | null;
+}
+
+export interface Achievement {
+  api_name: string;
+  achieved: boolean;
+  icon: string;
+  display_name: string;
+  description: string | null;
 }

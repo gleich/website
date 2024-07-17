@@ -1,0 +1,35 @@
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-weight: 900;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.valueName {
+  font-weight: normal;
+  font-size: 13px;
+  color: grey;
+}
+
+@media (max-width: 678px) {
+  .value {
+    font-size: 18px;
+  }
+
+  .valueName {
+    font-size: 11px;
+  }
+}
