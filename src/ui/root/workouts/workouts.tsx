@@ -111,7 +111,7 @@ export default async function Workouts() {
                       src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
                       alt="Map"
                       width={440}
-                      height={240}
+                      height={300}
                       draggable={false}
                       className={styles.map}
                       placeholder="blur"
