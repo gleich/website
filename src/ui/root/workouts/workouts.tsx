@@ -108,7 +108,7 @@ export default async function Workouts() {
                   </div>
                   <div className={styles.info}>
                     <Image
-                      src={`https://gleich.s3.us-east-2.amazonaws.com/mapbox-maps/${a.id}.png`}
+                      src={`https://minio-api.dev.mattglei.ch/mapbox-maps/${a.id}.jpg`}
                       alt="Map"
                       width={440}
                       height={240}
