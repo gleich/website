@@ -47,7 +47,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
         />
         <span>
           Cached & processed by{' '}
-          <Link href="/lcp" className={styles.link}>
+          <Link href="https://github.com/gleich/lcp-v2" className={styles.link}>
             gleich/lcp
           </Link>
         </span>
