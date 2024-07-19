@@ -34,7 +34,7 @@ export default async function Games() {
       name="Games"
       source="Steam"
       sourceURL="https://store.steampowered.com/about/"
-      lastUpdated={steamData.last_updated}
+      lastUpdated={steamData.updated}
     >
       <div>
         <p>

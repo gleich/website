@@ -1,7 +1,7 @@
 import { env } from 'process';
 
 export interface Response<T> {
-  last_updated: Date;
+  updated: Date;
   data: T;
 }
 

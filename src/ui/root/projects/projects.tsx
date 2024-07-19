@@ -17,7 +17,7 @@ export default async function Projects() {
       name="Projects"
       source="GitHub"
       sourceURL="https://github.com/about"
-      lastUpdated={githubData.last_updated}
+      lastUpdated={githubData.updated}
     >
       <p>
         For the past five years, I have been passionately pursuing programming.

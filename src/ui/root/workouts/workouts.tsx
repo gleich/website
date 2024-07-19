@@ -20,7 +20,7 @@ export default async function Workouts() {
       name="Workouts"
       source="Strava"
       sourceURL="https://www.strava.com/about"
-      lastUpdated={stravaData.last_updated}
+      lastUpdated={stravaData.updated}
     >
       <>
         <p>
