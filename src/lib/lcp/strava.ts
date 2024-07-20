@@ -66,4 +66,5 @@ export interface Activity {
 
 export interface Map {
   summary_polyline: string;
+  map_blur_image: string | undefined;
 }
