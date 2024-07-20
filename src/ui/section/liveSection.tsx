@@ -2,8 +2,8 @@ import styles from '@/ui/section/liveSection.module.css';
 import { Inconsolata } from 'next/font/google';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { LastUpdated } from './lastUpdated';
 import Card from '../card';
+import { LastUpdated } from './lastUpdated';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
