@@ -46,7 +46,10 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
     dayOfWeek = dayjsDate.format('dddd');
   }
   return (
-    <p className={`${styles.time} ${inconsolata.className}`}>
+    <p
+      className={`${styles.time} ${inconsolata.className}`}
+      suppressHydrationWarning
+    >
       {dayjsDate.format(`[${dayOfWeek}], MMMM Do [at] h:mm A`)} [
       {exactFromNow(dayjsDate, currentTime)}]
     </p>

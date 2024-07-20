@@ -53,7 +53,10 @@ export default function Project({ repo }: { repo: Repository }) {
         className={`${styles.highlightedProjectDetails} ${inconsolata.className}`}
       >
         <p>{repo.description}</p>
-        <p className={styles.highlightedProjectUpdated}>
+        <p
+          className={styles.highlightedProjectUpdated}
+          suppressHydrationWarning
+        >
           Updated {exactFromNow(updatedAt, currentTime)}
         </p>
       </div>

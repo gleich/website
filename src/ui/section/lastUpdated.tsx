@@ -34,7 +34,10 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
     dayjsLastUpdate.format('z') +
     ']';
   return (
-    <div className={`${styles.lastUpdated} ${inconsolata.className}`}>
+    <div
+      className={`${styles.lastUpdated} ${inconsolata.className}`}
+      suppressHydrationWarning
+    >
       Updated {exactFromNow(dayjsLastUpdate, currentTime)}
       <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
       <br />
