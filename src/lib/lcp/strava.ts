@@ -33,6 +33,10 @@ export function extractSportType(sport_type: string): [string, string] {
       name = 'Mountain Bike Ride';
       icon_name = 'mtb.svg';
       break;
+    case 'Kayaking':
+      name = sport_type;
+      icon_name = 'kayak.svg';
+      break;
     default:
       name = 'Workout';
       icon_name = 'workout.svg';
