@@ -119,7 +119,7 @@ export default async function Games() {
                                       alt={a.display_name}
                                       width={25}
                                       height={25}
-                                    ></Image>
+                                    />
                                     <p>{a.display_name}</p>
                                   </div>
                                 ))}
