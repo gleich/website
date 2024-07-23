@@ -8,7 +8,8 @@ import Time from './time';
 import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';
 import Card from '@/ui/card';
-import Stats from '@/ui/root/workouts/stats';
+import Stats from '@/ui/stats';
+import { renderDuration } from '@/lib/time';
 
 dayjs.extend(duration);
 
@@ -29,7 +30,7 @@ export default async function Workouts() {
           and traveling with my family. Out of all of those things I especially
           love cycling mainly through gravel cycling, road cycling, and mountain
           biking. Below are {activities.length} of my most recent{' '}
-          <Link href="https://strava.com" target="_blank">
+          <Link href="https://www.strava.com" target="_blank">
             Strava
           </Link>{' '}
           activities:
@@ -39,19 +40,8 @@ export default async function Workouts() {
             .filter((a) => !a.private)
             .map((a) => {
               const [sportName, sportIcon] = extractSportType(a.sport_type);
-
-              const movingDuration = dayjs.duration(a.moving_time, 'seconds');
-              let formattedDuration: string;
-              if (a.moving_time > 3660) {
-                formattedDuration = movingDuration.format('H[h] & m[m]');
-              } else if (a.moving_time < 3660 && a.moving_time > 3540) {
-                formattedDuration = '1h';
-              } else {
-                formattedDuration = movingDuration.format('m[m] & s[s]');
-              }
-
-              const stravaLink = `https://strava.com/activities/${a.id}`;
-
+              const stravaLink = `https://www.strava.com/activities/${a.id}`;
+              const formattedDuration = renderDuration(a.moving_time);
               const stats = new Map<string, string>([
                 ['Duration', formattedDuration],
                 [

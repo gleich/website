@@ -4,7 +4,6 @@ import duration from 'dayjs/plugin/duration';
 dayjs.extend(duration);
 
 export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
-  const diff = dayjs.duration(date.diff(currentTime));
   const yearsDiff = Math.abs(date.diff(currentTime, 'year'));
   const monthsDiff = Math.abs(date.diff(currentTime, 'month')) % 12;
   const daysDiff = Math.abs(date.diff(currentTime, 'day')) % 30;
@@ -28,4 +27,27 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   }
 
   return fromNow + ' ago';
+}
+
+export function renderDuration(seconds: number): string {
+  const duration = dayjs.duration(seconds, 'seconds');
+  let formattedDuration: string;
+
+  const totalHours = Math.floor(duration.asHours());
+  const minutes = duration.minutes();
+  if (totalHours > 0) {
+    formattedDuration = `${totalHours}h`;
+    if (minutes > 0) {
+      formattedDuration += ` & ${minutes}m`;
+    }
+  } else if (seconds < 3660 && seconds > 3540) {
+    formattedDuration = '1h';
+  } else {
+    const remainingSeconds = duration.seconds();
+    formattedDuration = `${minutes}m`;
+    if (remainingSeconds > 0) {
+      formattedDuration += ` & ${remainingSeconds}s`;
+    }
+  }
+  return formattedDuration;
 }

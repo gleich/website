@@ -10,11 +10,11 @@ export interface Game {
   url: string;
   icon_url: string;
   header_url: string;
-  library_url: string;
+  library_url: string | undefined;
   playtime_forever: number;
   rtime_last_played: Date;
-  achievement_progress: number | null;
-  achievements: Achievement[] | null;
+  achievement_progress: number | undefined;
+  achievements: Achievement[] | undefined;
 }
 
 export interface Achievement {

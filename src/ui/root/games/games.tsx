@@ -1,9 +1,12 @@
-import { loadSteamData } from '@/lib/lcp/steam';
-import Image from 'next/image';
+import { Achievement, loadSteamData } from '@/lib/lcp/steam';
 import Link from 'next/link';
 import styles from '@/ui/root/games/games.module.css';
 import LiveSection from '../../section/liveSection';
 import { Inconsolata } from 'next/font/google';
+import Image from 'next/image';
+import Card from '@/ui/card';
+import { renderDuration } from '@/lib/time';
+import Stats from '@/ui/stats';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -13,17 +16,6 @@ function truncateText(text: string, length: number): string {
   }
 
   return text.slice(0, length) + '\u2026';
-}
-
-function formatPlaytime(playtime_minutes: number): string {
-  if (playtime_minutes >= 60) {
-    const hours = playtime_minutes / 60;
-    return hours === 1 ? `${hours}hr` : `${hours.toFixed(1)}hrs`;
-  } else {
-    return playtime_minutes === 1
-      ? `${playtime_minutes}min`
-      : `${playtime_minutes}mins`;
-  }
 }
 
 export default async function Games() {
@@ -43,103 +35,103 @@ export default async function Games() {
           <Link href="https://store.steampowered.com/about/" target="_blank">
             Steam
           </Link>
-          , ranked by recent activity:
+          :
         </p>
         <div className={styles.games}>
-          <div className={styles.gameCovers}>
-            {games
-              .filter((g) => g.library_url != null)
-              .slice(0, 10)
-              .map((g, i) => (
-                <Link
-                  key={g.app_id}
-                  href={g.url}
-                  target="_blank"
-                  className={styles.gameLink}
-                  title={`View ${g.name} on Steam`}
-                >
+          {games
+            .filter((g) => g.library_url != null)
+            .slice(0, 3)
+            .map((g) => {
+              const stats = new Map<string, string>([
+                ['Playtime', renderDuration(g.playtime_forever * 60)],
+                [
+                  'Achievements',
+                  g.achievement_progress == undefined
+                    ? 'N/A'
+                    : `${g.achievement_progress?.toPrecision(3)}%`,
+                ],
+              ]);
+              return (
+                <Card key={g.app_id} className={styles.game}>
                   <Image
-                    key={g.app_id}
-                    src={g.library_url}
+                    src={g.library_url as string}
                     alt={g.name}
-                    width={600 / 4.5}
-                    height={900 / 4.5}
-                    draggable={false}
-                    className={styles.libraryCover}
+                    width={129.8304}
+                    height={194.7456}
+                    className={styles.gameLibraryImage}
                   />
-                  <p
-                    className={`${styles.libraryRanking} ${inconsolata.className}`}
-                  >
-                    #{i + 1}
-                  </p>
-                </Link>
-              ))}
-          </div>
-          <div className={`${styles.gameTable} ${inconsolata.className}`}>
-            <table style={{ borderCollapse: 'collapse' }}>
-              <thead>
-                <tr>
-                  <th className={styles.gameRankHeader} />
-                  <th>Name</th>
-                  <th className={styles.gamePlaytimeHeader}>Time Played</th>
-                  <th>Achievement Progress</th>
-                </tr>
-              </thead>
-              <tbody>
-                {games
-                  .filter((g) => g.library_url != null)
-                  .slice(0, 20)
-                  .map((g, i) => (
-                    <tr key={g.app_id} className={styles.gameData}>
-                      <td className={styles.gameRank}>#{i + 1}</td>
-                      <td className={styles.gameNameContainer}>
-                        <div className={styles.gameName}>
-                          <Image
-                            src={g.icon_url}
-                            alt={`${g.name} icon`}
-                            height={18}
-                            width={18}
-                            draggable={false}
-                          />
-                          <Link href={g.url} target="_blank" title={g.name}>
-                            {truncateText(g.name, 27)}
-                          </Link>
-                        </div>
-                      </td>
-                      <td className={styles.gamePlaytime}>
-                        {formatPlaytime(g.playtime_forever)}
-                      </td>
-                      <td className={styles.gameProgress}>
-                        <div className={styles.gameProgressContainer}>
-                          {g.achievement_progress != null ? (
-                            <>
-                              <p className={styles.gameProgressValue}>
-                                {g.achievement_progress.toPrecision(3)}%
-                              </p>
-                              <progress
-                                className={styles.gameProgressBar}
-                                max={100}
-                                style={
-                                  {
-                                    '--progress-bar-value-color':
-                                      g.achievement_progress == 100.0
-                                        ? '#30ce75'
-                                        : '#e1dc3f',
-                                  } as React.CSSProperties
-                                }
-                                value={g.achievement_progress}
-                              />
-                            </>
-                          ) : (
-                            <p>N/A</p>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+                  <div className={styles.gameDetails}>
+                    <Link
+                      href={g.url}
+                      target="_blank"
+                      className={styles.gameTitle}
+                      title={`View ${g.name} on Steam`}
+                    >
+                      <Image
+                        src={g.icon_url}
+                        alt={g.name}
+                        width={20}
+                        height={20}
+                      />
+                      <h3 className={styles.gameTitleText}>{g.name}</h3>
+                    </Link>
+                    <div className={styles.stats}>
+                      <Stats stats={stats} />
+                    </div>
+                    {(() => {
+                      if (g.achievements == undefined) {
+                        return (
+                          <div
+                            className={`${styles.noAchievements} ${inconsolata.className}`}
+                          >
+                            Game has no achievements
+                          </div>
+                        );
+                      } else if (g.achievement_progress == 0.0) {
+                        return (
+                          <div
+                            className={`${styles.noAchievements} ${inconsolata.className}`}
+                          >
+                            No achievements earned
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <>
+                            <p
+                              className={`${styles.recentAchievements} ${inconsolata.className}`}
+                            >
+                              Recent Achievements
+                            </p>
+                            <div
+                              className={`${styles.achievements} ${inconsolata.className}`}
+                            >
+                              {g.achievements
+                                ?.filter((a) => a.achieved)
+                                .slice(0, 3)
+                                .map((a) => (
+                                  <div
+                                    key={a.api_name}
+                                    className={styles.achievement}
+                                  >
+                                    <Image
+                                      src={a.icon}
+                                      alt={a.display_name}
+                                      width={25}
+                                      height={25}
+                                    ></Image>
+                                    <p>{a.display_name}</p>
+                                  </div>
+                                ))}
+                            </div>
+                          </>
+                        );
+                      }
+                    })()}
+                  </div>
+                </Card>
+              );
+            })}
         </div>
       </div>
     </LiveSection>

@@ -1,5 +1,5 @@
 import { Inconsolata } from 'next/font/google';
-import styles from '@/ui/root/workouts/stats.module.css';
+import styles from '@/ui/stats.module.css';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 

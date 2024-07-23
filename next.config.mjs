@@ -14,6 +14,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'steamcdn-a.akamaihd.net',
+        pathname: '/steamcommunity/public/images/apps/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'media.steampowered.com',
         pathname: '/steamcommunity/public/images/apps/**',
       },
