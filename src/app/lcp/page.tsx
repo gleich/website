@@ -11,7 +11,7 @@ import Nav from '@/ui/root/nav';
 
 const title = 'lcp';
 const description =
-  'Lightweight cache proxy written in Rust. Backend service for caching, processing, and aggregating data from APIs like the Strava and GitHub API.';
+  'Lightweight cache proxy written in Go. Backend service for caching, processing, and aggregating data from APIs like the Strava and GitHub API.';
 const ogImage = {
   url: 'https://mattglei.ch/articles/lcp/opengraph.png',
   width: 1200,
@@ -57,7 +57,7 @@ export default function Lcp() {
             lcp - Lightweight Cache Proxy
           </h1>
           <Link
-            href="https://github.com/gleich/lcp"
+            href="https://github.com/gleich/lcp-v2"
             target="_blank"
             className={styles.githubLink}
           >
@@ -69,7 +69,7 @@ export default function Lcp() {
               height={20}
               width={20}
             />{' '}
-            gleich/lcp
+            gleich/lcp-v2
           </Link>
         </div>
         <div className={styles.content}>
@@ -78,8 +78,8 @@ export default function Lcp() {
             lcp is a backend service I wrote that aggregates, processes, and
             caches data from a number of APIs. This data is then exposed as a
             REST API. It is written in the{' '}
-            <Link href="https://www.Rust-lang.org/" target="_blank">
-              Rust programming language
+            <Link href="https://go.dev/" target="_blank">
+              Go programming language
             </Link>{' '}
             and runs in a Docker container on my{' '}
             <Link href="https://caprover.com/" target="_blank">
@@ -122,13 +122,6 @@ export default function Lcp() {
               target="_blank"
             >
               mutex lock
-            </Link>{' '}
-            wrapped with an{' '}
-            <Link
-              href="https://doc.Rust-lang.org/std/sync/struct.Arc.html"
-              target="_blank"
-            >
-              atomic reference counter
             </Link>
             . All of this caching happens in different threads so to ensure
             thread-safe memory interactions this protected memory space is used.
@@ -202,48 +195,80 @@ export default function Lcp() {
                   opinion.
                 </li>
                 <li>
-                  I wanted to learn and work more with Rust and I thought this
-                  would be fun a project to push my skills in the language.
+                  I has been a little while since I worked in Go and wanted to
+                  do a new project in the language.
                 </li>
               </ul>
             </p>
             <b style={{ paddingTop: '0px' }}>
-              Why use the Rust programming language?
+              Why use the Go programming language?
             </b>
             <p>
-              Relative to languages like Java, JavaScript/TypeScript, Python,
-              and Golang, Rust is not a common option for building REST APIs.
-              lcp is developed in Rust for a few key reasons:
+              Go is a popular language for building REST APIs. I&apos;ve been
+              using the language for a few years now and have a few reasons why
+              I selected it for V2 of lcp:
               <ul>
                 <li>
-                  I like working with and writing Rust. I find that the
-                  ecosystem, compiler, and language features make me write
-                  higher-quality applications. I wanted to take this project as
-                  an opportunity to learn more about the language.
+                  The standard library makes it very easy to work with. I
+                  don&apos;t have to import a bunch of different packages for
+                  working with things like JSON and requests. A lot of these
+                  features come straight out of the box with the fantastic
+                  standard library.
                 </li>
                 <li>
-                  Making a REST API in Rust has actually been a fantastic
-                  experience. Using a framework called{' '}
-                  <Link href="https://rocket.rs/" target="_blank">
-                    rocket.rs
-                  </Link>{' '}
-                  I can very easily make a REST API without having to worry
-                  about the low-level details like you might expect from a
-                  language known for its performance and low-level capabilities.
+                  Go is very fast. Although I am not handling massive amounts of
+                  web traffic, being able to handle a request on the microsecond
+                  scale (literally) is great. Very happy with the performance I
+                  am getting.
                 </li>
                 <li>
-                  Memory management system. The{' '}
-                  <Link
-                    href="https://doc.Rust-lang.org/book/ch04-01-what-is-ownership.html"
-                    target="_blank"
-                  >
-                    Rust memory management system{' '}
-                  </Link>{' '}
-                  has made it easy to make sure that I am properly working with
-                  memory between threads and throughout the application.
+                  I have a lot of experience writing Go code and am very
+                  comfortable in the language.
                 </li>
               </ul>
             </p>
+            <b style={{ paddingTop: '0px' }}>Why is lcp on version 2?</b>
+            <p>
+              <Link href="https://github.com/gleich/lcp" target="_blank">
+                V1 of lcp
+              </Link>{' '}
+              was written in the{' '}
+              <Link href="https://www.rust-lang.org/" target="_blank">
+                Rust programming language
+              </Link>
+              . There are a few reasons why I wanted to rewrite lcp and create a
+              second version:
+              <ul>
+                <li>
+                  I wanted to make a more generic cache. In V1 of lcp a lot of
+                  the codebase was a cache specific. This added a lot of code
+                  for each cache with zero benefits. Making a generic cache
+                  greatly reduced the amount of code/complexity of lcp V2.
+                </li>
+                <li>
+                  Go is easier to make APIs with compared to Rust in my opinion.
+                  Rust is pretty easy using the{' '}
+                  <Link href="https://rocket.rs/" target="_blank">
+                    rocket.rs
+                  </Link>{' '}
+                  framework, but working with the Go standard library makes
+                  things easier.
+                </li>
+                <li>
+                  V1 of lcp used AWS S3 which I ended up replacing with a{' '}
+                  <Link href="https://min.io/" target="_blank">
+                    Minio
+                  </Link>{' '}
+                  instance running on my Caprover server. The current Minio
+                  library for Rust is not stable, but the one for Go is.
+                  Switching to Go allows me to use the stable Minio library and
+                  cut out using S3. I replaced S3 with Minio because I
+                  didn&apos;t want to pay any costs associated with storing
+                  images from mapbox (see below for more details).
+                </li>
+              </ul>
+            </p>
+
             <b style={{ paddingTop: '0px' }}>Why mix webhooks and polling?</b>
             <p>
               Using webhooks is ideal as it only reaches out to API when the
@@ -316,10 +341,10 @@ export default function Lcp() {
           <p>
             I am looking into potentially making this a generic tool that can be
             configured to be used with any API. Keep an eye on the{' '}
-            <Link href="https://github.com/gleich/lcp" target="_blank">
+            <Link href="https://github.com/gleich/lcp-v2" target="_blank">
               GitHub repository
             </Link>{' '}
-            for future updates
+            for future updates.
           </p>
         </div>
         <Copyright />
