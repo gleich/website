@@ -23,19 +23,6 @@
   color: var(--foreground);
 }
 
-.gameTitleText {
-  animation-name: infiniteScroll;
-  /* animation-duration: 5s; */
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  text-wrap: nowrap;
-  z-index: -1;
-  max-width: 255px;
-  width: 100%;
-  font-size: 20px !important;
-  overflow: hidden;
-}
-
 .gameDetails {
   width: 100%;
   padding-bottom: 8px;
@@ -84,15 +71,6 @@
 
 .achievement p {
   font-size: 13.5px;
-}
-
-@keyframes infiniteScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 @media (max-width: 1220px) {

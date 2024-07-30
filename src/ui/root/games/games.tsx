@@ -1,4 +1,4 @@
-import { Achievement, loadSteamData } from '@/lib/lcp/steam';
+import { loadSteamData } from '@/lib/lcp/steam';
 import Link from 'next/link';
 import styles from '@/ui/root/games/games.module.css';
 import LiveSection from '../../section/liveSection';
@@ -7,16 +7,9 @@ import Image from 'next/image';
 import Card from '@/ui/card';
 import { renderDuration } from '@/lib/time';
 import Stats from '@/ui/stats';
+import Title from './title';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
-
-function truncateText(text: string, length: number): string {
-  if (text.length <= length) {
-    return text;
-  }
-
-  return text.slice(0, length) + '\u2026';
-}
 
 export default async function Games() {
   const steamData = await loadSteamData();
@@ -73,7 +66,7 @@ export default async function Games() {
                         width={20}
                         height={20}
                       />
-                      <h3 className={styles.gameTitleText}>{g.name}</h3>
+                      <Title name={g.name} />
                     </Link>
                     <div className={styles.stats}>
                       <Stats stats={stats} />

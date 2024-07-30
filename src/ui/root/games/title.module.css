@@ -1,0 +1,29 @@
+.container {
+  overflow: hidden;
+  display: inline-flex;
+  max-width: 255px;
+  width: 100%;
+  gap: 30px;
+}
+
+.text {
+  white-space: nowrap;
+  z-index: -1;
+  font-size: 20px !important;
+}
+
+.scroll {
+  animation: scroll 8s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-115%);
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 50vw;
+  }
+}
