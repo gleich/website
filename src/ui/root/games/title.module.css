@@ -3,7 +3,7 @@
   display: inline-flex;
   max-width: 255px;
   width: 100%;
-  gap: 30px;
+  gap: 20px;
 }
 
 .text {
@@ -13,12 +13,12 @@
 }
 
 .scroll {
-  animation: scroll 8s linear infinite;
+  animation: scroll 9s linear infinite;
 }
 
 @keyframes scroll {
   to {
-    transform: translateX(-115%);
+    transform: translateX(calc(-100% - 20px));
   }
 }
 
