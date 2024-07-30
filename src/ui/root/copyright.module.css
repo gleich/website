@@ -12,8 +12,6 @@
   font-size: 14.5px;
 }
 
-.nameAndFlag {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.name {
+  margin-top: 5px;
 }
