@@ -106,6 +106,7 @@ export default async function Games() {
                                   <div
                                     key={a.api_name}
                                     className={styles.achievement}
+                                    title={a.description}
                                   >
                                     <Image
                                       src={a.icon}

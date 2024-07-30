@@ -22,5 +22,5 @@ export interface Achievement {
   achieved: boolean;
   icon: string;
   display_name: string;
-  description: string | null;
+  description: string | undefined;
 }
