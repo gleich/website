@@ -1,6 +1,15 @@
 .copyright {
   width: 100%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   bottom: 0;
   margin: 40px 0px;
+  flex-direction: column;
+}
+
+.nameAndFlag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
