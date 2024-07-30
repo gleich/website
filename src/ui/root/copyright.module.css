@@ -8,6 +8,10 @@
   flex-direction: column;
 }
 
+.copyright p {
+  font-size: 14.5px;
+}
+
 .nameAndFlag {
   display: flex;
   align-items: center;
