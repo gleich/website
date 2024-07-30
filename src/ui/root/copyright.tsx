@@ -23,11 +23,9 @@ export default function Copyright() {
         © Matt Gleich {new Date().getFullYear()}
       </p>
       <p>
-        [
         <Link href="https://github.com/gleich/website" target="_blank">
           gleich/website
         </Link>
-        ]
       </p>
     </div>
   );
