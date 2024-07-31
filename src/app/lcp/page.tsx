@@ -337,15 +337,6 @@ export default function Lcp() {
             expensive operation that can be done by lcp when a cache is
             updating.
           </p>
-          <h2>Future Plans</h2>
-          <p>
-            I am looking into potentially making this a generic tool that can be
-            configured to be used with any API. Keep an eye on the{' '}
-            <Link href="https://github.com/gleich/lcp-v2" target="_blank">
-              GitHub repository
-            </Link>{' '}
-            for future updates.
-          </p>
         </div>
         <Copyright />
       </div>
