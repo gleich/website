@@ -51,7 +51,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
         <span>
           Cached & processed by{' '}
           <Link href="/lcp" className={styles.link}>
-            gleich/lcp
+            lcp
           </Link>
         </span>
       </span>
