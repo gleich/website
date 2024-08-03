@@ -77,3 +77,22 @@ img {
 h3 {
   font-size: 22px;
 }
+
+h2::selection {
+  background-color: var(--background);
+  text-decoration-color: var(--foreground);
+  color: var(--foreground);
+}
+
+*::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+}
