@@ -23,7 +23,7 @@
 /* LIGHT MODE */
 @media (prefers-color-scheme: light) {
   :root {
-    --foreground: black;
+    --foreground: rgb(28, 31, 33);
     --background: white;
     --border: rgb(217, 217, 217);
   }
