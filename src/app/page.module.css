@@ -27,9 +27,8 @@
 .sections {
   padding-top: 50px;
   display: flex;
+  flex-direction: column;
   gap: 40px;
-  flex-wrap: wrap;
-  flex: 50%;
   align-items: center;
   justify-content: center;
 }
