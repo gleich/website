@@ -37,7 +37,7 @@
   gap: 10px;
   border: solid 3px var(--live-color);
   padding: 5px 10px;
-  animation: glow 2s infinite alternate;
+  animation: title-pulse 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .liveCircle {
@@ -48,7 +48,7 @@
   background: var(--live-color);
   cursor: pointer;
   box-shadow: 0 0 0 var(--live-color-dimmed);
-  animation: dot-pulse 2s infinite;
+  animation: dot-pulse 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .liveSourceLink {
@@ -90,14 +90,17 @@
   }
 }
 
-@keyframes glow {
+@keyframes title-pulse {
   0% {
-    box-shadow: 0 0 5px var(--live-color);
+    -moz-box-shadow: 0 0 0 0 rgba(243, 9, 40, 0.7);
+    box-shadow: 0 0 0 0 rgba(243, 9, 40, 0.7);
   }
-  60% {
-    box-shadow: 0 0 5px var(--live-color);
+  70% {
+    -moz-box-shadow: 0 0 0 7.5px rgba(233, 39, 65, 0);
+    box-shadow: 0 0 0 7.5px rgba(233, 39, 65, 0);
   }
   100% {
-    box-shadow: 0 0 10px var(--live-color);
+    -moz-box-shadow: 0 0 0 0 rgba(233, 39, 65, 0);
+    box-shadow: 0 0 0 0 rgba(233, 39, 65, 0);
   }
 }
