@@ -2,12 +2,11 @@
 
 import Link from 'next/link';
 import styles from '@/ui/root/copyright.module.css';
-import { IBM_Plex_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import Image from 'next/image';
 
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: '700',
-  subsets: ['latin'],
+const ibmPlexMono = localFont({
+  src: '../../../public/fonts/ibm_plex_mono/bold.ttf',
 });
 
 export default function Copyright() {

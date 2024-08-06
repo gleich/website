@@ -6,6 +6,7 @@
   bottom: 0;
   margin: 40px 0px;
   flex-direction: column;
+  font-feature-settings: 'zero';
 }
 
 .copyright p {

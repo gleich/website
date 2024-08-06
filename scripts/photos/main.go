@@ -17,7 +17,7 @@ import (
 
 const photos_folder = "../../public/photos"
 
-type Photo struct {
+type photo struct {
 	Name        string
 	Filename    string
 	Path        string
@@ -32,7 +32,7 @@ func main() {
 		lumber.Fatal(err, "Failed to read photos folder")
 	}
 
-	photos := []Photo{}
+	photos := []photo{}
 	for _, file := range files {
 		if !file.IsDir() && strings.HasSuffix(file.Name(), ".jpg") {
 			name := file.Name()
@@ -54,7 +54,12 @@ func main() {
 			}
 
 			scaleDownFactor := 200
-			blurImage, err := blurhash.Decode(blurData, width/scaleDownFactor, height/scaleDownFactor, 1)
+			blurImage, err := blurhash.Decode(
+				blurData,
+				width/scaleDownFactor,
+				height/scaleDownFactor,
+				1,
+			)
 			if err != nil {
 				lumber.Fatal(err, "Encoding blurhash data to img failed for", name)
 			}
@@ -66,10 +71,14 @@ func main() {
 			base64BlurData := base64.StdEncoding.EncodeToString(blurImageOut.Bytes())
 
 			photos = append(
-				photos, Photo{
-					Filename:    name,
-					Name:        strings.TrimSuffix(name, ".jpg"),
-					AspectRatio: float32(parsedJPG.Bounds().Dx()) / float32(parsedJPG.Bounds().Dy()),
+				photos, photo{
+					Filename: name,
+					Name:     strings.TrimSuffix(name, ".jpg"),
+					AspectRatio: float32(
+						parsedJPG.Bounds().Dx(),
+					) / float32(
+						parsedJPG.Bounds().Dy(),
+					),
 					Path:        fmt.Sprintf("/photos/%s", name),
 					BlurDataURL: base64BlurData,
 				},
