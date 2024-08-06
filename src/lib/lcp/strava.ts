@@ -53,26 +53,11 @@ export interface Activity {
   sport_type: string;
   start_date: Date;
   timezone: string;
-  map: Map;
-  trainer: boolean;
-  commute: boolean;
-  private: boolean;
-  average_speed: number;
-  max_speed: number;
-  average_temp: number;
-  average_cadence: number;
-  average_watts: number;
-  device_watts: boolean;
-  average_heartrate: number;
+  map_blur_image?: string | null;
+  has_map: boolean;
   total_elevation_gain: number;
   moving_time: number;
-  suffer_score: number;
-  pr_count: number;
   distance: number;
+  average_heartrate: number;
   id: number;
-}
-
-export interface Map {
-  summary_polyline: string;
-  map_blur_image: string | undefined;
 }
