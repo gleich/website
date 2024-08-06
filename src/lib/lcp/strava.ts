@@ -55,6 +55,7 @@ export interface Activity {
   timezone: string;
   map_blur_image?: string | null;
   has_map: boolean;
+  map_image_url?: string | null;
   total_elevation_gain: number;
   moving_time: number;
   distance: number;
