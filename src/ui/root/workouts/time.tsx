@@ -31,13 +31,13 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
   const yesterday = currentTime.subtract(1, 'day');
   let dayOfWeek: string;
   if (
-    currentTime.day() == dayjsDate.day() &&
+    currentTime.date() == dayjsDate.date() &&
     currentTime.year() == dayjsDate.year() &&
     currentTime.month() == dayjsDate.month()
   ) {
     dayOfWeek = 'Today';
   } else if (
-    yesterday.day() == dayjsDate.day() &&
+    yesterday.date() == dayjsDate.date() &&
     yesterday.year() == dayjsDate.year() &&
     yesterday.month() == dayjsDate.month()
   ) {
@@ -50,7 +50,7 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
       className={`${styles.time} ${inconsolata.className}`}
       suppressHydrationWarning
     >
-      {dayjsDate.format(`[${dayOfWeek}], MMMM Do [at] h:mm A`)} [
+      {dayjsDate.format(`[${dayOfWeek}], MMM Do [@] h:mm A`)} [
       {exactFromNow(dayjsDate, currentTime)}]
     </p>
   );
