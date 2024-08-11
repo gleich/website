@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <>
       <main className={styles.main}>
-        <Nav maxWidth={1500} hide={true} />
+        <Nav maxWidth={1550} hide={true} />
         <div className={styles.header}>
           <Header />
           <div>
