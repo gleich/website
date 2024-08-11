@@ -181,18 +181,17 @@ export default function Lcp() {
                   for example.
                 </li>
                 <li>
-                  I want to use this data in other projects. I am planning on
-                  building a little{' '}
+                  I want to use this data in other projects. For example, I use
+                  lcp in the{' '}
                   <Link
-                    href="https://www.adafruit.com/product/3934"
+                    href="https://github.com/gleich/terminal"
                     target="_blank"
                   >
-                    EINK-based display
-                  </Link>{' '}
-                  for some of Strava/Steam stats for example. To have a central
-                  place to access all of this data instead of everything just
-                  getting pulled from my site is a better architecture in my
-                  opinion.
+                    ssh version of this website
+                  </Link>
+                  . To have a central place to access all of this data instead
+                  of everything just getting pulled from my site is a better
+                  architecture in my opinion.
                 </li>
                 <li>
                   I has been a little while since I worked in Go and wanted to
