@@ -1,6 +1,6 @@
 .time {
   color: grey;
-  font-size: 15px;
+  font-size: clamp(15px, 1vw, 10px);
 }
 
 @media (max-width: 678px) {

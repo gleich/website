@@ -55,7 +55,7 @@
   margin-bottom: 10px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1250px) {
   .activities {
     flex-wrap: wrap;
   }
