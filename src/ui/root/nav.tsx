@@ -9,9 +9,11 @@ import Link from 'next/link';
 export default function Nav({
   maxWidth,
   hide,
+  className,
 }: {
   maxWidth: number;
   hide?: boolean;
+  className?: string;
 }) {
   const [scrollY, setScrollY] = useState(0);
 
@@ -32,7 +34,7 @@ export default function Nav({
   const revealPercentage = height / (maxHeight - 40);
   return (
     <div
-      className={styles.nav}
+      className={`${styles.nav} ${className}`}
       style={{
         position: hide ? 'fixed' : 'sticky',
         height: `${height}px`,

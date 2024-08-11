@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.nav {
+  padding-left: 15px;
+}
+
 .header {
   max-width: 1500px;
   width: 100%;
@@ -42,6 +46,10 @@
 @media (max-width: 678px) {
   .main {
     padding: 10px;
+  }
+
+  .nav {
+    padding-left: 0px;
   }
 
   .introduction {
