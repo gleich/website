@@ -19,7 +19,7 @@ export default async function Workouts() {
 
   if (stravaData.data == null) {
     return (
-      <Section name="Strava">
+      <Section name="Workouts">
         <div className={styles.error}>
           <p>Failed to load Strava data from LCP</p>
           <p>
