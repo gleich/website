@@ -10,11 +10,27 @@ import SVGIcon from '@/ui/svgIcon';
 import Card from '@/ui/card';
 import Stats from '@/ui/stats';
 import { renderDuration } from '@/lib/time';
+import Section from '@/ui/section/section';
 
 dayjs.extend(duration);
 
 export default async function Workouts() {
   const stravaData = await loadStravaData();
+
+  if (stravaData.data == null) {
+    return (
+      <Section name="Strava">
+        <div className={styles.error}>
+          <p>Failed to load Strava data from LCP</p>
+          <p>
+            It&apos;s possible that Strava is down. Check the{' '}
+            <Link href="https://status.strava.com/">Strava status page</Link>.
+          </p>
+        </div>
+      </Section>
+    );
+  }
+
   const activities = stravaData.data.slice(0, 3);
   return (
     <LiveSection
