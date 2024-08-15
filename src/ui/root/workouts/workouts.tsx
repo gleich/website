@@ -24,7 +24,10 @@ export default async function Workouts() {
           <p>Failed to load Strava data from LCP</p>
           <p>
             It&apos;s possible that Strava is down. Check the{' '}
-            <Link href="https://status.strava.com/">Strava status page</Link>.
+            <Link href="https://status.strava.com/" target="_blank">
+              Strava status page
+            </Link>
+            .
           </p>
         </div>
       </Section>
