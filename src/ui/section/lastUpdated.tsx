@@ -30,7 +30,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   }, []);
 
   const lastUpdateExact =
-    dayjsLastUpdate.format('MM/DD/YYYY [@] hh:mm A [') +
+    dayjsLastUpdate.format('MM/DD/YYYY [@] h:mm A [') +
     dayjsLastUpdate.format('z') +
     ']';
   return (
