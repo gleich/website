@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/buckket/go-blurhash"
-	"github.com/gleich/lumber/v2"
+	"github.com/gleich/lumber/v3"
 )
 
 const photos_folder = "../../public/photos"
@@ -83,12 +83,12 @@ func main() {
 					BlurDataURL: base64BlurData,
 				},
 			)
-			lumber.Success("Processed", name)
+			lumber.Done("Processed", name)
 		}
 	}
 
 	fmt.Println()
-	lumber.Success("DATA ARRAY:\n")
+	lumber.Done("DATA ARRAY:\n")
 	fmt.Println("const images: GalleryImage[] = [")
 	for _, photo := range photos {
 		fmt.Println("\t{")
