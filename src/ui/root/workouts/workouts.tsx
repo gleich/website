@@ -66,7 +66,7 @@ export default async function Workouts() {
                 `${((a.distance * 0.621) / 1000).toPrecision(3)} mi`,
               ],
             ]);
-            if (a.total_elevation_gain > 152.4) {
+            if (a.total_elevation_gain > 304.8) {
               stats.set(
                 'Elevation Gain',
                 `${Math.round(a.total_elevation_gain * 3.280839895).toLocaleString()} ft`,
