@@ -160,6 +160,14 @@ export default function Lcp() {
               so my site can hit it every time a request is made without having
               to worry about rate limits.
             </p>
+            <b className={styles.benefit}>Prevent downtime</b>
+            <p>
+              Sometimes APIs have problems and are down. Because lcp caches the
+              data and is essentially is saving a copy, it does&apos;t have to
+              depend about the source data being up. Downtime is more often than
+              people think and when you&apos;re using multiple APIs, the chance
+              of one of them being down is even greater.
+            </p>
           </div>
           <h2>Design Decisions</h2>
           <div className={styles.customList}>
