@@ -3,14 +3,22 @@
   color: grey;
   font-weight: 700;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .cachedAndProcessed {
   display: flex;
-  align-items: center;
   gap: 7px;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   color: var(--success);
+  background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
+  padding: 3px 10px;
+  border-radius: 2px;
 }
 
 .link {

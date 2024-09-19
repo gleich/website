@@ -38,10 +38,11 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
       className={`${styles.lastUpdated} ${inconsolata.className}`}
       suppressHydrationWarning
     >
-      Updated {exactFromNow(dayjsLastUpdate, currentTime)}
-      <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
-      <br />
-      <span className={styles.cachedAndProcessed}>
+      <p>
+        Updated {exactFromNow(dayjsLastUpdate, currentTime)}
+        <span className={styles.lastUpdateExact}> · {lastUpdateExact}</span>
+      </p>
+      <p className={styles.cachedAndProcessed}>
         <Image
           src="/icons/hard-drive.svg"
           alt="Hard Drive Icon"
@@ -54,7 +55,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
             lcp
           </Link>
         </span>
-      </span>
+      </p>
     </div>
   );
 }
