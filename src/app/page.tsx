@@ -37,18 +37,18 @@ export default async function Home() {
 
         <div className={styles.sections}>
           <Suspense
-            fallback={<LoadingSection name="Workouts" expectedHeight={460.5} />}
+            fallback={<LoadingSection name="Workouts" expectedHeight={470.5} />}
           >
             <Workouts />
           </Suspense>
           <Suspense
-            fallback={<LoadingSection name="Projects" expectedHeight={346} />}
+            fallback={<LoadingSection name="Projects" expectedHeight={356} />}
           >
             <Projects />
           </Suspense>
           <Photos />
           <Suspense
-            fallback={<LoadingSection name="Games" expectedHeight={279.24} />}
+            fallback={<LoadingSection name="Games" expectedHeight={289.24} />}
           >
             <Games />
           </Suspense>
