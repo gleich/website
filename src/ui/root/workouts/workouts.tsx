@@ -92,6 +92,7 @@ export default async function Workouts() {
                         href={stravaLink}
                         target="_blank"
                         title="View on Strava"
+                        className={styles.titleText}
                       >
                         <h3 className={styles.titleText}>{a.name}</h3>
                       </Link>
