@@ -1,0 +1,18 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 7px;
+  width: 430px;
+  height: 230px;
+}
+
+.name {
+  background-color: #ff4245;
+  color: white;
+  width: 100%;
+  padding: 1.5px 0px;
+  font-size: 13px;
+  text-align: center;
+}

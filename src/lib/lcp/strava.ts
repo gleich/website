@@ -41,6 +41,10 @@ export function extractSportType(sport_type: string): [string, string] {
       name = sport_type;
       icon_name = 'pickle.svg';
       break;
+    case 'WeightTraining':
+      name = 'Weight Training';
+      icon_name = 'weight-training.svg';
+      break;
     default:
       name = 'Workout';
       icon_name = 'workout.svg';
@@ -61,4 +65,6 @@ export interface Activity {
   distance: number;
   average_heartrate: number;
   id: number;
+  heartrate_data: number[];
+  calories: number;
 }

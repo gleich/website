@@ -10,6 +10,7 @@ import SVGIcon from '@/ui/svgIcon';
 import Card from '@/ui/card';
 import Stats from '@/ui/stats';
 import { renderDuration } from '@/lib/time';
+import Graph from './graph';
 import Section from '@/ui/section/section';
 
 dayjs.extend(duration);
@@ -35,6 +36,7 @@ export default async function Workouts() {
   }
 
   const activities = stravaData.data.slice(0, 3);
+
   return (
     <LiveSection
       name="Workouts"
@@ -61,11 +63,15 @@ export default async function Workouts() {
             const formattedDuration = renderDuration(a.moving_time);
             const stats = new Map<string, string>([
               ['Duration', formattedDuration],
-              [
+            ]);
+            if (a.distance != 0.0) {
+              stats.set(
                 'Distance',
                 `${((a.distance * 0.621) / 1000).toPrecision(3)} mi`,
-              ],
-            ]);
+              );
+            } else {
+              stats.set('Calories', a.calories.toLocaleString());
+            }
             if (a.total_elevation_gain > 304.8) {
               stats.set(
                 'Elevation Gain',
@@ -115,16 +121,21 @@ export default async function Workouts() {
                   <Time date={a.start_date} tz={a.timezone} />
                 </div>
                 <div className={styles.info}>
-                  <Image
-                    src={a.map_image_url as string}
-                    alt="Map"
-                    width={440}
-                    height={240}
-                    draggable={false}
-                    className={styles.map}
-                    placeholder="blur"
-                    blurDataURL={a.map_blur_image as string}
-                  />
+                  {/* {a.has_map ? (
+                    <Image
+                      src={a.map_image_url as string}
+                      alt="Map"
+                      width={440}
+                      height={240}
+                      draggable={false}
+                      className={styles.map}
+                      placeholder="blur"
+                      blurDataURL={a.map_blur_image as string}
+                    />
+                  ) : (
+                    <Graph hrData={a.heartrate_data} />
+                  )} */}
+                  <Graph hrData={a.heartrate_data} />
                   <Stats stats={stats} />
                 </div>
               </Card>
