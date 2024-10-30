@@ -15,20 +15,25 @@
     "dayjs": "^1.11.11",
     "million": "^3.1.11",
     "nanoid": "^5.0.7",
-    "next": "^15.0.0-canary.55",
+    "next": "v15.0.1-canary.1",
     "next-gallery": "^2.1.0",
-    "react": "^19.0.0-rc.0",
+    "react": "19.0.0-rc-69d4b800-20241021",
+    "react-dom": "19.0.0-rc-69d4b800-20241021",
     "recharts": "2.13.0-alpha.5",
     "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "@vercel/style-guide": "^6.0.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3",
+    "eslint-config-next": "15.0.0",
     "prettier": "^3.3.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
   }
 }
