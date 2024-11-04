@@ -99,4 +99,8 @@
   .titleText {
     font-size: 20px;
   }
+
+  .stravaIcon {
+    padding-right: 0px;
+  }
 }
