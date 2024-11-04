@@ -50,7 +50,7 @@ export default async function Projects() {
         <Link href="https://github.com/rootlyhq/cli" target="_blank">
           official CLI
         </Link>{' '}
-        in Golang. More recently, I contributed to{' '}
+        in Golang. More recently, I worked at{' '}
         <Link href="https://stainlessapi.com" target="_blank">
           Stainless API
         </Link>{' '}
