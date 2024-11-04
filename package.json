@@ -19,7 +19,7 @@
     "next-gallery": "^2.1.0",
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
-    "recharts": "2.13.0-alpha.5",
+    "recharts": "2.13.3",
     "sharp": "^0.33.4"
   },
   "devDependencies": {

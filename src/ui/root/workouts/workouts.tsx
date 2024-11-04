@@ -121,7 +121,7 @@ export default async function Workouts() {
                   <Time date={a.start_date} tz={a.timezone} />
                 </div>
                 <div className={styles.info}>
-                  {/* {a.has_map ? (
+                  {a.has_map ? (
                     <Image
                       src={a.map_image_url as string}
                       alt="Map"
@@ -134,8 +134,7 @@ export default async function Workouts() {
                     />
                   ) : (
                     <Graph hrData={a.heartrate_data} />
-                  )} */}
-                  <Graph hrData={a.heartrate_data} />
+                  )}
                   <Stats stats={stats} />
                 </div>
               </Card>

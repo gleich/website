@@ -8,10 +8,17 @@
   margin-bottom: 20px;
 }
 
+.activities > * {
+  flex: 1 1 100%;
+  max-width: 440px;
+}
+
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  width: 100%;
 }
 
 .header {
