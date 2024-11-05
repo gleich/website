@@ -41,7 +41,7 @@
 
 .titleText {
   color: var(--foreground);
-  text-decoration: underline;
+  text-decoration: none;
   margin-bottom: 2px;
 }
 
