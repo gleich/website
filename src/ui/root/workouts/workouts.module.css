@@ -39,19 +39,14 @@
   display: flex;
 }
 
-.stravaIcon {
-  padding-top: 5px;
-  padding-right: 5px;
-}
-
 .titleText {
   color: var(--foreground);
   text-decoration: underline;
+  margin-bottom: 2px;
 }
 
 .icon {
   margin-right: 10px;
-  padding: 2px 3px;
 }
 
 .map {
@@ -98,9 +93,5 @@
 
   .titleText {
     font-size: 20px;
-  }
-
-  .stravaIcon {
-    padding-right: 0px;
   }
 }
