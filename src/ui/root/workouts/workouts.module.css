@@ -94,4 +94,8 @@
   .titleText {
     font-size: 20px;
   }
+
+  .activities {
+    gap: 10px;
+  }
 }
