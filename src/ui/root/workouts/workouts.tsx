@@ -73,7 +73,7 @@ export default async function Workouts() {
             if (a.sport_type == 'Run') {
               stats.set(
                 'Avg Pace',
-                `${(a.moving_time / 60 / distanceInMiles).toPrecision(3).replace('.', ':')} mi/min`,
+                `${(a.moving_time / 60 / distanceInMiles).toPrecision(3).replace('.', ':')}m /mi`,
               );
             } else if (a.total_elevation_gain > 304.8) {
               stats.set(
