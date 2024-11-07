@@ -64,15 +64,18 @@ export default async function Workouts() {
             const stats = new Map<string, string>([
               ['Duration', formattedDuration],
             ]);
+            const distanceInMiles = (a.distance * 0.621) / 1000;
             if (a.distance != 0.0) {
-              stats.set(
-                'Distance',
-                `${((a.distance * 0.621) / 1000).toPrecision(3)} mi`,
-              );
+              stats.set('Distance', `${distanceInMiles.toPrecision(3)} mi`);
             } else {
-              stats.set('Calories', a.calories.toLocaleString());
+              stats.set('Calories Burned', a.calories.toLocaleString());
             }
-            if (a.total_elevation_gain > 304.8) {
+            if (a.sport_type == 'Run') {
+              stats.set(
+                'Avg Pace',
+                `${(a.moving_time / 60 / distanceInMiles).toPrecision(3).replace('.', ':')} mi/min`,
+              );
+            } else if (a.total_elevation_gain > 304.8) {
               stats.set(
                 'Elevation Gain',
                 `${Math.round(a.total_elevation_gain * 3.280839895).toLocaleString()} ft`,
