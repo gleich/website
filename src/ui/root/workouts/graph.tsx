@@ -33,14 +33,11 @@ export default function Graph({ hrData }: { hrData: number[] }) {
   return (
     <div className={styles.container}>
       <div className={styles.chartWrapper}>
-        {/* Placeholder */}
         <div
           className={`${styles.placeholder} ${isClient ? styles.hidden : ''}`}
         >
           <p className={styles.placeholderText}>Loading heartrate data</p>
         </div>
-
-        {/* Chart */}
         <div
           className={`${styles.chartContainer} ${!isClient ? styles.hidden : ''}`}
         >
@@ -51,7 +48,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                 dataKey="heartrate"
                 stroke="#ff4245"
                 dot={false}
-                animationDuration={5000}
+                animationDuration={10000}
                 animationEasing="ease-in"
               />
               <YAxis
