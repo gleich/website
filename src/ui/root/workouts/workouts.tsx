@@ -68,14 +68,15 @@ export default async function Workouts() {
             if (a.distance != 0.0) {
               stats.set('Distance', `${distanceInMiles.toPrecision(3)} mi`);
             } else {
-              stats.set('Calories Burned', a.calories.toLocaleString());
+              stats.set('Calories', a.calories.toLocaleString());
             }
             if (a.sport_type == 'Run') {
               stats.set(
                 'Avg Pace',
-                `${(a.moving_time / 60 / distanceInMiles).toPrecision(3).replace('.', ':')}m /mi`,
+                `${(a.moving_time / 60 / distanceInMiles).toPrecision(3).replace('.', ':')} /mi`,
               );
             } else if (a.total_elevation_gain > 304.8) {
+              // if more than 1,000 ft fo gain
               stats.set(
                 'Elevation Gain',
                 `${Math.round(a.total_elevation_gain * 3.280839895).toLocaleString()} ft`,
