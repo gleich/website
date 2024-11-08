@@ -43,6 +43,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
         >
           <ResponsiveContainer width="100%" aspect={500 / 240}>
             <LineChart data={data}>
+              <CartesianGrid stroke="#424242" strokeDasharray="3 3" />
               <Line
                 type="basis"
                 dataKey="heartrate"
@@ -66,7 +67,6 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                 padding={{ bottom: 20, top: 20 }}
               />
               <XAxis interval={3} tick={false} height={0} />
-              <CartesianGrid stroke="#424242" strokeDasharray="3 3" />
             </LineChart>
           </ResponsiveContainer>
         </div>
