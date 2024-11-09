@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 const title = 'Matt Gleich';
 const description =
-  'College student @ RIT, software engineer, cyclist, and photographer';
+  'College student @ RIT (Rochester Institute of Technology), software engineer, cyclist, and photographer';
 const ogImage = {
   url: 'https://mattglei.ch/opengraph.png',
   width: 1200,
