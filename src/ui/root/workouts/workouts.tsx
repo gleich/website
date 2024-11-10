@@ -94,15 +94,15 @@ export default async function Workouts() {
                         src={sportIcon}
                         alt={sportName}
                         title={sportName}
-                        width={26}
-                        height={26}
+                        width={22}
+                        height={22}
                         className={styles.icon}
                       />
                       <Link
                         href={stravaLink}
                         target="_blank"
                         title="View on Strava"
-                        className={styles.titleText}
+                        className={styles.titleLink}
                       >
                         <h3 className={styles.titleText}>{a.name}</h3>
                       </Link>

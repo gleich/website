@@ -33,19 +33,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3px;
 }
 
 .titleIconAndTitle {
   display: flex;
 }
 
+.titleLink {
+  text-decoration: none;
+  color: var(--foreground);
+}
+
 .titleText {
   color: var(--foreground);
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
-  margin-right: 10px;
+  margin-right: 8px;
+  border: 1px dashed rgb(207, 207, 207);
+  padding: 3px;
 }
 
 .map {
