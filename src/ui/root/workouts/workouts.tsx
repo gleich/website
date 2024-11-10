@@ -111,6 +111,7 @@ export default async function Workouts() {
                       href={stravaLink}
                       target="_blank"
                       title="View on Strava"
+                      className={styles.stravaIcon}
                     >
                       <SVGIcon
                         src="/icons/socials/strava.svg"
@@ -118,7 +119,6 @@ export default async function Workouts() {
                         title="View on Strava"
                         height={22}
                         width={22}
-                        className={styles.stravaIcon}
                       />
                     </Link>
                   </div>

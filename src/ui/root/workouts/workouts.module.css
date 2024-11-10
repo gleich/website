@@ -55,6 +55,12 @@
   font-size: 23px !important;
 }
 
+.stravaIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .icon {
   margin-right: 8px;
   border: 1px dashed rgb(207, 207, 207);
