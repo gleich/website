@@ -14,7 +14,9 @@
   background-color: var(--foreground);
   color: var(--background);
   width: min-content;
-  padding: 5px 8px;
+  padding: 3px 10px;
+  font-size: 25px;
+  border-radius: 3px;
 }
 
 .description {
@@ -24,8 +26,8 @@
 
 .liveFrom {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   color: var(--live-color);
   font-weight: 900;
@@ -35,8 +37,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border: solid 3px var(--live-color);
+  border: solid 2px var(--live-color);
   padding: 5px 10px;
+  height: 23px;
 }
 
 .liveCircle {
@@ -52,6 +55,7 @@
 
 .liveSourceLink {
   color: var(--live-color);
+  text-decoration-thickness: 0.5px;
 }
 
 @media (max-width: 400px) {

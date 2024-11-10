@@ -29,13 +29,13 @@ export default function LiveSection({
             <div className={styles.liveFromTitle}>
               <span className={styles.liveCircle} />
               <p>
-                LIVE from{' '}
+                LIVE FROM{' '}
                 <Link
                   className={styles.liveSourceLink}
                   href={sourceURL}
                   target="_blank"
                 >
-                  {source}
+                  {source.toUpperCase()}
                 </Link>
               </p>
             </div>
