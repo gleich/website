@@ -50,7 +50,8 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                 stroke="#ff4245"
                 dot={false}
                 animationDuration={10000}
-                animationEasing="ease-in"
+                animationEasing="linear"
+                strokeWidth={1.8}
               />
               <YAxis
                 type="number"
@@ -66,7 +67,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                 ]}
                 padding={{ bottom: 20, top: 20 }}
               />
-              <XAxis interval={3} tick={false} height={0} />
+              <XAxis interval={2} tick={false} height={0} />
             </LineChart>
           </ResponsiveContainer>
         </div>
