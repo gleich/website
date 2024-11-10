@@ -8,6 +8,7 @@ import {
   XAxis,
   YAxis,
   ResponsiveContainer,
+  ReferenceLine,
 } from 'recharts';
 import styles from './graph.module.css';
 import { IBM_Plex_Mono } from 'next/font/google';
@@ -65,6 +66,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                   Math.floor(max),
                 ]}
                 padding={{ bottom: 20, top: 20 }}
+                style={{ fontFamily: 'monospace', fontWeight: 'bold' }}
               />
               <XAxis interval={2} tick={false} height={0} />
             </LineChart>
