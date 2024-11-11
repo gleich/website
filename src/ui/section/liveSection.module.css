@@ -37,9 +37,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border: solid 2px var(--live-color);
   padding: 5px 10px;
-  height: 23px;
+  background-color: rgba(243, 9, 40, 0.13);
+  border-radius: 2px;
 }
 
 .liveCircle {
@@ -50,7 +50,7 @@
   background: var(--live-color);
   cursor: pointer;
   box-shadow: 0 0 0 var(--live-color-dimmed);
-  animation: dot--fade 0.8s linear alternate infinite;
+  animation: dot--fade 0.5s linear alternate infinite;
 }
 
 .liveSourceLink {
@@ -63,6 +63,13 @@
     border: none;
     padding: 0px;
     box-shadow: none;
+  }
+
+  .liveFromTitle {
+    padding: 5px 10px;
+    height: 25px;
+    margin-right: 2px;
+    margin-top: 2px;
   }
 }
 
