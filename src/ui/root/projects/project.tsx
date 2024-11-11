@@ -27,39 +27,46 @@ export default function Project({ repo }: { repo: Repository }) {
 
   return (
     <Card className={styles.highlightedProject}>
-      <div className={styles.highlightedProjectHeader}>
-        <div className={styles.highlightedProjectName}>
-          <SVGIcon
-            src="/icons/book.svg"
-            alt="Folder Icon"
-            title=""
-            width={15}
-            height={15}
-          />
-
-          <Link href={repo.url} target="_blank">
-            {repo.owner}/{repo.name}
-          </Link>
-        </div>
-        <p className={styles.highlightedProjectLanguage}>
-          <span
-            className={styles.highlightedProjectLanguageCircle}
-            style={{ backgroundColor: repo.language_color }}
-          />{' '}
-          {repo.language}{' '}
-        </p>
-      </div>
-      <div
-        className={`${styles.highlightedProjectDetails} ${inconsolata.className}`}
+      <Link
+        href={repo.url}
+        target="_blank"
+        className={styles.cardLink}
+        title="View on repository on GitHub"
       >
-        <p>{repo.description}</p>
-        <p
-          className={styles.highlightedProjectUpdated}
-          suppressHydrationWarning
+        <div className={styles.highlightedProjectHeader}>
+          <div className={styles.highlightedProjectName}>
+            <SVGIcon
+              src="/icons/book.svg"
+              alt="Folder Icon"
+              title=""
+              width={15}
+              height={15}
+            />
+
+            <Link href={repo.url} target="_blank">
+              {repo.owner}/{repo.name}
+            </Link>
+          </div>
+          <p className={styles.highlightedProjectLanguage}>
+            <span
+              className={styles.highlightedProjectLanguageCircle}
+              style={{ backgroundColor: repo.language_color }}
+            />{' '}
+            {repo.language}{' '}
+          </p>
+        </div>
+        <div
+          className={`${styles.highlightedProjectDetails} ${inconsolata.className}`}
         >
-          Updated {exactFromNow(updatedAt, currentTime)}
-        </p>
-      </div>
+          <p>{repo.description}</p>
+          <p
+            className={styles.highlightedProjectUpdated}
+            suppressHydrationWarning
+          >
+            Updated {exactFromNow(updatedAt, currentTime)}
+          </p>
+        </div>
+      </Link>
     </Card>
   );
 }

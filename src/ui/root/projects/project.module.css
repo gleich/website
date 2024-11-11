@@ -44,3 +44,8 @@
   display: inline-block;
   border-radius: 50%;
 }
+
+.cardLink {
+  color: var(--foreground) !important;
+  text-decoration: none;
+}
