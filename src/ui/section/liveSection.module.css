@@ -52,7 +52,7 @@
   cursor: pointer;
   margin-right: 5px;
   box-shadow: 0 0 0 var(--live-color-dimmed);
-  animation: dot--fade 0.5s linear alternate infinite;
+  animation: dot--fade 0.4s linear alternate infinite;
 }
 
 .liveSourceLink {
