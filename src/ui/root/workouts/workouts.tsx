@@ -41,6 +41,7 @@ export default async function Workouts() {
     <LiveSection
       name="Workouts"
       source="Strava"
+      sourceIcon="strava"
       sourceURL="https://www.strava.com/about"
       lastUpdated={stravaData.updated}
     >
@@ -114,7 +115,7 @@ export default async function Workouts() {
                       className={styles.stravaIcon}
                     >
                       <SVGIcon
-                        src="/icons/socials/strava.svg"
+                        src="/icons/logos/strava.svg"
                         alt="Strava icon"
                         title="View on Strava"
                         height={22}

@@ -17,6 +17,7 @@ export default async function Games() {
   return (
     <LiveSection
       name="Games"
+      sourceIcon="steam"
       source="Steam"
       sourceURL="https://store.steampowered.com/about/"
       lastUpdated={steamData.updated}

@@ -17,7 +17,7 @@ function Social({ name, href }: { name: string; href: string }) {
   return (
     <Link href={href} className={styles.icon} target="_blank">
       <SVGIcon
-        src={`/icons/socials/${name}.svg`}
+        src={`/icons/logos/${name}.svg`}
         width={30}
         height={30}
         alt={`${name} icon`}

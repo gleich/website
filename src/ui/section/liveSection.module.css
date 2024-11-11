@@ -36,7 +36,8 @@
 .liveFromTitle {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 6px;
   padding: 5px 10px;
   background-color: rgba(243, 9, 40, 0.13);
   border-radius: 2px;
@@ -49,13 +50,23 @@
   border-radius: 50%;
   background: var(--live-color);
   cursor: pointer;
+  margin-right: 5px;
   box-shadow: 0 0 0 var(--live-color-dimmed);
   animation: dot--fade 0.5s linear alternate infinite;
 }
 
 .liveSourceLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
   color: var(--live-color);
   text-decoration-thickness: 0.5px;
+}
+
+.logoIcon {
+  filter: invert(23%) sepia(97%) saturate(4660%) hue-rotate(342deg)
+    brightness(90%) contrast(114%);
 }
 
 @media (max-width: 400px) {
@@ -70,6 +81,10 @@
     height: 25px;
     margin-right: 2px;
     margin-top: 2px;
+  }
+
+  .logoIcon {
+    display: none;
   }
 }
 

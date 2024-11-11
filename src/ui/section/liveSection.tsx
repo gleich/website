@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import Card from '../card';
 import { LastUpdated } from './lastUpdated';
+import Image from 'next/image';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -11,11 +12,13 @@ export default function LiveSection({
   name,
   source,
   sourceURL,
+  sourceIcon,
   lastUpdated,
   children,
 }: {
   name: string;
   source: string;
+  sourceIcon: string;
   sourceURL: string;
   lastUpdated: Date;
   children: ReactNode;
@@ -28,16 +31,21 @@ export default function LiveSection({
           <div className={`${styles.liveFrom} ${inconsolata.className}`}>
             <div className={styles.liveFromTitle}>
               <span className={styles.liveCircle} />
-              <p>
-                LIVE FROM{' '}
-                <Link
-                  className={styles.liveSourceLink}
-                  href={sourceURL}
-                  target="_blank"
-                >
-                  {source.toUpperCase()}
-                </Link>
-              </p>
+              <p>LIVE FROM</p>
+              <Link
+                className={styles.liveSourceLink}
+                href={sourceURL}
+                target="_blank"
+              >
+                {source.toUpperCase()}
+                <Image
+                  src={`/icons/logos/${sourceIcon}.svg`}
+                  alt={name}
+                  height={17}
+                  width={17}
+                  className={styles.logoIcon}
+                />
+              </Link>
             </div>
           </div>
         </div>
