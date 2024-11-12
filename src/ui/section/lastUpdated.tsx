@@ -29,7 +29,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
     return () => clearInterval(interval);
   }, []);
 
-  const lastUpdateExact = dayjsLastUpdate.format('MMMM Do YYYY [at] h:mm A');
+  const lastUpdateExact = dayjsLastUpdate.format('MMMM Do YYYY [at] h:mma');
   return (
     <div
       className={`${styles.lastUpdated} ${inconsolata.className}`}
@@ -50,9 +50,10 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
         </span>
       </p>
       <p>
-        Updated:
-        <span className={styles.lastUpdateExact}> {lastUpdateExact}</span> (
-        {exactFromNow(dayjsLastUpdate, currentTime)})
+        Updated:{' '}
+        <span className={styles.lastUpdateExact}>{lastUpdateExact} [</span>
+        {exactFromNow(dayjsLastUpdate, currentTime)}
+        <span className={styles.lastUpdateExact}>]</span>
       </p>
     </div>
   );

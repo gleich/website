@@ -17,7 +17,7 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   } else if (monthsDiff > 0) {
     fromNow = `${monthsDiff} ${monthsDiff === 1 ? 'month' : 'months'} & ${daysDiff} ${daysDiff === 1 ? 'day' : 'days'}`;
   } else if (daysDiff > 0) {
-    fromNow = `${daysDiff}d & ${hoursDiff}hr`;
+    fromNow = `${daysDiff} ${daysDiff === 1 ? 'day' : 'days'} & ${hoursDiff}hr`;
   } else if (hoursDiff > 0) {
     fromNow = `${hoursDiff}hr & ${minutesDiff}m`;
   } else if (minutesDiff > 0) {
