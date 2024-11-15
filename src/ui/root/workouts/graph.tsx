@@ -48,7 +48,8 @@ export default function Graph({ hrData }: { hrData: number[] }) {
               <Line
                 type="basis"
                 dataKey="heartrate"
-                stroke="#ff4245"
+                stroke="#e3393c"
+                strokeWidth={2}
                 dot={false}
                 animationDuration={10000}
                 animationEasing="linear"
