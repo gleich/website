@@ -52,7 +52,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                 strokeWidth={2}
                 dot={false}
                 animationDuration={10000}
-                animationEasing="linear"
+                animationEasing="ease-out"
               />
               <YAxis
                 type="number"
