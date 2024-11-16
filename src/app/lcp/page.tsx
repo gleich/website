@@ -63,7 +63,7 @@ export default function Lcp() {
           >
             {' '}
             <SVGIcon
-              src="/icons/socials/github.svg"
+              src="/icons/logos/githubOfficial.svg"
               alt="GitHub"
               title="View on GitHub"
               height={20}
