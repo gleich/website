@@ -1,0 +1,6 @@
+.tooltip {
+  background-color: var(--background);
+  padding: 4px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+}

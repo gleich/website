@@ -11,6 +11,10 @@
   padding-top: calc(240 / 500 * 100%);
 }
 
+.chartContainer {
+  cursor: crosshair;
+}
+
 .chartContainer,
 .placeholder {
   position: absolute;

@@ -9,9 +9,11 @@ import {
   YAxis,
   ResponsiveContainer,
   ReferenceLine,
+  Tooltip,
 } from 'recharts';
 import styles from './graph.module.css';
 import { IBM_Plex_Mono } from 'next/font/google';
+import GraphTooltip from './graphTooltip';
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: '700',
@@ -53,6 +55,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                 dot={false}
                 animationDuration={10000}
                 animationEasing="ease-out"
+                activeDot={{ r: 4 }}
               />
               <YAxis
                 type="number"
@@ -70,6 +73,13 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                 style={{ fontFamily: 'monospace', fontWeight: 'bold' }}
               />
               <XAxis interval={2} tick={false} height={0} />
+              <Tooltip
+                content={GraphTooltip}
+                cursor={{
+                  stroke: '#515151',
+                  strokeWidth: 1.5,
+                }}
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>
