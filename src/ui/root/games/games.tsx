@@ -33,7 +33,7 @@ export default async function Games() {
         <div className={styles.games}>
           {games
             .filter((g) => typeof g.library_url === 'string')
-            .slice(0, 5)
+            .slice(0, 4)
             .map((g, i) => {
               const stats = new Map<string, string>([
                 ['Playtime', renderDuration(g.playtime_forever * 60)],
