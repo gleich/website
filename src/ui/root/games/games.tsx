@@ -50,6 +50,7 @@ export default async function Games() {
                     href={g.url}
                     className={styles.gameLink}
                     target="_blank"
+                    title={g.name}
                   >
                     <Image
                       src={g.library_url as string}
