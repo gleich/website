@@ -1,5 +1,4 @@
 'use client';
-
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import utc from 'dayjs/plugin/utc';
@@ -29,7 +28,15 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
     return () => clearInterval(interval);
   }, []);
 
-  const lastUpdateExact = dayjsLastUpdate.format('MMMM Do YYYY [at] h:mma');
+  let lastUpdateExact;
+  if (dayjsLastUpdate.isSame(currentTime, 'day')) {
+    lastUpdateExact = `Today at ${dayjsLastUpdate.format('h:mma')}`;
+  } else if (dayjsLastUpdate.isSame(currentTime.subtract(1, 'day'), 'day')) {
+    lastUpdateExact = `Yesterday at ${dayjsLastUpdate.format('h:mma')}`;
+  } else {
+    lastUpdateExact = dayjsLastUpdate.format('MMMM Do YYYY [at] h:mma');
+  }
+
   return (
     <div
       className={`${styles.lastUpdated} ${inconsolata.className}`}
