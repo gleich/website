@@ -30,11 +30,11 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
 
   let lastUpdateExact;
   if (dayjsLastUpdate.isSame(currentTime, 'day')) {
-    lastUpdateExact = `Today at ${dayjsLastUpdate.format('h:mma')}`;
+    lastUpdateExact = `today at ${dayjsLastUpdate.format('h:mm A')}`;
   } else if (dayjsLastUpdate.isSame(currentTime.subtract(1, 'day'), 'day')) {
-    lastUpdateExact = `Yesterday at ${dayjsLastUpdate.format('h:mma')}`;
+    lastUpdateExact = `yesterday at ${dayjsLastUpdate.format('h:mm A')}`;
   } else {
-    lastUpdateExact = dayjsLastUpdate.format('MMMM Do YYYY [at] h:mma');
+    lastUpdateExact = dayjsLastUpdate.format('MMMM Do YYYY [@] h:mm A');
   }
 
   return (
@@ -57,7 +57,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
         </span>
       </p>
       <p>
-        Updated:{' '}
+        Last updated{' '}
         <span className={styles.lastUpdateExact}>{lastUpdateExact} [</span>
         {exactFromNow(dayjsLastUpdate, currentTime)}
         <span className={styles.lastUpdateExact}>]</span>
