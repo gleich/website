@@ -9,16 +9,29 @@
 }
 
 .game {
-  flex: 1 1 270px;
   border: 1px solid var(--border);
   padding: 0px !important;
-  max-width: 250px;
-  height: min-content;
+}
+
+.gameLink {
+  height: 100%;
+  display: flex;
+  color: var(--foreground);
+  text-decoration: none;
 }
 
 .gameDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.statsContainer {
   padding-top: 5px;
   padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin: 0px 30px;
+  height: 100%;
 }
 
 .inGame {
@@ -29,8 +42,13 @@
   padding: 5px;
 }
 
+.stats {
+  flex-direction: column;
+  gap: 35px !important;
+  justify-content: space-around !important;
+}
+
 .headerImage {
-  width: 100%;
-  max-width: 100%;
+  max-width: 120px;
   height: auto;
 }

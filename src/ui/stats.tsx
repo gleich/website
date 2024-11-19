@@ -3,9 +3,15 @@ import styles from '@/ui/stats.module.css';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
-export default function Stats({ stats }: { stats: Map<string, string> }) {
+export default function Stats({
+  stats,
+  className,
+}: {
+  stats: Map<string, string>;
+  className?: string | undefined;
+}) {
   return (
-    <div className={`${styles.stats} ${inconsolata.className}`}>
+    <div className={`${className} ${styles.stats} ${inconsolata.className}`}>
       {[...stats.keys()].map((k) => (
         <div className={styles.stat} key={k}>
           <p className={styles.value}>{stats.get(k)}</p>
