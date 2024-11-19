@@ -12,7 +12,7 @@ export interface Game {
   header_url: string;
   library_url: string | undefined;
   playtime_forever: number;
-  rtime_last_played: Date;
+  rtime_last_played: number;
   achievement_progress: number | undefined;
   achievements: Achievement[] | undefined;
 }
