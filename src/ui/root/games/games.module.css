@@ -1,55 +1,80 @@
 .games {
   display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   align-items: center;
   justify-content: center;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  gap: 15px;
-  flex-wrap: wrap;
 }
 
 .game {
-  border: 1px solid var(--border);
-  padding: 0px !important;
+  max-width: 430px;
+  width: 100%;
+  display: flex;
+  gap: 7px;
+  padding: 0 !important;
 }
 
-.gameLink {
-  height: 100%;
+.gameTitle {
   display: flex;
+  gap: 5px;
+  padding-top: 1.5px;
+  align-items: center;
   color: var(--foreground);
-  text-decoration: none;
 }
 
 .gameDetails {
+  width: 100%;
+  padding-bottom: 8px;
   display: flex;
   flex-direction: column;
 }
 
-.statsContainer {
-  padding-top: 5px;
-  padding-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 100%;
-}
-
-.inGame {
-  color: var(--success);
-  text-align: center;
-  font-weight: bold;
-  background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
-  padding: 5px;
+.gameLastPlaytime {
+  color: grey;
+  font-size: 14px;
 }
 
 .stats {
-  flex-direction: column;
-  gap: 35px !important;
-  justify-content: space-around !important;
+  margin: 9px 0px;
 }
 
-.headerImage {
+.noAchievements {
   width: 100%;
-  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  padding-bottom: 10px;
+  font-size: 13.5px;
+}
+
+.recentAchievements {
+  margin-bottom: 5px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.achievement {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.achievement p {
+  font-size: 13.5px;
+}
+
+@media (max-width: 1220px) {
+  .games {
+    flex-wrap: wrap;
+  }
 }
