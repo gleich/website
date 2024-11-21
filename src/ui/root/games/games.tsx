@@ -59,13 +59,14 @@ export default async function Games() {
                       href={g.url}
                       target="_blank"
                       className={styles.gameTitle}
-                      title={`View ${g.name} on Steam`}
+                      title={`View "${g.name}" on Steam`}
                     >
                       <Image
                         src={g.icon_url}
                         alt={g.name}
                         width={20}
                         height={20}
+                        className={styles.gameIcon}
                       />
                       <Title name={g.name} />
                     </Link>
@@ -114,6 +115,7 @@ export default async function Games() {
                                       alt={a.display_name}
                                       width={25}
                                       height={25}
+                                      className={styles.achievementIcon}
                                     />
                                     <p>{a.display_name}</p>
                                   </div>

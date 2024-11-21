@@ -1,7 +1,7 @@
 .container {
   overflow: hidden;
   display: inline-flex;
-  max-width: 255px;
+  max-width: 264px;
   width: 100%;
   gap: 20px;
 }
