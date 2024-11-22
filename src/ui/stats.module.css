@@ -1,8 +1,8 @@
 .stats {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-evenly;
+  width: 100%;
   font-weight: 900;
 }
 
