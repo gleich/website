@@ -1,0 +1,31 @@
+.container {
+  overflow: hidden;
+  display: inline-flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.notOverflow {
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.scroll {
+  animation: scroll 9s linear infinite;
+  animation-delay: 2s;
+  will-change: transform;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}

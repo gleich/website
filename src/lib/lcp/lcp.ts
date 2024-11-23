@@ -9,6 +9,7 @@ export enum Cache {
   Strava,
   GitHub,
   Steam,
+  AppleMusic,
 }
 
 export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
@@ -22,6 +23,9 @@ export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
       break;
     case Cache.Steam:
       pathName = 'steam';
+      break;
+    case Cache.AppleMusic:
+      pathName = 'applemusic';
       break;
   }
   const res = await fetch(`https://lcp.dev.mattglei.ch/${pathName}/cache`, {

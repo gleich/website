@@ -10,6 +10,7 @@ import LoadingSection from '@/ui/section/loading';
 import Projects from '@/ui/root/projects/projects';
 import Resume from '@/ui/root/projects/resume';
 import Nav from '@/ui/root/nav';
+import Music from '@/ui/root/music/music';
 
 export default async function Home() {
   return (
@@ -46,6 +47,7 @@ export default async function Home() {
           >
             <Projects />
           </Suspense>
+          <Music />
           <Photos />
           <Suspense
             fallback={<LoadingSection name="Games" expectedHeight={289.24} />}

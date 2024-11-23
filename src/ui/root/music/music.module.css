@@ -1,0 +1,43 @@
+.recentSongsContainer {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  gap: 10px;
+}
+
+.recentSongs {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.recentSongsTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recentSong {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  color: var(--foreground);
+  text-decoration: none;
+  width: 200px;
+}
+
+.recentSongAlbumArt {
+  border-radius: 3px;
+}
+
+.recentSongText {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.recentSongArtist {
+  color: grey;
+}
