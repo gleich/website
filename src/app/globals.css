@@ -100,3 +100,9 @@ h2::selection {
 *::-webkit-scrollbar-thumb {
   background: var(--foreground);
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

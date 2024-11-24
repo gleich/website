@@ -1,25 +1,28 @@
 import { Playlist as AppleMusicPlaylist } from '@/lib/lcp/applemusic';
 import styles from '@/ui/root/music/playlist.module.css';
-import { IBM_Plex_Mono } from 'next/font/google';
+import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: '700',
   subsets: ['latin'],
-  style: 'italic',
 });
+
+const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });
 
 export default function Playlist({
   playlist,
+  className,
 }: {
   playlist: AppleMusicPlaylist;
+  className?: string | undefined;
 }) {
   return (
     <Link
       href="https://google.com"
       target="_blank"
-      className={styles.container}
+      className={`${styles.container} ${className}`}
     >
       <div className={styles.collageContainer}>
         <div className={styles.collage}>
@@ -39,7 +42,9 @@ export default function Playlist({
         </p>
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.viewTracksButton}>
+        <button
+          className={`${styles.viewTracksButton} ${ibmPlexSans.className}`}
+        >
           View {playlist.tracks.length} tracks
         </button>
       </div>

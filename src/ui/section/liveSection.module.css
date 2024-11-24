@@ -1,6 +1,7 @@
 .section {
   max-width: 1500px;
   width: 100%;
+  overflow: hidden;
 }
 
 .header {

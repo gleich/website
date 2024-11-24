@@ -36,6 +36,10 @@ export default async function Music() {
             <Playlist playlist={playlists['p.qQXLxPLtA75zg8e']} />
             <Playlist playlist={playlists['p.LV0PXNoCl0EpDLW']} />
             <Playlist playlist={playlists['p.AWXoZoxHLrvpJlY']} />
+            <Playlist
+              className={styles.fourthPlaylist}
+              playlist={playlists['p.LV0PX3EIl0EpDLW']}
+            />
           </Card>
         </div>
 
@@ -53,6 +57,11 @@ export default async function Music() {
                   albumArtClassName={styles.recentSongAlbumArt}
                 />
               ))}
+              <Song
+                song={recentlyPlayed[3]}
+                className={styles.fourthRecentSong}
+                albumArtClassName={styles.recentSongAlbumArt}
+              />
             </div>
           </Card>
         </div>
