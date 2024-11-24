@@ -27,14 +27,32 @@ export default async function Music() {
         favorite music of all time, that stretches across a lot of different
         genres. I am into everything from 90s rap to 1930s jazz.
       </p>
-      <Card className={styles.recentSongsContainer}>
-        <h2 className={styles.recentSongsTitle}>Recently Played Songs</h2>
-        <div className={styles.recentSongs}>
-          {recentlyPlayed.slice(0, 3).map((s) => (
-            <Song song={s} key={s.id} />
-          ))}
+      <div className={styles.sections}>
+        <div className={styles.section}>
+          <h4 className={styles.sectionTitle}>Playlists</h4>
+          <Card className={`${styles.playlists}`}>
+            <p>hello world!</p>
+          </Card>
         </div>
-      </Card>
+
+        <div className={styles.section}>
+          <h4 className={`${styles.recentSongsTitle} ${styles.sectionTitle}`}>
+            Recently Played Songs
+          </h4>
+          <Card className={`${styles.recentSongsContainer}`}>
+            <div className={styles.recentSongs}>
+              {recentlyPlayed.slice(0, 3).map((s) => (
+                <Song
+                  song={s}
+                  key={s.id}
+                  className={styles.recentSong}
+                  albumArtClassName={styles.recentSongAlbumArt}
+                />
+              ))}
+            </div>
+          </Card>
+        </div>
+      </div>
     </LiveSection>
   );
 }
