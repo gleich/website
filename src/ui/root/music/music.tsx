@@ -7,12 +7,14 @@ import { Inconsolata } from 'next/font/google';
 import ScrollingTitle from './scrollingTitle';
 import Card from '@/ui/card';
 import Song from './song';
+import Playlist from './playlist';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export default async function Music() {
   const appleMusicData = await loadAppleMusicData();
   const recentlyPlayed = appleMusicData.data.recently_played;
+  const playlists = appleMusicData.data.playlists;
   return (
     <LiveSection
       name="Music"
@@ -31,7 +33,9 @@ export default async function Music() {
         <div className={styles.section}>
           <h4 className={styles.sectionTitle}>Playlists</h4>
           <Card className={`${styles.playlists}`}>
-            <p>hello world!</p>
+            <Playlist playlist={playlists['p.qQXLxPLtA75zg8e']} />
+            <Playlist playlist={playlists['p.LV0PXNoCl0EpDLW']} />
+            <Playlist playlist={playlists['p.AWXoZoxHLrvpJlY']} />
           </Card>
         </div>
 

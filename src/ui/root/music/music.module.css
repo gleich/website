@@ -6,12 +6,13 @@
 }
 
 .section {
-  width: 50%;
+  width: calc(50% - 5px);
+  box-sizing: border-box;
 }
 
 .sectionTitle {
   text-align: center;
-  padding: 10px 0px;
+  padding: 5px 0px;
 }
 
 .recentSongsContainer {
@@ -28,15 +29,18 @@
 }
 
 .recentSong {
-  width: 33% !important;
+  width: calc(33.3333% - 10px) !important;
+  box-sizing: border-box;
 }
 
 .recentSongAlbumArt {
   width: 100%;
+  box-sizing: border-box;
   height: auto;
 }
 
 .playlists {
   display: flex;
-  width: 50%;
+  justify-content: space-evenly;
+  gap: 10px;
 }

@@ -6,6 +6,7 @@ export async function loadAppleMusicData() {
 
 export interface CacheData {
   recently_played: Song[];
+  playlists: Record<string, Playlist>;
 }
 
 export interface Song {
@@ -18,4 +19,10 @@ export interface Song {
   album_art_url: string;
   url: string;
   id: string;
+}
+
+export interface Playlist {
+  name: string;
+  tracks: Song[];
+  last_modified: Date;
 }
