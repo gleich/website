@@ -39,6 +39,7 @@ export default function ScrollingTitle({
         <Marquee
           gradient={false}
           speed={40}
+          delay={4}
           className={`${styles.marquee} ${className}`}
         >
           <span className={styles.marqueeText}>{text}</span>
