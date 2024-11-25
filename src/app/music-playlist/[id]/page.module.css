@@ -34,3 +34,9 @@
 .song {
   width: 160px !important;
 }
+
+@media (max-width: 600px) {
+  .songs {
+    justify-content: center;
+  }
+}
