@@ -18,10 +18,11 @@ export default async function Music() {
       lastUpdated={appleMusicData.updated}
     >
       <p>
-        One of my favorite things in this whole world is music. Here are a few
-        of the playlists I&apos;ve built up over the last few years. Some of my
-        favorite music of all time, that stretches across a lot of different
-        genres. I am into everything from 90s rap to 1930s jazz.
+        One of my favorite things in the whole world is music. Here are a few of
+        the playlists I&apos;ve built up over the last few years and my recently
+        played songs. I am into everything from electronic to bossa nova. A few
+        of my favorite artists are The Smiths, Coldplay, Daft Punk, and Earth
+        Wind & Fire.
       </p>
       <div className={styles.sections}>
         <div className={styles.section}>
