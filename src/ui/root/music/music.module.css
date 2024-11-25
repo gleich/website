@@ -1,0 +1,109 @@
+.sections {
+  margin: 10px 5px;
+  display: flex;
+  gap: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  width: calc(50% - 5px);
+}
+
+.sectionTitle {
+  text-align: center;
+  padding: 5px 0px;
+}
+
+.recentSongsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recentSongs {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.recentSong {
+  width: calc(33% - 10px) !important;
+}
+
+.recentSongAlbumArt {
+  width: 100%;
+  height: auto;
+}
+
+.playlists {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.fourthRecentSong {
+  display: none !important;
+}
+
+.fourthPlaylist {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .sections {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 525px) {
+  .section {
+    width: 100%;
+  }
+
+  .recentSong {
+    width: calc(33% - 20px);
+  }
+}
+
+@media (max-width: 525px) {
+  .recentSongs {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .playlists {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .section {
+    width: calc(100% - 15px);
+  }
+
+  .fourthPlaylist {
+    display: block;
+  }
+
+  .fourthRecentSong {
+    display: block !important;
+    width: calc(50% - 10px) !important;
+  }
+
+  .recentSong {
+    width: calc(50% - 10px) !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .section {
+    width: calc(95%);
+  }
+
+  .sections {
+    margin: 10px 0px;
+  }
+}

@@ -18,8 +18,8 @@
   border-radius: 5px;
   border: 0.5px solid grey;
   transition:
-    background-color 0.11s ease,
-    color 0.11s ease;
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .button:hover {

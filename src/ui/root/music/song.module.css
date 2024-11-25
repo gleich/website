@@ -1,0 +1,23 @@
+.song {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  color: var(--foreground);
+  text-decoration: none;
+  width: 200px;
+}
+
+.albumArt {
+  border-radius: 4px;
+}
+
+.songText {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.artist {
+  color: grey;
+}

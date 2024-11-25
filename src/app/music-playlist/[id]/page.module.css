@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lastUpdated {
+  color: grey;
+}
+
+.songs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.songAlbumArt {
+  width: 150px !important;
+  height: auto;
+}
+
+.song {
+  width: 150px !important;
+}

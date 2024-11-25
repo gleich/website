@@ -78,6 +78,10 @@ h3 {
   font-size: 22px;
 }
 
+h4 {
+  font-size: 20px;
+}
+
 h2::selection {
   background-color: var(--background);
   text-decoration-color: var(--foreground);
@@ -95,4 +99,10 @@ h2::selection {
 
 *::-webkit-scrollbar-thumb {
   background: var(--foreground);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

@@ -24,6 +24,11 @@ const nextConfig = {
         hostname: 'minio-api.dev.mattglei.ch',
         pathname: '/mapbox-maps/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'is1-ssl.mzstatic.com',
+        pathname: '/image/**',
+      },
     ],
   },
   redirects: async () => [
