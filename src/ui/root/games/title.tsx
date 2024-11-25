@@ -29,10 +29,7 @@ export default function Title({ name }: { name: string }) {
         {name}
       </h3>
       {isOverflowing ? (
-        <h3
-          ref={textRef}
-          className={`${styles.text} ${isOverflowing ? styles.scroll : ''}`}
-        >
+        <h3 className={`${styles.text} ${isOverflowing ? styles.scroll : ''}`}>
           {name}
         </h3>
       ) : (
