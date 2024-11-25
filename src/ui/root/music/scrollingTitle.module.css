@@ -22,3 +22,13 @@
 .marqueeText {
   margin-right: 20px;
 }
+
+@media (max-width: 400px) {
+  .text {
+    font-size: 13px;
+  }
+
+  .marqueeText {
+    font-size: 13px;
+  }
+}
