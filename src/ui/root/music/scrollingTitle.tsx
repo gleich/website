@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import styles from '@/ui/root/music/scrollingTitle.module.css';
+import Marquee from 'react-fast-marquee';
 
 export default function ScrollingTitle({
   text,
@@ -11,39 +12,39 @@ export default function ScrollingTitle({
   className?: string | undefined;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mainTextRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const text = mainTextRef.current;
-    if (container && text) {
-      const checkOverflow = () => {
-        if (container && mainTextRef.current) {
-          setIsOverflowing(
-            mainTextRef.current.scrollWidth > container.clientWidth,
-          );
-        }
-      };
-      checkOverflow();
-      window.addEventListener('resize', checkOverflow);
-      return () => window.removeEventListener('resize', checkOverflow);
-    }
-  }, []);
+    const checkOverflow = () => {
+      const container = containerRef.current;
+      const textElement = textRef.current;
+      if (container && textElement) {
+        setIsOverflowing(textElement.scrollWidth > container.clientWidth);
+      }
+    };
+
+    checkOverflow();
+
+    window.addEventListener('resize', checkOverflow);
+    return () => window.removeEventListener('resize', checkOverflow);
+  }, [text]);
 
   return (
     <div
       ref={containerRef}
       className={`${styles.container} ${!isOverflowing ? styles.notOverflow : ''}`}
     >
-      <div
-        ref={mainTextRef}
-        className={`${styles.text} ${className} ${isOverflowing ? styles.scroll : ''}`}
-      >
-        {text}
-      </div>
-      {isOverflowing && (
-        <div className={`${styles.text} ${className} ${styles.scroll}`}>
+      {isOverflowing ? (
+        <Marquee
+          gradient={false}
+          speed={40}
+          className={`${styles.marquee} ${className}`}
+        >
+          <span className={styles.marqueeText}>{text}</span>
+        </Marquee>
+      ) : (
+        <div ref={textRef} className={`${styles.text} ${className}`}>
           {text}
         </div>
       )}

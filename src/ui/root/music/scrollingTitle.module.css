@@ -1,33 +1,24 @@
 .container {
   overflow: hidden;
   display: flex;
+  align-items: center;
   max-width: 100%;
-  gap: 20px;
   position: relative;
 }
 
 .notOverflow {
-  align-items: center;
   justify-content: center;
 }
 
 .text {
   white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
 }
 
-.scroll {
-  animation: scroll 9s linear infinite;
-  animation-delay: 2s;
-  will-change: transform;
-  flex-shrink: 0;
+.marquee {
+  width: 100%;
+  display: block;
 }
 
-@keyframes scroll {
-  to {
-    transform: translateX(calc(-100% - 20px));
-  }
+.marqueeText {
+  margin-right: 20px;
 }
