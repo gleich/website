@@ -13,7 +13,7 @@ export default async function Music() {
     <LiveSection
       name="Music"
       source="Apple Music"
-      sourceIcon="appleMusic"
+      sourceIcon="applemusic"
       sourceURL="https://music.apple.com/"
       lastUpdated={appleMusicData.updated}
     >
