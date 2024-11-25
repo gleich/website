@@ -15,7 +15,7 @@
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .artist {
