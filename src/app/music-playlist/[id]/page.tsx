@@ -36,7 +36,7 @@ export async function generateMetadata({
     description: description,
     openGraph: {
       title: playlist.name,
-      description: playlist.name || `Discover my "${playlist.name}" playlist.`,
+      description: description,
       url: `https://mattglei.ch/music-playlist/${id}`,
     },
     twitter: {
