@@ -12,7 +12,12 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export default function Description({ fontSize }: { fontSize: number }) {
   const descriptions = useMemo(
-    () => ['college student', 'software engineer', 'cyclist', 'photographer'],
+    () => [
+      'college student @ RIT',
+      'software engineer',
+      'cyclist',
+      'photographer',
+    ],
     [],
   );
 
