@@ -17,7 +17,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const appleMusicData = await loadAppleMusicData();
   const id = (await params).id;
