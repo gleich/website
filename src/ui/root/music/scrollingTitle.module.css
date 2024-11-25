@@ -1,8 +1,9 @@
 .container {
   overflow: hidden;
-  display: inline-flex;
-  width: 100%;
+  display: flex;
+  max-width: 100%;
   gap: 20px;
+  position: relative;
 }
 
 .notOverflow {
@@ -22,6 +23,7 @@
   animation: scroll 9s linear infinite;
   animation-delay: 2s;
   will-change: transform;
+  flex-shrink: 0;
 }
 
 @keyframes scroll {

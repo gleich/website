@@ -29,12 +29,12 @@ export default function ScrollingTitle({
       window.addEventListener('resize', checkOverflow);
       return () => window.removeEventListener('resize', checkOverflow);
     }
-  }, [text]);
+  }, []);
 
   return (
     <div
       ref={containerRef}
-      className={`${styles.container} ${isOverflowing ? '' : styles.notOverflow}`}
+      className={`${styles.container} ${!isOverflowing ? styles.notOverflow : ''}`}
     >
       <div
         ref={mainTextRef}
@@ -42,14 +42,10 @@ export default function ScrollingTitle({
       >
         {text}
       </div>
-      {isOverflowing ? (
-        <div
-          className={`${styles.text} ${className} ${isOverflowing ? styles.scroll : ''}`}
-        >
+      {isOverflowing && (
+        <div className={`${styles.text} ${className} ${styles.scroll}`}>
           {text}
         </div>
-      ) : (
-        <></>
       )}
     </div>
   );
