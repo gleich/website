@@ -21,16 +21,16 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 1400px;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .songAlbumArt {
-  width: 150px !important;
+  width: 160px !important;
   height: auto;
 }
 
 .song {
-  width: 150px !important;
+  width: 160px !important;
 }
