@@ -6,12 +6,45 @@ import Song from '@/ui/root/music/song';
 import Copyright from '@/ui/root/copyright';
 import { IBM_Plex_Mono } from 'next/font/google';
 import LastUpdated from './lastUpdated';
+import { Metadata } from 'next';
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: '700',
   subsets: ['latin'],
   style: 'italic',
 });
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const appleMusicData = await loadAppleMusicData();
+  const id = (await params).id;
+  const playlist = appleMusicData.data.playlists[id];
+
+  if (!playlist) {
+    return {
+      title: 'Playlist Not Found',
+      description: 'The requested playlist could not be found.',
+    };
+  }
+
+  const description = `Enjoy my playlist "${playlist.name}".`;
+  return {
+    title: playlist.name,
+    description: description,
+    openGraph: {
+      title: playlist.name,
+      description: playlist.name || `Discover my "${playlist.name}" playlist.`,
+      url: `https://mattglei.ch/music-playlist/${id}`,
+    },
+    twitter: {
+      title: playlist.name,
+      description: description,
+    },
+  };
+}
 
 export default async function Page({
   params,
