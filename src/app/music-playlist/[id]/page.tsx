@@ -38,6 +38,7 @@ export default async function Page({
       <div className={styles.songs}>
         {playlist.tracks.map((t) => (
           <Song
+            key={t.id}
             song={t}
             className={styles.song}
             albumArtClassName={styles.songAlbumArt}
