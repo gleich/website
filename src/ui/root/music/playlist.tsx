@@ -20,8 +20,7 @@ export default function Playlist({
 }) {
   return (
     <Link
-      href="https://google.com"
-      target="_blank"
+      href={`/music-playlist/${playlist.id}`}
       className={`${styles.container} ${className}`}
     >
       <div className={styles.collageContainer}>

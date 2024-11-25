@@ -1,15 +1,9 @@
 import { loadAppleMusicData } from '@/lib/lcp/applemusic';
 import LiveSection from '@/ui/section/liveSection';
 import styles from '@/ui/root/music/music.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Inconsolata } from 'next/font/google';
-import ScrollingTitle from './scrollingTitle';
 import Card from '@/ui/card';
 import Song from './song';
 import Playlist from './playlist';
-
-const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export default async function Music() {
   const appleMusicData = await loadAppleMusicData();

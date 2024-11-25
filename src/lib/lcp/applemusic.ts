@@ -23,6 +23,7 @@ export interface Song {
 
 export interface Playlist {
   name: string;
+  id: string;
   tracks: Song[];
   last_modified: Date;
 }
