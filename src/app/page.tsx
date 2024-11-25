@@ -47,7 +47,11 @@ export default async function Home() {
           >
             <Projects />
           </Suspense>
-          <Music />
+          <Suspense
+            fallback={<LoadingSection name="Music" expectedHeight={438.5} />}
+          >
+            <Music />
+          </Suspense>
           <Photos />
           <Suspense
             fallback={<LoadingSection name="Games" expectedHeight={289.24} />}
