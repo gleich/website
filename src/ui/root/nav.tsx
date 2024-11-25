@@ -5,6 +5,9 @@ import Logo from './header/logo';
 import Description from './header/description';
 import Socials from './header/social';
 import Link from 'next/link';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Nav({
   maxWidth,
@@ -45,7 +48,7 @@ export default function Nav({
       <Link href="/" className={styles.link}>
         <Logo className={styles.logo} />
         <div className={styles.nameAndDescription}>
-          <h1 className={styles.name}>Matt Gleich</h1>
+          <h1 className={`${inter.className} ${styles.name}`}>Matt Gleich</h1>
           <Description fontSize={13} />
         </div>
       </Link>
