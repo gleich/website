@@ -6,11 +6,8 @@ import styles from '@/ui/root/projects/project.module.css';
 import SVGIcon from '@/ui/svgIcon';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { Inconsolata } from 'next/font/google';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
-const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 dayjs.extend(relativeTime);
 
@@ -55,9 +52,7 @@ export default function Project({ repo }: { repo: Repository }) {
             {repo.language}{' '}
           </p>
         </div>
-        <div
-          className={`${styles.highlightedProjectDetails} ${inconsolata.className}`}
-        >
+        <div className={styles.highlightedProjectDetails}>
           <p>{repo.description}</p>
           <p
             className={styles.highlightedProjectUpdated}
