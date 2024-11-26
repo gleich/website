@@ -13,13 +13,8 @@ export default function Song({
   className?: string | undefined;
   albumArtClassName?: string | undefined;
 }) {
-  return (
-    <Link
-      href={song.url}
-      key={song.id}
-      className={`${styles.song} ${className}`}
-      target="_blank"
-    >
+  const songContent = (
+    <>
       <Image
         src={song.album_art_url}
         alt={song.track}
@@ -31,6 +26,19 @@ export default function Song({
         <ScrollingTitle text={song.track} />
         <ScrollingTitle className={styles.artist} text={song.artist} />
       </div>
+    </>
+  );
+
+  return song.url != '' ? (
+    <Link
+      href={song.url}
+      key={song.id}
+      className={`${styles.song} ${className}`}
+      target="_blank"
+    >
+      {songContent}
     </Link>
+  ) : (
+    <div className={`${styles.song} ${className}`}>{songContent}</div>
   );
 }
