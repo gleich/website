@@ -8,8 +8,8 @@ export default function Resume() {
       <Image
         src="/icons/file-text.svg"
         alt="text file icon"
-        width={14}
-        height={14}
+        width={21}
+        height={21}
         className={styles.fileIcon}
       />
       résumé

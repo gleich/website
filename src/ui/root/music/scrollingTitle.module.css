@@ -26,11 +26,9 @@
 @media (max-width: 400px) {
   .text {
     font-size: 13px;
-    -webkit-text-size-adjust: 100%;
   }
 
   .marqueeText {
     font-size: 13px;
-    -webkit-text-size-adjust: 100%;
   }
 }
