@@ -19,6 +19,35 @@
   display: block;
 }
 
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--background),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--background),
+    rgba(255, 255, 255, 0)
+  );
+}
+
 .marqueeText {
   margin-right: 20px;
 }
