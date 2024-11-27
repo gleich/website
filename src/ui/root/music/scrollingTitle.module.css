@@ -50,7 +50,7 @@
 }
 
 .marqueeText {
-  margin-right: 20px;
+  margin: 0px 10px;
 }
 
 @media (max-width: 400px) {
