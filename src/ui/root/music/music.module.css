@@ -100,10 +100,6 @@
 }
 
 @media (max-width: 400px) {
-  .section {
-    width: calc(95%);
-  }
-
   .sections {
     margin: 10px 0px;
   }
