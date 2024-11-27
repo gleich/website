@@ -23,7 +23,7 @@
   max-width: 1400px;
   gap: 15px;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .songAlbumArt {
