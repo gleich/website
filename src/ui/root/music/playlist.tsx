@@ -22,6 +22,7 @@ export default function Playlist({
     <Link
       href={`/music-playlist/${playlist.id}`}
       className={`${styles.container} ${className}`}
+      title={`View the ${playlist.tracks.length} tracks from my ${playlist.name} playlist`}
     >
       <div className={styles.collageContainer}>
         <div className={styles.collage}>
