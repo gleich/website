@@ -17,7 +17,7 @@ export default function Song({
     <>
       <Image
         src={song.album_art_url}
-        alt={song.track}
+        alt={`${song.track} album art`}
         width={200}
         height={200}
         className={`${styles.albumArt} ${albumArtClassName}`}
@@ -35,6 +35,7 @@ export default function Song({
       key={song.id}
       className={`${styles.song} ${className}`}
       target="_blank"
+      title={`View "${song.track}" on Apple Music`}
     >
       {songContent}
     </Link>
