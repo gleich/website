@@ -2,11 +2,8 @@
 
 import { exactFromNow } from '@/lib/time';
 import dayjs from 'dayjs';
-import { Inconsolata } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import styles from '@/app/music-playlist/[id]/lastUpdated.module.css';
-
-const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export default function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   const dayjsLastUpdate = dayjs(lastUpdated);
@@ -20,7 +17,7 @@ export default function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   }, []);
 
   return (
-    <div className={`${styles.lastUpdated} ${inconsolata.className}`}>
+    <div className={styles.lastUpdated}>
       Last updated {exactFromNow(dayjsLastUpdate, currentTime)}
     </div>
   );
