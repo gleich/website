@@ -29,11 +29,11 @@ export default async function Music() {
           <h4 className={styles.sectionTitle}>Playlists</h4>
           <Card className={`${styles.playlists}`}>
             <Playlist playlist={playlists['p.qQXLxPLtA75zg8e']} />
-            <Playlist playlist={playlists['p.LV0PXNoCl0EpDLW']} />
+            <Playlist playlist={playlists['p.LV0PX3EIl0EpDLW']} />
             <Playlist playlist={playlists['p.AWXoZoxHLrvpJlY']} />
             <Playlist
               className={styles.fourthPlaylist}
-              playlist={playlists['p.LV0PX3EIl0EpDLW']}
+              playlist={playlists['p.LV0PXNoCl0EpDLW']}
             />
           </Card>
         </div>
