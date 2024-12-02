@@ -79,4 +79,8 @@
   .container {
     width: calc(50% - 10px);
   }
+
+  .name {
+    padding: 3px 0px;
+  }
 }
