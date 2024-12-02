@@ -20,7 +20,7 @@
 .songs {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1400px;
+  max-width: 1600px;
   gap: 15px;
   align-items: center;
   justify-content: center;
@@ -28,17 +28,25 @@
 }
 
 .songAlbumArt {
-  width: 160px !important;
+  width: 200px !important;
   height: auto;
 }
 
 .song {
-  width: 160px !important;
+  width: 200px !important;
 }
 
 @media (max-width: 600px) {
   .songs {
     justify-content: center;
+  }
+
+  .songAlbumArt {
+    width: 40vw !important;
+  }
+
+  .song {
+    width: 40vw !important;
   }
 }
 
