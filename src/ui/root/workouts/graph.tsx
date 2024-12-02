@@ -45,7 +45,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
           className={`${styles.chartContainer} ${!isClient ? styles.hidden : ''}`}
         >
           <ResponsiveContainer width="100%" aspect={500 / 240}>
-            <LineChart data={data}>
+            <LineChart data={data} style={{ cursor: 'crosshair' }}>
               <CartesianGrid stroke="#424242" strokeDasharray="3 3" />
               <Line
                 type="basis"
