@@ -7,6 +7,8 @@ import Copyright from '@/ui/root/copyright';
 import { IBM_Plex_Mono } from 'next/font/google';
 import LastUpdated from './lastUpdated';
 import { Metadata } from 'next';
+import { exactFromNow } from '@/lib/time';
+import dayjs from 'dayjs';
 
 const ibmPlexMono = IBM_Plex_Mono({
   weight: '700',
@@ -30,7 +32,7 @@ export async function generateMetadata({
     };
   }
 
-  const description = `Enjoy my playlist "${playlist.name}".`;
+  const description = `Enjoy the ${playlist.tracks.length} tracks from my "${playlist.name}" playlist. Last updated ${exactFromNow(dayjs(playlist.last_modified), dayjs())}`;
   return {
     title: playlist.name,
     description: description,
@@ -60,7 +62,7 @@ export default async function Page({
   }
   return (
     <main className={styles.main}>
-      <Nav maxWidth={1400} />
+      <Nav maxWidth={1600} />
 
       <div className={styles.header}>
         <h1 className={`${styles.title} ${ibmPlexMono.className}`}>
