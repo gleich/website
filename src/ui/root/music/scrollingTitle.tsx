@@ -41,7 +41,7 @@ export default function ScrollingTitle({
       {isOverflowing ? (
         <Marquee
           gradient={false}
-          speed={35}
+          speed={Math.min(70, 1.2 * text.length)}
           delay={2}
           className={`${styles.marquee} ${className}`}
         >
