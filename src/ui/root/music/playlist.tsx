@@ -7,6 +7,7 @@ import Link from 'next/link';
 const ibmPlexMono = IBM_Plex_Mono({
   weight: '700',
   subsets: ['latin'],
+  style: 'italic',
 });
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });
