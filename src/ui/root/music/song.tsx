@@ -35,7 +35,7 @@ export default function Song({
       key={song.id}
       className={`${styles.song} ${className}`}
       target="_blank"
-      title={`View "${song.track}" on Apple Music`}
+      title={`View "${song.track}" by ${song.artist} on Apple Music`}
     >
       {songContent}
     </Link>
