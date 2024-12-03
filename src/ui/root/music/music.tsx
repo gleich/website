@@ -4,6 +4,7 @@ import styles from '@/ui/root/music/music.module.css';
 import Card from '@/ui/card';
 import Song from './song';
 import Playlist from './playlist';
+import Link from 'next/link';
 
 export default async function Music() {
   const appleMusicData = await loadAppleMusicData();
@@ -18,11 +19,28 @@ export default async function Music() {
       lastUpdated={appleMusicData.updated}
     >
       <p>
-        One of my favorite things in this world is music. Here are a few of the
-        playlists I&apos;ve built up over the last few years and my recently
-        played songs. I am into everything from electronic to bossa nova. A few
-        of my favorite artists are The Smiths, Coldplay, Daft Punk, and Earth
-        Wind & Fire.
+        One of my favorite things in this world is music. I am into everything
+        from electronic to bossa nova. A few of my favorite artists are{' '}
+        <Link href="https://en.wikipedia.org/wiki/The_Smiths" target="_blank">
+          The Smiths
+        </Link>
+        ,{' '}
+        <Link href="https://en.wikipedia.org/wiki/Coldplay" target="_blank">
+          Coldplay
+        </Link>
+        ,{' '}
+        <Link href="https://en.wikipedia.org/wiki/Daft_Punk" target="_blank">
+          Daft Punk
+        </Link>
+        , and{' '}
+        <Link
+          href="https://en.wikipedia.org/wiki/Fleetwood_Mac"
+          target="_blank"
+        >
+          Fleetwood Mac
+        </Link>
+        . Here are a few of the playlists I&apos;ve built up over the last few
+        years and my recently played songs:
       </p>
       <div className={styles.sections}>
         <div className={styles.section}>
