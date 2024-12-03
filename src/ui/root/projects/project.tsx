@@ -28,7 +28,7 @@ export default function Project({ repo }: { repo: Repository }) {
         href={repo.url}
         target="_blank"
         className={styles.cardLink}
-        title="View on repository on GitHub"
+        title={`View ${repo.owner}/${repo.name} on GitHub`}
       >
         <div className={styles.highlightedProjectHeader}>
           <div className={styles.highlightedProjectName}>
