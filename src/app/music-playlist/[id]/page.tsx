@@ -16,8 +16,8 @@ dayjs.extend(advancedFormat);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 
-const ibmPlexMono = localFont({
-  src: '../../../../public/fonts/ibm_plex_mono/bold.ttf',
+const ibmPlexMonoBoldItalic = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
 });
 
 export async function generateMetadata({
@@ -69,7 +69,7 @@ export default async function Page({
       <Nav maxWidth={1600} />
 
       <div className={styles.header}>
-        <h1 className={`${styles.title} ${ibmPlexMono.className}`}>
+        <h1 className={`${styles.title} ${ibmPlexMonoBoldItalic.className}`}>
           {playlist.name}
         </h1>
         <LastUpdated lastUpdated={playlist.last_modified} />
