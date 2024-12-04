@@ -5,7 +5,7 @@ import localFont from 'next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ibmPlexMono = localFont({
+const ibmPlexMonoBoldItalic = localFont({
   src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
 });
 
@@ -37,7 +37,7 @@ export default function Playlist({
             />
           ))}
         </div>
-        <p className={`${ibmPlexMono.className} ${styles.name}`}>
+        <p className={`${ibmPlexMonoBoldItalic.className} ${styles.name}`}>
           {playlist.name}
         </p>
       </div>

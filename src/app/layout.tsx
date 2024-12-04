@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import { IBM_Plex_Sans } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import localFont from 'next/font/local';
 
-const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });
+const ibmPlexSansMedium = localFont({
+  src: '../../public/fonts/ibm_plex_sans/medium.otf',
+});
 
 const title = 'Matt Gleich';
 const description =
@@ -67,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ibmPlexSans.className}>
+      <body className={ibmPlexSansMedium.className}>
         {children} <Analytics />
         <SpeedInsights />
       </body>
