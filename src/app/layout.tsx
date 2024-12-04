@@ -4,7 +4,7 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '400' });
+const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });
 
 const title = 'Matt Gleich';
 const description =

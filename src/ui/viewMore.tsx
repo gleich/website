@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from '@/ui/viewMore.module.css';
-import { IBM_Plex_Sans, Inconsolata } from 'next/font/google';
+import { IBM_Plex_Sans } from 'next/font/google';
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });
 
