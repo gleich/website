@@ -3,9 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from '@/ui/root/music/scrollingTitle.module.css';
 import Marquee from 'react-fast-marquee';
-import { IBM_Plex_Sans } from 'next/font/google';
-
-const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });
 
 export default function ScrollingTitle({
   text,
@@ -36,7 +33,7 @@ export default function ScrollingTitle({
   return (
     <div
       ref={containerRef}
-      className={`${styles.container} ${ibmPlexSans.className} ${!isOverflowing ? styles.notOverflow : ''}`}
+      className={`${styles.container} ${!isOverflowing ? styles.notOverflow : ''}`}
     >
       {isOverflowing ? (
         <Marquee

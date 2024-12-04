@@ -1,6 +1,5 @@
 import { Playlist as AppleMusicPlaylist } from '@/lib/lcp/applemusic';
 import styles from '@/ui/root/music/playlist.module.css';
-import { IBM_Plex_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,8 +7,6 @@ import Link from 'next/link';
 const ibmPlexMonoBoldItalic = localFont({
   src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
 });
-
-const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });
 
 export default function Playlist({
   playlist,
@@ -42,9 +39,7 @@ export default function Playlist({
         </p>
       </div>
       <div className={styles.buttonContainer}>
-        <button
-          className={`${styles.viewTracksButton} ${ibmPlexSans.className}`}
-        >
+        <button className={styles.viewTracksButton}>
           View {playlist.tracks.length} tracks
         </button>
       </div>
