@@ -1,13 +1,12 @@
 import { Playlist as AppleMusicPlaylist } from '@/lib/lcp/applemusic';
 import styles from '@/ui/root/music/playlist.module.css';
-import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
+import { IBM_Plex_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: '700',
-  subsets: ['latin'],
-  style: 'italic',
+const ibmPlexMono = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
 });
 
 const ibmPlexSans = IBM_Plex_Sans({ subsets: ['latin'], weight: '500' });

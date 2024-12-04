@@ -4,22 +4,20 @@ import styles from '@/app/music-playlist/[id]/page.module.css';
 import Nav from '@/ui/root/nav';
 import Song from '@/ui/root/music/song';
 import Copyright from '@/ui/root/copyright';
-import { IBM_Plex_Mono } from 'next/font/google';
 import LastUpdated from './lastUpdated';
 import { Metadata } from 'next';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import dayjs from 'dayjs';
+import localFont from 'next/font/local';
 
 dayjs.extend(advancedFormat);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: '700',
-  subsets: ['latin'],
-  style: 'italic',
+const ibmPlexMono = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/bold.ttf',
 });
 
 export async function generateMetadata({
