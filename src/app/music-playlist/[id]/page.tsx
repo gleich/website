@@ -80,7 +80,7 @@ export default async function Page({
         </h1>
         <div className={styles.headerText}>
           <p>
-            {playlist.tracks.length} songs ⋅ {renderDuration(totalTime / 1000)}
+            {playlist.tracks.length} songs - {renderDuration(totalTime / 1000)}
           </p>
           <LastUpdated lastUpdated={playlist.last_modified} />
         </div>
