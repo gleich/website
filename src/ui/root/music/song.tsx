@@ -19,6 +19,7 @@ export default function Song({
         src={song.album_art_url}
         alt={`${song.track} album art`}
         width={200}
+        unoptimized
         height={200}
         className={`${styles.albumArt} ${albumArtClassName}`}
       />
