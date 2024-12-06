@@ -20,3 +20,9 @@
 .artist {
   color: grey;
 }
+
+@media (max-width: 400px) {
+  .songText {
+    margin-top: 2px;
+  }
+}
