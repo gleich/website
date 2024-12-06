@@ -8,6 +8,10 @@
 }
 
 .section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: calc(50% - 5px);
 }
 

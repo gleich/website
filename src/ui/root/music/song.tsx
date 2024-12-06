@@ -14,7 +14,7 @@ export default function Song({
   albumArtClassName?: string | undefined;
 }) {
   const songContent = (
-    <>
+    <div>
       <Image
         src={song.album_art_url}
         alt={`${song.track} album art`}
@@ -27,7 +27,7 @@ export default function Song({
         <ScrollingTitle text={song.track} />
         <ScrollingTitle className={styles.artist} text={song.artist} />
       </div>
-    </>
+    </div>
   );
 
   return song.url != '' ? (
