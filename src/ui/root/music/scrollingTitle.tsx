@@ -12,15 +12,17 @@ export default function ScrollingTitle({
   className?: string | undefined;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
+  const measurementRef = useRef<HTMLSpanElement>(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
 
   useEffect(() => {
     const checkOverflow = () => {
       const container = containerRef.current;
-      const textElement = textRef.current;
-      if (container && textElement) {
-        setIsOverflowing(textElement.scrollWidth > container.clientWidth);
+      const measurementElement = measurementRef.current;
+      if (container && measurementElement) {
+        setIsOverflowing(
+          measurementElement.scrollWidth > container.clientWidth,
+        );
       }
     };
 
@@ -31,10 +33,11 @@ export default function ScrollingTitle({
   }, [text]);
 
   return (
-    <div
-      ref={containerRef}
-      className={`${styles.container} ${!isOverflowing ? styles.notOverflow : ''}`}
-    >
+    <div ref={containerRef} className={styles.container}>
+      <span ref={measurementRef} className={styles.measurement}>
+        {text}
+      </span>
+
       {isOverflowing ? (
         <Marquee
           gradient={false}
@@ -45,9 +48,7 @@ export default function ScrollingTitle({
           <span className={styles.marqueeText}>{text}</span>
         </Marquee>
       ) : (
-        <div ref={textRef} className={`${styles.text} ${className}`}>
-          {text}
-        </div>
+        <div className={`${styles.text} ${className}`}>{text}</div>
       )}
     </div>
   );

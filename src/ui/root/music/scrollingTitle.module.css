@@ -11,6 +11,8 @@
 }
 
 .text {
+  width: 100%;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -51,6 +53,12 @@
 
 .marqueeText {
   margin: 0px 10px;
+}
+
+.measurement {
+  visibility: hidden;
+  white-space: nowrap;
+  position: absolute;
 }
 
 @media (max-width: 400px) {
