@@ -11,6 +11,7 @@ import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import dayjs from 'dayjs';
 import localFont from 'next/font/local';
+import { renderDuration } from '@/lib/time';
 
 dayjs.extend(advancedFormat);
 dayjs.extend(timezone);
@@ -61,6 +62,11 @@ export default async function Page({
   const appleMusicData = await loadAppleMusicData();
   const id = (await params).id;
   const playlist = appleMusicData.data.playlists[id];
+  const totalTime = playlist.tracks.reduce(
+    (total: number, s: { duration_in_millis: number }) =>
+      total + s.duration_in_millis,
+    0,
+  );
   if (!playlist) {
     return <NotFound />;
   }
@@ -72,7 +78,12 @@ export default async function Page({
         <h1 className={`${styles.title} ${ibmPlexMonoBoldItalic.className}`}>
           {playlist.name}
         </h1>
-        <LastUpdated lastUpdated={playlist.last_modified} />
+        <div className={styles.headerText}>
+          <p>
+            {playlist.tracks.length} songs ⋅ {renderDuration(totalTime / 1000)}
+          </p>
+          <LastUpdated lastUpdated={playlist.last_modified} />
+        </div>
       </div>
 
       <div className={styles.songs}>

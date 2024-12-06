@@ -17,8 +17,8 @@ export default function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   }, []);
 
   return (
-    <div className={styles.lastUpdated}>
+    <p className={styles.lastUpdated}>
       Last updated {exactFromNow(dayjsLastUpdate, currentTime)}
-    </div>
+    </p>
   );
 }

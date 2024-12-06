@@ -15,6 +15,7 @@ dayjs.extend(relativeTime);
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(advancedFormat);
+
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
 export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
