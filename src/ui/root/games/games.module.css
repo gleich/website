@@ -96,3 +96,9 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 450px) {
+  .game {
+    width: 95%;
+  }
+}

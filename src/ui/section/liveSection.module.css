@@ -70,7 +70,7 @@
     brightness(90%) contrast(114%);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
   .card {
     border: none;
     padding: 0px;
