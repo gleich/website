@@ -153,7 +153,7 @@ export default function Lcp() {
               +25 requests to the Steam REST API with each request taking +400ms
               down to one request that takes ~200ms.
             </p>
-            <b className={styles.benefit}>Avoid hitting API rate limits</b>
+            <b className={styles.benefit}>Prevent hitting API rate limits</b>
             <p>
               Most major APIs have rate limits. The Strava API for example only
               allows 100 requests every 15 minutes. If I wasn&apos;t caching
@@ -205,7 +205,7 @@ export default function Lcp() {
                   architecture in my opinion.
                 </li>
                 <li>
-                  I has been a little while since I worked in Go and wanted to
+                  It has been a little while since I worked in Go and wanted to
                   do a new project in the language.
                 </li>
               </ul>
