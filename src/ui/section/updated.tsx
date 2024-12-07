@@ -4,7 +4,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
-import styles from '@/ui/section/lastUpdated.module.css';
+import styles from '@/ui/section/updated.module.css';
 import { Inconsolata } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,7 +18,7 @@ dayjs.extend(advancedFormat);
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
-export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
+export function Updated({ lastUpdated }: { lastUpdated: Date }) {
   const dayjsLastUpdate = dayjs(lastUpdated);
   const [currentTime, setCurrentTime] = useState(dayjs());
 

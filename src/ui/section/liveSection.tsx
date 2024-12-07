@@ -3,7 +3,7 @@ import { Inconsolata, Inter } from 'next/font/google';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import Card from '../card';
-import { LastUpdated } from './lastUpdated';
+import { Updated } from './updated';
 import Image from 'next/image';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
@@ -51,7 +51,7 @@ export default function LiveSection({
           </div>
         </div>
         {children}
-        <LastUpdated lastUpdated={lastUpdated} />
+        <Updated lastUpdated={lastUpdated} />
       </Card>
     </section>
   );
