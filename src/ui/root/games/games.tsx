@@ -58,7 +58,7 @@ export default async function Games() {
                     <Link
                       href={g.url}
                       target="_blank"
-                      className={styles.gameTitle}
+                      className={styles.gameTitleLink}
                       title={`View "${g.name}" on Steam`}
                     >
                       <Image
