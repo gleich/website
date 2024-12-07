@@ -2,7 +2,7 @@ import { Song as AppleMusicSong } from '@/lib/lcp/applemusic';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/ui/root/music/song.module.css';
-import ScrollingTitle from './scrollingTitle';
+import ScrollingText from '../../scrollingText';
 
 export default function Song({
   song,
@@ -24,8 +24,8 @@ export default function Song({
         className={`${styles.albumArt} ${albumArtClassName}`}
       />
       <div className={`${styles.songText}`}>
-        <ScrollingTitle text={song.track} />
-        <ScrollingTitle className={styles.artist} text={song.artist} />
+        <ScrollingText text={song.track} />
+        <ScrollingText className={styles.artist} text={song.artist} />
       </div>
     </div>
   );

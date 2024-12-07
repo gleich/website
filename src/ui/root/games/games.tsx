@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Card from '@/ui/card';
 import { renderDuration } from '@/lib/time';
 import Stats from '@/ui/stats';
-import Title from './title';
+import ScrollingText from '@/ui/scrollingText';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 
@@ -68,7 +68,10 @@ export default async function Games() {
                         height={20}
                         className={styles.gameIcon}
                       />
-                      <Title name={g.name} />
+                      <ScrollingText
+                        text={g.name}
+                        className={styles.gameTitle}
+                      />
                     </Link>
                     <div className={styles.stats}>
                       <Stats stats={stats} />

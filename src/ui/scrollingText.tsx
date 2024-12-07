@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import styles from '@/ui/root/music/scrollingTitle.module.css';
+import styles from '@/ui/scrollingTitle.module.css';
 import Marquee from 'react-fast-marquee';
 
-export default function ScrollingTitle({
+export default function ScrollingText({
   text,
   className,
 }: {
