@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import styles from '@/ui/scrollingTitle.module.css';
+import styles from '@/ui/scrollingText.module.css';
 import Marquee from 'react-fast-marquee';
 
 export default function ScrollingText({
@@ -34,7 +34,10 @@ export default function ScrollingText({
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <span ref={measurementRef} className={styles.measurement}>
+      <span
+        ref={measurementRef}
+        className={`${styles.measurement} ${styles.text} ${className}`}
+      >
         {text}
       </span>
 
