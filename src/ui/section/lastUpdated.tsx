@@ -58,7 +58,7 @@ export function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
         </span>
       </p>
       <p>
-        Last updated{' '}
+        Updated{' '}
         <span className={styles.lastUpdateExact}>{lastUpdateExact} [</span>
         {exactFromNow(dayjsLastUpdate, currentTime)}
         <span className={styles.lastUpdateExact}>]</span>
