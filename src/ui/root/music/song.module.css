@@ -11,7 +11,7 @@
 }
 
 .songText {
-  margin-top: 5px;
+  margin-top: 2px;
   display: flex;
   flex-direction: column;
   font-size: 14px !important;
@@ -19,10 +19,4 @@
 
 .artist {
   color: grey;
-}
-
-@media (max-width: 400px) {
-  .songText {
-    margin-top: 2px;
-  }
 }
