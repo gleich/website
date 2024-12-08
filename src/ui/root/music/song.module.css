@@ -20,3 +20,13 @@
 .artist {
   color: grey;
 }
+
+@media (max-width: 400px) {
+  .track {
+    font-size: 13px;
+  }
+
+  .artist {
+    font-size: 13px;
+  }
+}

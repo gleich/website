@@ -24,7 +24,7 @@ export default function Song({
         className={`${styles.albumArt} ${albumArtClassName}`}
       />
       <div className={`${styles.songText}`}>
-        <ScrollingText text={song.track} />
+        <ScrollingText className={styles.track} text={song.track} />
         <ScrollingText className={styles.artist} text={song.artist} />
       </div>
     </div>

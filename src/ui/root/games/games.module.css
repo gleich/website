@@ -4,6 +4,7 @@
   margin-top: 15px;
   margin-bottom: 15px;
   align-items: center;
+  width: 100%;
   justify-content: center;
 }
 
@@ -97,8 +98,8 @@
   }
 }
 
-@media (max-width: 450px) {
-  .game {
-    width: 95%;
+@media (max-width: 410px) {
+  .gameTitle {
+    font-size: 17px !important;
   }
 }
