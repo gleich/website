@@ -50,7 +50,7 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
       className={`${styles.time} ${inconsolata.className}`}
       suppressHydrationWarning
     >
-      {dayjsDate.format(`[${dayOfWeek}], MMM Do [@] h:mm A`)} [
+      {dayjsDate.format(`[${dayOfWeek}], MMM Do [at] h:mm A`)} [
       {exactFromNow(dayjsDate, currentTime)}]
     </p>
   );
