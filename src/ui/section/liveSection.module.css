@@ -62,7 +62,6 @@
   justify-content: center;
   gap: 9px;
   color: var(--live-color);
-  text-decoration-thickness: 0.5px;
 }
 
 .logoIcon {
