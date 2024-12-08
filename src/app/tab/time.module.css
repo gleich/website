@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.time {
+  font-size: 19px;
+}
