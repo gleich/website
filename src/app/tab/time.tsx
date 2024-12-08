@@ -2,10 +2,13 @@
 
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
-import advancedFormat from 'dayjs/plugin/advancedFormat';
 import styles from './time.module.css';
 
-dayjs.extend(advancedFormat);
+function getNumberWithOrdinal(n: number): string {
+  let s = ['th', 'st', 'nd', 'rd'],
+    v = n % 100;
+  return s[(v - 20) % 10] || s[v] || s[0];
+}
 
 export default function Time() {
   const [currentTime, setCurrentTime] = useState(dayjs());
@@ -19,7 +22,13 @@ export default function Time() {
 
   return (
     <div className={styles.container}>
-      <p className={styles.time}>{currentTime.format('dddd, MMMM Do')}</p>
+      <p className={styles.time}>
+        {currentTime.format('dddd, MMMM D')}
+        <sup className={styles.ordinal}>
+          {getNumberWithOrdinal(currentTime.date())}
+        </sup>
+        , {currentTime.format('YYYY')}
+      </p>
       <p className={styles.time}>{currentTime.format('h:mm:ss A')}</p>
     </div>
   );
