@@ -18,6 +18,7 @@
   align-items: center;
 }
 
-.siteName {
-  color: grey;
+.copyright {
+  position: fixed;
+  bottom: 0;
 }
