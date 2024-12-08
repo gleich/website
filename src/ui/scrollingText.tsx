@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styles from '@/ui/scrollingText.module.css';
 import Marquee from 'react-fast-marquee';
 
@@ -15,21 +15,25 @@ export default function ScrollingText({
   const measurementRef = useRef<HTMLSpanElement>(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
 
-  useEffect(() => {
-    const checkOverflow = () => {
-      const container = containerRef.current;
-      const measurementElement = measurementRef.current;
-      if (container && measurementElement) {
-        setIsOverflowing(
-          measurementElement.scrollWidth > container.clientWidth,
-        );
-      }
-    };
+  const checkOverflow = () => {
+    const container = containerRef.current;
+    const measurementElement = measurementRef.current;
+    if (container && measurementElement) {
+      setIsOverflowing(measurementElement.scrollWidth > container.clientWidth);
+    }
+  };
 
-    requestAnimationFrame(checkOverflow);
+  useLayoutEffect(() => {
+    checkOverflow();
 
-    window.addEventListener('resize', checkOverflow);
-    return () => window.removeEventListener('resize', checkOverflow);
+    const observer = new ResizeObserver(() => {
+      checkOverflow();
+    });
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
   }, [text]);
 
   return (
