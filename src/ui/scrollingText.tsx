@@ -26,7 +26,7 @@ export default function ScrollingText({
       }
     };
 
-    checkOverflow();
+    requestAnimationFrame(checkOverflow);
 
     window.addEventListener('resize', checkOverflow);
     return () => window.removeEventListener('resize', checkOverflow);
