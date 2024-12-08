@@ -58,6 +58,8 @@
   margin-top: 10px;
   cursor: pointer;
   border-radius: 5px;
+  font-family: 'ibmPlexSansMedium';
+  font-feature-settings: 'zero';
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
