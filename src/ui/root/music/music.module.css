@@ -92,6 +92,10 @@
     width: calc(100% - 15px);
   }
 
+  .sections {
+    align-items: center;
+  }
+
   .fourthPlaylist {
     display: block;
   }
@@ -106,9 +110,8 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .sections {
     margin: 10px 0px;
-    align-items: center;
   }
 }
