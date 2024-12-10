@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import Copyright from '@/ui/root/copyright';
 
 export const metadata: Metadata = {
-  title: 'mattglei.ch',
+  title: 'New Tab',
 };
 
 export default function TabPage() {
