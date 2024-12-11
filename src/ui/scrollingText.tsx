@@ -19,7 +19,9 @@ export default function ScrollingText({
     const container = containerRef.current;
     const measurementElement = measurementRef.current;
     if (container && measurementElement) {
-      setIsOverflowing(measurementElement.scrollWidth > container.clientWidth);
+      setIsOverflowing(
+        measurementElement.scrollWidth > container.clientWidth + 1,
+      );
     }
   };
 
