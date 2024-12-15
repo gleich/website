@@ -4,7 +4,7 @@
 
 .lines {
   stroke: var(--foreground);
-  animation: spin infinite 20s linear;
+  animation: spin infinite 30s linear;
   transform-origin: center;
 }
 
