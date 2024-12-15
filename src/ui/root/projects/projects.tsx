@@ -43,7 +43,7 @@ export default async function Projects() {
         <Link href="https://bottomline.com" target="_blank">
           Bottomline Technologies
         </Link>
-        , where I utilized Python, Puppet, Docker, and Grafana. At{' '}
+        , where I utilized Python, Terraform, Docker, and Grafana. At{' '}
         <Link href="https://rootly.com/" target="_blank">
           Rootly
         </Link>
