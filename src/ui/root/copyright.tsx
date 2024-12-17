@@ -2,16 +2,11 @@
 
 import Link from 'next/link';
 import styles from '@/ui/root/copyright.module.css';
-import localFont from 'next/font/local';
 import Image from 'next/image';
-
-const ibmPlexMono = localFont({
-  src: '../../../public/fonts/ibm_plex_mono/bold.ttf',
-});
 
 export default function Copyright() {
   return (
-    <div className={`${styles.copyright} ${ibmPlexMono.className}`}>
+    <div className={styles.copyright}>
       <Image
         src="/icons/usa.svg"
         alt="United States Flag"
