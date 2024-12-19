@@ -70,7 +70,7 @@ export default function Graph({ hrData }: { hrData: number[] }) {
                   Math.floor(max),
                 ]}
                 padding={{ bottom: 20, top: 20 }}
-                style={{ fontFamily: 'ibmPlexSansMedium', fontSize: '15px' }}
+                style={{ fontFamily: 'ibmPlexSansMedium', fontSize: '14px' }}
               />
               <XAxis interval={2} tick={false} height={0} />
               <Tooltip
