@@ -14,7 +14,7 @@ export default function Song({
   albumArtClassName?: string | undefined;
 }) {
   const songContent = (
-    <div>
+    <div className={styles.song}>
       <Image
         src={song.album_art_url}
         alt={`${song.track} album art`}

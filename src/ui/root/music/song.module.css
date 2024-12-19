@@ -1,8 +1,8 @@
 .song {
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
   text-decoration: none;
+  gap: 3px;
 }
 
 .albumArt {
@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   font-size: 14px !important;
+  color: var(--foreground);
 }
 
 .artist {
