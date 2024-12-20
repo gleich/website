@@ -1,6 +1,6 @@
 .container {
   width: calc(33% - 10px);
-  color: var(--foreground);
+  color: white;
   text-decoration: none;
 }
 
