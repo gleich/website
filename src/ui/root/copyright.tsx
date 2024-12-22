@@ -13,9 +13,7 @@ export default function Copyright() {
         width={23.25}
         height={16.25}
       />
-      <p className={styles.name}>
-        Copyright Matt Gleich {new Date().getFullYear()}
-      </p>
+      <p className={styles.name}>Matt Gleich {new Date().getFullYear()}</p>
       <p>
         <Link href="https://github.com/gleich/website" target="_blank">
           gleich/website
