@@ -8,7 +8,6 @@ import {
   XAxis,
   YAxis,
   ResponsiveContainer,
-  ReferenceLine,
   Tooltip,
 } from 'recharts';
 import styles from './graph.module.css';

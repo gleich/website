@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import styles from '@/ui/scrollingText.module.css';
 import Marquee from 'react-fast-marquee';
 
