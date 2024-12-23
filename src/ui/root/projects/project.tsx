@@ -2,6 +2,7 @@
 import { Repository } from '@/lib/lcp/github';
 import { exactFromNow } from '@/lib/time';
 import Card from '@/ui/card';
+import { TextMorph } from '@/ui/motion/textMorph';
 import styles from '@/ui/root/projects/project.module.css';
 import SVGIcon from '@/ui/svgIcon';
 import dayjs from 'dayjs';
@@ -54,12 +55,9 @@ export default function Project({ repo }: { repo: Repository }) {
         </div>
         <div className={styles.highlightedProjectDetails}>
           <p>{repo.description}</p>
-          <p
-            className={styles.highlightedProjectUpdated}
-            suppressHydrationWarning
-          >
-            Updated {exactFromNow(updatedAt, currentTime)}
-          </p>
+          <TextMorph className={styles.highlightedProjectUpdated}>
+            {`Updated ${exactFromNow(updatedAt, currentTime)}`}
+          </TextMorph>
         </div>
       </Link>
     </Card>
