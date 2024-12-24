@@ -28,7 +28,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const appleMusicData = await loadAppleMusicData();
   const id = (await params).id;
-  const playlist = appleMusicData.data.playlists[id];
+  const playlist = appleMusicData.data.playlists.find((p) => p.id === id);
 
   if (!playlist) {
     return {
@@ -61,15 +61,15 @@ export default async function Page({
 }) {
   const appleMusicData = await loadAppleMusicData();
   const id = (await params).id;
-  const playlist = appleMusicData.data.playlists[id];
+  const playlist = appleMusicData.data.playlists.find((p) => p.id === id);
+  if (!playlist) {
+    return <NotFound />;
+  }
   const totalTime = playlist.tracks.reduce(
     (total: number, s: { duration_in_millis: number }) =>
       total + s.duration_in_millis,
     0,
   );
-  if (!playlist) {
-    return <NotFound />;
-  }
   return (
     <main className={styles.main}>
       <Nav maxWidth={1600} />
