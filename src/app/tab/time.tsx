@@ -3,7 +3,6 @@
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import styles from './time.module.css';
-import { TextMorph } from '@/ui/motion/textMorph';
 
 function getNumberWithOrdinal(n: number): string {
   const s = ['th', 'st', 'nd', 'rd'];
@@ -30,9 +29,7 @@ export default function Time() {
         </sup>
         , {currentTime.format('YYYY')}
       </p>
-      <TextMorph className={styles.time}>
-        {currentTime.format('h:mm:ss A')}
-      </TextMorph>
+      <p className={styles.time}>{currentTime.format('h:mm:ss A')}</p>
     </div>
   );
 }

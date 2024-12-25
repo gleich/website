@@ -10,7 +10,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { exactFromNow } from '@/lib/time';
-import { TextMorph } from '../motion/textMorph';
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
@@ -61,7 +60,7 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
       <p>
         Updated{' '}
         <span className={styles.lastUpdateExact}>{lastUpdateExact} [</span>
-        <TextMorph>{exactFromNow(dayjsLastUpdate, currentTime)}</TextMorph>
+        {exactFromNow(dayjsLastUpdate, currentTime)}
         <span className={styles.lastUpdateExact}>]</span>
       </p>
     </div>
