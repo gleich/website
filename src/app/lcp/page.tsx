@@ -306,7 +306,7 @@ export default function Lcp() {
               </Link>{' '}
               and even experimental features like{' '}
               <Link
-                href="https://nextjs.org/docs/app/api-reference/next-config-js/partial-prerendering"
+                href="https://nextjs.org/docs/app/building-your-application/rendering/partial-prerendering"
                 target="_blank"
               >
                 partial pre-rendering (PPR)
