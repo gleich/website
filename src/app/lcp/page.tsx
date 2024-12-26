@@ -168,8 +168,8 @@ export default function Lcp() {
               Sometimes APIs have problems and are down. Because lcp caches the
               data and is essentially saving a copy, it does&apos;t have to
               depend about the source data being up. Downtime is more often than
-              people think and when you&apos;re using multiple APIs, the chance
-              of one of them being down is even greater.
+              people realize and when you&apos;re using multiple APIs, the
+              chance of one of them being down is even greater.
             </p>
           </div>
           <h2>Design Decisions</h2>
