@@ -166,7 +166,7 @@ export default function Lcp() {
             <b className={styles.benefit}>Prevent downtime</b>
             <p>
               Sometimes APIs have problems and are down. Because lcp caches the
-              data and is essentially is saving a copy, it does&apos;t have to
+              data and is essentially saving a copy, it does&apos;t have to
               depend about the source data being up. Downtime is more often than
               people think and when you&apos;re using multiple APIs, the chance
               of one of them being down is even greater.
