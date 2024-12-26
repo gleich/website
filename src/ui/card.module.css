@@ -11,3 +11,10 @@
     box-shadow: 0px 0px 20px rgba(12, 12, 12, 1);
   }
 }
+
+@media (max-width: 420px) {
+  .card {
+    padding: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  }
+}
