@@ -75,9 +75,12 @@ export default async function Workouts() {
               );
             }
             if (a.sport_type == 'Run') {
+              const totalSecondsPerMile = a.moving_time / distanceInMiles;
+              const minutesPerMile = Math.floor(totalSecondsPerMile / 60);
+              const secondsPerMile = Math.floor(totalSecondsPerMile % 60);
               stats.set(
                 'Avg. Pace',
-                `${(a.moving_time / 60 / distanceInMiles).toPrecision(3).replace('.', ':')}/mi`,
+                `${minutesPerMile}:${secondsPerMile.toString().padStart(2, '0')}/mi`,
               );
             } else if (a.total_elevation_gain > 304.8) {
               // if more than 1,000 ft of elevation gain
