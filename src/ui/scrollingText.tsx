@@ -50,7 +50,7 @@ export default function ScrollingText({
       {isOverflowing ? (
         <Marquee
           gradient={false}
-          speed={30}
+          speed={20}
           delay={2}
           className={`${styles.marquee} ${className}`}
         >
