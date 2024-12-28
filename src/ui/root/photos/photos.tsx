@@ -215,7 +215,7 @@ export default function Photos() {
         Starting with nature photography, mainly landscapes and macro, I&apos;ve
         recently delved into automotive photography, especially during my time
         at college with the RIT car club. I primarily use Nikon gear, with my
-        current camera being a Nikon Z7II. Here are a few of my best photos:
+        current camera being a Nikon Z7II. Here are a some of my best photos:
       </p>
       <div className={styles.photos}>
         <Gallery
