@@ -80,7 +80,8 @@
   .recentSongs {
     width: 100%;
     flex-wrap: wrap;
-    gap: 8px;
+    padding-top: 5px;
+    gap: 10px;
   }
 
   .playlists {
