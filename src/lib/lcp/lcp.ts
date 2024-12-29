@@ -1,5 +1,3 @@
-import { env } from 'process';
-
 export interface Response<T> {
   updated: Date;
   data: T;
@@ -28,11 +26,8 @@ export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
       pathName = 'applemusic';
       break;
   }
-  const res = await fetch(`https://lcp.dev.mattglei.ch/${pathName}/cache`, {
+  const res = await fetch(`https://lcp.dev.mattglei.ch/${pathName}`, {
     method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + env.LCP_ACCESS_TOKEN,
-    },
     cache: 'no-store',
   });
   const responseData: Response<T> = await res.json();
