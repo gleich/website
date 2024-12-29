@@ -12,9 +12,6 @@ export interface CacheData {
 export interface Song {
   track: string;
   artist: string;
-  album: string;
-  genres: string[];
-  release_date: Date;
   duration_in_millis: number;
   album_art_url: string;
   url: string;
