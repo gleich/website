@@ -37,18 +37,20 @@ export async function generateMetadata({
     };
   }
 
+  const title = `${playlist.name} playlist`;
+
   const description = `Enjoy the ${playlist.tracks.length} tracks from my "${playlist.name}" playlist. Last updated ${dayjs(playlist.last_modified).tz('America/New_York').format('MMMM Do YYYY [at] h:mma z')}.`;
   return {
-    title: playlist.name,
+    title: title,
     description: description,
     openGraph: {
-      title: playlist.name,
+      title: title,
       siteName: 'mattglei.ch',
       description: description,
       url: `https://mattglei.ch/music-playlist/${id}`,
     },
     twitter: {
-      title: playlist.name,
+      title: title,
       description: description,
     },
   };
