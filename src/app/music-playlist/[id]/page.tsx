@@ -1,5 +1,5 @@
 import NotFound from '@/app/not-found';
-import { loadAppleMusicData } from '@/lib/lcp/applemusic';
+import { loadAppleMusicPlaylist } from '@/lib/lcp/applemusic';
 import styles from '@/app/music-playlist/[id]/page.module.css';
 import Nav from '@/ui/root/nav';
 import Song from '@/ui/root/music/song';
@@ -26,9 +26,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const appleMusicData = await loadAppleMusicData();
   const id = (await params).id;
-  const playlist = appleMusicData.data.playlists.find((p) => p.id === id);
+  const playlist = await loadAppleMusicPlaylist(id);
 
   if (!playlist) {
     return {
@@ -61,9 +60,8 @@ export default async function Page({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const appleMusicData = await loadAppleMusicData();
   const id = (await params).id;
-  const playlist = appleMusicData.data.playlists.find((p) => p.id === id);
+  const playlist = await loadAppleMusicPlaylist(id);
   if (!playlist) {
     return <NotFound />;
   }

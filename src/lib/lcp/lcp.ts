@@ -30,6 +30,6 @@ export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
     method: 'GET',
     cache: 'no-store',
   });
-  const responseData: Response<T> = await res.json();
-  return responseData;
+  const data: Response<T> = await res.json();
+  return data;
 }

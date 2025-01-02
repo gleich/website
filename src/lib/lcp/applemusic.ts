@@ -4,6 +4,18 @@ export async function loadAppleMusicData() {
   return loadFromLCP<CacheData>(Cache.AppleMusic);
 }
 
+export async function loadAppleMusicPlaylist(id: string): Promise<Playlist> {
+  const res = await fetch(
+    `https://lcp.dev.mattglei.ch/applemusic/playlist/${id}`,
+    {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  );
+  const data: Playlist = await res.json();
+  return data;
+}
+
 export interface CacheData {
   recently_played: Song[];
   playlists: Playlist[];
