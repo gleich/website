@@ -6,7 +6,7 @@ export async function loadAppleMusicData() {
 
 export async function loadAppleMusicPlaylist(id: string): Promise<Playlist> {
   const res = await fetch(
-    `https://lcp.dev.mattglei.ch/applemusic/playlist/${id}`,
+    `https://lcp.dev.mattglei.ch/applemusic/playlists/${id}`,
     {
       method: 'GET',
       cache: 'no-store',
