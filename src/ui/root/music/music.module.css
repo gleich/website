@@ -4,15 +4,15 @@
   gap: 10px;
   padding-bottom: 10px;
   align-items: stretch;
-  justify-content: center;
 }
 
 .section {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   width: calc(50% - 5px);
+  flex: 1;
+  position: relative;
 }
 
 .sectionTitle {
@@ -23,6 +23,10 @@
 .recentSongsContainer {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   gap: 10px;
 }
 
@@ -30,6 +34,7 @@
   display: flex;
   gap: 15px;
   align-items: center;
+  height: 100%;
   justify-content: center;
 }
 
@@ -41,14 +46,6 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1/1;
-}
-
-.playlists {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
-  height: 100%;
 }
 
 .fourthRecentSong {

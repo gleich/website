@@ -28,9 +28,7 @@ export default function ScrollingText({
   useLayoutEffect(() => {
     checkOverflow();
 
-    const observer = new ResizeObserver(() => {
-      checkOverflow();
-    });
+    const observer = new ResizeObserver(checkOverflow);
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }

@@ -3,8 +3,8 @@ import LiveSection from '@/ui/section/liveSection';
 import styles from '@/ui/root/music/music.module.css';
 import Card from '@/ui/card';
 import Song from './song';
-import Playlist from './playlist';
 import Link from 'next/link';
+import Playlists from './playlists';
 
 export default async function Music() {
   const appleMusicData = await loadAppleMusicData();
@@ -45,15 +45,7 @@ export default async function Music() {
       <div className={styles.sections}>
         <div className={styles.section}>
           <h4 className={styles.sectionTitle}>Playlists</h4>
-          <Card className={`${styles.playlists}`}>
-            <Playlist playlist={playlists[0]} />
-            <Playlist playlist={playlists[1]} />
-            <Playlist playlist={playlists[2]} />
-            <Playlist
-              className={styles.fourthPlaylist}
-              playlist={playlists[3]}
-            />
-          </Card>
+          <Playlists playlists={playlists} />
         </div>
 
         <div className={styles.section}>
