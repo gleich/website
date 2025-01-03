@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './playlists.module.css';
-import { Playlist } from '@/lib/lcp/applemusic';
+import { PlaylistSummary } from '@/lib/lcp/applemusic';
 import Link from 'next/link';
 import Image from 'next/image';
 import localFont from 'next/font/local';
@@ -11,7 +11,11 @@ const ibmPlexMonoBoldItalic = localFont({
   src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
 });
 
-export default function Playlists({ playlists }: { playlists: Playlist[] }) {
+export default function Playlists({
+  playlists,
+}: {
+  playlists: PlaylistSummary[];
+}) {
   return (
     <Card className={styles.card}>
       <div className={styles.container}>
@@ -20,11 +24,11 @@ export default function Playlists({ playlists }: { playlists: Playlist[] }) {
             key={p.id}
             href={`/music-playlist/${p.id}`}
             className={styles.playlist}
-            title={`View the ${p.tracks.length} tracks from my ${p.name} playlist`}
+            title={`View the ${p.track_count} tracks from my ${p.name} playlist`}
           >
             <div className={styles.collageContainer}>
               <div className={styles.collage}>
-                {p.tracks.slice(0, 4).map((t) => (
+                {p.first_four_tracks.map((t) => (
                   <Image
                     key={t.id}
                     src={t.album_art_url}
@@ -43,7 +47,7 @@ export default function Playlists({ playlists }: { playlists: Playlist[] }) {
             </div>
             <div className={styles.buttonContainer}>
               <button className={styles.viewTracksButton}>
-                View {p.tracks.length} tracks
+                View {p.track_count} tracks
               </button>
             </div>
           </Link>

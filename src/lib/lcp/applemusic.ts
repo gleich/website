@@ -23,7 +23,7 @@ export async function loadAppleMusicPlaylist(
 
 export interface CacheData {
   recently_played: Song[];
-  playlists: Playlist[];
+  playlist_summaries: PlaylistSummary[];
 }
 
 export interface Song {
@@ -33,6 +33,13 @@ export interface Song {
   album_art_url: string;
   url: string;
   id: string;
+}
+
+export interface PlaylistSummary {
+  name: string;
+  id: string;
+  track_count: number;
+  first_four_tracks: Song[];
 }
 
 export interface Playlist {

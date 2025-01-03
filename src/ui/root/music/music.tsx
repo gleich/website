@@ -9,7 +9,7 @@ import Playlists from './playlists';
 export default async function Music() {
   const appleMusicData = await loadAppleMusicData();
   const recentlyPlayed = appleMusicData.data.recently_played;
-  const playlists = appleMusicData.data.playlists;
+  const playlists = appleMusicData.data.playlist_summaries;
   return (
     <LiveSection
       name="Music"
