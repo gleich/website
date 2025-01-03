@@ -4,7 +4,9 @@ export async function loadAppleMusicData() {
   return loadFromLCP<CacheData>(Cache.AppleMusic);
 }
 
-export async function loadAppleMusicPlaylist(id: string): Promise<Playlist> {
+export async function loadAppleMusicPlaylist(
+  id: string,
+): Promise<Playlist | null> {
   const res = await fetch(
     `https://lcp.dev.mattglei.ch/applemusic/playlists/${id}`,
     {
@@ -12,6 +14,9 @@ export async function loadAppleMusicPlaylist(id: string): Promise<Playlist> {
       cache: 'no-store',
     },
   );
+  if (res.status == 404) {
+    return null;
+  }
   const data: Playlist = await res.json();
   return data;
 }
