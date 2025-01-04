@@ -3,7 +3,7 @@
 import { exactFromNow } from '@/lib/time';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
-import styles from '@/app/music-playlist/[id]/lastUpdated.module.css';
+import styles from './lastUpdated.module.css';
 
 export default function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   const dayjsLastUpdate = dayjs(lastUpdated);

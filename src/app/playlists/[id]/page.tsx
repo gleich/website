@@ -1,6 +1,6 @@
 import NotFound from '@/app/not-found';
 import { loadAppleMusicPlaylist } from '@/lib/lcp/applemusic';
-import styles from '@/app/music-playlist/[id]/page.module.css';
+import styles from '@/app/playlists/[id]/page.module.css';
 import Nav from '@/ui/root/nav';
 import Song from '@/ui/root/music/song';
 import Copyright from '@/ui/root/copyright';
