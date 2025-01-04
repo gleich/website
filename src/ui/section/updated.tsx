@@ -35,7 +35,7 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
   } else if (dayjsLastUpdate.isSame(currentTime.subtract(1, 'day'), 'day')) {
     lastUpdateExact = `yesterday at ${dayjsLastUpdate.format('h:mm A')}`;
   } else {
-    lastUpdateExact = dayjsLastUpdate.format('MMMM Do YYYY [at] h:mm A');
+    lastUpdateExact = dayjsLastUpdate.format('MMMM Do [at] h:mm A');
   }
 
   return (
