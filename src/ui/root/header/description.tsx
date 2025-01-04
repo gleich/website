@@ -2,12 +2,10 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import styles from '@/ui/root/header/description.module.css';
-import { IBM_Plex_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: '700',
-  subsets: ['latin'],
-  style: 'italic',
+const ibmPlexMonoSemiBoldItalic = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/semibold_italic.otf',
 });
 
 export default function Description({ fontSize }: { fontSize: number }) {
@@ -33,7 +31,7 @@ export default function Description({ fontSize }: { fontSize: number }) {
 
   return (
     <p
-      className={`${styles.description} ${ibmPlexMono.className}`}
+      className={`${styles.description} ${ibmPlexMonoSemiBoldItalic.className}`}
       style={{ fontSize: `${fontSize}px` }}
     >
       {descriptions[index]}
