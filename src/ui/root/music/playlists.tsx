@@ -22,7 +22,7 @@ export default function Playlists({
         {playlists.map((p) => (
           <Link
             key={p.id}
-            href={`/music-playlist/${p.id}`}
+            href={`/playlists/${p.id}`}
             className={styles.playlist}
             title={`View the ${p.track_count} tracks from my ${p.name} playlist`}
           >
