@@ -6,6 +6,15 @@ const nextConfig = {
     ppr: true,
     reactCompiler: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/music-playlist/:id',
+        destination: '/playlists/:id',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
