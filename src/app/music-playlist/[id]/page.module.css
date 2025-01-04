@@ -44,19 +44,15 @@
 @media (max-width: 600px) {
   .songs {
     justify-content: center;
+    gap: 10px;
+    margin: 0px;
   }
 
   .songAlbumArt {
-    width: 40vw !important;
+    width: 45vw !important;
   }
 
   .song {
-    width: 40vw !important;
-  }
-}
-
-@media (max-width: 400px) {
-  .songs {
-    margin: 0px;
+    width: 45vw !important;
   }
 }
