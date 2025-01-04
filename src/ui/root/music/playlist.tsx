@@ -20,6 +20,7 @@ export default function Playlist({
       href={`/music-playlist/${playlist.id}`}
       className={`${styles.container} ${className}`}
       title={`View the ${playlist.tracks.length} tracks from my ${playlist.name} playlist`}
+      prefetch={true}
     >
       <div className={styles.collageContainer}>
         <div className={styles.collage}>
