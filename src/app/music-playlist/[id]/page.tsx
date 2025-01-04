@@ -17,8 +17,8 @@ dayjs.extend(advancedFormat);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 
-const ibmPlexMonoBoldItalic = localFont({
-  src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
+const ibmPlexMonoSemiBoldItalic = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/semibold_italic.otf',
 });
 
 export async function generateMetadata({
@@ -75,7 +75,9 @@ export default async function Page({
       <Nav maxWidth={1600} />
 
       <div className={styles.header}>
-        <h1 className={`${styles.title} ${ibmPlexMonoBoldItalic.className}`}>
+        <h1
+          className={`${styles.title} ${ibmPlexMonoSemiBoldItalic.className}`}
+        >
           {playlist.name}
         </h1>
         <div className={styles.headerText}>

@@ -7,8 +7,8 @@ import Image from 'next/image';
 import localFont from 'next/font/local';
 import Card from '@/ui/card';
 
-const ibmPlexMonoBoldItalic = localFont({
-  src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
+const ibmPlexMonoSemiBoldItalic = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/semibold_italic.otf',
 });
 
 export default function Playlists({
@@ -40,7 +40,7 @@ export default function Playlists({
                 ))}
               </div>
               <p
-                className={`${ibmPlexMonoBoldItalic.className} ${styles.name}`}
+                className={`${ibmPlexMonoSemiBoldItalic.className} ${styles.name}`}
               >
                 {p.name}
               </p>

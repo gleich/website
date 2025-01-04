@@ -14,9 +14,11 @@ export async function loadAppleMusicPlaylist(
       cache: 'no-store',
     },
   );
-  if (res.status == 404) {
+
+  if (res.status === 404) {
     return null;
   }
+
   const data: Playlist = await res.json();
   return data;
 }

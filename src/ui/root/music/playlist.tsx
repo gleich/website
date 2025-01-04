@@ -4,8 +4,8 @@ import localFont from 'next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ibmPlexMonoBoldItalic = localFont({
-  src: '../../../../public/fonts/ibm_plex_mono/bold_italic.otf',
+const ibmPlexMonoSemiBoldItalic = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/semibold_italic.otf',
 });
 
 export default function Playlist({
@@ -35,7 +35,7 @@ export default function Playlist({
             />
           ))}
         </div>
-        <p className={`${ibmPlexMonoBoldItalic.className} ${styles.name}`}>
+        <p className={`${ibmPlexMonoSemiBoldItalic.className} ${styles.name}`}>
           {playlist.name}
         </p>
       </div>
