@@ -44,8 +44,8 @@ const ibmPlexMono = IBM_Plex_Mono({
 export default function Lcp() {
   return (
     <main className={styles.main}>
+      <Nav maxWidth={1050} />
       <div className={styles.article}>
-        <Nav maxWidth={1000} />
         <div className={styles.title}>
           <Image
             src={jetsPhoto}
