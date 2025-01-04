@@ -1,6 +1,6 @@
 import Section from '@/ui/section/section';
 import styles from '@/ui/root/photos/photos.module.css';
-import ViewMore from '@/ui/viewMore';
+import Button from '@/ui/button';
 import { Gallery, Image as GalleryImage } from 'next-gallery';
 
 // automatically generated from script in /scripts/photos
@@ -226,8 +226,8 @@ export default function Photos() {
           lastRowBehavior="fill"
         />
       </div>
-      <ViewMore
-        locationName="Instagram"
+      <Button
+        text="View more on Instagram"
         href="https://www.instagram.com/mattglei.ch/"
       />
     </Section>

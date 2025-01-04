@@ -12,6 +12,7 @@ import timezone from 'dayjs/plugin/timezone';
 import dayjs from 'dayjs';
 import localFont from 'next/font/local';
 import { renderDuration } from '@/lib/time';
+import Button from '@/ui/button';
 
 dayjs.extend(advancedFormat);
 dayjs.extend(timezone);
@@ -86,6 +87,7 @@ export default async function Page({
           </p>
           <LastUpdated lastUpdated={playlist.last_modified} />
         </div>
+        <Button text="View on Apple Music" href={playlist.url} />
       </div>
 
       <div className={styles.songs}>

@@ -49,4 +49,5 @@ export interface Playlist {
   id: string;
   tracks: Song[];
   last_modified: Date;
+  url: string;
 }
