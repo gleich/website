@@ -1,3 +1,5 @@
+import { env } from 'process';
+
 export interface Response<T> {
   updated: Date;
   data: T;
@@ -29,6 +31,9 @@ export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
   const res = await fetch(`https://lcp.dev.mattglei.ch/${pathName}`, {
     method: 'GET',
     cache: 'no-store',
+    headers: {
+      Authorization: `Bearer ${env.LCP_TOKEN}`,
+    },
   });
   const data: Response<T> = await res.json();
   return data;

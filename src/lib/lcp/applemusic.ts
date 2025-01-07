@@ -1,3 +1,4 @@
+import { env } from 'process';
 import { Cache, loadFromLCP } from './lcp';
 
 export async function loadAppleMusicData() {
@@ -12,6 +13,9 @@ export async function loadAppleMusicPlaylist(
     {
       method: 'GET',
       cache: 'no-store',
+      headers: {
+        Authorization: `Bearer ${env.LCP_TOKEN}`,
+      },
     },
   );
 
