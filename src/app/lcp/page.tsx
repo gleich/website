@@ -57,7 +57,7 @@ export default function Lcp() {
             lcp - Lightweight Cache Proxy
           </h1>
           <Link
-            href="https://github.com/gleich/lcp-v2"
+            href="https://github.com/gleich/lcp-2"
             target="_blank"
             className={styles.githubLink}
           >
@@ -69,7 +69,7 @@ export default function Lcp() {
               height={20}
               width={20}
             />{' '}
-            gleich/lcp-v2
+            gleich/lcp-2
           </Link>
         </div>
         <div className={styles.content}>
