@@ -20,7 +20,7 @@ export default async function Music() {
     >
       <p>
         One of my favorite things in this world is music. I am into everything
-        from electronic to bossa nova. A few of my favorite artists are{' '}
+        from electronic to jazz. A few of my favorite artists are{' '}
         <Link href="https://en.wikipedia.org/wiki/The_Smiths" target="_blank">
           The Smiths
         </Link>
