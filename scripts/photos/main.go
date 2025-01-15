@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/buckket/go-blurhash"
-	"github.com/gleich/lumber/v3"
+	"pkg.mattglei.ch/timber"
 )
 
 const photos_folder = "../../public/photos"
@@ -26,10 +26,10 @@ type photo struct {
 }
 
 func main() {
-	lumber.Info("BOOTED")
+	timber.Info("BOOTED")
 	files, err := os.ReadDir(photos_folder)
 	if err != nil {
-		lumber.Fatal(err, "Failed to read photos folder")
+		timber.Fatal(err, "Failed to read photos folder")
 	}
 
 	photos := []photo{}
@@ -38,19 +38,19 @@ func main() {
 			name := file.Name()
 			reader, err := os.Open(filepath.Join(photos_folder, name))
 			if err != nil {
-				lumber.Fatal(err, "Failed to read image:", name)
+				timber.Fatal(err, "Failed to read image:", name)
 			}
 			defer reader.Close()
 
 			parsedJPG, err := jpeg.Decode(reader)
 			if err != nil {
-				lumber.Fatal(err, "Parsing JPEG failed for", name)
+				timber.Fatal(err, "Parsing JPEG failed for", name)
 			}
 			width := parsedJPG.Bounds().Dx()
 			height := parsedJPG.Bounds().Dy()
 			blurData, err := blurhash.Encode(4, 3, parsedJPG)
 			if err != nil {
-				lumber.Fatal(err, "Creating blur data for", name, "failed")
+				timber.Fatal(err, "Creating blur data for", name, "failed")
 			}
 
 			scaleDownFactor := 200
@@ -61,12 +61,12 @@ func main() {
 				1,
 			)
 			if err != nil {
-				lumber.Fatal(err, "Encoding blurhash data to img failed for", name)
+				timber.Fatal(err, "Encoding blurhash data to img failed for", name)
 			}
 			blurImageOut := new(bytes.Buffer)
 			err = png.Encode(blurImageOut, blurImage)
 			if err != nil {
-				lumber.Fatal(err, "Writing data to PNG failed", name)
+				timber.Fatal(err, "Writing data to PNG failed", name)
 			}
 			base64BlurData := base64.StdEncoding.EncodeToString(blurImageOut.Bytes())
 
@@ -83,12 +83,12 @@ func main() {
 					BlurDataURL: base64BlurData,
 				},
 			)
-			lumber.Done("Processed", name)
+			timber.Done("Processed", name)
 		}
 	}
 
 	fmt.Println()
-	lumber.Done("DATA ARRAY:\n")
+	timber.Done("DATA ARRAY:\n")
 	fmt.Println("const images: GalleryImage[] = [")
 	for _, photo := range photos {
 		fmt.Println("\t{")
