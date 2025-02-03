@@ -1,3 +1,5 @@
+github.com/atotto/clipboard v0.1.4 h1:EH0zSVneZPSuFR11BlR9YppQTVDbh5+16AmcJi4g1z4=
+github.com/atotto/clipboard v0.1.4/go.mod h1:ZY9tmq7sm5xIbd9bOK4onWV4S6X0u6GY7Vn0Yu86PYI=
 github.com/aymanbagabas/go-osc52/v2 v2.0.1 h1:HwpRHbFMcZLEVr42D4p7XBqjyuxQH5SMiErDT4WkJ2k=
 github.com/aymanbagabas/go-osc52/v2 v2.0.1/go.mod h1:uYgXzlJ7ZpABp8OJ+exZzJJhRNQ2ASbcXHWsFqH8hp8=
 github.com/buckket/go-blurhash v1.1.0 h1:X5M6r0LIvwdvKiUtiNcRL2YlmOfMzYobI3VCKCZc9Do=
@@ -22,5 +24,5 @@ github.com/rivo/uniseg v0.4.7/go.mod h1:FN3SvrM+Zdj16jyLfmOkMNblXMcoc8DfTHruCPUc
 golang.org/x/sys v0.6.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.29.0 h1:TPYlXGxvx1MGTn2GiZDhnjPA9wZzZeGKHHmKhHYvgaU=
 golang.org/x/sys v0.29.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=
-pkg.mattglei.ch/timber v1.0.0 h1:OQk7AyFZhfAeADbAj8wXBg/pD1fBngSWYD3EJ/v34HE=
-pkg.mattglei.ch/timber v1.0.0/go.mod h1:Go9fz7dL27Oo7t3ksPAthw6JzCJmUMdSiEbqZhKDxLc=
+pkg.mattglei.ch/timber v1.0.1 h1:jJuvLxTCe1lwC51Q+N55Twyv6qIxlbdyNPFqcJTIbX0=
+pkg.mattglei.ch/timber v1.0.1/go.mod h1:Go9fz7dL27Oo7t3ksPAthw6JzCJmUMdSiEbqZhKDxLc=

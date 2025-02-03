@@ -3,8 +3,9 @@ module github.com/gleich/website/scripts/photos
 go 1.23
 
 require (
+	github.com/atotto/clipboard v0.1.4
 	github.com/buckket/go-blurhash v1.1.0
-	pkg.mattglei.ch/timber v1.0.0
+	pkg.mattglei.ch/timber v1.0.1
 )
 
 require (
