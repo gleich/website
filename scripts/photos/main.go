@@ -19,7 +19,7 @@ import (
 
 const PHOTOS_FOLDER = "../../public/photos"
 
-var photoFiles = []string{
+var files = []string{
 	"RITRacing.jpg",
 	"audiA4.jpg",
 	"mtb2.jpg",
@@ -53,22 +53,22 @@ func main() {
 	timber.SetTimeFormat("03:04:05")
 
 	photos := []photo{}
-	for _, file := range photoFiles {
+	for _, file := range files {
 		reader, err := os.Open(filepath.Join(PHOTOS_FOLDER, file))
 		if err != nil {
-			timber.Fatal(err, "Failed to read image:", file)
+			timber.Fatal(err, "failed to read image:", file)
 		}
 		defer reader.Close()
 
 		parsedJPG, err := jpeg.Decode(reader)
 		if err != nil {
-			timber.Fatal(err, "Parsing JPEG failed for", file)
+			timber.Fatal(err, "parsing JPEG failed for", file)
 		}
 		width := parsedJPG.Bounds().Dx()
 		height := parsedJPG.Bounds().Dy()
 		blurData, err := blurhash.Encode(4, 3, parsedJPG)
 		if err != nil {
-			timber.Fatal(err, "Creating blur data for", file, "failed")
+			timber.Fatal(err, "creating blur data for", file, "failed")
 		}
 
 		scaleDownFactor := 200
