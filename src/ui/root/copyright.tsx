@@ -2,17 +2,16 @@
 
 import Link from 'next/link';
 import styles from '@/ui/root/copyright.module.css';
-import Image from 'next/image';
 
 export default function Copyright() {
   return (
     <div className={styles.copyright}>
-      <Image
+      {/* <Image
         src="/icons/usa.svg"
         alt="United States Flag"
         width={23.25}
         height={16.25}
-      />
+      /> */}
       <p className={styles.name}>
         <span className={styles.symbol}>©</span> Matt Gleich{' '}
         {new Date().getFullYear()}
