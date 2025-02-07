@@ -24,7 +24,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --foreground: rgb(28, 31, 33);
-    --background: white;
+    --background: #dddddd;
     --border: rgb(217, 217, 217);
   }
 
