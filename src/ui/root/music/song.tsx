@@ -22,6 +22,8 @@ export default function Song({
         unoptimized
         height={200}
         className={`${styles.albumArt} ${albumArtClassName}`}
+        placeholder="blur"
+        blurDataURL={song.album_art_blurhash}
       />
       <div className={`${styles.songText}`}>
         <ScrollingText className={styles.track} text={song.track} />
