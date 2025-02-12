@@ -36,6 +36,8 @@ export default function Playlists({
                     height={100}
                     width={100}
                     className={styles.collageImage}
+                    placeholder="blur"
+                    blurDataURL={t.album_art_blurhash}
                   />
                 ))}
               </div>
