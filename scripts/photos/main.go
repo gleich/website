@@ -14,7 +14,7 @@ import (
 
 	"github.com/atotto/clipboard"
 	"github.com/buckket/go-blurhash"
-	"pkg.mattglei.ch/timber"
+	"go.mattglei.ch/timber"
 )
 
 const PHOTOS_FOLDER = "../../public/photos"
