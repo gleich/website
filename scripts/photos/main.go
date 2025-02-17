@@ -49,8 +49,8 @@ type photo struct {
 }
 
 func main() {
-	timber.SetTimezone(time.Local)
-	timber.SetTimeFormat("03:04:05")
+	timber.Timezone(time.Local)
+	timber.TimeFormat("03:04:05")
 
 	photos := []photo{}
 	for _, file := range files {
