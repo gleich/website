@@ -43,7 +43,11 @@ export default async function Workouts() {
       name="Workouts"
       sources={[
         { name: 'Strava', icon: 'strava.svg', url: 'https://strava.com' },
-        { name: 'Hevy', icon: 'hevy.svg', url: 'https://hevy.com' },
+        {
+          name: 'Hevy',
+          icon: 'hevy.svg',
+          url: 'https://www.hevyapp.com/product/',
+        },
       ]}
       lastUpdated={stravaData.updated}
     >
