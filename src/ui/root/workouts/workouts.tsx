@@ -12,6 +12,7 @@ import Stats from '@/ui/stats';
 import { renderDuration } from '@/lib/time';
 import Graph from './graph';
 import Section from '@/ui/section/section';
+import Lift from './lift';
 
 dayjs.extend(duration);
 
@@ -35,16 +36,15 @@ export default async function Workouts() {
     );
   }
 
-  const activities = stravaData.data
-    .filter((a) => a.platform === 'strava')
-    .slice(0, 3);
+  const activities = stravaData.data.slice(0, 3);
 
   return (
     <LiveSection
       name="Workouts"
-      source="Strava"
-      sourceIcon="strava"
-      sourceURL="https://www.strava.com/about"
+      sources={[
+        { name: 'Strava', icon: 'strava.svg', url: 'https://strava.com' },
+        { name: 'Hevy', icon: 'hevy.svg', url: 'https://hevy.com' },
+      ]}
       lastUpdated={stravaData.updated}
     >
       <>
@@ -57,23 +57,32 @@ export default async function Workouts() {
           <Link href="https://www.strava.com" target="_blank">
             Strava
           </Link>{' '}
+          and{' '}
+          <Link href="https://hevy.com" target="_blank">
+            Hevy
+          </Link>{' '}
           activities:
         </p>
         <div className={styles.activities}>
           {activities.map((a) => {
             const [sportName, sportIcon] = extractSportType(a.sport_type);
-            const stravaLink = `https://www.strava.com/activities/${a.id}`;
+            const link =
+              a.platform === 'strava'
+                ? `https://www.strava.com/activities/${a.id}`
+                : `https://hevy.com/workout/${a.id}`;
+            const viewOn =
+              a.platform === 'strava' ? `View on Strava` : `View on Hevy`;
             const formattedDuration = renderDuration(a.moving_time);
             const stats = new Map<string, string>([
               ['Duration', formattedDuration],
             ]);
             const distanceInMiles = (a.distance * 0.621) / 1000;
-            if (a.distance != undefined) {
+            if (a.distance) {
               stats.set('Distance', `${distanceInMiles.toPrecision(3)} mi`);
-            } else {
+            } else if (a.calories) {
               stats.set(
                 'Calories Burned',
-                a.calories.toLocaleString() + ' cal',
+                a.calories?.toLocaleString() + ' cal',
               );
             }
             if (a.sport_type == 'Run') {
@@ -90,8 +99,13 @@ export default async function Workouts() {
                 'Elevation Gain',
                 `${Math.round(a.total_elevation_gain * 3.280839895).toLocaleString()} ft`,
               );
-            } else {
+            } else if (a.average_heartrate) {
               stats.set('Avg. Heart Rate', `${a.average_heartrate} bpm`);
+            } else if (a.hevy_volume_kg) {
+              stats.set(
+                'Total Volume',
+                `${Math.round(a.hevy_volume_kg * 2.2046226218).toLocaleString()} lbs`,
+              );
             }
 
             return (
@@ -108,45 +122,59 @@ export default async function Workouts() {
                         className={styles.icon}
                       />
                       <Link
-                        href={stravaLink}
+                        href={link}
                         target="_blank"
-                        title="View on Strava"
+                        title={viewOn}
                         className={styles.titleLink}
                       >
                         <h3 className={styles.titleText}>{a.name}</h3>
                       </Link>
                     </div>
                     <Link
-                      href={stravaLink}
+                      href={link}
                       target="_blank"
-                      title="View on Strava"
-                      className={styles.stravaIcon}
+                      title={viewOn}
+                      className={styles.platformIcon}
                     >
-                      <SVGIcon
-                        src="/icons/logos/strava.svg"
-                        alt="Strava icon"
-                        title="View on Strava"
-                        height={22}
-                        width={22}
-                      />
+                      {a.platform === 'strava' ? (
+                        <SVGIcon
+                          src="/icons/logos/strava.svg"
+                          alt="Strava icon"
+                          title="View on Strava"
+                          height={22}
+                          width={22}
+                        />
+                      ) : (
+                        <SVGIcon
+                          src="/icons/logos/hevy.svg"
+                          alt="Strava icon"
+                          title="View on Hevy"
+                          height={22}
+                          width={22}
+                        />
+                      )}
                     </Link>
                   </div>
                   <Time date={a.start_date} tz={a.timezone} />
                 </div>
                 <div className={styles.info}>
-                  {a.has_map ? (
-                    <Image
-                      src={a.map_image_url as string}
-                      alt="Map"
-                      width={440}
-                      height={240}
-                      draggable={false}
-                      className={styles.map}
-                      placeholder="blur"
-                      blurDataURL={a.map_blur_image as string}
-                    />
+                  {a.platform === 'strava' ? (
+                    a.has_map ? (
+                      <Image
+                        src={a.map_image_url as string}
+                        alt="Map"
+                        width={440}
+                        height={240}
+                        draggable={false}
+                        className={styles.map}
+                        placeholder="blur"
+                        blurDataURL={a.map_blur_image as string}
+                      />
+                    ) : (
+                      <Graph hrData={a.heartrate_data} />
+                    )
                   ) : (
-                    <Graph hrData={a.heartrate_data} />
+                    <Lift hevyExercises={a.hevy_exercises ?? []} />
                   )}
                   <Stats stats={stats} />
                 </div>

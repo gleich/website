@@ -5,22 +5,25 @@ import { ReactNode } from 'react';
 import Card from '../card';
 import { Updated } from './updated';
 import Image from 'next/image';
+import { nanoid } from 'nanoid';
 
 const inconsolata = Inconsolata({ subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
+export interface Source {
+  name: string;
+  url: string;
+  icon: string;
+}
+
 export default function LiveSection({
   name,
-  source,
-  sourceURL,
-  sourceIcon,
+  sources,
   lastUpdated,
   children,
 }: {
   name: string;
-  source: string;
-  sourceIcon: string;
-  sourceURL: string;
+  sources: Source[];
   lastUpdated: Date;
   children: ReactNode;
 }) {
@@ -33,20 +36,25 @@ export default function LiveSection({
             <div className={styles.liveFromTitle}>
               <span className={styles.liveCircle} />
               <p>LIVE FROM</p>
-              <Link
-                className={styles.liveSourceLink}
-                href={sourceURL}
-                target="_blank"
-              >
-                {source.toUpperCase()}
-                <Image
-                  src={`/icons/logos/${sourceIcon}.svg`}
-                  alt={name}
-                  height={17}
-                  width={17}
-                  className={styles.logoIcon}
-                />
-              </Link>
+              {sources.map((s) => s.name.toUpperCase()).join('/')}
+              <div className={styles.logoIcons}>
+                {sources.map((s) => (
+                  <Link
+                    key={nanoid()}
+                    className={styles.liveSourceLink}
+                    href={s.url}
+                    target="_blank"
+                  >
+                    <Image
+                      src={`/icons/logos/${s.icon}`}
+                      alt={name}
+                      height={16}
+                      width={16}
+                      className={styles.logoIcon}
+                    />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

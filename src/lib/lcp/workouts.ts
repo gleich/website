@@ -64,8 +64,21 @@ export interface Workout {
   total_elevation_gain: number;
   moving_time: number;
   distance: number;
-  average_heartrate: number;
+  average_heartrate?: number | null;
   id: number;
   heartrate_data: number[];
-  calories: number;
+  calories?: number | null;
+  hevy_exercises?: HevyExercise[] | null;
+  hevy_volume_kg?: number | null;
+}
+
+export interface HevyExercise {
+  title: string;
+  sets: HevySet[];
+}
+
+export interface HevySet {
+  index: number;
+  weight_kg: number;
+  reps: number;
 }

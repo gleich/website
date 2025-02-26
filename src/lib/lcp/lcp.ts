@@ -28,7 +28,7 @@ export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
       pathName = 'applemusic';
       break;
   }
-  const res = await fetch(`https://lcp.dev.mattglei.ch/${pathName}`, {
+  const res = await fetch(`${env.LCP_URL}/${pathName}`, {
     method: 'GET',
     cache: 'no-store',
     headers: {

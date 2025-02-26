@@ -15,9 +15,13 @@ export default async function Projects() {
   return (
     <LiveSection
       name="Projects"
-      sourceIcon="githubOfficial"
-      source="GitHub"
-      sourceURL="https://github.com/about"
+      sources={[
+        {
+          name: 'GitHub',
+          icon: 'githubOfficial.svg',
+          url: 'https://github.com/about',
+        },
+      ]}
       lastUpdated={githubData.updated}
     >
       <p>
