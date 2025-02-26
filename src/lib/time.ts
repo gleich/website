@@ -30,9 +30,9 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   } else if (daysDiff > 0) {
     fromNow = `${daysDiff} ${daysDiff === 1 ? 'day' : 'days'} & ${hoursDiff}hr`;
   } else if (hoursDiff > 0) {
-    fromNow = `${hoursDiff}hr & ${minutesDiff}m`;
+    fromNow = `${hoursDiff}hr & ${minutesDiff}min`;
   } else if (minutesDiff > 0) {
-    fromNow = `${minutesDiff}m & ${secondsDiff}s`;
+    fromNow = `${minutesDiff}min & ${secondsDiff}s`;
   } else {
     fromNow = `${secondsDiff}s`;
   }
@@ -49,13 +49,13 @@ export function renderDuration(seconds: number): string {
   if (totalHours > 0) {
     formattedDuration = `${totalHours}hr`;
     if (minutes > 0) {
-      formattedDuration += ` & ${minutes}m`;
+      formattedDuration += ` & ${minutes}min`;
     }
   } else if (seconds < 3660 && seconds > 3540) {
     formattedDuration = '1hr';
   } else {
     const remainingSeconds = duration.seconds();
-    formattedDuration = `${minutes}m`;
+    formattedDuration = `${minutes}min`;
     if (remainingSeconds > 0) {
       formattedDuration += ` & ${remainingSeconds}s`;
     }
