@@ -35,3 +35,10 @@
   align-items: center;
   gap: 7px;
 }
+
+@media (prefers-color-scheme: light) {
+  .exerciseName,
+  .setNumber {
+    background-color: rgb(205, 205, 205);
+  }
+}
