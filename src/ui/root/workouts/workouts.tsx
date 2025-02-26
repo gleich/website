@@ -33,11 +33,12 @@ export default async function Workouts() {
     >
       <>
         <p>
-          One of my favorite things in the world is staying active and enjoying
-          the outdoors. I grew up in New Hampshire hiking, biking, snowshoeing,
-          and traveling with my family. Out of all of those things I especially
-          love cycling mainly through gravel cycling, road cycling, and mountain
-          biking. Below are {activities.length} of my most recent{' '}
+          One of my favorite things is staying active and enjoying the outdoors.
+          I grew up in New Hampshire hiking, biking, snowshoeing, and traveling
+          with my family. Out of all of those things I especially love cycling
+          mainly through gravel cycling, road cycling, and mountain biking.
+          Recently I&apos;ve been getting into lifting which has been a ton of
+          fun. Below are {activities.length} of my most recent{' '}
           <Link href="https://www.strava.com" target="_blank">
             Strava
           </Link>{' '}
@@ -45,7 +46,7 @@ export default async function Workouts() {
           <Link href="https://hevy.com" target="_blank">
             Hevy
           </Link>{' '}
-          activities:
+          workouts:
         </p>
         <div className={styles.activities}>
           {activities.map((a) => {
