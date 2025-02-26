@@ -30,7 +30,7 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   } else if (daysDiff > 0) {
     fromNow = `${daysDiff} ${daysDiff === 1 ? 'day' : 'days'} & ${hoursDiff}hr`;
   } else if (hoursDiff > 0) {
-    fromNow = `${hoursDiff}hr & ${minutesDiff}m`;
+    fromNow = `${hoursDiff}h & ${minutesDiff}m`;
   } else if (minutesDiff > 0) {
     fromNow = `${minutesDiff}m & ${secondsDiff}s`;
   } else {
@@ -47,7 +47,7 @@ export function renderDuration(seconds: number): string {
   const totalHours = Math.floor(duration.asHours());
   const minutes = duration.minutes();
   if (totalHours > 0) {
-    formattedDuration = `${totalHours}hr`;
+    formattedDuration = `${totalHours}h`;
     if (minutes > 0) {
       formattedDuration += ` & ${minutes}m`;
     }
