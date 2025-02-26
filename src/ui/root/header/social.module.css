@@ -9,25 +9,3 @@
   text-decoration: none;
   height: min-content;
 }
-
-.icon:hover {
-  animation: shake 0.5s;
-}
-
-@keyframes shake {
-  0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  75% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
