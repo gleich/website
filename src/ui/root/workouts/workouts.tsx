@@ -16,10 +16,8 @@ import Lift from './lift';
 dayjs.extend(duration);
 
 export default async function Workouts() {
-  const stravaData = await loadWorkoutsData();
-
-  const activities = stravaData.data.slice(0, 3);
-
+  const workoutData = await loadWorkoutsData();
+  const activities = workoutData.data.slice(0, 3);
   return (
     <LiveSection
       name="Workouts"
@@ -31,7 +29,7 @@ export default async function Workouts() {
           url: 'https://www.hevyapp.com/product/',
         },
       ]}
-      lastUpdated={stravaData.updated}
+      lastUpdated={workoutData.updated}
     >
       <>
         <p>
