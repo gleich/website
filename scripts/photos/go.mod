@@ -1,4 +1,4 @@
-module github.com/gleich/website/scripts/photos
+module go.mattglei.ch/website/scripts/photos
 
 go 1.24
 
