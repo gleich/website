@@ -1,4 +1,4 @@
-import { extractSportType, loadStravaData } from '@/lib/lcp/strava';
+import { extractSportType, loadWorkoutsData } from '@/lib/lcp/workouts';
 import LiveSection from '../../section/liveSection';
 import styles from '@/ui/root/workouts/workouts.module.css';
 import dayjs from 'dayjs';
@@ -16,7 +16,7 @@ import Section from '@/ui/section/section';
 dayjs.extend(duration);
 
 export default async function Workouts() {
-  const stravaData = await loadStravaData();
+  const stravaData = await loadWorkoutsData();
 
   if (stravaData.data == null) {
     return (
@@ -35,7 +35,9 @@ export default async function Workouts() {
     );
   }
 
-  const activities = stravaData.data.slice(0, 3);
+  const activities = stravaData.data
+    .filter((a) => a.platform === 'strava')
+    .slice(0, 3);
 
   return (
     <LiveSection
@@ -66,7 +68,7 @@ export default async function Workouts() {
               ['Duration', formattedDuration],
             ]);
             const distanceInMiles = (a.distance * 0.621) / 1000;
-            if (a.distance != 0.0) {
+            if (a.distance != undefined) {
               stats.set('Distance', `${distanceInMiles.toPrecision(3)} mi`);
             } else {
               stats.set(

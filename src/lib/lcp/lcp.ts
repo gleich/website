@@ -6,7 +6,7 @@ export interface Response<T> {
 }
 
 export enum Cache {
-  Strava,
+  Workouts,
   GitHub,
   Steam,
   AppleMusic,
@@ -15,8 +15,8 @@ export enum Cache {
 export async function loadFromLCP<T>(cache: Cache): Promise<Response<T>> {
   let pathName: string;
   switch (cache) {
-    case Cache.Strava:
-      pathName = 'strava';
+    case Cache.Workouts:
+      pathName = 'workouts';
       break;
     case Cache.GitHub:
       pathName = 'github';

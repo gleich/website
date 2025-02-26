@@ -1,7 +1,7 @@
 import { Cache, loadFromLCP } from './lcp';
 
-export async function loadStravaData() {
-  return loadFromLCP<Activity[]>(Cache.Strava);
+export async function loadWorkoutsData() {
+  return loadFromLCP<Workout[]>(Cache.Workouts);
 }
 
 export function extractSportType(sport_type: string): [string, string] {
@@ -52,7 +52,8 @@ export function extractSportType(sport_type: string): [string, string] {
   return [name, icon_folder + icon_name];
 }
 
-export interface Activity {
+export interface Workout {
+  platform: string;
   name: string;
   sport_type: string;
   start_date: Date;
