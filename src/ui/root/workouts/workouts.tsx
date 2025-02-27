@@ -94,7 +94,7 @@ export default async function Workouts() {
             }
 
             return (
-              <Card key={a.id}>
+              <Card key={a.id} className={styles.activity}>
                 <div className={styles.header}>
                   <div className={styles.title}>
                     <div className={styles.titleIconAndTitle}>

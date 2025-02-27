@@ -1,16 +1,11 @@
 .activities {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 20px;
-}
-
-.activities > * {
-  flex: 1 1 100%;
-  max-width: 440px;
 }
 
 .info {
@@ -19,6 +14,7 @@
   align-items: center;
   height: auto;
   width: 100%;
+  aspect-ratio: 440 / 240;
 }
 
 .header {
@@ -73,8 +69,7 @@
 
 .map {
   border-radius: 5px;
-  max-width: 100%;
-  width: 440px;
+  width: 100%;
   height: auto;
   margin-bottom: 10px;
 }
@@ -91,9 +86,25 @@
   text-align: center;
 }
 
+.activity {
+  width: 33%;
+}
+
 @media (max-width: 1250px) {
   .activities {
     flex-wrap: wrap;
+  }
+
+  .activity {
+    width: clamp(350px, 90vw, 600px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .activities {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
@@ -111,9 +122,5 @@
 @media (max-width: 400px) {
   .header {
     max-width: 340px;
-  }
-
-  .activities {
-    gap: 10px;
   }
 }

@@ -1,8 +1,11 @@
 .scrollContainer {
-  height: 230px;
   max-width: 100%;
   overflow-y: scroll;
+  aspect-ratio: 440/240;
+  height: auto;
   margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
 }
 
 .exerciseName {
