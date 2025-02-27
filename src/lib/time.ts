@@ -55,7 +55,7 @@ export function renderDuration(seconds: number): string {
     formattedDuration = '1hr';
   } else {
     const remainingSeconds = duration.seconds();
-    formattedDuration = `${minutes}min`;
+    formattedDuration = `${minutes}m`;
     if (remainingSeconds > 0) {
       formattedDuration += ` & ${remainingSeconds}s`;
     }
