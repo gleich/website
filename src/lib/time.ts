@@ -32,7 +32,7 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   } else if (hoursDiff > 0) {
     fromNow = `${hoursDiff}hr & ${minutesDiff}m`;
   } else if (minutesDiff > 0) {
-    fromNow = `${minutesDiff}m& ${secondsDiff}s`;
+    fromNow = `${minutesDiff}m & ${secondsDiff}s`;
   } else {
     fromNow = `${secondsDiff}s`;
   }
