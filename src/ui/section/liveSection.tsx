@@ -59,7 +59,7 @@ export default function LiveSection({
             </div>
           </div>
         </div>
-        {children}
+        <div className={styles.content}>{children}</div>
         <Updated lastUpdated={lastUpdated} />
       </Card>
     </section>
