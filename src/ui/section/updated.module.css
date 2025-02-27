@@ -1,7 +1,6 @@
 .lastUpdated {
   text-align: right;
   color: grey;
-  font-weight: 700;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -19,6 +18,11 @@
   background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
   padding: 3px 10px;
   border-radius: 2px;
+  font-size: 14px;
+}
+
+.updated {
+  font-size: 13px;
 }
 
 .link {

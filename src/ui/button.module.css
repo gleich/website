@@ -8,7 +8,7 @@
 
 .button {
   background-color: var(--foreground);
-  color: var(--background);
+  color: var(--real-background);
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -24,7 +24,7 @@
 }
 
 .button:hover {
-  background-color: var(--background);
+  background-color: var(--real-background);
   color: var(--foreground);
 }
 

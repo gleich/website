@@ -10,7 +10,7 @@
 
 .exerciseName {
   width: 100%;
-  border: 1.5px solid var(--border);
+  border: 1.5px dashed var(--border);
   background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
   padding: 3px 0px;
   font-size: 15px;
@@ -42,5 +42,15 @@
 @media (prefers-color-scheme: light) {
   .setNumber {
     background-color: rgb(205, 205, 205);
+  }
+}
+
+@media (max-width: 400px) {
+  .set {
+    font-size: 10px !important;
+  }
+
+  .sets {
+    gap: 3px;
   }
 }

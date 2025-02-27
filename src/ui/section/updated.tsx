@@ -5,18 +5,20 @@ import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import styles from '@/ui/section/updated.module.css';
-import { Inconsolata } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { exactFromNow } from '@/lib/time';
+import localFont from 'next/font/local';
 
 dayjs.extend(relativeTime);
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(advancedFormat);
 
-const inconsolata = Inconsolata({ subsets: ['latin'] });
+const ibmPlexMonoMedium = localFont({
+  src: '../../../public/fonts/ibm_plex_mono/medium.otf',
+});
 
 export function Updated({ lastUpdated }: { lastUpdated: Date }) {
   const dayjsLastUpdate = dayjs(lastUpdated);
@@ -40,7 +42,7 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
 
   return (
     <div
-      className={`${styles.lastUpdated} ${inconsolata.className}`}
+      className={`${styles.lastUpdated} ${ibmPlexMonoMedium.className}`}
       suppressHydrationWarning
     >
       <p className={styles.cachedAndProcessed}>
@@ -57,7 +59,7 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
           </Link>
         </span>
       </p>
-      <p>
+      <p className={styles.updated}>
         Updated{' '}
         <span className={styles.lastUpdateExact}>{lastUpdateExact} [</span>
         {exactFromNow(dayjsLastUpdate, currentTime)}

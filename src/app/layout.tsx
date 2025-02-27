@@ -69,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ibmPlexSansMedium.className}>
+      <body className={`${ibmPlexSansMedium.className}`}>
         {children} <Analytics />
         <SpeedInsights />
       </body>

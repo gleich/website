@@ -20,6 +20,7 @@
 
 .artist {
   color: grey;
+  font-weight: 400;
 }
 
 @media (max-width: 400px) {

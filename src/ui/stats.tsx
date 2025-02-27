@@ -1,7 +1,13 @@
-import { Inconsolata } from 'next/font/google';
 import styles from '@/ui/stats.module.css';
+import localFont from 'next/font/local';
 
-const inconsolata = Inconsolata({ subsets: ['latin'] });
+const ibmPlexMonoBold = localFont({
+  src: '../../public/fonts/ibm_plex_mono/bold.ttf',
+});
+
+const ibmPlexMonoMedium = localFont({
+  src: '../../public/fonts/ibm_plex_mono/medium.otf',
+});
 
 export default function Stats({
   stats,
@@ -11,11 +17,15 @@ export default function Stats({
   className?: string | undefined;
 }) {
   return (
-    <div className={`${className} ${styles.stats} ${inconsolata.className}`}>
+    <div className={`${className} ${styles.stats}`}>
       {[...stats.keys()].map((k) => (
         <div className={styles.stat} key={k}>
-          <p className={styles.value}>{stats.get(k)}</p>
-          <p className={styles.valueName}>{k}</p>
+          <p className={`${styles.value} ${ibmPlexMonoBold.className}`}>
+            {stats.get(k)}
+          </p>
+          <p className={`${styles.valueName} ${ibmPlexMonoMedium.className}`}>
+            {k}
+          </p>
         </div>
       ))}
     </div>

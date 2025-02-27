@@ -7,10 +7,12 @@ import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import utc from 'dayjs/plugin/utc';
 import styles from '@/ui/root/workouts/time.module.css';
-import { Inconsolata } from 'next/font/google';
 import { exactFromNow } from '@/lib/time';
+import localFont from 'next/font/local';
 
-const inconsolata = Inconsolata({ subsets: ['latin'] });
+const ibmPlexMonoRegular = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/regular.otf',
+});
 
 dayjs.extend(duration);
 dayjs.extend(timezone);
@@ -47,10 +49,10 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
   }
   return (
     <p
-      className={`${styles.time} ${inconsolata.className}`}
+      className={`${styles.time} ${ibmPlexMonoRegular.className}`}
       suppressHydrationWarning
     >
-      {dayjsDate.format(`[${dayOfWeek}], MMM Do [at] h:mm A`)} [
+      {dayjsDate.format(`[${dayOfWeek}], MMM Do [-] h:mm A`)} [
       {exactFromNow(dayjsDate, currentTime)}]
     </p>
   );

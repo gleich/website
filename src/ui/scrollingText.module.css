@@ -41,14 +41,18 @@
   left: 0;
   background: linear-gradient(
     to right,
-    rgb(36, 35, 35),
+    var(--real-background),
     rgba(255, 255, 255, 0)
   );
 }
 
 .marquee::after {
   right: 0;
-  background: linear-gradient(to left, rgb(36, 35, 35), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    to left,
+    var(--real-background),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .marqueeText {
