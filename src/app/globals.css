@@ -71,6 +71,7 @@ html:before {
   bottom: 0;
   position: absolute;
   pointer-events: none;
+  z-index: -1;
 }
 
 p,
