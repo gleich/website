@@ -39,7 +39,6 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
     const secondsWithFraction = msDiff / 1000;
     fromNow = `${secondsWithFraction.toFixed(2)}s`;
   }
-
   return fromNow + ' ago';
 }
 
