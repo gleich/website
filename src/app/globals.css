@@ -26,7 +26,7 @@
   :root {
     --foreground: rgb(28, 31, 33);
     --background: #dddddd;
-    --real-background: #dddddd;
+    --real-background: rgb(220, 220, 220, 0.9);
     --border: rgb(198, 198, 198);
   }
 
