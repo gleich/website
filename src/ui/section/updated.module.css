@@ -15,9 +15,10 @@
   align-items: center;
   justify-content: center;
   color: var(--success);
+  border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.5);
   background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
   padding: 3px 10px;
-  border-radius: 2px;
+  border-radius: 5px;
   font-size: 14px;
 }
 
