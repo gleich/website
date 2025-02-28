@@ -94,7 +94,7 @@
   }
 
   .activity {
-    width: clamp(350px, 90vw, 600px);
+    width: clamp(350px, 95vw, 600px);
   }
 }
 
