@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from '@/ui/root/nav.module.css';
 import Logo from './header/logo';
 import Description from './header/description';
 import Socials from './header/social';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,17 +22,15 @@ export default function Nav({
 }) {
   const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    setScrollY(window.scrollY);
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  useScrollPosition(
+    ({ currPos }) => {
+      setScrollY(currPos.y);
+    },
+    [],
+    undefined,
+    true,
+    10,
+  );
 
   const maxHeight = 75;
   const height = Math.min(maxHeight, hide ? scrollY / 2.6 : maxHeight);
