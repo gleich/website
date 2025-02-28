@@ -55,7 +55,8 @@
   padding: 7px 10px;
   background-color: rgba(243, 9, 40, 0.13);
   border-bottom-left-radius: 5px;
-  border: 1px dashed var(--border);
+  border: 1px solid var(--live-color-dimmed);
+  border-top-right-radius: 5px;
   margin: 0;
 }
 
