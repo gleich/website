@@ -19,11 +19,11 @@ export default function Lift({
             <div className={styles.sets}>
               {e.sets.map((s) => (
                 <div className={styles.set} key={nanoid()}>
-                  <p className={styles.setNumber}>{s.index + 1}</p>
-                  <p>
+                  <div className={styles.setNumber}>{s.index + 1}</div>
+                  <div>
                     {(s.weight_kg * 2.2046226218).toPrecision(3)} lbs × {s.reps}{' '}
                     reps
-                  </p>
+                  </div>
                 </div>
               ))}
             </div>
