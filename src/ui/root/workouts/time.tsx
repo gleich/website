@@ -45,14 +45,14 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
   ) {
     dayOfWeek = 'Yesterday';
   } else {
-    dayOfWeek = dayjsDate.format('dddd');
+    dayOfWeek = dayjsDate.format('dddd, MMM Do');
   }
   return (
     <p
       className={`${styles.time} ${ibmPlexMonoRegular.className}`}
       suppressHydrationWarning
     >
-      {dayjsDate.format(`[${dayOfWeek}], MMM Do [-] h:mm A`)} [
+      {dayjsDate.format(`[${dayOfWeek}] [-] h:mm A`)} [
       {exactFromNow(dayjsDate, currentTime)}]
     </p>
   );

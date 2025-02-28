@@ -70,6 +70,7 @@ export interface Workout {
   calories?: number | null;
   hevy_exercises?: HevyExercise[] | null;
   hevy_volume_kg?: number | null;
+  hevy_set_count?: number | null;
 }
 
 export interface HevyExercise {
