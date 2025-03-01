@@ -31,10 +31,14 @@
   font-weight: 600;
 }
 
+.gameLibraryImage {
+  max-height: 100%;
+  width: auto;
+}
+
 .gameDetails {
   width: 100%;
   min-width: 0;
-  padding-bottom: 8px;
   display: flex;
   flex-direction: column;
 }
@@ -78,9 +82,6 @@
   display: flex;
   gap: 8px;
   align-items: center;
-}
-
-.achievement p {
   font-size: 13.5px;
 }
 

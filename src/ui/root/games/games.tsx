@@ -124,7 +124,10 @@ export default async function Games() {
                                       height={25}
                                       className={styles.achievementIcon}
                                     />
-                                    <p>{a.display_name}</p>
+                                    <ScrollingText
+                                      text={a.display_name}
+                                      className={styles.achievement}
+                                    />
                                   </div>
                                 ))}
                             </div>
