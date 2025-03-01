@@ -91,7 +91,7 @@ export default async function Workouts() {
                 'Total Volume',
                 `${Math.round(a.hevy_volume_kg * 2.2046226218).toLocaleString()} lbs`,
               );
-              stats.set('Set Count', `${a.hevy_set_count ?? 0}`);
+              stats.set('Sets', `${a.hevy_set_count ?? 0}`);
             }
 
             return (
