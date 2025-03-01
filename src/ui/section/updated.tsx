@@ -31,39 +31,30 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
     return () => clearInterval(interval);
   }, []);
 
-  let lastUpdateExact;
-  if (dayjsLastUpdate.isSame(currentTime, 'day')) {
-    lastUpdateExact = `Today - ${dayjsLastUpdate.format('h:mm A')}`;
-  } else if (dayjsLastUpdate.isSame(currentTime.subtract(1, 'day'), 'day')) {
-    lastUpdateExact = `Yesterday - ${dayjsLastUpdate.format('h:mm A')}`;
-  } else {
-    lastUpdateExact = dayjsLastUpdate.format('MMMM Do [-] h:mm A');
-  }
-
   return (
     <div
       className={`${styles.lastUpdated} ${ibmPlexMonoMedium.className}`}
       suppressHydrationWarning
     >
-      <p className={styles.cachedAndProcessed}>
+      <div className={styles.cachedAndProcessed}>
         <Image
           src="/icons/hard-drive.svg"
           alt="Hard Drive Icon"
+          className={styles.icon}
           height={15}
           width={15}
         />
-        <span>
-          Cached & processed by{' '}
-          <Link href="/lcp" className={styles.link}>
-            lcp
-          </Link>
-        </span>
-      </p>
-      <p className={styles.updated}>
-        <span className={styles.lastUpdateExact}>{lastUpdateExact} [</span>
-        {exactFromNow(dayjsLastUpdate, currentTime)}
-        <span className={styles.lastUpdateExact}>]</span>
-      </p>
+        <p className={styles.text}>
+          <span>
+            Cached & processed by{' '}
+            <Link href="/lcp" className={styles.link}>
+              lcp
+            </Link>{' '}
+          </span>
+          <span className={styles.lastUpdateExact}></span>[
+          {exactFromNow(dayjsLastUpdate, currentTime)}]
+        </p>
+      </div>
     </div>
   );
 }
