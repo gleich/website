@@ -57,20 +57,20 @@ export interface Workout {
   name: string;
   sport_type: string;
   start_date: Date;
-  timezone: string;
-  map_blur_image?: string | null;
+  timezone?: string;
+  map_blur_image?: string;
   has_map: boolean;
-  map_image_url?: string | null;
+  map_image_url?: string;
   total_elevation_gain: number;
   moving_time: number;
   distance: number;
-  average_heartrate?: number | null;
+  average_heartrate?: number;
   id: number;
   heartrate_data: number[];
-  calories?: number | null;
-  hevy_exercises?: HevyExercise[] | null;
-  hevy_volume_kg?: number | null;
-  hevy_set_count?: number | null;
+  calories?: number;
+  hevy_exercises?: HevyExercise[];
+  hevy_volume_kg?: number;
+  hevy_set_count?: number;
 }
 
 export interface HevyExercise {

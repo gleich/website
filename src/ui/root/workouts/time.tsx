@@ -19,7 +19,7 @@ dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
 
-export default function Time({ date, tz }: { date: Date; tz: string }) {
+export default function Time({ date, tz }: { date: Date; tz?: string }) {
   const [currentTime, setCurrentTime] = useState(dayjs());
 
   useEffect(() => {
@@ -29,7 +29,10 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
     return () => clearInterval(interval);
   }, []);
 
-  const dayjsDate = dayjs(date).tz(tz.split(' ')[1]);
+  let dayjsDate = dayjs(date).local();
+  if (tz) {
+    dayjsDate = dayjsDate.tz(tz.split(' ')[1]);
+  }
   const yesterday = currentTime.subtract(1, 'day');
   let dayOfWeek: string;
   if (
