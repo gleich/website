@@ -226,10 +226,12 @@ export default function Photos() {
           lastRowBehavior="fill"
         />
       </div>
-      <Button
-        text="View more on Instagram"
-        href="https://www.instagram.com/mattglei.ch/"
-      />
+      <div className={styles.viewMore}>
+        <Button
+          text="View more on Instagram"
+          href="https://www.instagram.com/mattglei.ch/"
+        />
+      </div>
     </Section>
   );
 }
