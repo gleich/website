@@ -34,8 +34,8 @@ export default async function Home() {
               as a DevOps intern. Below are a few sections featuring parts of
               who I am! Want to get in touch? Feel free to shoot me an email
               over at{' '}
-              <Link href="mailto:email@mattglei.ch">email@mattglei.ch</Link>.
-              More of my professional work is detailed in my <Resume />.
+              <Link href="mailto:mail@mattglei.ch">mail@mattglei.ch</Link>. More
+              of my professional work is detailed in my <Resume />.
             </p>
           </div>
         </div>
