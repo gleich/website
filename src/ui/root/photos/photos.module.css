@@ -3,6 +3,10 @@
   height: max-content;
 }
 
+.text {
+  padding: 0 10px;
+}
+
 @media (max-width: 678px) {
   .photos {
     gap: 5px;

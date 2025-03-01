@@ -210,7 +210,7 @@ export default function Photos() {
   const ratios = [2.2, 4, 6];
   return (
     <Section name="Photos">
-      <p>
+      <p className={styles.text}>
         I&apos;ve been really into photography for about seven years now.
         Starting with nature photography, mainly landscapes and macro, I&apos;ve
         recently delved into automotive photography, especially during my time
