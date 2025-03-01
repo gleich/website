@@ -1,6 +1,5 @@
 .card {
   padding: 0px;
-  padding-bottom: 10px;
   background-color: transparent;
 }
 
@@ -110,10 +109,16 @@
 
   .liveFromTitle {
     padding: 5px;
+    gap: 6px;
     height: 25px;
     margin-right: 5px;
     margin-top: 0px;
     border-radius: 2px;
+  }
+
+  .liveCircle {
+    margin-right: 2px;
+    margin-left: 2px;
   }
 
   .logoIcons {
@@ -126,6 +131,12 @@
 
   .content {
     padding: 0px 2px;
+  }
+}
+
+@media (max-width: 365px) {
+  .liveFromTitle {
+    font-size: 14px;
   }
 }
 

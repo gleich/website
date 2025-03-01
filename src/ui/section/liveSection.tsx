@@ -35,9 +35,9 @@ export default function LiveSection({
           <div className={`${styles.liveFrom} ${inconsolata.className}`}>
             <div className={styles.liveFromTitle}>
               <span className={styles.liveCircle} />
-              <p>
+              <div>
                 LIVE FROM {sources.map((s) => s.name.toUpperCase()).join('/')}
-              </p>
+              </div>
               <div className={styles.logoIcons}>
                 {sources.map((s) => (
                   <Link

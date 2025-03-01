@@ -5,7 +5,6 @@
   align-items: stretch;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 20px;
 }
 
 .info {
@@ -94,7 +93,8 @@
   }
 
   .activity {
-    width: clamp(350px, 95vw, 600px);
+    width: 95vw;
+    max-width: 450px;
   }
 }
 
@@ -107,18 +107,18 @@
 }
 
 @media (max-width: 678px) {
-  .icon {
-    width: 24px;
-    height: auto;
-  }
-
   .titleText {
-    font-size: 20px;
+    font-size: 20px !important;
   }
 }
 
 @media (max-width: 400px) {
   .header {
     max-width: 340px;
+  }
+
+  .icon {
+    width: 20px;
+    height: auto;
   }
 }
