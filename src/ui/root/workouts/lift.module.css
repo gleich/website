@@ -10,7 +10,8 @@
 
 .exerciseName {
   width: 100%;
-  background-color: rgba(18.8%, 80.8%, 45.9%, 0.2);
+  background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
+  border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.3);
   padding: 3px 0px;
   font-size: 15px;
 }
@@ -27,7 +28,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  gap: 10px;
+  gap: 8px;
   margin: 5px 0px;
 }
 
@@ -35,7 +36,8 @@
   align-items: center;
   display: flex;
   gap: 7px;
-  width: 170px;
+  width: 155px;
+  font-size: 15px;
 }
 
 @media (prefers-color-scheme: light) {
