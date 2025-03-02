@@ -46,7 +46,7 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
         />
         <p className={styles.text}>
           <span>
-            Cached & processed by{' '}
+            Data cached & processed by{' '}
             <Link href="/lcp" className={styles.link}>
               lcp
             </Link>{' '}
