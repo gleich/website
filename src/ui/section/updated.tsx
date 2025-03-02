@@ -16,6 +16,10 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(advancedFormat);
 
+const ibmPlexMonoMediumItalic = localFont({
+  src: '../../../public/fonts/ibm_plex_mono/medium_italic.otf',
+});
+
 const ibmPlexMonoMedium = localFont({
   src: '../../../public/fonts/ibm_plex_mono/medium.otf',
 });
@@ -33,7 +37,7 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
 
   return (
     <div
-      className={`${styles.lastUpdated} ${ibmPlexMonoMedium.className}`}
+      className={`${styles.lastUpdated} ${ibmPlexMonoMediumItalic.className}`}
       suppressHydrationWarning
     >
       <div className={styles.cachedAndProcessed}>
@@ -46,13 +50,16 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
         />
         <p className={styles.text}>
           <span>
-            Data cached & processed by{' '}
+            data cached & processed by{' '}
             <Link href="/lcp" className={styles.link}>
               lcp
             </Link>{' '}
           </span>
-          <span className={styles.lastUpdateExact}></span>[
-          {exactFromNow(dayjsLastUpdate, currentTime)}]
+          <span
+            className={`${ibmPlexMonoMedium.className} ${styles.lastUpdateExact}`}
+          >
+            [{exactFromNow(dayjsLastUpdate, currentTime)}]
+          </span>
         </p>
       </div>
     </div>
