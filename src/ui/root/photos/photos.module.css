@@ -22,6 +22,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .text {
+    padding: 0px 2px;
+  }
+}
+
 @media (max-width: 400px) {
   .photo {
     width: var(--photo-mobile-width);
