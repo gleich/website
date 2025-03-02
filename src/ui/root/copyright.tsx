@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Copyright() {
   return (
-    <div className={styles.copyright}>
+    <footer className={styles.copyright}>
       <Image
         src="/icons/usa.svg"
         alt="United States Flag"
@@ -22,6 +22,6 @@ export default function Copyright() {
           gleich/website
         </Link>
       </p>
-    </div>
+    </footer>
   );
 }
