@@ -12,7 +12,7 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
-  color: var(--success);
+  color: #30ce75;
   border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.2);
   background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
   padding: 4px 10px;
@@ -30,6 +30,18 @@
 
 .link {
   color: var(--success);
+}
+
+@media (prefers-color-scheme: light) {
+  .icon {
+    display: none;
+  }
+
+  .cachedAndProcessed {
+    color: white;
+    border: 1px solid rgba(26, 160, 84, 0.8);
+    background-color: rgba(26, 160, 84, 0.6);
+  }
 }
 
 @media (max-width: 678px) {

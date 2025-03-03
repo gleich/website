@@ -63,6 +63,12 @@
   display: none;
 }
 
+@media (prefers-color-scheme: light) {
+  .sectionTitle {
+    background-color: rgba(195, 195, 195, 0.5);
+  }
+}
+
 @media (max-width: 1000px) {
   .sections {
     flex-direction: column;
