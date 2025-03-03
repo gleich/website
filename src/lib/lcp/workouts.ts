@@ -80,7 +80,7 @@ export interface HevyExercise {
 }
 
 export interface HevySet {
-  index: number;
   weight_kg: number;
   reps: number;
+  type: string;
 }
