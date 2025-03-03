@@ -11,28 +11,6 @@
   padding: 10px;
 }
 
-.header {
-  position: sticky;
-  border-bottom: 0.5px solid var(--border);
-  background-color: rgba(23, 23, 28, 0.8);
-  z-index: 2;
-  top: 0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.headerLink {
-  color: var(--foreground);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.headerLogo {
-  width: 70px;
-  height: auto;
-}
-
 .title {
   display: flex;
   flex-direction: column;
@@ -41,6 +19,7 @@
 }
 
 .titlePhoto {
+  margin-top: 15px;
   width: 100%;
   height: auto;
 }

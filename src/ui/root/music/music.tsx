@@ -23,14 +23,17 @@ export default async function Music() {
       lastUpdated={appleMusicData.updated}
     >
       <p>
-        One of my favorite things in this world is music. I am into everything
-        from electronic to jazz. A few of my favorite artists are{' '}
+        I love a lot of different types of music ranging from electronic to
+        jazz. A few of my favorite artists are{' '}
         <Link href="https://en.wikipedia.org/wiki/The_Smiths" target="_blank">
           The Smiths
         </Link>
         ,{' '}
-        <Link href="https://en.wikipedia.org/wiki/Coldplay" target="_blank">
-          Coldplay
+        <Link
+          href="https://en.wikipedia.org/wiki/Eagles_(band)"
+          target="_blank"
+        >
+          Eagles
         </Link>
         ,{' '}
         <Link href="https://en.wikipedia.org/wiki/Daft_Punk" target="_blank">
