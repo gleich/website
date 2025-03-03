@@ -19,6 +19,7 @@ export default function Lift({
                 href={`https://hevy.com/exercise/${e.exercise_template_id}`}
                 about="_blank"
                 className={styles.exerciseNameText}
+                title="View exercise in Hevy"
               >
                 <ScrollingText text={e.title} />
               </Link>
