@@ -10,12 +10,7 @@ const ibmPlexMonoSemiBoldItalic = localFont({
 
 export default function Description({ fontSize }: { fontSize: number }) {
   const descriptions = useMemo(
-    () => [
-      'college student @ RIT',
-      'software engineer',
-      'cyclist',
-      'photographer',
-    ],
+    () => ['student @ RIT', 'software engineer', 'cyclist', 'photographer'],
     [],
   );
 
@@ -24,13 +19,14 @@ export default function Description({ fontSize }: { fontSize: number }) {
   useEffect(() => {
     const cycleTexts = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % descriptions.length);
-    }, 2000);
+    }, 2500);
 
     return () => clearInterval(cycleTexts);
   }, [descriptions]);
 
   return (
     <p
+      key={index}
       className={`${styles.description} ${ibmPlexMonoSemiBoldItalic.className}`}
       style={{ fontSize: `${fontSize}px` }}
     >

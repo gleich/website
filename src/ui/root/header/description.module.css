@@ -1,9 +1,22 @@
 .description {
   font-size: 17px;
+  animation: blurInOut 1.5s ease;
 }
 
 @media (max-width: 678px) {
   .description {
     font-size: 5vw;
+  }
+}
+
+@keyframes blurInOut {
+  0% {
+    filter: blur(2px);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0);
+    opacity: 1;
   }
 }
