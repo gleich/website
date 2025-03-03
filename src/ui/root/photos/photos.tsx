@@ -28,24 +28,24 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/mtb2.jpg',
-    alt: 'mtb2',
+    src: '/photos/quinn.jpg',
+    alt: 'quinn',
     aspect_ratio: 0.666667,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAIAAAD3rtNaAAAApklEQVR4nFSNMaqFMBBFg3MxaJxISFATsFGwyBLc/07cgGBhoZjPN+8V7zbDORwYEu/GcZznuaqqfd+FEEW2AIgopZTxY5m5ruui+Eb5OOeY+TiOn3YYhr7vQwgZ/7+t6xpjtNYCKMty2zYsyzJNk/eemaWU13U55xBjDCF0Xae1llI+z2OMgffeWmuMadsWwH3fSilorZumUe9SSud5EtFfAAAA///8GiLyr4tWmgAAAABJRU5ErkJggg==',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAQCAIAAABP3xIpAAABNklEQVR4nFyO3WpUWxCEa3VX/621J7NPkjMkKCh6ob7/26mzWyYBMWnqoqA/qop4ex+xPX95yv2EGb+MP3W8JwwtgLz4V/OeuAMCTRyNBnrgbcYP4Gxd45CX9yE45B/iK/AMbEuMDe1WQMf4u+MR+AQ8ALVRYrTdJCZCvREKfAP+B/aL+SlG8SgdSU1Tkt+RO/DE/u9R7/ayU2A5lo1yC6cZP394mNL3fpwL2zJbObYYW2qlZRqNl8uK0bteT96raKtkK13FWR7pZrzfy0afxu9lPZO+gltyK58VUWbG810QPaHFI4Mx01f5qpiVmU7jNl1xJEboNcKyPCpyZq3M15ZZJn11wGVY0G/7vNJnRmY4SXeVhuHgAE3N6M4Iu+W5uZFGGd3aItJKERWlUtVUjTf9CQAA///uCDNeuEgG5gAAAABJRU5ErkJggg==',
       draggable: false,
     },
   },
   {
-    src: '/photos/motorcycle.jpg',
-    alt: 'motorcycle',
-    aspect_ratio: 0.666831,
+    src: '/photos/clarkson.jpg',
+    alt: 'clarkson',
+    aspect_ratio: 0.666667,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAIAAAAYbLhkAAAArUlEQVR4nATAzU6EMBAH8On0z7SFFlgWsho/OJiYePMNfH7fwPOe9G4MLZXZH+iNPp7fX5/Ww5jrz/fX9ROLLA6NZTJ6WNLYTPzSr2OIQUh4D6yX7g7r+f7cIzratCQYPy54nJeYji78cdXBC5oJD/NJfGWoZtFW2jjgMvUGZT9K3SKiGcaIeWwr4XfLWXJgc0oBQ3K5cvlvpSkilDqH4ECssGLhxZIX3AIAAP//z8QusXyjVWsAAAAASUVORK5CYII=',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAGCAIAAABrW6giAAAAXklEQVR4nABOALH/BHB5VScY2ywpMfT9FgQBAgL6/A709QH4AwME/wUC7vUT4Ob/BA4EBPz//e3yBvT0+xAZ/AT39vb+9f/4/gX/BPAE9vLyB/zxCgcR/PEAAQAA//+u2ylLDsFXqAAAAABJRU5ErkJggg==',
       draggable: false,
     },
   },
@@ -72,13 +72,13 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/quinn.jpg',
-    alt: 'quinn',
-    aspect_ratio: 0.666667,
+    src: '/photos/up.jpg',
+    alt: 'up',
+    aspect_ratio: 0.667252,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAQCAIAAABP3xIpAAABNklEQVR4nFyO3WpUWxCEa3VX/621J7NPkjMkKCh6ob7/26mzWyYBMWnqoqA/qop4ex+xPX95yv2EGb+MP3W8JwwtgLz4V/OeuAMCTRyNBnrgbcYP4Gxd45CX9yE45B/iK/AMbEuMDe1WQMf4u+MR+AQ8ALVRYrTdJCZCvREKfAP+B/aL+SlG8SgdSU1Tkt+RO/DE/u9R7/ayU2A5lo1yC6cZP394mNL3fpwL2zJbObYYW2qlZRqNl8uK0bteT96raKtkK13FWR7pZrzfy0afxu9lPZO+gltyK58VUWbG810QPaHFI4Mx01f5qpiVmU7jNl1xJEboNcKyPCpyZq3M15ZZJn11wGVY0G/7vNJnRmY4SXeVhuHgAE3N6M4Iu+W5uZFGGd3aItJKERWlUtVUjTf9CQAA///uCDNeuEgG5gAAAABJRU5ErkJggg==',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALCAIAAAA88gD/AAAAy0lEQVR4nDyPzUrDQBRGz01vkzZq03aiQjeCiC58Al/JpxUEN7oS7ULThNa2k8nPRBLBs7qLA+d++ggWPuEJKniAG9COnhBW0A5HB1qDBCT3q2huOpG4yP3zh1Ywvr1Irq5TswRpknnjnFaXjBfpqTFn5waRH5F8kWoVzeJoEk4n8UmMiNsffTQNfIcfCv/0Nfa71pbOlofDsXetpbQ6Kmg32TZbul6SelMERaYKzdtXHmq92/59Nnv91tEwKX9Zv7P2cAcJ/AYAAP//AqtQZ57H6pAAAAAASUVORK5CYII=',
       draggable: false,
     },
   },
@@ -116,24 +116,24 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/up.jpg',
-    alt: 'up',
-    aspect_ratio: 0.667252,
-    nextImageProps: {
-      placeholder: 'blur',
-      blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALCAIAAAA88gD/AAAAy0lEQVR4nDyPzUrDQBRGz01vkzZq03aiQjeCiC58Al/JpxUEN7oS7ULThNa2k8nPRBLBs7qLA+d++ggWPuEJKniAG9COnhBW0A5HB1qDBCT3q2huOpG4yP3zh1Ywvr1Irq5TswRpknnjnFaXjBfpqTFn5waRH5F8kWoVzeJoEk4n8UmMiNsffTQNfIcfCv/0Nfa71pbOlofDsXetpbQ6Kmg32TZbul6SelMERaYKzdtXHmq92/59Nnv91tEwKX9Zv7P2cAcJ/AYAAP//AqtQZ57H6pAAAAAASUVORK5CYII=',
-      draggable: false,
-    },
-  },
-  {
-    src: '/photos/clarkson.jpg',
-    alt: 'clarkson',
+    src: '/photos/mtb2.jpg',
+    alt: 'mtb2',
     aspect_ratio: 0.666667,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAGCAIAAABrW6giAAAAXklEQVR4nABOALH/BHB5VScY2ywpMfT9FgQBAgL6/A709QH4AwME/wUC7vUT4Ob/BA4EBPz//e3yBvT0+xAZ/AT39vb+9f/4/gX/BPAE9vLyB/zxCgcR/PEAAQAA//+u2ylLDsFXqAAAAABJRU5ErkJggg==',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAIAAAD3rtNaAAAApklEQVR4nFSNMaqFMBBFg3MxaJxISFATsFGwyBLc/07cgGBhoZjPN+8V7zbDORwYEu/GcZznuaqqfd+FEEW2AIgopZTxY5m5ruui+Eb5OOeY+TiOn3YYhr7vQwgZ/7+t6xpjtNYCKMty2zYsyzJNk/eemaWU13U55xBjDCF0Xae1llI+z2OMgffeWmuMadsWwH3fSilorZumUe9SSud5EtFfAAAA///8GiLyr4tWmgAAAABJRU5ErkJggg==',
+      draggable: false,
+    },
+  },
+  {
+    src: '/photos/motorcycle.jpg',
+    alt: 'motorcycle',
+    aspect_ratio: 0.666831,
+    nextImageProps: {
+      placeholder: 'blur',
+      blurDataURL:
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAIAAAAYbLhkAAAArUlEQVR4nATAzU6EMBAH8On0z7SFFlgWsho/OJiYePMNfH7fwPOe9G4MLZXZH+iNPp7fX5/Ww5jrz/fX9ROLLA6NZTJ6WNLYTPzSr2OIQUh4D6yX7g7r+f7cIzratCQYPy54nJeYji78cdXBC5oJD/NJfGWoZtFW2jjgMvUGZT9K3SKiGcaIeWwr4XfLWXJgc0oBQ3K5cvlvpSkilDqH4ECssGLhxZIX3AIAAP//z8QusXyjVWsAAAAASUVORK5CYII=',
       draggable: false,
     },
   },
