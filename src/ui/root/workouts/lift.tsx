@@ -17,7 +17,7 @@ export default function Lift({
             <div className={styles.exerciseNameContainer}>
               <Link
                 href={`https://hevy.com/exercise/${e.exercise_template_id}`}
-                about="_blank"
+                target="_blank"
                 className={styles.exerciseNameText}
                 title="View exercise in Hevy"
               >
