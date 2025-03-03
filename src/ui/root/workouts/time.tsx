@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import timezone from 'dayjs/plugin/timezone';
-import advancedFormat from 'dayjs/plugin/advancedFormat';
 import utc from 'dayjs/plugin/utc';
 import styles from '@/ui/root/workouts/time.module.css';
 import { exactFromNow } from '@/lib/time';
@@ -17,7 +16,6 @@ const ibmPlexMonoRegular = localFont({
 dayjs.extend(duration);
 dayjs.extend(timezone);
 dayjs.extend(utc);
-dayjs.extend(advancedFormat);
 
 export default function Time({ date, tz }: { date: Date; tz?: string }) {
   const [currentTime, setCurrentTime] = useState(dayjs());
@@ -48,7 +46,7 @@ export default function Time({ date, tz }: { date: Date; tz?: string }) {
   ) {
     dayOfWeek = 'Yesterday';
   } else {
-    dayOfWeek = dayjsDate.format('dddd, MMM Do');
+    dayOfWeek = dayjsDate.format('dddd, MMM D');
   }
   return (
     <p
