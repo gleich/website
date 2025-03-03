@@ -20,22 +20,22 @@ import (
 const PHOTOS_FOLDER = "../../public/photos"
 
 var files = []string{
-	"RITRacing.jpg",
-	"audiA4.jpg",
+	"ritracing.jpg",
+	"a4.jpg",
 	"mtb2.jpg",
 	"motorcycle.jpg",
 	"spider.jpg",
 	"eye.jpg",
-	"glass.jpg",
+	"quinn.jpg",
 	"cadillac.jpg",
 	"ladybug.jpg",
-	"porsche.jpg",
+	"rocky8.jpg",
 	"up.jpg",
 	"clarkson.jpg",
 	"hayhay.jpg",
 	"mtb1.jpg",
-	"flowers.jpg",
-	"beach.jpg",
+	"pete.jpg",
+	"fox.jpg",
 	"nyc.jpg",
 	"eggBeach.jpg",
 }
