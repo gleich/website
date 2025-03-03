@@ -8,14 +8,32 @@
   border-radius: 5px;
 }
 
-.exerciseName {
+.exerciseNameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
-  border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.3);
   border-right: 0;
   border-left: 0;
-  padding: 3px 0px;
   font-size: 15px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(54, 234, 132, 0.2) 0 1px,
+    var(--real-background) 1px 6px
+  );
+}
+
+.exerciseNameText {
+  background-color: rgba(18.8%, 80.8%, 45.9%, 0.3);
+  border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 1px 8px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .setNumber {

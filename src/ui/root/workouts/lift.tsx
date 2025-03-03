@@ -13,8 +13,10 @@ export default function Lift({
       <div className={styles.table}>
         {hevyExercises.map((e) => (
           <div key={nanoid()}>
-            <div className={styles.exerciseName}>
-              <ScrollingText text={e.title} />
+            <div className={styles.exerciseNameContainer}>
+              <div className={styles.exerciseNameText}>
+                <ScrollingText text={e.title} />
+              </div>
             </div>
             <div className={styles.sets}>
               {e.sets.map((s) => (
