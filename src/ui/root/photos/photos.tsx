@@ -39,13 +39,13 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/marcAudi.jpg',
-    alt: 'marcAudi',
-    aspect_ratio: 0.666864,
+    src: '/photos/motorcycle.jpg',
+    alt: 'motorcycle',
+    aspect_ratio: 0.666667,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAIAAAC+k6JsAAAAcElEQVR4nATAMZLCMAwF0G9JVsaZ7CwtJQ0Nh+QYnBQzRPIXz15PfPiYdTs6/keYKaScFELQYPu4f+cRZ1/Nq0HGdjX9i7UlRrXDVC8NztVJJ90y9lpqNFlaqTZnz1O8RAMIyHxLhjiaJhH8BQAA//+PEzIMpisfLwAAAABJRU5ErkJggg==',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAIAAAAYbLhkAAAAsElEQVR4nATATVLDIBQHcMj7w6MkYGqc6bhw4cKFZ/CM3sJreQBnzPgxbUqAB/3h4/0N1syzXo4Xtm3b71FqUYOuQiJSa5a64/+8sgvOHTa+FvOVcsb37+fkn50lQxtozbLi50816SNrUgSorhR6e61lSmm0pC0nmIRjeAENvWuRQHpxTHh8eJLWes/GdO9tjA6n5ZRyvqSNWYdpuosj5hDP11SaYh78IXofbwEAAP//6uVLTy3bT8EAAAAASUVORK5CYII=',
       draggable: false,
     },
   },
@@ -127,13 +127,13 @@ const images: GalleryImage[] = [
     },
   },
   {
-    src: '/photos/motorcycle.jpg',
-    alt: 'motorcycle',
+    src: '/photos/clarkson.jpg',
+    alt: 'clarkson',
     aspect_ratio: 0.666667,
     nextImageProps: {
       placeholder: 'blur',
       blurDataURL:
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAKCAIAAAAYbLhkAAAAsElEQVR4nATATVLDIBQHcMj7w6MkYGqc6bhw4cKFZ/CM3sJreQBnzPgxbUqAB/3h4/0N1syzXo4Xtm3b71FqUYOuQiJSa5a64/+8sgvOHTa+FvOVcsb37+fkn50lQxtozbLi50816SNrUgSorhR6e61lSmm0pC0nmIRjeAENvWuRQHpxTHh8eJLWes/GdO9tjA6n5ZRyvqSNWYdpuosj5hDP11SaYh78IXofbwEAAP//6uVLTy3bT8EAAAAASUVORK5CYII=',
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAGCAIAAABrW6giAAAAXklEQVR4nABOALH/BHB5VScY2ywpMfT9FgQBAgL6/A709QH4AwME/wUC7vUT4Ob/BA4EBPz//e3yBvT0+xAZ/AT39vb+9f/4/gX/BPAE9vLyB/zxCgcR/PEAAQAA//+u2ylLDsFXqAAAAABJRU5ErkJggg==',
       draggable: false,
     },
   },
@@ -222,7 +222,7 @@ export default function Photos() {
           widths={widths}
           ratios={ratios}
           images={images}
-          gap="2px"
+          gap="1.5px"
           lastRowBehavior="fill"
         />
       </div>
