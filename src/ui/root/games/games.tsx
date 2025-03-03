@@ -2,14 +2,16 @@ import { loadSteamData } from '@/lib/lcp/steam';
 import Link from 'next/link';
 import styles from '@/ui/root/games/games.module.css';
 import LiveSection from '../../section/liveSection';
-import { Inconsolata } from 'next/font/google';
 import Image from 'next/image';
 import Card from '@/ui/card';
 import { renderDuration } from '@/lib/time';
 import Stats from '@/ui/stats';
 import ScrollingText from '@/ui/scrollingText';
+import localFont from 'next/font/local';
 
-const inconsolata = Inconsolata({ subsets: ['latin'] });
+const ibmPlexMonoMedium = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/medium.otf',
+});
 
 export default async function Games() {
   const steamData = await loadSteamData();
@@ -84,7 +86,7 @@ export default async function Games() {
                       if (g.achievements == undefined) {
                         return (
                           <div
-                            className={`${styles.noAchievements} ${inconsolata.className}`}
+                            className={`${styles.noAchievements} ${ibmPlexMonoMedium.className}`}
                           >
                             Game has no achievements
                           </div>
@@ -92,7 +94,7 @@ export default async function Games() {
                       } else if (g.achievement_progress == 0.0) {
                         return (
                           <div
-                            className={`${styles.noAchievements} ${inconsolata.className}`}
+                            className={`${styles.noAchievements} ${ibmPlexMonoMedium.className}`}
                           >
                             No achievements earned
                           </div>
@@ -101,12 +103,12 @@ export default async function Games() {
                         return (
                           <>
                             <p
-                              className={`${styles.recentAchievements} ${inconsolata.className}`}
+                              className={`${styles.recentAchievements} ${ibmPlexMonoMedium.className}`}
                             >
                               Recent Achievements
                             </p>
                             <div
-                              className={`${styles.achievements} ${inconsolata.className}`}
+                              className={`${styles.achievements} ${ibmPlexMonoMedium.className}`}
                             >
                               {g.achievements
                                 ?.filter((a) => a.achieved)
