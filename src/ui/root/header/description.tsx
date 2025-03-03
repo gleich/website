@@ -19,7 +19,7 @@ export default function Description({ fontSize }: { fontSize: number }) {
   useEffect(() => {
     const cycleTexts = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % descriptions.length);
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(cycleTexts);
   }, [descriptions]);
