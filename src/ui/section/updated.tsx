@@ -45,11 +45,13 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
           width={15}
         />
         <p className={styles.text}>
-          data cached & processed by{' '}
-          <Link href="/lcp" className={styles.link}>
-            lcp
-          </Link>{' '}
-          [{exactFromNow(dayjsLastUpdate, currentTime)}]
+          <span>
+            data cached & processed by{' '}
+            <Link href="/lcp" className={styles.link}>
+              lcp
+            </Link>{' '}
+          </span>
+          <span>[{exactFromNow(dayjsLastUpdate, currentTime)}]</span>
         </p>
       </div>
     </div>
