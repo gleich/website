@@ -18,27 +18,28 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   let fromNow: string;
 
   if (yearsDiff > 0) {
-    fromNow = `${yearsDiff} ${yearsDiff === 1 ? 'year' : 'years'} ${monthsDiff} ${monthsDiff === 1 ? 'month' : 'months'}`;
+    fromNow = `${yearsDiff} ${yearsDiff === 1 ? 'year' : 'years'} & ${monthsDiff} ${monthsDiff === 1 ? 'month' : 'months'}`;
   } else if (monthsDiff > 0) {
-    fromNow = `${monthsDiff} ${monthsDiff === 1 ? 'month' : 'months'} ${daysDiff}d`;
+    fromNow = `${monthsDiff} ${monthsDiff === 1 ? 'month' : 'months'} & ${daysDiff} ${daysDiff === 1 ? 'day' : 'days'}`;
   } else if (weeksDiff > 0 && daysDiff === 0) {
-    fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} ${hoursDiff}hr`;
+    fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} & ${hoursDiff}hr`;
   } else if (weeksDiff > 0) {
-    fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} ${daysDiff}d`;
+    fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} & ${daysDiff} ${daysDiff === 1 ? 'day' : 'days'}`;
   } else if (daysDiff > 0) {
-    fromNow = `${daysDiff}d ${hoursDiff}hr`;
+    fromNow = `${daysDiff} ${daysDiff === 1 ? 'day' : 'days'} & ${hoursDiff}hr`;
   } else if (hoursDiff > 0) {
-    fromNow = `${hoursDiff}hr ${minutesDiff}m`;
+    fromNow = `${hoursDiff}hr & ${minutesDiff}m`;
   } else if (minutesDiff > 0) {
     const msDiff = Math.abs(date.diff(currentTime, 'millisecond'));
     const msAfterMinutes = msDiff % (60 * 1000);
     const secondsWithFraction = msAfterMinutes / 1000;
-    fromNow = `${minutesDiff}m ${secondsWithFraction.toFixed(2)}s`;
+    fromNow = `${minutesDiff}m & ${secondsWithFraction.toFixed(2)}s`;
   } else {
     const msDiff = Math.abs(date.diff(currentTime, 'millisecond'));
     const secondsWithFraction = msDiff / 1000;
     fromNow = `${secondsWithFraction.toFixed(2)}s`;
   }
+
   return fromNow + ' ago';
 }
 
