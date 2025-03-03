@@ -2,6 +2,7 @@ import { HevyExercise } from '@/lib/lcp/workouts';
 import ScrollingText from '@/ui/scrollingText';
 import styles from './lift.module.css';
 import { nanoid } from 'nanoid';
+import Link from 'next/link';
 
 export default function Lift({
   hevyExercises,
@@ -14,9 +15,13 @@ export default function Lift({
         {hevyExercises.map((e) => (
           <div key={nanoid()}>
             <div className={styles.exerciseNameContainer}>
-              <div className={styles.exerciseNameText}>
+              <Link
+                href={`https://hevy.com/exercise/${e.exercise_template_id}`}
+                about="_blank"
+                className={styles.exerciseNameText}
+              >
                 <ScrollingText text={e.title} />
-              </div>
+              </Link>
             </div>
             <div className={styles.sets}>
               {e.sets.map((s) => (

@@ -76,6 +76,7 @@ export interface Workout {
 export interface HevyExercise {
   title: string;
   sets: HevySet[];
+  exercise_template_id: string;
 }
 
 export interface HevySet {
