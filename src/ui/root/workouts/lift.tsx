@@ -27,7 +27,9 @@ export default function Lift({
             <div className={styles.sets}>
               {e.sets.map((s, i) => (
                 <div className={styles.set} key={nanoid()}>
-                  <div className={styles.setNumber}>{i + 1}</div>
+                  <div className={styles.setNumber}>
+                    {s.type != 'warmup' ? i + 1 : 'W'}
+                  </div>
                   <div>
                     {(s.weight_kg * 2.2046226218).toPrecision(3)} lbs × {s.reps}{' '}
                     reps
