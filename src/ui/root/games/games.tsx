@@ -28,8 +28,8 @@ export default async function Games() {
     >
       <div>
         <p>
-          To relax, I like to occasionally playing video games with some of my
-          friends. Here are my recently played titles on{' '}
+          To relax, I like to occasionally play some video games with some of my
+          friends. Here are my recently played titles from{' '}
           <Link href="https://store.steampowered.com/about/" target="_blank">
             Steam
           </Link>
