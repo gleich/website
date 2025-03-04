@@ -3,11 +3,6 @@ import ScrollingText from '@/ui/scrollingText';
 import styles from './lift.module.css';
 import { nanoid } from 'nanoid';
 import Link from 'next/link';
-import localFont from 'next/font/local';
-
-const ibmPlexMonoMedium = localFont({
-  src: '../../../../public/fonts/ibm_plex_mono/medium.otf',
-});
 
 export default function Lift({
   hevyExercises,
