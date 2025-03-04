@@ -40,8 +40,16 @@
 .setNumber {
   border: 1.5px solid var(--border);
   background-color: rgb(46, 49, 52);
-  padding: 3px 7px;
+  padding: 0px 7px;
   font-size: 13px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warmup {
+  color: rgb(255, 102, 0);
 }
 
 .sets {
@@ -57,7 +65,7 @@
   align-items: center;
   display: flex;
   gap: 7px;
-  width: 155px;
+  width: 165px;
   font-size: 15px;
 }
 

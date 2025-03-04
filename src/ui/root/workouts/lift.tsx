@@ -3,6 +3,11 @@ import ScrollingText from '@/ui/scrollingText';
 import styles from './lift.module.css';
 import { nanoid } from 'nanoid';
 import Link from 'next/link';
+import localFont from 'next/font/local';
+
+const ibmPlexMonoMedium = localFont({
+  src: '../../../../public/fonts/ibm_plex_mono/medium.otf',
+});
 
 export default function Lift({
   hevyExercises,
@@ -21,13 +26,17 @@ export default function Lift({
                 className={styles.exerciseNameText}
                 title="View exercise in Hevy"
               >
-                <ScrollingText text={e.title} />
+                <ScrollingText
+                  text={e.title.replaceAll('(', '[').replaceAll(')', ']')}
+                />
               </Link>
             </div>
             <div className={styles.sets}>
               {e.sets.map((s, i) => (
                 <div className={styles.set} key={nanoid()}>
-                  <div className={styles.setNumber}>
+                  <div
+                    className={`${styles.setNumber} ${s.type == 'warmup' ? styles.warmup : ''}`}
+                  >
                     {s.type != 'warmup' ? i + 1 : 'W'}
                   </div>
                   <div>
