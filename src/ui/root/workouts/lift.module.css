@@ -14,18 +14,13 @@
   justify-content: center;
   width: 100%;
   background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
+  border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.2);
   border-right: 0;
   border-left: 0;
   font-size: 15px;
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--border) 0 1px,
-    var(--real-background) 1px 6px
-  );
 }
 
 .exerciseNameText {
-  background-color: rgba(18.8%, 80.8%, 45.9%, 0.3);
   backdrop-filter: blur(10px);
   padding: 1px 8px;
   width: fit-content;
@@ -33,7 +28,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: var(--foreground);
+  color: #16df6d;
   text-decoration: none;
 }
 
@@ -73,14 +68,6 @@
 @media (prefers-color-scheme: light) {
   .setNumber {
     background-color: rgb(205, 205, 205);
-  }
-
-  .exerciseNameContainer {
-    background: repeating-linear-gradient(
-      -45deg,
-      var(--border) 0 1px,
-      var(--real-background) 1px 6px
-    );
   }
 
   .exerciseNameText {
