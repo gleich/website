@@ -31,6 +31,7 @@ export default function Lift({
                 <div className={styles.set} key={nanoid()}>
                   <div
                     className={`${styles.setNumber} ${s.type == 'warmup' ? styles.warmup : ''}`}
+                    title={s.type == 'warmup' ? 'Warmup Set' : undefined}
                   >
                     {s.type != 'warmup' ? i + 1 : 'W'}
                   </div>
