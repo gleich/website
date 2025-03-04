@@ -12,7 +12,7 @@ export default function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
-    }, 20);
+    }, 10);
     return () => clearInterval(interval);
   }, []);
 
