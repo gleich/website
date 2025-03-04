@@ -27,7 +27,7 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
     return () => clearInterval(interval);
   }, []);
 
-  const dayjsDate = dayjs(date).tz(tz.split(' ')[1]);
+  const dayjsDate = dayjs(date).utc(true).tz(tz.split(' ')[1]);
   const yesterday = currentTime.subtract(1, 'day');
   let dayOfWeek: string;
   if (
