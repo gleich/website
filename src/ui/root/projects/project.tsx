@@ -3,7 +3,6 @@ import { Repository } from '@/lib/lcp/github';
 import { exactFromNow } from '@/lib/time';
 import Card from '@/ui/card';
 import styles from '@/ui/root/projects/project.module.css';
-import SVGIcon from '@/ui/svgIcon';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import Link from 'next/link';
@@ -32,14 +31,6 @@ export default function Project({ repo }: { repo: Repository }) {
       >
         <div className={styles.highlightedProjectHeader}>
           <div className={styles.highlightedProjectName}>
-            <SVGIcon
-              src="/icons/book.svg"
-              alt="Folder Icon"
-              title=""
-              width={15}
-              height={15}
-            />
-
             <p className={styles.name}>
               {repo.owner}/{repo.name}
             </p>
