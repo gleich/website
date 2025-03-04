@@ -18,7 +18,7 @@ export default function Project({ repo }: { repo: Repository }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
-    }, 10);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -40,9 +40,9 @@ export default function Project({ repo }: { repo: Repository }) {
               height={15}
             />
 
-            <Link href={repo.url} target="_blank">
+            <p className={styles.name}>
               {repo.owner}/{repo.name}
-            </Link>
+            </p>
           </div>
           <p className={styles.highlightedProjectLanguage}>
             <span
@@ -54,7 +54,10 @@ export default function Project({ repo }: { repo: Repository }) {
         </div>
         <div className={styles.highlightedProjectDetails}>
           <p>{repo.description}</p>
-          <p className={styles.highlightedProjectUpdated}>
+          <p
+            className={styles.highlightedProjectUpdated}
+            suppressHydrationWarning
+          >
             {`Updated ${exactFromNow(updatedAt, currentTime)}`}
           </p>
         </div>

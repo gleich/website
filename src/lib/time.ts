@@ -9,11 +9,13 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   const monthsDiff = totalMonthsDiff % 12;
 
   const totalDaysDiff = Math.abs(date.diff(currentTime, 'day'));
+
   const weeksDiff = totalDaysDiff >= 7 ? Math.floor(totalDaysDiff / 7) : 0;
   const daysDiff = weeksDiff > 0 ? totalDaysDiff % 7 : totalDaysDiff % 30;
 
   const hoursDiff = Math.abs(date.diff(currentTime, 'hour')) % 24;
   const minutesDiff = Math.abs(date.diff(currentTime, 'minute')) % 60;
+  const secondsDiff = Math.abs(date.diff(currentTime, 'second')) % 60;
 
   let fromNow: string;
 
@@ -21,7 +23,7 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
     fromNow = `${yearsDiff} ${yearsDiff === 1 ? 'year' : 'years'} & ${monthsDiff} ${monthsDiff === 1 ? 'month' : 'months'}`;
   } else if (monthsDiff > 0) {
     fromNow = `${monthsDiff} ${monthsDiff === 1 ? 'month' : 'months'} & ${daysDiff} ${daysDiff === 1 ? 'day' : 'days'}`;
-  } else if (weeksDiff > 0 && daysDiff === 0) {
+  } else if (weeksDiff > 0 && daysDiff == 0) {
     fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} & ${hoursDiff}hr`;
   } else if (weeksDiff > 0) {
     fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} & ${daysDiff} ${daysDiff === 1 ? 'day' : 'days'}`;
@@ -30,16 +32,10 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   } else if (hoursDiff > 0) {
     fromNow = `${hoursDiff}hr & ${minutesDiff}m`;
   } else if (minutesDiff > 0) {
-    const msDiff = Math.abs(date.diff(currentTime, 'millisecond'));
-    const msAfterMinutes = msDiff % (60 * 1000);
-    const secondsWithFraction = msAfterMinutes / 1000;
-    fromNow = `${minutesDiff}m & ${secondsWithFraction.toFixed(2)}s`;
+    fromNow = `${minutesDiff}m & ${secondsDiff}s`;
   } else {
-    const msDiff = Math.abs(date.diff(currentTime, 'millisecond'));
-    const secondsWithFraction = msDiff / 1000;
-    fromNow = `${secondsWithFraction.toFixed(2)}s`;
+    fromNow = `${secondsDiff}s`;
   }
-
   return fromNow + ' ago';
 }
 

@@ -27,15 +27,12 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
-    }, 10);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div
-      className={`${styles.lastUpdated} ${ibmPlexMonoMedium.className}`}
-      suppressHydrationWarning
-    >
+    <div className={`${styles.lastUpdated} ${ibmPlexMonoMedium.className}`}>
       <div className={styles.cachedAndProcessed}>
         <Image
           src="/icons/hard-drive.svg"
@@ -51,7 +48,9 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
               lcp
             </Link>{' '}
           </span>
-          <span>[{exactFromNow(dayjsLastUpdate, currentTime)}]</span>
+          <span suppressHydrationWarning>
+            [{exactFromNow(dayjsLastUpdate, currentTime)}]
+          </span>
         </p>
       </div>
     </div>

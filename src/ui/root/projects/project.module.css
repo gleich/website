@@ -24,6 +24,13 @@
   gap: 10px;
 }
 
+.name {
+  background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
+  border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.2);
+  padding: 1px 3px;
+  color: #16df6d;
+}
+
 .highlightedProjectDetails {
   display: flex;
   flex-direction: column;

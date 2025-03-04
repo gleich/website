@@ -12,12 +12,12 @@ export default function LastUpdated({ lastUpdated }: { lastUpdated: Date }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
-    }, 10);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <p className={styles.lastUpdated}>
+    <p className={styles.lastUpdated} suppressHydrationWarning>
       {`Last updated ${exactFromNow(dayjsLastUpdate, currentTime)}`}
     </p>
   );
