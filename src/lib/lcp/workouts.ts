@@ -57,7 +57,7 @@ export interface Workout {
   name: string;
   sport_type: string;
   start_date: Date;
-  timezone?: string;
+  timezone: string;
   map_blur_image?: string;
   has_map: boolean;
   map_image_url?: string;
