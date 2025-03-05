@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Copyright() {
   return (
-    <footer className="w-full flex items-center justify-center bottom-0 my-10 flex-col font-bold text-sm">
+    <footer className="bottom-0 my-10 flex w-full flex-col items-center justify-center text-sm font-bold">
       <Image
         src="/icons/usa.svg"
         alt="United States Flag"
