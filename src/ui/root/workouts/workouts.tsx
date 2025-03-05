@@ -4,7 +4,6 @@ import styles from '@/ui/root/workouts/workouts.module.css';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import Image from 'next/image';
-import Time from './time';
 import Link from 'next/link';
 import SVGIcon from '@/ui/svgIcon';
 import Card from '@/ui/card';
@@ -12,6 +11,7 @@ import Stats from '@/ui/stats';
 import { renderDuration } from '@/lib/time';
 import Graph from './graph';
 import Lift from './lift';
+import Time from './time';
 
 dayjs.extend(duration);
 
