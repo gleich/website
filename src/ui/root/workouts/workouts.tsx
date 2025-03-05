@@ -41,8 +41,8 @@ export default async function Workouts() {
           fun. Below are {activities.length} of my most recent{' '}
           <Link href="https://www.strava.com" target="_blank">
             Strava
-          </Link>{' '}
-          and{' '}
+          </Link>
+          /
           <Link href="https://hevy.com" target="_blank">
             Hevy
           </Link>{' '}
