@@ -58,5 +58,6 @@
 
   .cachedAndProcessed {
     border-radius: 5px;
+    margin: 0px 5px;
   }
 }

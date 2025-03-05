@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^2.0.3",
+    "@tailwindcss/postcss": "^4.0.9",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "dayjs": "^1.11.13",
@@ -18,11 +19,13 @@
     "nanoid": "^5.1.2",
     "next": "canary",
     "next-gallery": "^2.1.1",
+    "postcss": "^8.5.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-fast-marquee": "^1.6.5",
     "recharts": "2.13.3",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",

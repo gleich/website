@@ -21,9 +21,9 @@
   width: min-content;
   margin-top: 10px;
   margin-left: 10px;
-  padding: 3px 10px;
+  padding: 0px 10px;
   font-size: 25px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-weight: 800;
 }
 
@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 7px 10px;
+  padding: 4px 13px;
   background-color: rgb(61 36 38);
   border-bottom-left-radius: 5px;
   border: 1px solid var(--live-color-dimmed);
@@ -116,8 +116,8 @@
   }
 
   .liveCircle {
-    margin-right: 2px;
-    margin-left: 2px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
 
   .logoIcons {

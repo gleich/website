@@ -1,11 +1,14 @@
 .fileIcon {
-  vertical-align: middle;
+  vertical-align: bottom;
   position: relative;
   padding-right: 5px;
   padding-left: 2px;
-  bottom: 0.5px;
+  bottom: -2px;
 }
 
 .resume {
-  gap: 5px;
+  display: inline-flex;
+  align-items: center;
+  height: 15px;
+  text-decoration: underline;
 }
