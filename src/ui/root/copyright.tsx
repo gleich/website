@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Copyright() {
   return (
-    <footer className="bottom-0 my-10 flex w-full flex-col items-center justify-center text-sm font-bold">
+    <footer className="bottom-0 my-10 flex w-full flex-col items-center justify-center gap-2 text-sm font-bold">
       <Image
         src="/icons/usa.svg"
         alt="United States Flag"
@@ -16,7 +16,11 @@ export default function Copyright() {
         <span className="pr-0.5">©</span> Matt Gleich{' '}
         {new Date().getFullYear()}
       </p>
-      <Link href="https://github.com/gleich/website" target="_blank">
+      <Link
+        href="https://github.com/gleich/website"
+        target="_blank"
+        className="leading-1.25"
+      >
         gleich/website
       </Link>
     </footer>
