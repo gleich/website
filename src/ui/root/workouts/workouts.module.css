@@ -48,6 +48,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  font-weight: 600;
   font-size: 23px !important;
 }
 
