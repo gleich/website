@@ -69,7 +69,7 @@
   border-radius: 50%;
   background: var(--live-color);
   cursor: pointer;
-  /* animation: dot--fade 0.4s linear alternate infinite; */
+  animation: dot-fade 0.4s linear alternate infinite;
 }
 
 .liveSourceLink {
@@ -146,7 +146,7 @@
   }
 }
 
-@-webkit-keyframes dot--fade {
+@-webkit-keyframes dot-fade {
   0% {
     opacity: 20%;
   }
@@ -158,7 +158,7 @@
   }
 }
 
-@keyframes dot--fade {
+@keyframes dot-fade {
   0% {
     opacity: 20%;
   }
