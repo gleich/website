@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.title {
+  font-size: 30px;
+}
+
 .header {
   padding: 70px 0;
   display: flex;
