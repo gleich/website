@@ -53,7 +53,7 @@
   justify-content: center;
   gap: 10px;
   padding: 7px 10px;
-  background-color: rgba(243, 9, 40, 0.13);
+  background-color: rgb(61 36 38);
   border-bottom-left-radius: 5px;
   border: 1px solid var(--live-color-dimmed);
   border-top-right-radius: 5px;
@@ -69,8 +69,7 @@
   border-radius: 50%;
   background: var(--live-color);
   cursor: pointer;
-  box-shadow: 0px 0px 10px var(--live-color);
-  animation: dot--fade 0.4s linear alternate infinite;
+  /* animation: dot--fade 0.4s linear alternate infinite; */
 }
 
 .liveSourceLink {
@@ -131,6 +130,13 @@
 
   .content {
     padding: 0px 2px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .liveFromTitle {
+    background-color: rgb(223 195 197);
+    border-color: rgb(236 134 137);
   }
 }
 

@@ -27,7 +27,7 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
-    }, 1000);
+    }, 10);
     return () => clearInterval(interval);
   }, []);
 

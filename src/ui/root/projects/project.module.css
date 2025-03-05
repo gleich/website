@@ -25,8 +25,8 @@
 }
 
 .name {
-  background-color: rgba(18.8%, 80.8%, 45.9%, 0.1);
-  border: 1px solid rgba(18.8%, 80.8%, 45.9%, 0.2);
+  border: 1px solid rgb(40 86 61);
+  background-color: rgb(37 54 48);
   padding: 1px 3px;
   color: #16df6d;
 }
@@ -55,4 +55,11 @@
 .cardLink {
   color: var(--foreground) !important;
   text-decoration: none;
+}
+
+@media (prefers-color-scheme: light) {
+  .name {
+    background-color: rgb(45, 112, 74);
+    border: 1px solid rgb(38, 76, 57);
+  }
 }

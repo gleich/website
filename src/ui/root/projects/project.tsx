@@ -17,7 +17,7 @@ export default function Project({ repo }: { repo: Repository }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs());
-    }, 1000);
+    }, 10);
     return () => clearInterval(interval);
   }, []);
 
