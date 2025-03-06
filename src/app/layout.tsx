@@ -68,14 +68,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <>
       <header>
         <meta name="darkreader-lock" />
       </header>
-      <body className={`${ibmPlexSansMedium.className}`}>
-        {children} <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+      <html lang="en">
+        <body className={`${ibmPlexSansMedium.className}`}>
+          {children} <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </>
   );
 }
