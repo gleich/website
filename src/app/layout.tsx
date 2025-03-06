@@ -69,6 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <header>
+        <meta name="darkreader-lock" />
+      </header>
       <body className={`${ibmPlexSansMedium.className}`}>
         {children} <Analytics />
         <SpeedInsights />
