@@ -28,7 +28,7 @@ export default function LiveSection({
   children: ReactNode;
 }) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id={name.toLowerCase()}>
       <Card className={styles.card}>
         <div className={styles.header}>
           <h2 className={`${inter.className} ${styles.title}`}>{name}</h2>
