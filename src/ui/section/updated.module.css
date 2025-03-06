@@ -6,13 +6,18 @@
   gap: 3px;
 }
 
+.icon {
+  filter: invert(75%) sepia(16%) saturate(2231%) hue-rotate(85deg)
+    brightness(89%) contrast(87%);
+}
+
 .cachedAndProcessed {
   width: 100%;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
   justify-content: center;
-  color: #16df6d;
+  color: rgb(0 217 107);
   border: 1px solid rgb(40 86 61);
   background-color: rgb(37 54 48);
   padding: 4px 10px;
@@ -33,10 +38,6 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .icon {
-    display: none;
-  }
-
   .cachedAndProcessed {
     color: #16df6d;
     border: 1px solid rgb(37 54 48);
@@ -50,10 +51,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-
-  .icon {
-    display: none;
   }
 
   .cachedAndProcessed {

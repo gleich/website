@@ -112,7 +112,7 @@ export default async function Games() {
                             >
                               {g.achievements
                                 ?.filter((a) => a.achieved)
-                                .slice(0, 4)
+                                .slice(0, 3)
                                 .map((a) => (
                                   <div
                                     key={a.api_name}

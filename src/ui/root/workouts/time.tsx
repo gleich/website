@@ -43,7 +43,7 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
       className={`${styles.time} ${ibmPlexMonoRegular.className}`}
       suppressHydrationWarning
     >
-      {dayjsDate.format(`[${dayOfWeek}] [-] h:mm A`)} [
+      {dayjsDate.format(`[${dayOfWeek}] [@] h:mm A`)} [
       {exactFromNow(dayjsDate, now)}]
     </p>
   );

@@ -35,11 +35,11 @@ export function Updated({ lastUpdated }: { lastUpdated: Date }) {
     <div className={`${styles.lastUpdated} ${ibmPlexMonoMedium.className}`}>
       <div className={styles.cachedAndProcessed}>
         <Image
-          src="/icons/hard-drive.svg"
-          alt="Hard Drive Icon"
+          src="/icons/cache.svg"
+          alt="Cache Icon"
           className={styles.icon}
-          height={15}
-          width={15}
+          height={13.5}
+          width={13.5}
         />
         <p className={styles.text}>
           <span>

@@ -24,9 +24,9 @@ export function exactFromNow(date: Dayjs, currentTime: Dayjs): string {
   } else if (weeksDiff > 0 && daysDiff === 0) {
     fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} ${hoursDiff}hr`;
   } else if (weeksDiff > 0) {
-    fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} ${daysDiff} ${daysDiff === 1 ? 'day' : 'days'}`;
+    fromNow = `${weeksDiff} ${weeksDiff === 1 ? 'week' : 'weeks'} ${daysDiff}d`;
   } else if (daysDiff > 0) {
-    fromNow = `${daysDiff} ${daysDiff === 1 ? 'day' : 'days'} ${hoursDiff}hr`;
+    fromNow = `${daysDiff}d ${hoursDiff}hr`;
   } else if (hoursDiff > 0) {
     fromNow = `${hoursDiff}hr ${minutesDiff}m`;
   } else if (minutesDiff > 0) {

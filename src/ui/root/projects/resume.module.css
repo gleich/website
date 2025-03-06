@@ -7,7 +7,6 @@
 }
 
 .resume {
-  display: inline-flex;
   align-items: center;
   height: 15px;
   text-decoration: underline;

@@ -12,7 +12,7 @@ export default function Lift({
   return (
     <div className={styles.scrollContainer}>
       <div className={styles.table}>
-        {hevyExercises.map((e) => (
+        {hevyExercises.map((e, i) => (
           <div key={nanoid()}>
             <div className={styles.exerciseNameContainer}>
               <Link
@@ -22,7 +22,7 @@ export default function Lift({
                 title="View exercise in Hevy"
               >
                 <ScrollingText
-                  text={e.title.replaceAll('(', '[').replaceAll(')', ']')}
+                  text={`#${i + 1}: ${e.title.replaceAll('(', '[').replaceAll(')', ']')}`}
                 />
               </Link>
             </div>
@@ -36,8 +36,7 @@ export default function Lift({
                     {s.type != 'warmup' ? i + 1 : 'W'}
                   </div>
                   <div>
-                    {(s.weight_kg * 2.2046226218).toPrecision(3)} lbs × {s.reps}{' '}
-                    reps
+                    {Math.round(s.weight_kg * 2.2046226218)} lbs × {s.reps} reps
                   </div>
                 </div>
               ))}
