@@ -25,10 +25,10 @@
 }
 
 .name {
-  border: 1px solid rgb(40 86 61);
-  background-color: rgb(37 54 48);
+  border: 1px solid var(--green-border);
+  background-color: var(--green-background);
   padding: 1px 5px;
-  color: #16df6d;
+  color: var(--green-foreground);
 }
 
 .highlightedProjectDetails {
@@ -55,11 +55,4 @@
 .cardLink {
   color: var(--foreground) !important;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: light) {
-  .name {
-    background-color: rgb(45, 112, 74);
-    border: 1px solid rgb(38, 76, 57);
-  }
 }

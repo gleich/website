@@ -17,9 +17,9 @@
   gap: 12px;
   align-items: center;
   justify-content: center;
-  color: rgb(0 217 107);
-  border: 1px solid rgb(40 86 61);
-  background-color: rgb(37 54 48);
+  color: var(--green-foreground);
+  border: 1px solid var(--green-border);
+  background-color: var(--green-background);
   padding: 4px 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -38,10 +38,9 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .cachedAndProcessed {
-    color: #16df6d;
-    border: 1px solid rgb(37 54 48);
-    background-color: rgb(50, 124, 82);
+  .icon {
+    filter: invert(16%) sepia(85%) saturate(1241%) hue-rotate(106deg)
+      brightness(98%) contrast(104%);
   }
 }
 
