@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 import styles from '@/ui/root/workouts/time.module.css';
 import { exactFromNow } from '@/lib/time';
 import localFont from 'next/font/local';
@@ -9,6 +10,8 @@ import localFont from 'next/font/local';
 const ibmPlexMonoRegular = localFont({
   src: '../../../../public/fonts/ibm_plex_mono/regular.otf',
 });
+
+dayjs.extend(utc);
 
 export default function Time({ date }: { date: Date }) {
   const [currentTime, setCurrentTime] = useState(dayjs().local());
@@ -20,8 +23,9 @@ export default function Time({ date }: { date: Date }) {
     return () => clearInterval(interval);
   }, []);
 
-  const dayjsDate = dayjs(date);
+  const dayjsDate = dayjs.utc(date).local();
   const yesterday = currentTime.subtract(1, 'day');
+  console.log(dayjsDate.format());
   let dayOfWeek: string;
   if (
     currentTime.date() == dayjsDate.date() &&
