@@ -2,25 +2,21 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import styles from './copyright.module.css';
 
 export default function Copyright() {
   return (
-    <footer className="bottom-0 my-10 flex w-full flex-col items-center justify-center gap-2 text-sm font-bold">
+    <footer className={styles.copyright}>
       <Image
         src="/icons/usa.svg"
         alt="United States Flag"
         width={23.25}
         height={16.25}
       />
-      <p>
-        <span className="pr-0.5">©</span> Matt Gleich{' '}
-        {new Date().getFullYear()}
+      <p className={styles.name}>
+        <span>©</span> Matt Gleich {new Date().getFullYear()}
       </p>
-      <Link
-        href="https://github.com/gleich/website"
-        target="_blank"
-        className="leading-1.25"
-      >
+      <Link href="https://github.com/gleich/website" target="_blank">
         gleich/website
       </Link>
     </footer>
