@@ -55,5 +55,12 @@
   .cachedAndProcessed {
     border-radius: 5px;
     margin: 0px 5px;
+    align-items: flex-start;
+  }
+
+  .icon {
+    margin-top: 2.5px;
+    height: 12px;
+    width: auto;
   }
 }
