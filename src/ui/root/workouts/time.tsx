@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
 import styles from '@/ui/root/workouts/time.module.css';
 import { exactFromNow } from '@/lib/time';
 import localFont from 'next/font/local';
@@ -11,26 +10,23 @@ const ibmPlexMonoRegular = localFont({
   src: '../../../../public/fonts/ibm_plex_mono/regular.otf',
 });
 
-dayjs.extend(utc);
-
-export default function Time({ date }: { date: Date }) {
-  const [currentTime, setCurrentTime] = useState(dayjs().local());
+export default function Time({ date, tz }: { date: Date; tz: string }) {
+  const [now, setNow] = useState(dayjs().local());
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(dayjs().local());
+      setNow(dayjs().local());
     }, 10);
     return () => clearInterval(interval);
   }, []);
 
-  const dayjsDate = dayjs.utc(date).local();
-  const yesterday = currentTime.subtract(1, 'day');
-  console.log(dayjsDate.format());
+  const dayjsDate = dayjs(date).tz(tz.split(' ')[1]);
+  const yesterday = now.subtract(1, 'day');
   let dayOfWeek: string;
   if (
-    currentTime.date() == dayjsDate.date() &&
-    currentTime.year() == dayjsDate.year() &&
-    currentTime.month() == dayjsDate.month()
+    now.date() == dayjsDate.date() &&
+    now.year() == dayjsDate.year() &&
+    now.month() == dayjsDate.month()
   ) {
     dayOfWeek = 'Today';
   } else if (
@@ -48,7 +44,7 @@ export default function Time({ date }: { date: Date }) {
       suppressHydrationWarning
     >
       {dayjsDate.format(`[${dayOfWeek}] [-] h:mm A`)} [
-      {exactFromNow(dayjsDate, currentTime)}]
+      {exactFromNow(dayjsDate, now)}]
     </p>
   );
 }

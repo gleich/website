@@ -141,7 +141,7 @@ export default async function Workouts() {
                       )}
                     </Link>
                   </div>
-                  <Time date={a.start_date} />
+                  <Time date={a.start_date} tz={a.timezone} />
                 </div>
                 <div className={styles.info}>
                   {a.platform === 'strava' ? (
