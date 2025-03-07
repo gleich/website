@@ -19,7 +19,7 @@ export default function Time({ date, tz }: { date: Date; tz: string }) {
       setNow(dayjs().tz(timezone));
     }, 10);
     return () => clearInterval(interval);
-  }, []);
+  }, [timezone]);
 
   const dayjsDate = dayjs(date).tz(timezone);
   const yesterday = now.subtract(1, 'day');
