@@ -9,12 +9,13 @@
   font-weight: bold;
 }
 
-.copyright p {
-  font-size: 14.5px;
-}
-
 .name {
   margin-top: 5px;
+}
+
+.link,
+.name {
+  font-size: 14.5px;
 }
 
 .symbol {
