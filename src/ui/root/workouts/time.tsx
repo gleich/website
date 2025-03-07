@@ -11,16 +11,17 @@ const ibmPlexMonoRegular = localFont({
 });
 
 export default function Time({ date, tz }: { date: Date; tz: string }) {
-  const [now, setNow] = useState(dayjs().local());
+  const timezone = tz.split(' ')[1];
+  const [now, setNow] = useState(dayjs().tz(timezone));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setNow(dayjs().local());
+      setNow(dayjs().tz(timezone));
     }, 10);
     return () => clearInterval(interval);
   }, []);
 
-  const dayjsDate = dayjs(date).tz(tz.split(' ')[1]);
+  const dayjsDate = dayjs(date).tz(timezone);
   const yesterday = now.subtract(1, 'day');
   let dayOfWeek: string;
   if (
