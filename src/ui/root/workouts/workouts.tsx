@@ -86,11 +86,12 @@ export default async function Workouts() {
               );
             } else if (a.average_heartrate) {
               stats.set('Avg. Heart Rate', `${a.average_heartrate} bpm`);
-            } else if (a.hevy_volume_kg && a.hevy_set_count) {
+            } else if (a.hevy_volume_kg) {
               stats.set(
                 'Total Volume',
                 `${Math.round(a.hevy_volume_kg * 2.2046226218).toLocaleString()} lbs`,
               );
+            } else if (a.hevy_set_count){
               stats.set('Sets', `${a.hevy_set_count ?? 0}`);
             }
 
